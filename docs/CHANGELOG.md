@@ -54,3 +54,13 @@ Decisions
 * ESLint also blocks relative imports of `lib/pipeline` and `lib/db` from screens and the data clients
 * Node 24 runs the scripts directly (built in type stripping), so no new dev dependency; script reachable `lib/` files use `.ts` import extensions (`allowImportingTsExtensions`)
 * New dependencies from the CLAUDE.md stack: `sharp` (its install script is allowed in `pnpm-workspace.yaml`) and `zod`
+
+## M1 follow up · Sample products restyled (2026-10-17)
+
+* The five fixtures now look like three fictional products, clearly not UX Critic: **Little Fern Coffee** checkout v1 to v3 (cream page, white checkout sheet, dark green `#1F4A36`, Cormorant Garamond headings, Figtree text), **Rally** fitness sign up (white with an orange `#C2410C` panel and buttons, Rubik), **Waypoint Freight** logistics dashboard (dark `#0F1720`, teal `#2DD4BF`, Barlow Semi Condensed). No fixture uses `#1D4ED8`, Atkinson Hyperlegible or Overpass
+* `base.css` is now only a reset; each product has its own stylesheet (`coffee.css`, `fitness.css`, `logistics.css`). `checkout.css` is gone
+* Every planted problem is the same element, principle and kind of failure. The faint helper text is still `#B9BFC8` on white (1.85 : 1). `demo:data` found every planted measured problem and nothing else
+* Measured values that changed (computed): the dashboard footnote is now 2.81 : 1 on the dark card (was 3.10 : 1 on white); 352 measurements (was 344)
+* Fonts were chosen by testing the docs/04 estimate at 12 to 40 px (within 1 px), then checked again on the captured pages (worst 0.8 px). Fredoka passed the first test (+0.67 px) but reached 1.08 px on the page once boxes snap to whole pixels, so the sign up form uses Rubik instead. Note added to docs/04
+* Handwritten prose and contexts updated for the new products (coffee shop, fitness app, "Fleet overview", Shipments and On time); no numbers added
+* New dev dependencies, listed in CLAUDE.md: `@fontsource/cormorant-garamond`, `@fontsource/figtree`, `@fontsource/rubik`, `@fontsource/barlow-semi-condensed`

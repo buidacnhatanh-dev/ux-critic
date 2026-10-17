@@ -5,56 +5,56 @@
   "scale": 2,
   "textLines": [
     {
-      "label": "Northwind Goods",
+      "label": "Little Fern Coffee",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 356,
-        "h": 54
+        "x": 112,
+        "y": 34,
+        "w": 424,
+        "h": 74
       },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 22
+      "cssColor": "rgb(31, 74, 54)",
+      "cssFontSize": 30
     },
     {
       "label": "Secure checkout",
       "box": {
-        "x": 2230,
-        "y": 43,
-        "w": 234,
-        "h": 40
+        "x": 2205,
+        "y": 51,
+        "w": 243,
+        "h": 38
       },
-      "cssColor": "rgb(74, 82, 96)",
+      "cssColor": "rgb(94, 85, 76)",
       "cssFontSize": 16
     },
     {
       "label": "Checkout",
       "box": {
-        "x": 96,
+        "x": 194,
         "y": 188,
-        "w": 324,
-        "h": 92
+        "w": 307,
+        "h": 96
       },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 36
+      "cssColor": "rgb(31, 74, 54)",
+      "cssFontSize": 40
     },
     {
       "label": "Contact",
       "box": {
-        "x": 96,
-        "y": 316,
-        "w": 148,
-        "h": 53
+        "x": 194,
+        "y": 304,
+        "w": 168,
+        "h": 62
       },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 20
+      "cssColor": "rgb(31, 74, 54)",
+      "cssFontSize": 26
     },
     {
       "label": "We send your receipt to this address",
       "box": {
-        "x": 96,
-        "y": 502,
-        "w": 514,
-        "h": 41
+        "x": 194,
+        "y": 497,
+        "w": 524,
+        "h": 39
       },
       "cssColor": "rgb(185, 191, 200)",
       "cssFontSize": 16
@@ -62,232 +62,232 @@
     {
       "label": "Payment",
       "box": {
-        "x": 96,
-        "y": 584,
-        "w": 168,
-        "h": 53
+        "x": 194,
+        "y": 573,
+        "w": 178,
+        "h": 63
       },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 20
+      "cssColor": "rgb(31, 74, 54)",
+      "cssFontSize": 26
     },
     {
       "label": "Card",
       "box": {
-        "x": 182,
-        "y": 686,
-        "w": 71,
-        "h": 41
+        "x": 273,
+        "y": 682,
+        "w": 72,
+        "h": 39
       },
-      "cssColor": "rgb(29, 78, 216)",
+      "cssColor": "rgb(31, 74, 54)",
       "cssFontSize": 16
     },
     {
       "label": "PayPal",
       "box": {
-        "x": 428,
-        "y": 686,
-        "w": 101,
-        "h": 41
+        "x": 503,
+        "y": 682,
+        "w": 99,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 16
     },
     {
       "label": "Apple Pay",
       "box": {
-        "x": 661,
-        "y": 686,
-        "w": 154,
-        "h": 41
+        "x": 719,
+        "y": 682,
+        "w": 150,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 16
     },
     {
       "label": "Google Pay",
       "box": {
-        "x": 911,
-        "y": 686,
-        "w": 172,
-        "h": 41
+        "x": 951,
+        "y": 682,
+        "w": 169,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 16
     },
     {
       "label": "Klarna",
       "box": {
-        "x": 1207,
-        "y": 686,
-        "w": 99,
-        "h": 41
+        "x": 1230,
+        "y": 682,
+        "w": 94,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 16
     },
     {
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 648,
-        "y": 1054,
-        "w": 176,
-        "h": 41
+        "x": 703,
+        "y": 1046,
+        "w": 178,
+        "h": 39
       },
-      "cssColor": "rgb(255, 255, 255)",
+      "cssColor": "rgb(251, 247, 238)",
       "cssFontSize": 16
     },
     {
       "label": "Terms",
       "box": {
-        "x": 96,
-        "y": 1160,
-        "w": 64,
+        "x": 194,
+        "y": 1152,
+        "w": 65,
         "h": 29
       },
-      "cssColor": "rgb(29, 78, 216)",
+      "cssColor": "rgb(31, 74, 54)",
       "cssFontSize": 12
     },
     {
       "label": "Order summary",
       "box": {
-        "x": 1618,
-        "y": 368,
-        "w": 296,
-        "h": 52
+        "x": 1656,
+        "y": 276,
+        "w": 328,
+        "h": 62
       },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 20
+      "cssColor": "rgb(31, 74, 54)",
+      "cssFontSize": 26
     },
     {
-      "label": "Linen shirt",
+      "label": "House blend, whole bean",
       "box": {
-        "x": 1618,
-        "y": 462,
-        "w": 150,
-        "h": 40
+        "x": 1656,
+        "y": 377,
+        "w": 361,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 16
     },
     {
-      "label": "€59.00",
+      "label": "€14.00",
       "box": {
-        "x": 2211,
-        "y": 462,
-        "w": 107,
-        "h": 40
-      },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "Canvas tote",
-      "box": {
-        "x": 1618,
-        "y": 542,
-        "w": 166,
-        "h": 40
-      },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "€19.00",
-      "box": {
-        "x": 2216,
-        "y": 542,
+        "x": 2226,
+        "y": 377,
         "w": 102,
-        "h": 40
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 16
     },
     {
-      "label": "Shipping",
+      "label": "Ceramic pour over",
       "box": {
-        "x": 1618,
-        "y": 622,
-        "w": 126,
-        "h": 40
+        "x": 1656,
+        "y": 457,
+        "w": 265,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 16
     },
     {
-      "label": "€6.00",
+      "label": "€32.00",
       "box": {
-        "x": 2229,
-        "y": 622,
-        "w": 89,
-        "h": 40
+        "x": 2223,
+        "y": 457,
+        "w": 105,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Delivery",
+      "box": {
+        "x": 1656,
+        "y": 537,
+        "w": 116,
+        "h": 39
+      },
+      "cssColor": "rgb(42, 36, 32)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "€4.50",
+      "box": {
+        "x": 2241,
+        "y": 537,
+        "w": 87,
+        "h": 39
+      },
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 16
     },
     {
       "label": "Total",
       "box": {
-        "x": 1618,
-        "y": 736,
-        "w": 85,
-        "h": 44
+        "x": 1656,
+        "y": 651,
+        "w": 82,
+        "h": 45
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 18
     },
     {
-      "label": "€84.00",
+      "label": "€50.50",
       "box": {
-        "x": 2193,
-        "y": 736,
-        "w": 125,
-        "h": 44
+        "x": 2205,
+        "y": 651,
+        "w": 123,
+        "h": 45
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(42, 36, 32)",
       "cssFontSize": 18
     },
     {
       "label": "Email address",
       "box": {
-        "x": 126,
-        "y": 418,
-        "w": 199,
-        "h": 41
+        "x": 224,
+        "y": 414,
+        "w": 197,
+        "h": 39
       },
-      "cssColor": "rgb(107, 114, 128)",
+      "cssColor": "rgb(110, 102, 92)",
       "cssFontSize": 16
     },
     {
       "label": "Card number",
       "box": {
-        "x": 126,
-        "y": 814,
-        "w": 184,
-        "h": 41
+        "x": 224,
+        "y": 807,
+        "w": 187,
+        "h": 39
       },
-      "cssColor": "rgb(107, 114, 128)",
+      "cssColor": "rgb(110, 102, 92)",
       "cssFontSize": 16
     },
     {
       "label": "MM / YY",
       "box": {
-        "x": 126,
-        "y": 934,
-        "w": 121,
-        "h": 41
+        "x": 224,
+        "y": 927,
+        "w": 122,
+        "h": 39
       },
-      "cssColor": "rgb(107, 114, 128)",
+      "cssColor": "rgb(110, 102, 92)",
       "cssFontSize": 16
     },
     {
       "label": "CVC",
       "box": {
-        "x": 782,
-        "y": 934,
-        "w": 60,
-        "h": 41
+        "x": 838,
+        "y": 927,
+        "w": 69,
+        "h": 39
       },
-      "cssColor": "rgb(107, 114, 128)",
+      "cssColor": "rgb(110, 102, 92)",
       "cssFontSize": 16
     }
   ],
@@ -296,9 +296,9 @@
       "label": "Email address",
       "role": "input",
       "box": {
-        "x": 96,
-        "y": 390,
-        "w": 1280,
+        "x": 194,
+        "y": 385,
+        "w": 1196,
         "h": 97
       }
     },
@@ -306,9 +306,9 @@
       "label": "Card",
       "role": "button",
       "box": {
-        "x": 96,
-        "y": 658,
-        "w": 244,
+        "x": 194,
+        "y": 654,
+        "w": 230,
         "h": 97
       }
     },
@@ -316,9 +316,9 @@
       "label": "PayPal",
       "role": "button",
       "box": {
-        "x": 359,
-        "y": 658,
-        "w": 240,
+        "x": 439,
+        "y": 654,
+        "w": 227,
         "h": 97
       }
     },
@@ -326,9 +326,9 @@
       "label": "Apple Pay",
       "role": "button",
       "box": {
-        "x": 618,
-        "y": 658,
-        "w": 240,
+        "x": 681,
+        "y": 654,
+        "w": 226,
         "h": 97
       }
     },
@@ -336,9 +336,9 @@
       "label": "Google Pay",
       "role": "button",
       "box": {
-        "x": 877,
-        "y": 658,
-        "w": 240,
+        "x": 922,
+        "y": 654,
+        "w": 227,
         "h": 97
       }
     },
@@ -346,9 +346,9 @@
       "label": "Klarna",
       "role": "button",
       "box": {
-        "x": 1136,
-        "y": 658,
-        "w": 240,
+        "x": 1164,
+        "y": 654,
+        "w": 226,
         "h": 97
       }
     },
@@ -356,9 +356,9 @@
       "label": "Card number",
       "role": "input",
       "box": {
-        "x": 96,
-        "y": 786,
-        "w": 1280,
+        "x": 194,
+        "y": 778,
+        "w": 1196,
         "h": 97
       }
     },
@@ -366,9 +366,9 @@
       "label": "MM / YY",
       "role": "input",
       "box": {
-        "x": 96,
-        "y": 906,
-        "w": 624,
+        "x": 194,
+        "y": 898,
+        "w": 582,
         "h": 97
       }
     },
@@ -376,19 +376,19 @@
       "label": "CVC",
       "role": "input",
       "box": {
-        "x": 752,
-        "y": 906,
-        "w": 624,
+        "x": 808,
+        "y": 898,
+        "w": 582,
         "h": 97
       }
     },
     {
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "role": "button",
       "box": {
-        "x": 96,
-        "y": 1026,
-        "w": 1280,
+        "x": 194,
+        "y": 1018,
+        "w": 1196,
         "h": 97
       }
     },
@@ -396,9 +396,9 @@
       "label": "Terms",
       "role": "link",
       "box": {
-        "x": 96,
-        "y": 1162,
-        "w": 64,
+        "x": 194,
+        "y": 1154,
+        "w": 65,
         "h": 25
       }
     }
@@ -407,36 +407,36 @@
     {
       "selector": "#email, #card, #expiry, #cvc",
       "box": {
-        "x": 96,
-        "y": 390,
-        "w": 1280,
-        "h": 613
+        "x": 194,
+        "y": 385,
+        "w": 1196,
+        "h": 610
       }
     },
     {
       "selector": "#email-help",
       "box": {
-        "x": 96,
-        "y": 498,
-        "w": 1280,
+        "x": 194,
+        "y": 493,
+        "w": 1196,
         "h": 49
       }
     },
     {
       "selector": "#methods",
       "box": {
-        "x": 96,
-        "y": 658,
-        "w": 1280,
+        "x": 194,
+        "y": 654,
+        "w": 1196,
         "h": 97
       }
     },
     {
       "selector": "#terms",
       "box": {
-        "x": 96,
-        "y": 1162,
-        "w": 64,
+        "x": 194,
+        "y": 1154,
+        "w": 65,
         "h": 25
       }
     }

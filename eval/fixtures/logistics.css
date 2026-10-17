@@ -1,0 +1,55 @@
+/* Waypoint Freight: logistics tool, dark theme, teal accent, compact sans. */
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  font-weight: 400;
+  src: url(../../node_modules/@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-400-normal.woff2);
+}
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  font-weight: 700;
+  src: url(../../node_modules/@fontsource/barlow-semi-condensed/files/barlow-semi-condensed-latin-700-normal.woff2);
+}
+body {
+  background: #0f1720;
+  color: #e6edf3;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+h2 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+.muted {
+  color: #a3b3c2;
+}
+.topbar {
+  height: 56px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0b1219;
+  border-bottom: 1px solid #24323f;
+}
+.brand {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2dd4bf;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 6px;
+  border: 1px solid #3b4d5e;
+  background: #16212c;
+  color: #e6edf3;
+}
+.card {
+  border: 1px solid #24323f;
+  border-radius: 8px;
+  background: #16212c;
+}

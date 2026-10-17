@@ -5,311 +5,311 @@
   "scale": 2,
   "textLines": [
     {
-      "label": "Lumen Analytics",
+      "label": "Waypoint Freight",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 350,
-        "h": 54
+        "x": 80,
+        "y": 28,
+        "w": 385,
+        "h": 52
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(45, 212, 191)",
       "cssFontSize": 22
     },
     {
-      "label": "Acme Store workspace",
+      "label": "North depot · Dispatch",
       "box": {
-        "x": 2142,
-        "y": 43,
-        "w": 322,
-        "h": 40
+        "x": 2203,
+        "y": 35,
+        "w": 277,
+        "h": 38
       },
-      "cssColor": "rgb(74, 82, 96)",
+      "cssColor": "rgb(163, 179, 194)",
       "cssFontSize": 16
     },
     {
-      "label": "Sales overview",
+      "label": "Fleet overview",
       "box": {
         "x": 80,
-        "y": 172,
-        "w": 207,
-        "h": 40
+        "y": 156,
+        "w": 180,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Export",
       "box": {
         "x": 114,
-        "y": 268,
-        "w": 91,
-        "h": 40
+        "y": 252,
+        "w": 82,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Share",
       "box": {
-        "x": 288,
-        "y": 268,
-        "w": 82,
-        "h": 40
+        "x": 279,
+        "y": 252,
+        "w": 73,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Filter",
       "box": {
-        "x": 453,
-        "y": 268,
-        "w": 74,
-        "h": 40
+        "x": 435,
+        "y": 252,
+        "w": 66,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Refresh",
       "box": {
-        "x": 610,
-        "y": 268,
-        "w": 109,
-        "h": 40
+        "x": 584,
+        "y": 252,
+        "w": 97,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Compare",
       "box": {
-        "x": 802,
-        "y": 268,
-        "w": 129,
-        "h": 40
+        "x": 764,
+        "y": 252,
+        "w": 113,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Annotate",
       "box": {
-        "x": 1014,
-        "y": 268,
-        "w": 128,
-        "h": 40
+        "x": 960,
+        "y": 252,
+        "w": 113,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Schedule",
       "box": {
-        "x": 1226,
-        "y": 268,
-        "w": 130,
-        "h": 40
+        "x": 1156,
+        "y": 252,
+        "w": 114,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Settings",
       "box": {
-        "x": 1439,
-        "y": 268,
-        "w": 117,
-        "h": 40
+        "x": 1353,
+        "y": 252,
+        "w": 104,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Print",
       "box": {
-        "x": 1639,
-        "y": 268,
-        "w": 67,
-        "h": 40
+        "x": 1540,
+        "y": 252,
+        "w": 61,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "€48,210",
-      "box": {
-        "x": 122,
-        "y": 404,
-        "w": 307,
-        "h": 100
-      },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 40
-    },
-    {
-      "label": "12.4%",
-      "box": {
-        "x": 122,
-        "y": 502,
-        "w": 93,
-        "h": 40
-      },
-      "cssColor": "rgb(26, 127, 60)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "Revenue",
-      "box": {
-        "x": 122,
-        "y": 618,
-        "w": 121,
-        "h": 40
-      },
-      "cssColor": "rgb(74, 82, 96)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "1,284",
       "box": {
-        "x": 730,
-        "y": 404,
-        "w": 206,
-        "h": 100
+        "x": 122,
+        "y": 390,
+        "w": 168,
+        "h": 96
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 40
     },
     {
-      "label": "3.1%",
-      "box": {
-        "x": 730,
-        "y": 502,
-        "w": 73,
-        "h": 40
-      },
-      "cssColor": "rgb(180, 35, 24)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "Orders",
-      "box": {
-        "x": 730,
-        "y": 618,
-        "w": 96,
-        "h": 40
-      },
-      "cssColor": "rgb(74, 82, 96)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "€37.55",
-      "box": {
-        "x": 1338,
-        "y": 404,
-        "w": 248,
-        "h": 100
-      },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 40
-    },
-    {
-      "label": "8.0%",
-      "box": {
-        "x": 1338,
-        "y": 502,
-        "w": 80,
-        "h": 40
-      },
-      "cssColor": "rgb(26, 127, 60)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "Average order",
-      "box": {
-        "x": 1338,
-        "y": 618,
-        "w": 197,
-        "h": 40
-      },
-      "cssColor": "rgb(74, 82, 96)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "2.6%",
-      "box": {
-        "x": 1946,
-        "y": 404,
-        "w": 186,
-        "h": 100
-      },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 40
-    },
-    {
-      "label": "0.4%",
-      "box": {
-        "x": 1946,
-        "y": 502,
-        "w": 80,
-        "h": 40
-      },
-      "cssColor": "rgb(180, 35, 24)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "Conversion",
-      "box": {
-        "x": 1946,
-        "y": 618,
-        "w": 158,
-        "h": 40
-      },
-      "cssColor": "rgb(74, 82, 96)",
-      "cssFontSize": 16
-    },
-    {
-      "label": "Revenue by week",
+      "label": "6.2%",
       "box": {
         "x": 122,
-        "y": 772,
-        "w": 329,
-        "h": 52
+        "y": 486,
+        "w": 65,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(74, 222, 128)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Shipments",
+      "box": {
+        "x": 122,
+        "y": 602,
+        "w": 133,
+        "h": 38
+      },
+      "cssColor": "rgb(163, 179, 194)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "94.1%",
+      "box": {
+        "x": 730,
+        "y": 390,
+        "w": 191,
+        "h": 96
+      },
+      "cssColor": "rgb(230, 237, 243)",
+      "cssFontSize": 40
+    },
+    {
+      "label": "1.3%",
+      "box": {
+        "x": 730,
+        "y": 486,
+        "w": 60,
+        "h": 38
+      },
+      "cssColor": "rgb(248, 113, 113)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "On time",
+      "box": {
+        "x": 730,
+        "y": 602,
+        "w": 96,
+        "h": 38
+      },
+      "cssColor": "rgb(163, 179, 194)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "2.4 d",
+      "box": {
+        "x": 1338,
+        "y": 390,
+        "w": 160,
+        "h": 96
+      },
+      "cssColor": "rgb(230, 237, 243)",
+      "cssFontSize": 40
+    },
+    {
+      "label": "4.0%",
+      "box": {
+        "x": 1338,
+        "y": 486,
+        "w": 67,
+        "h": 38
+      },
+      "cssColor": "rgb(74, 222, 128)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Average transit",
+      "box": {
+        "x": 1338,
+        "y": 602,
+        "w": 188,
+        "h": 38
+      },
+      "cssColor": "rgb(163, 179, 194)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "37",
+      "box": {
+        "x": 1946,
+        "y": 390,
+        "w": 76,
+        "h": 96
+      },
+      "cssColor": "rgb(230, 237, 243)",
+      "cssFontSize": 40
+    },
+    {
+      "label": "12.0%",
+      "box": {
+        "x": 1946,
+        "y": 486,
+        "w": 75,
+        "h": 38
+      },
+      "cssColor": "rgb(248, 113, 113)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Exceptions",
+      "box": {
+        "x": 1946,
+        "y": 602,
+        "w": 138,
+        "h": 38
+      },
+      "cssColor": "rgb(163, 179, 194)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Deliveries by week",
+      "box": {
+        "x": 122,
+        "y": 758,
+        "w": 300,
+        "h": 48
+      },
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 20
     },
     {
       "label": "This year",
       "box": {
         "x": 162,
-        "y": 842,
-        "w": 127,
-        "h": 40
+        "y": 826,
+        "w": 112,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
       "label": "Last year",
       "box": {
-        "x": 368,
-        "y": 842,
-        "w": 129,
-        "h": 40
+        "x": 353,
+        "y": 826,
+        "w": 115,
+        "h": 38
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(230, 237, 243)",
       "cssFontSize": 16
     },
     {
-      "label": "Figures exclude refunds and are converted to euros at the daily rate",
+      "label": "Times are local to each depot and exclude weekend pickups",
       "box": {
         "x": 122,
-        "y": 1270,
-        "w": 774,
+        "y": 1252,
+        "w": 598,
         "h": 32
       },
-      "cssColor": "rgb(138, 147, 163)",
+      "cssColor": "rgb(86, 103, 122)",
       "cssFontSize": 13
     }
   ],
@@ -319,8 +319,8 @@
       "role": "button",
       "box": {
         "x": 80,
-        "y": 244,
-        "w": 159,
+        "y": 228,
+        "w": 150,
         "h": 88
       }
     },
@@ -328,9 +328,9 @@
       "label": "Share",
       "role": "button",
       "box": {
-        "x": 254,
-        "y": 244,
-        "w": 150,
+        "x": 245,
+        "y": 228,
+        "w": 141,
         "h": 88
       }
     },
@@ -338,9 +338,9 @@
       "label": "Filter",
       "role": "button",
       "box": {
-        "x": 419,
-        "y": 244,
-        "w": 142,
+        "x": 401,
+        "y": 228,
+        "w": 134,
         "h": 88
       }
     },
@@ -348,9 +348,9 @@
       "label": "Refresh",
       "role": "button",
       "box": {
-        "x": 576,
-        "y": 244,
-        "w": 177,
+        "x": 550,
+        "y": 228,
+        "w": 165,
         "h": 88
       }
     },
@@ -358,9 +358,9 @@
       "label": "Compare",
       "role": "button",
       "box": {
-        "x": 768,
-        "y": 244,
-        "w": 197,
+        "x": 730,
+        "y": 228,
+        "w": 181,
         "h": 88
       }
     },
@@ -368,9 +368,9 @@
       "label": "Annotate",
       "role": "button",
       "box": {
-        "x": 980,
-        "y": 244,
-        "w": 196,
+        "x": 926,
+        "y": 228,
+        "w": 181,
         "h": 88
       }
     },
@@ -378,9 +378,9 @@
       "label": "Schedule",
       "role": "button",
       "box": {
-        "x": 1192,
-        "y": 244,
-        "w": 198,
+        "x": 1122,
+        "y": 228,
+        "w": 182,
         "h": 88
       }
     },
@@ -388,9 +388,9 @@
       "label": "Settings",
       "role": "button",
       "box": {
-        "x": 1405,
-        "y": 244,
-        "w": 185,
+        "x": 1319,
+        "y": 228,
+        "w": 172,
         "h": 88
       }
     },
@@ -398,9 +398,9 @@
       "label": "Print",
       "role": "button",
       "box": {
-        "x": 1605,
-        "y": 244,
-        "w": 135,
+        "x": 1506,
+        "y": 228,
+        "w": 129,
         "h": 88
       }
     }
@@ -410,7 +410,7 @@
       "selector": "#page-title",
       "box": {
         "x": 80,
-        "y": 168,
+        "y": 152,
         "w": 2400,
         "h": 48
       }
@@ -419,7 +419,7 @@
       "selector": "#toolbar",
       "box": {
         "x": 80,
-        "y": 244,
+        "y": 228,
         "w": 2400,
         "h": 88
       }
@@ -428,7 +428,7 @@
       "selector": "#kpis",
       "box": {
         "x": 80,
-        "y": 376,
+        "y": 360,
         "w": 2400,
         "h": 320
       }
@@ -437,7 +437,7 @@
       "selector": "#kpis .up, #kpis .down",
       "box": {
         "x": 122,
-        "y": 498,
+        "y": 482,
         "w": 2316,
         "h": 48
       }
@@ -446,7 +446,7 @@
       "selector": "#footnote",
       "box": {
         "x": 122,
-        "y": 1268,
+        "y": 1250,
         "w": 2316,
         "h": 39
       }
@@ -455,7 +455,7 @@
       "selector": "#footnote",
       "box": {
         "x": 122,
-        "y": 1268,
+        "y": 1250,
         "w": 2316,
         "h": 39
       }

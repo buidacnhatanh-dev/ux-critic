@@ -31,6 +31,17 @@ The `contrast_min` rule threshold replaces 4.5 if the owner set a stricter one.
 
 Estimated font size in CSS px = OCR line box height ÷ scale ÷ 1.2. Report as "about 13 px". Fail when below the `text_size_min` rule (default 16) and the line is longer than 20 characters (so labels and captions are not flagged as body text). Severity low. Detail must say the size is estimated from the text line height.
 
+### Accuracy of the text size estimate
+
+The estimate depends on the font, because `line box height ÷ scale ÷ 1.2` assumes the font's line box is 1.2 times its size. Tested in Chromium at 12 to 40 px with the text line box Chromium reports for each line:
+
+* Within 1 px: Atkinson Hyperlegible, Overpass, Cormorant Garamond, Figtree, Rubik and Barlow Semi Condensed (the fixture fonts), also Inter Tight, Bitter, Zilla Slab, Libre Franklin and Varela Round
+* Arial and Helvetica read 1 to 2 px low, so 16 px body text in them can be reported as "about 15 px" and fail the 16 px rule
+* Fonts with tall line boxes read high (Nunito, Source Serif 4, Playfair Display by 4 to 5 px at 40 px), so small text in them can pass when it should not
+* Snapping a box to whole screenshot pixels adds up to 1 image px, which is 0.42 CSS px at scale 2. Fredoka was dropped from the fixtures for this: +0.67 px on its own, 1.08 px after snapping
+
+The demo fixtures only use fonts that stay within 1 px after snapping. Real screenshots go through OCR, whose line boxes are tighter than Chromium's line boxes, so check this formula against real OCR boxes in M6 before trusting text size results on other fonts.
+
 ## Target size (needs Claude call 1)
 
 For each control from call 1:

@@ -1,6 +1,6 @@
 {
   "fixture": "checkout-v2",
-  "description": "Checkout with labels fixed, still five payment options, and a new error shown only by a red border.",
+  "description": "Coffee shop checkout with labels fixed, still five payment options, and a new error shown only by a red border.",
   "issues": [
     {
       "id": "five-methods",

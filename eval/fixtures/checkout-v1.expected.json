@@ -1,6 +1,6 @@
 {
   "fixture": "checkout-v1",
-  "description": "Checkout with placeholder labels, faint helper text, a tiny link and five payment options.",
+  "description": "Coffee shop checkout with placeholder labels, faint helper text, a tiny link and five payment options.",
   "issues": [
     {
       "id": "placeholder-labels",

@@ -1,5 +1,5 @@
 {
   "fixture": "checkout-v3",
-  "description": "Clean checkout: visible labels, three payment choices, no colour only states. Counts false alarms.",
+  "description": "Clean coffee shop checkout: visible labels, three payment choices, no colour only states. Counts false alarms.",
   "issues": []
 }

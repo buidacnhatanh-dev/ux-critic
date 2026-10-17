@@ -134,7 +134,7 @@
       "projectId": "checkout-practice",
       "sampleId": "checkout-v1",
       "name": "v1",
-      "context": "Guest checkout for a small clothing shop. People pay for what is in their cart.",
+      "context": "Guest checkout for a small coffee shop. People pay for the beans and gear in their cart.",
       "screenshotUrl": "/demo/checkout-v1.png",
       "width": 2560,
       "height": 1600,
@@ -170,7 +170,7 @@
       "projectId": "sign-up-form",
       "sampleId": "signup",
       "name": "v1",
-      "context": "Account sign up for a free trial. Shown after someone typed an email without the domain ending.",
+      "context": "Sign up for a fitness app's free trial. Shown after someone typed an email without the domain ending.",
       "screenshotUrl": "/demo/signup.png",
       "width": 2560,
       "height": 1600,
@@ -182,7 +182,7 @@
       "projectId": "analytics-dashboard",
       "sampleId": "dashboard",
       "name": "v1",
-      "context": "Weekly sales overview for a shop owner who checks it every Monday.",
+      "context": "Daily fleet overview for a dispatcher at a freight company who checks it every morning.",
       "screenshotUrl": "/demo/dashboard.png",
       "width": 2560,
       "height": 1600,
@@ -352,29 +352,29 @@
       "id": "checkout-v1-m-t0-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "Northwind Goods",
+      "label": "Little Fern Coffee",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 356,
-        "h": 54
+        "x": 112,
+        "y": 34,
+        "w": 424,
+        "h": 74
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 8.69,
+      "threshold": 3,
       "passes": true
     },
     {
       "id": "checkout-v1-m-t0-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "Northwind Goods",
+      "label": "Little Fern Coffee",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 356,
-        "h": 54
+        "x": 112,
+        "y": 34,
+        "w": 424,
+        "h": 74
       },
-      "value": 23,
+      "value": 31,
       "threshold": 16,
       "passes": true
     },
@@ -384,12 +384,12 @@
       "kind": "contrast",
       "label": "Secure checkout",
       "box": {
-        "x": 2230,
-        "y": 43,
-        "w": 234,
-        "h": 40
+        "x": 2205,
+        "y": 51,
+        "w": 243,
+        "h": 38
       },
-      "value": 7.87,
+      "value": 6.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -399,12 +399,12 @@
       "kind": "text_size",
       "label": "Secure checkout",
       "box": {
-        "x": 2230,
-        "y": 43,
-        "w": 234,
-        "h": 40
+        "x": 2205,
+        "y": 51,
+        "w": 243,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -414,12 +414,12 @@
       "kind": "contrast",
       "label": "Checkout",
       "box": {
-        "x": 96,
+        "x": 194,
         "y": 188,
-        "w": 324,
-        "h": 92
+        "w": 307,
+        "h": 96
       },
-      "value": 17.79,
+      "value": 10.04,
       "threshold": 3,
       "passes": true
     },
@@ -429,12 +429,12 @@
       "kind": "text_size",
       "label": "Checkout",
       "box": {
-        "x": 96,
+        "x": 194,
         "y": 188,
-        "w": 324,
-        "h": 92
+        "w": 307,
+        "h": 96
       },
-      "value": 38,
+      "value": 40,
       "threshold": 16,
       "passes": true
     },
@@ -444,13 +444,13 @@
       "kind": "contrast",
       "label": "Contact",
       "box": {
-        "x": 96,
-        "y": 316,
-        "w": 148,
-        "h": 53
+        "x": 194,
+        "y": 304,
+        "w": 168,
+        "h": 62
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 10.04,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -459,12 +459,12 @@
       "kind": "text_size",
       "label": "Contact",
       "box": {
-        "x": 96,
-        "y": 316,
-        "w": 148,
-        "h": 53
+        "x": 194,
+        "y": 304,
+        "w": 168,
+        "h": 62
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -474,10 +474,10 @@
       "kind": "contrast",
       "label": "We send your receipt to this address",
       "box": {
-        "x": 96,
-        "y": 502,
-        "w": 514,
-        "h": 41
+        "x": 194,
+        "y": 497,
+        "w": 524,
+        "h": 39
       },
       "value": 1.85,
       "threshold": 4.5,
@@ -489,12 +489,12 @@
       "kind": "text_size",
       "label": "We send your receipt to this address",
       "box": {
-        "x": 96,
-        "y": 502,
-        "w": 514,
-        "h": 41
+        "x": 194,
+        "y": 497,
+        "w": 524,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -504,13 +504,13 @@
       "kind": "contrast",
       "label": "Payment",
       "box": {
-        "x": 96,
-        "y": 584,
-        "w": 168,
-        "h": 53
+        "x": 194,
+        "y": 573,
+        "w": 178,
+        "h": 63
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 10.04,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -519,12 +519,12 @@
       "kind": "text_size",
       "label": "Payment",
       "box": {
-        "x": 96,
-        "y": 584,
-        "w": 168,
-        "h": 53
+        "x": 194,
+        "y": 573,
+        "w": 178,
+        "h": 63
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -534,12 +534,12 @@
       "kind": "contrast",
       "label": "Card",
       "box": {
-        "x": 182,
-        "y": 686,
-        "w": 71,
-        "h": 41
+        "x": 273,
+        "y": 682,
+        "w": 72,
+        "h": 39
       },
-      "value": 5.77,
+      "value": 8.55,
       "threshold": 4.5,
       "passes": true
     },
@@ -549,12 +549,12 @@
       "kind": "text_size",
       "label": "Card",
       "box": {
-        "x": 182,
-        "y": 686,
-        "w": 71,
-        "h": 41
+        "x": 273,
+        "y": 682,
+        "w": 72,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -564,12 +564,12 @@
       "kind": "contrast",
       "label": "PayPal",
       "box": {
-        "x": 428,
-        "y": 686,
-        "w": 101,
-        "h": 41
+        "x": 503,
+        "y": 682,
+        "w": 99,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -579,12 +579,12 @@
       "kind": "text_size",
       "label": "PayPal",
       "box": {
-        "x": 428,
-        "y": 686,
-        "w": 101,
-        "h": 41
+        "x": 503,
+        "y": 682,
+        "w": 99,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -594,12 +594,12 @@
       "kind": "contrast",
       "label": "Apple Pay",
       "box": {
-        "x": 661,
-        "y": 686,
-        "w": 154,
-        "h": 41
+        "x": 719,
+        "y": 682,
+        "w": 150,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -609,12 +609,12 @@
       "kind": "text_size",
       "label": "Apple Pay",
       "box": {
-        "x": 661,
-        "y": 686,
-        "w": 154,
-        "h": 41
+        "x": 719,
+        "y": 682,
+        "w": 150,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -624,12 +624,12 @@
       "kind": "contrast",
       "label": "Google Pay",
       "box": {
-        "x": 911,
-        "y": 686,
-        "w": 172,
-        "h": 41
+        "x": 951,
+        "y": 682,
+        "w": 169,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -639,12 +639,12 @@
       "kind": "text_size",
       "label": "Google Pay",
       "box": {
-        "x": 911,
-        "y": 686,
-        "w": 172,
-        "h": 41
+        "x": 951,
+        "y": 682,
+        "w": 169,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -654,12 +654,12 @@
       "kind": "contrast",
       "label": "Klarna",
       "box": {
-        "x": 1207,
-        "y": 686,
-        "w": 99,
-        "h": 41
+        "x": 1230,
+        "y": 682,
+        "w": 94,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -669,12 +669,12 @@
       "kind": "text_size",
       "label": "Klarna",
       "box": {
-        "x": 1207,
-        "y": 686,
-        "w": 99,
-        "h": 41
+        "x": 1230,
+        "y": 682,
+        "w": 94,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -682,14 +682,14 @@
       "id": "checkout-v1-m-t11-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 648,
-        "y": 1054,
-        "w": 176,
-        "h": 41
+        "x": 703,
+        "y": 1046,
+        "w": 178,
+        "h": 39
       },
-      "value": 6.7,
+      "value": 9.39,
       "threshold": 4.5,
       "passes": true
     },
@@ -697,14 +697,14 @@
       "id": "checkout-v1-m-t11-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 648,
-        "y": 1054,
-        "w": 176,
-        "h": 41
+        "x": 703,
+        "y": 1046,
+        "w": 178,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -714,12 +714,12 @@
       "kind": "contrast",
       "label": "Terms",
       "box": {
-        "x": 96,
-        "y": 1160,
-        "w": 64,
+        "x": 194,
+        "y": 1152,
+        "w": 65,
         "h": 29
       },
-      "value": 6.7,
+      "value": 10.04,
       "threshold": 4.5,
       "passes": true
     },
@@ -729,9 +729,9 @@
       "kind": "text_size",
       "label": "Terms",
       "box": {
-        "x": 96,
-        "y": 1160,
-        "w": 64,
+        "x": 194,
+        "y": 1152,
+        "w": 65,
         "h": 29
       },
       "value": 12,
@@ -744,13 +744,13 @@
       "kind": "contrast",
       "label": "Order summary",
       "box": {
-        "x": 1618,
-        "y": 368,
-        "w": 296,
-        "h": 52
+        "x": 1656,
+        "y": 276,
+        "w": 328,
+        "h": 62
       },
-      "value": 16.74,
-      "threshold": 4.5,
+      "value": 7.81,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -759,12 +759,12 @@
       "kind": "text_size",
       "label": "Order summary",
       "box": {
-        "x": 1618,
-        "y": 368,
-        "w": 296,
-        "h": 52
+        "x": 1656,
+        "y": 276,
+        "w": 328,
+        "h": 62
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -772,14 +772,14 @@
       "id": "checkout-v1-m-t14-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "Linen shirt",
+      "label": "House blend, whole bean",
       "box": {
-        "x": 1618,
-        "y": 462,
-        "w": 150,
-        "h": 40
+        "x": 1656,
+        "y": 377,
+        "w": 361,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -787,14 +787,14 @@
       "id": "checkout-v1-m-t14-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "Linen shirt",
+      "label": "House blend, whole bean",
       "box": {
-        "x": 1618,
-        "y": 462,
-        "w": 150,
-        "h": 40
+        "x": 1656,
+        "y": 377,
+        "w": 361,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -802,14 +802,14 @@
       "id": "checkout-v1-m-t15-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "€59.00",
+      "label": "€14.00",
       "box": {
-        "x": 2211,
-        "y": 462,
-        "w": 107,
-        "h": 40
+        "x": 2226,
+        "y": 377,
+        "w": 102,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -817,14 +817,14 @@
       "id": "checkout-v1-m-t15-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "€59.00",
+      "label": "€14.00",
       "box": {
-        "x": 2211,
-        "y": 462,
-        "w": 107,
-        "h": 40
+        "x": 2226,
+        "y": 377,
+        "w": 102,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -832,14 +832,14 @@
       "id": "checkout-v1-m-t16-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "Canvas tote",
+      "label": "Ceramic pour over",
       "box": {
-        "x": 1618,
-        "y": 542,
-        "w": 166,
-        "h": 40
+        "x": 1656,
+        "y": 457,
+        "w": 265,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -847,14 +847,14 @@
       "id": "checkout-v1-m-t16-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "Canvas tote",
+      "label": "Ceramic pour over",
       "box": {
-        "x": 1618,
-        "y": 542,
-        "w": 166,
-        "h": 40
+        "x": 1656,
+        "y": 457,
+        "w": 265,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -862,14 +862,14 @@
       "id": "checkout-v1-m-t17-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "€19.00",
+      "label": "€32.00",
       "box": {
-        "x": 2216,
-        "y": 542,
-        "w": 102,
-        "h": 40
+        "x": 2223,
+        "y": 457,
+        "w": 105,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -877,14 +877,14 @@
       "id": "checkout-v1-m-t17-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "€19.00",
+      "label": "€32.00",
       "box": {
-        "x": 2216,
-        "y": 542,
-        "w": 102,
-        "h": 40
+        "x": 2223,
+        "y": 457,
+        "w": 105,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -892,14 +892,14 @@
       "id": "checkout-v1-m-t18-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "Shipping",
+      "label": "Delivery",
       "box": {
-        "x": 1618,
-        "y": 622,
-        "w": 126,
-        "h": 40
+        "x": 1656,
+        "y": 537,
+        "w": 116,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -907,14 +907,14 @@
       "id": "checkout-v1-m-t18-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "Shipping",
+      "label": "Delivery",
       "box": {
-        "x": 1618,
-        "y": 622,
-        "w": 126,
-        "h": 40
+        "x": 1656,
+        "y": 537,
+        "w": 116,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -922,14 +922,14 @@
       "id": "checkout-v1-m-t19-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "€6.00",
+      "label": "€4.50",
       "box": {
-        "x": 2229,
-        "y": 622,
-        "w": 89,
-        "h": 40
+        "x": 2241,
+        "y": 537,
+        "w": 87,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -937,14 +937,14 @@
       "id": "checkout-v1-m-t19-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "€6.00",
+      "label": "€4.50",
       "box": {
-        "x": 2229,
-        "y": 622,
-        "w": 89,
-        "h": 40
+        "x": 2241,
+        "y": 537,
+        "w": 87,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -954,12 +954,12 @@
       "kind": "contrast",
       "label": "Total",
       "box": {
-        "x": 1618,
-        "y": 736,
-        "w": 85,
-        "h": 44
+        "x": 1656,
+        "y": 651,
+        "w": 82,
+        "h": 45
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -969,12 +969,12 @@
       "kind": "text_size",
       "label": "Total",
       "box": {
-        "x": 1618,
-        "y": 736,
-        "w": 85,
-        "h": 44
+        "x": 1656,
+        "y": 651,
+        "w": 82,
+        "h": 45
       },
-      "value": 18,
+      "value": 19,
       "threshold": 16,
       "passes": true
     },
@@ -982,14 +982,14 @@
       "id": "checkout-v1-m-t21-contrast",
       "reviewId": "review-checkout-v1",
       "kind": "contrast",
-      "label": "€84.00",
+      "label": "€50.50",
       "box": {
-        "x": 2193,
-        "y": 736,
-        "w": 125,
-        "h": 44
+        "x": 2205,
+        "y": 651,
+        "w": 123,
+        "h": 45
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -997,14 +997,14 @@
       "id": "checkout-v1-m-t21-size",
       "reviewId": "review-checkout-v1",
       "kind": "text_size",
-      "label": "€84.00",
+      "label": "€50.50",
       "box": {
-        "x": 2193,
-        "y": 736,
-        "w": 125,
-        "h": 44
+        "x": 2205,
+        "y": 651,
+        "w": 123,
+        "h": 45
       },
-      "value": 18,
+      "value": 19,
       "threshold": 16,
       "passes": true
     },
@@ -1014,12 +1014,12 @@
       "kind": "contrast",
       "label": "Email address",
       "box": {
-        "x": 126,
-        "y": 418,
-        "w": 199,
-        "h": 41
+        "x": 224,
+        "y": 414,
+        "w": 197,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -1029,12 +1029,12 @@
       "kind": "text_size",
       "label": "Email address",
       "box": {
-        "x": 126,
-        "y": 418,
-        "w": 199,
-        "h": 41
+        "x": 224,
+        "y": 414,
+        "w": 197,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1044,12 +1044,12 @@
       "kind": "contrast",
       "label": "Card number",
       "box": {
-        "x": 126,
-        "y": 814,
-        "w": 184,
-        "h": 41
+        "x": 224,
+        "y": 807,
+        "w": 187,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -1059,12 +1059,12 @@
       "kind": "text_size",
       "label": "Card number",
       "box": {
-        "x": 126,
-        "y": 814,
-        "w": 184,
-        "h": 41
+        "x": 224,
+        "y": 807,
+        "w": 187,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1074,12 +1074,12 @@
       "kind": "contrast",
       "label": "MM / YY",
       "box": {
-        "x": 126,
-        "y": 934,
-        "w": 121,
-        "h": 41
+        "x": 224,
+        "y": 927,
+        "w": 122,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -1089,12 +1089,12 @@
       "kind": "text_size",
       "label": "MM / YY",
       "box": {
-        "x": 126,
-        "y": 934,
-        "w": 121,
-        "h": 41
+        "x": 224,
+        "y": 927,
+        "w": 122,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1104,12 +1104,12 @@
       "kind": "contrast",
       "label": "CVC",
       "box": {
-        "x": 782,
-        "y": 934,
-        "w": 60,
-        "h": 41
+        "x": 838,
+        "y": 927,
+        "w": 69,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -1119,12 +1119,12 @@
       "kind": "text_size",
       "label": "CVC",
       "box": {
-        "x": 782,
-        "y": 934,
-        "w": 60,
-        "h": 41
+        "x": 838,
+        "y": 927,
+        "w": 69,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1134,9 +1134,9 @@
       "kind": "target_size",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 390,
-        "w": 1280,
+        "x": 194,
+        "y": 386,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -1149,9 +1149,9 @@
       "kind": "target_size",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 390,
-        "w": 1280,
+        "x": 194,
+        "y": 386,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -1164,9 +1164,9 @@
       "kind": "target_size",
       "label": "Card",
       "box": {
-        "x": 96,
-        "y": 658,
-        "w": 244,
+        "x": 194,
+        "y": 654,
+        "w": 230,
         "h": 96
       },
       "value": 48,
@@ -1179,9 +1179,9 @@
       "kind": "target_size",
       "label": "Card",
       "box": {
-        "x": 96,
-        "y": 658,
-        "w": 244,
+        "x": 194,
+        "y": 654,
+        "w": 230,
         "h": 96
       },
       "value": 48,
@@ -1194,9 +1194,9 @@
       "kind": "target_size",
       "label": "PayPal",
       "box": {
-        "x": 360,
-        "y": 658,
-        "w": 238,
+        "x": 423,
+        "y": 654,
+        "w": 243,
         "h": 96
       },
       "value": 48,
@@ -1209,9 +1209,9 @@
       "kind": "target_size",
       "label": "PayPal",
       "box": {
-        "x": 360,
-        "y": 658,
-        "w": 238,
+        "x": 423,
+        "y": 654,
+        "w": 243,
         "h": 96
       },
       "value": 48,
@@ -1224,9 +1224,9 @@
       "kind": "target_size",
       "label": "Apple Pay",
       "box": {
-        "x": 618,
-        "y": 658,
-        "w": 240,
+        "x": 665,
+        "y": 654,
+        "w": 258,
         "h": 96
       },
       "value": 48,
@@ -1239,9 +1239,9 @@
       "kind": "target_size",
       "label": "Apple Pay",
       "box": {
-        "x": 618,
-        "y": 658,
-        "w": 240,
+        "x": 665,
+        "y": 654,
+        "w": 258,
         "h": 96
       },
       "value": 48,
@@ -1254,9 +1254,9 @@
       "kind": "target_size",
       "label": "Google Pay",
       "box": {
-        "x": 878,
-        "y": 658,
-        "w": 238,
+        "x": 922,
+        "y": 654,
+        "w": 243,
         "h": 96
       },
       "value": 48,
@@ -1269,9 +1269,9 @@
       "kind": "target_size",
       "label": "Google Pay",
       "box": {
-        "x": 878,
-        "y": 658,
-        "w": 238,
+        "x": 922,
+        "y": 654,
+        "w": 243,
         "h": 96
       },
       "value": 48,
@@ -1284,9 +1284,9 @@
       "kind": "target_size",
       "label": "Klarna",
       "box": {
-        "x": 1136,
-        "y": 658,
-        "w": 240,
+        "x": 1164,
+        "y": 654,
+        "w": 226,
         "h": 96
       },
       "value": 48,
@@ -1299,9 +1299,9 @@
       "kind": "target_size",
       "label": "Klarna",
       "box": {
-        "x": 1136,
-        "y": 658,
-        "w": 240,
+        "x": 1164,
+        "y": 654,
+        "w": 226,
         "h": 96
       },
       "value": 48,
@@ -1314,9 +1314,9 @@
       "kind": "target_size",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 786,
-        "w": 1280,
+        "x": 194,
+        "y": 778,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -1329,9 +1329,9 @@
       "kind": "target_size",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 786,
-        "w": 1280,
+        "x": 194,
+        "y": 778,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -1344,9 +1344,9 @@
       "kind": "target_size",
       "label": "MM / YY",
       "box": {
-        "x": 96,
-        "y": 906,
-        "w": 624,
+        "x": 194,
+        "y": 898,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -1359,9 +1359,9 @@
       "kind": "target_size",
       "label": "MM / YY",
       "box": {
-        "x": 96,
-        "y": 906,
-        "w": 624,
+        "x": 194,
+        "y": 898,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -1374,9 +1374,9 @@
       "kind": "target_size",
       "label": "CVC",
       "box": {
-        "x": 752,
-        "y": 906,
-        "w": 624,
+        "x": 808,
+        "y": 898,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -1389,9 +1389,9 @@
       "kind": "target_size",
       "label": "CVC",
       "box": {
-        "x": 752,
-        "y": 906,
-        "w": 624,
+        "x": 808,
+        "y": 898,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -1402,11 +1402,11 @@
       "id": "checkout-v1-m-c9-target",
       "reviewId": "review-checkout-v1",
       "kind": "target_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 96,
-        "y": 1026,
-        "w": 1280,
+        "x": 194,
+        "y": 1018,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -1417,11 +1417,11 @@
       "id": "checkout-v1-m-c9-target-rule",
       "reviewId": "review-checkout-v1",
       "kind": "target_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 96,
-        "y": 1026,
-        "w": 1280,
+        "x": 194,
+        "y": 1018,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -1434,9 +1434,9 @@
       "kind": "target_size",
       "label": "Terms",
       "box": {
-        "x": 96,
-        "y": 1165,
-        "w": 64,
+        "x": 194,
+        "y": 1157,
+        "w": 65,
         "h": 21
       },
       "value": 10.5,
@@ -1449,9 +1449,9 @@
       "kind": "target_size",
       "label": "Terms",
       "box": {
-        "x": 96,
-        "y": 1165,
-        "w": 64,
+        "x": 194,
+        "y": 1157,
+        "w": 65,
         "h": 21
       },
       "value": 10.5,
@@ -1462,29 +1462,29 @@
       "id": "checkout-v2-m-t0-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "Northwind Goods",
+      "label": "Little Fern Coffee",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 356,
-        "h": 54
+        "x": 112,
+        "y": 34,
+        "w": 424,
+        "h": 74
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 8.69,
+      "threshold": 3,
       "passes": true
     },
     {
       "id": "checkout-v2-m-t0-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "Northwind Goods",
+      "label": "Little Fern Coffee",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 356,
-        "h": 54
+        "x": 112,
+        "y": 34,
+        "w": 424,
+        "h": 74
       },
-      "value": 23,
+      "value": 31,
       "threshold": 16,
       "passes": true
     },
@@ -1494,12 +1494,12 @@
       "kind": "contrast",
       "label": "Secure checkout",
       "box": {
-        "x": 2230,
-        "y": 43,
-        "w": 234,
-        "h": 40
+        "x": 2205,
+        "y": 51,
+        "w": 243,
+        "h": 38
       },
-      "value": 7.87,
+      "value": 6.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1509,12 +1509,12 @@
       "kind": "text_size",
       "label": "Secure checkout",
       "box": {
-        "x": 2230,
-        "y": 43,
-        "w": 234,
-        "h": 40
+        "x": 2205,
+        "y": 51,
+        "w": 243,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1524,12 +1524,12 @@
       "kind": "contrast",
       "label": "Checkout",
       "box": {
-        "x": 96,
+        "x": 194,
         "y": 188,
-        "w": 324,
-        "h": 92
+        "w": 307,
+        "h": 96
       },
-      "value": 17.79,
+      "value": 10.04,
       "threshold": 3,
       "passes": true
     },
@@ -1539,12 +1539,12 @@
       "kind": "text_size",
       "label": "Checkout",
       "box": {
-        "x": 96,
+        "x": 194,
         "y": 188,
-        "w": 324,
-        "h": 92
+        "w": 307,
+        "h": 96
       },
-      "value": 38,
+      "value": 40,
       "threshold": 16,
       "passes": true
     },
@@ -1554,13 +1554,13 @@
       "kind": "contrast",
       "label": "Contact",
       "box": {
-        "x": 96,
-        "y": 316,
-        "w": 148,
-        "h": 53
+        "x": 194,
+        "y": 304,
+        "w": 168,
+        "h": 62
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 10.04,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -1569,12 +1569,12 @@
       "kind": "text_size",
       "label": "Contact",
       "box": {
-        "x": 96,
-        "y": 316,
-        "w": 148,
-        "h": 53
+        "x": 194,
+        "y": 304,
+        "w": 168,
+        "h": 62
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -1584,12 +1584,12 @@
       "kind": "contrast",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 394,
-        "w": 215,
-        "h": 41
+        "x": 194,
+        "y": 389,
+        "w": 203,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1599,12 +1599,12 @@
       "kind": "text_size",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 394,
-        "w": 215,
-        "h": 41
+        "x": 194,
+        "y": 389,
+        "w": 203,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1614,12 +1614,12 @@
       "kind": "contrast",
       "label": "We send your receipt to this address",
       "box": {
-        "x": 96,
-        "y": 562,
-        "w": 514,
-        "h": 41
+        "x": 194,
+        "y": 557,
+        "w": 524,
+        "h": 39
       },
-      "value": 7.87,
+      "value": 7.29,
       "threshold": 4.5,
       "passes": true
     },
@@ -1629,12 +1629,12 @@
       "kind": "text_size",
       "label": "We send your receipt to this address",
       "box": {
-        "x": 96,
-        "y": 562,
-        "w": 514,
-        "h": 41
+        "x": 194,
+        "y": 557,
+        "w": 524,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1644,13 +1644,13 @@
       "kind": "contrast",
       "label": "Payment",
       "box": {
-        "x": 96,
-        "y": 644,
-        "w": 168,
-        "h": 53
+        "x": 194,
+        "y": 633,
+        "w": 178,
+        "h": 63
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 10.04,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -1659,12 +1659,12 @@
       "kind": "text_size",
       "label": "Payment",
       "box": {
-        "x": 96,
-        "y": 644,
-        "w": 168,
-        "h": 53
+        "x": 194,
+        "y": 633,
+        "w": 178,
+        "h": 63
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -1674,12 +1674,12 @@
       "kind": "contrast",
       "label": "Card",
       "box": {
-        "x": 182,
-        "y": 746,
-        "w": 71,
-        "h": 41
+        "x": 273,
+        "y": 742,
+        "w": 72,
+        "h": 39
       },
-      "value": 5.77,
+      "value": 8.55,
       "threshold": 4.5,
       "passes": true
     },
@@ -1689,12 +1689,12 @@
       "kind": "text_size",
       "label": "Card",
       "box": {
-        "x": 182,
-        "y": 746,
-        "w": 71,
-        "h": 41
+        "x": 273,
+        "y": 742,
+        "w": 72,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1704,12 +1704,12 @@
       "kind": "contrast",
       "label": "PayPal",
       "box": {
-        "x": 428,
-        "y": 746,
-        "w": 101,
-        "h": 41
+        "x": 503,
+        "y": 742,
+        "w": 99,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1719,12 +1719,12 @@
       "kind": "text_size",
       "label": "PayPal",
       "box": {
-        "x": 428,
-        "y": 746,
-        "w": 101,
-        "h": 41
+        "x": 503,
+        "y": 742,
+        "w": 99,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1734,12 +1734,12 @@
       "kind": "contrast",
       "label": "Apple Pay",
       "box": {
-        "x": 661,
-        "y": 746,
-        "w": 154,
-        "h": 41
+        "x": 719,
+        "y": 742,
+        "w": 150,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1749,12 +1749,12 @@
       "kind": "text_size",
       "label": "Apple Pay",
       "box": {
-        "x": 661,
-        "y": 746,
-        "w": 154,
-        "h": 41
+        "x": 719,
+        "y": 742,
+        "w": 150,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1764,12 +1764,12 @@
       "kind": "contrast",
       "label": "Google Pay",
       "box": {
-        "x": 911,
-        "y": 746,
-        "w": 172,
-        "h": 41
+        "x": 951,
+        "y": 742,
+        "w": 169,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1779,12 +1779,12 @@
       "kind": "text_size",
       "label": "Google Pay",
       "box": {
-        "x": 911,
-        "y": 746,
-        "w": 172,
-        "h": 41
+        "x": 951,
+        "y": 742,
+        "w": 169,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1794,12 +1794,12 @@
       "kind": "contrast",
       "label": "Klarna",
       "box": {
-        "x": 1207,
-        "y": 746,
-        "w": 99,
-        "h": 41
+        "x": 1230,
+        "y": 742,
+        "w": 94,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1809,12 +1809,12 @@
       "kind": "text_size",
       "label": "Klarna",
       "box": {
-        "x": 1207,
-        "y": 746,
-        "w": 99,
-        "h": 41
+        "x": 1230,
+        "y": 742,
+        "w": 94,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1824,12 +1824,12 @@
       "kind": "contrast",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 850,
-        "w": 195,
-        "h": 41
+        "x": 194,
+        "y": 842,
+        "w": 193,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1839,12 +1839,12 @@
       "kind": "text_size",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 850,
-        "w": 195,
-        "h": 41
+        "x": 194,
+        "y": 842,
+        "w": 193,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1854,12 +1854,12 @@
       "kind": "contrast",
       "label": "Expiry date",
       "box": {
-        "x": 96,
-        "y": 1030,
-        "w": 172,
-        "h": 41
+        "x": 194,
+        "y": 1022,
+        "w": 169,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1869,12 +1869,12 @@
       "kind": "text_size",
       "label": "Expiry date",
       "box": {
-        "x": 96,
-        "y": 1030,
-        "w": 172,
-        "h": 41
+        "x": 194,
+        "y": 1022,
+        "w": 169,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1884,12 +1884,12 @@
       "kind": "contrast",
       "label": "Security code",
       "box": {
-        "x": 752,
-        "y": 1030,
-        "w": 207,
-        "h": 41
+        "x": 808,
+        "y": 1022,
+        "w": 206,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -1899,12 +1899,12 @@
       "kind": "text_size",
       "label": "Security code",
       "box": {
-        "x": 752,
-        "y": 1030,
-        "w": 207,
-        "h": 41
+        "x": 808,
+        "y": 1022,
+        "w": 206,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1912,14 +1912,14 @@
       "id": "checkout-v2-m-t15-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 648,
-        "y": 1234,
-        "w": 176,
-        "h": 41
+        "x": 703,
+        "y": 1226,
+        "w": 178,
+        "h": 39
       },
-      "value": 6.7,
+      "value": 9.39,
       "threshold": 4.5,
       "passes": true
     },
@@ -1927,14 +1927,14 @@
       "id": "checkout-v2-m-t15-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 648,
-        "y": 1234,
-        "w": 176,
-        "h": 41
+        "x": 703,
+        "y": 1226,
+        "w": 178,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1944,12 +1944,12 @@
       "kind": "contrast",
       "label": "Read the terms",
       "box": {
-        "x": 138,
-        "y": 1362,
-        "w": 233,
-        "h": 41
+        "x": 240,
+        "y": 1354,
+        "w": 224,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 10.04,
       "threshold": 4.5,
       "passes": true
     },
@@ -1959,12 +1959,12 @@
       "kind": "text_size",
       "label": "Read the terms",
       "box": {
-        "x": 138,
-        "y": 1362,
-        "w": 233,
-        "h": 41
+        "x": 240,
+        "y": 1354,
+        "w": 224,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -1974,13 +1974,13 @@
       "kind": "contrast",
       "label": "Order summary",
       "box": {
-        "x": 1618,
-        "y": 368,
-        "w": 296,
-        "h": 52
+        "x": 1656,
+        "y": 276,
+        "w": 328,
+        "h": 62
       },
-      "value": 16.74,
-      "threshold": 4.5,
+      "value": 7.81,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -1989,12 +1989,12 @@
       "kind": "text_size",
       "label": "Order summary",
       "box": {
-        "x": 1618,
-        "y": 368,
-        "w": 296,
-        "h": 52
+        "x": 1656,
+        "y": 276,
+        "w": 328,
+        "h": 62
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -2002,14 +2002,14 @@
       "id": "checkout-v2-m-t18-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "Linen shirt",
+      "label": "House blend, whole bean",
       "box": {
-        "x": 1618,
-        "y": 462,
-        "w": 150,
-        "h": 40
+        "x": 1656,
+        "y": 377,
+        "w": 361,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -2017,14 +2017,14 @@
       "id": "checkout-v2-m-t18-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "Linen shirt",
+      "label": "House blend, whole bean",
       "box": {
-        "x": 1618,
-        "y": 462,
-        "w": 150,
-        "h": 40
+        "x": 1656,
+        "y": 377,
+        "w": 361,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2032,14 +2032,14 @@
       "id": "checkout-v2-m-t19-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "€59.00",
+      "label": "€14.00",
       "box": {
-        "x": 2211,
-        "y": 462,
-        "w": 107,
-        "h": 40
+        "x": 2226,
+        "y": 377,
+        "w": 102,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -2047,14 +2047,14 @@
       "id": "checkout-v2-m-t19-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "€59.00",
+      "label": "€14.00",
       "box": {
-        "x": 2211,
-        "y": 462,
-        "w": 107,
-        "h": 40
+        "x": 2226,
+        "y": 377,
+        "w": 102,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2062,14 +2062,14 @@
       "id": "checkout-v2-m-t20-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "Canvas tote",
+      "label": "Ceramic pour over",
       "box": {
-        "x": 1618,
-        "y": 542,
-        "w": 166,
-        "h": 40
+        "x": 1656,
+        "y": 457,
+        "w": 265,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -2077,14 +2077,14 @@
       "id": "checkout-v2-m-t20-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "Canvas tote",
+      "label": "Ceramic pour over",
       "box": {
-        "x": 1618,
-        "y": 542,
-        "w": 166,
-        "h": 40
+        "x": 1656,
+        "y": 457,
+        "w": 265,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2092,14 +2092,14 @@
       "id": "checkout-v2-m-t21-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "€19.00",
+      "label": "€32.00",
       "box": {
-        "x": 2216,
-        "y": 542,
-        "w": 102,
-        "h": 40
+        "x": 2223,
+        "y": 457,
+        "w": 105,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -2107,14 +2107,14 @@
       "id": "checkout-v2-m-t21-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "€19.00",
+      "label": "€32.00",
       "box": {
-        "x": 2216,
-        "y": 542,
-        "w": 102,
-        "h": 40
+        "x": 2223,
+        "y": 457,
+        "w": 105,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2122,14 +2122,14 @@
       "id": "checkout-v2-m-t22-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "Shipping",
+      "label": "Delivery",
       "box": {
-        "x": 1618,
-        "y": 622,
-        "w": 126,
-        "h": 40
+        "x": 1656,
+        "y": 537,
+        "w": 116,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -2137,14 +2137,14 @@
       "id": "checkout-v2-m-t22-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "Shipping",
+      "label": "Delivery",
       "box": {
-        "x": 1618,
-        "y": 622,
-        "w": 126,
-        "h": 40
+        "x": 1656,
+        "y": 537,
+        "w": 116,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2152,14 +2152,14 @@
       "id": "checkout-v2-m-t23-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "€6.00",
+      "label": "€4.50",
       "box": {
-        "x": 2229,
-        "y": 622,
-        "w": 89,
-        "h": 40
+        "x": 2241,
+        "y": 537,
+        "w": 87,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -2167,14 +2167,14 @@
       "id": "checkout-v2-m-t23-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "€6.00",
+      "label": "€4.50",
       "box": {
-        "x": 2229,
-        "y": 622,
-        "w": 89,
-        "h": 40
+        "x": 2241,
+        "y": 537,
+        "w": 87,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2184,12 +2184,12 @@
       "kind": "contrast",
       "label": "Total",
       "box": {
-        "x": 1618,
-        "y": 736,
-        "w": 85,
-        "h": 44
+        "x": 1656,
+        "y": 651,
+        "w": 82,
+        "h": 45
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -2199,12 +2199,12 @@
       "kind": "text_size",
       "label": "Total",
       "box": {
-        "x": 1618,
-        "y": 736,
-        "w": 85,
-        "h": 44
+        "x": 1656,
+        "y": 651,
+        "w": 82,
+        "h": 45
       },
-      "value": 18,
+      "value": 19,
       "threshold": 16,
       "passes": true
     },
@@ -2212,14 +2212,14 @@
       "id": "checkout-v2-m-t25-contrast",
       "reviewId": "review-checkout-v2",
       "kind": "contrast",
-      "label": "€84.00",
+      "label": "€50.50",
       "box": {
-        "x": 2193,
-        "y": 736,
-        "w": 125,
-        "h": 44
+        "x": 2205,
+        "y": 651,
+        "w": 123,
+        "h": 45
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -2227,14 +2227,14 @@
       "id": "checkout-v2-m-t25-size",
       "reviewId": "review-checkout-v2",
       "kind": "text_size",
-      "label": "€84.00",
+      "label": "€50.50",
       "box": {
-        "x": 2193,
-        "y": 736,
-        "w": 125,
-        "h": 44
+        "x": 2205,
+        "y": 651,
+        "w": 123,
+        "h": 45
       },
-      "value": 18,
+      "value": 19,
       "threshold": 16,
       "passes": true
     },
@@ -2244,12 +2244,12 @@
       "kind": "contrast",
       "label": "sam@example.com",
       "box": {
-        "x": 126,
-        "y": 478,
-        "w": 270,
-        "h": 41
+        "x": 224,
+        "y": 474,
+        "w": 280,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -2259,12 +2259,12 @@
       "kind": "text_size",
       "label": "sam@example.com",
       "box": {
-        "x": 126,
-        "y": 478,
-        "w": 270,
-        "h": 41
+        "x": 224,
+        "y": 474,
+        "w": 280,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2274,12 +2274,12 @@
       "kind": "contrast",
       "label": "4242 4242 4242",
       "box": {
-        "x": 128,
-        "y": 934,
-        "w": 241,
-        "h": 41
+        "x": 226,
+        "y": 927,
+        "w": 243,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -2289,12 +2289,12 @@
       "kind": "text_size",
       "label": "4242 4242 4242",
       "box": {
-        "x": 128,
-        "y": 934,
-        "w": 241,
-        "h": 41
+        "x": 226,
+        "y": 927,
+        "w": 243,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2304,12 +2304,12 @@
       "kind": "contrast",
       "label": "MM / YY",
       "box": {
-        "x": 126,
-        "y": 1114,
-        "w": 121,
-        "h": 41
+        "x": 224,
+        "y": 1107,
+        "w": 122,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -2319,12 +2319,12 @@
       "kind": "text_size",
       "label": "MM / YY",
       "box": {
-        "x": 126,
-        "y": 1114,
-        "w": 121,
-        "h": 41
+        "x": 224,
+        "y": 1107,
+        "w": 122,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2334,12 +2334,12 @@
       "kind": "contrast",
       "label": "3 digits",
       "box": {
-        "x": 782,
-        "y": 1114,
-        "w": 107,
-        "h": 41
+        "x": 838,
+        "y": 1107,
+        "w": 105,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -2349,12 +2349,12 @@
       "kind": "text_size",
       "label": "3 digits",
       "box": {
-        "x": 782,
-        "y": 1114,
-        "w": 107,
-        "h": 41
+        "x": 838,
+        "y": 1107,
+        "w": 105,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2364,9 +2364,9 @@
       "kind": "target_size",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 450,
-        "w": 1280,
+        "x": 194,
+        "y": 446,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -2379,9 +2379,9 @@
       "kind": "target_size",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 450,
-        "w": 1280,
+        "x": 194,
+        "y": 446,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -2394,9 +2394,9 @@
       "kind": "target_size",
       "label": "Card",
       "box": {
-        "x": 96,
-        "y": 718,
-        "w": 244,
+        "x": 194,
+        "y": 714,
+        "w": 230,
         "h": 96
       },
       "value": 48,
@@ -2409,9 +2409,9 @@
       "kind": "target_size",
       "label": "Card",
       "box": {
-        "x": 96,
-        "y": 718,
-        "w": 244,
+        "x": 194,
+        "y": 714,
+        "w": 230,
         "h": 96
       },
       "value": 48,
@@ -2424,9 +2424,9 @@
       "kind": "target_size",
       "label": "PayPal",
       "box": {
-        "x": 360,
-        "y": 718,
-        "w": 238,
+        "x": 423,
+        "y": 714,
+        "w": 243,
         "h": 96
       },
       "value": 48,
@@ -2439,9 +2439,9 @@
       "kind": "target_size",
       "label": "PayPal",
       "box": {
-        "x": 360,
-        "y": 718,
-        "w": 238,
+        "x": 423,
+        "y": 714,
+        "w": 243,
         "h": 96
       },
       "value": 48,
@@ -2454,9 +2454,9 @@
       "kind": "target_size",
       "label": "Apple Pay",
       "box": {
-        "x": 618,
-        "y": 718,
-        "w": 240,
+        "x": 665,
+        "y": 714,
+        "w": 258,
         "h": 96
       },
       "value": 48,
@@ -2469,9 +2469,9 @@
       "kind": "target_size",
       "label": "Apple Pay",
       "box": {
-        "x": 618,
-        "y": 718,
-        "w": 240,
+        "x": 665,
+        "y": 714,
+        "w": 258,
         "h": 96
       },
       "value": 48,
@@ -2484,9 +2484,9 @@
       "kind": "target_size",
       "label": "Google Pay",
       "box": {
-        "x": 878,
-        "y": 718,
-        "w": 238,
+        "x": 922,
+        "y": 714,
+        "w": 243,
         "h": 96
       },
       "value": 48,
@@ -2499,9 +2499,9 @@
       "kind": "target_size",
       "label": "Google Pay",
       "box": {
-        "x": 878,
-        "y": 718,
-        "w": 238,
+        "x": 922,
+        "y": 714,
+        "w": 243,
         "h": 96
       },
       "value": 48,
@@ -2514,9 +2514,9 @@
       "kind": "target_size",
       "label": "Klarna",
       "box": {
-        "x": 1136,
-        "y": 718,
-        "w": 240,
+        "x": 1164,
+        "y": 714,
+        "w": 226,
         "h": 96
       },
       "value": 48,
@@ -2529,9 +2529,9 @@
       "kind": "target_size",
       "label": "Klarna",
       "box": {
-        "x": 1136,
-        "y": 718,
-        "w": 240,
+        "x": 1164,
+        "y": 714,
+        "w": 226,
         "h": 96
       },
       "value": 48,
@@ -2544,9 +2544,9 @@
       "kind": "target_size",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 906,
-        "w": 1280,
+        "x": 194,
+        "y": 898,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -2559,9 +2559,9 @@
       "kind": "target_size",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 906,
-        "w": 1280,
+        "x": 194,
+        "y": 898,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -2574,9 +2574,9 @@
       "kind": "target_size",
       "label": "Expiry date",
       "box": {
-        "x": 96,
-        "y": 1086,
-        "w": 624,
+        "x": 194,
+        "y": 1078,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -2589,9 +2589,9 @@
       "kind": "target_size",
       "label": "Expiry date",
       "box": {
-        "x": 96,
-        "y": 1086,
-        "w": 624,
+        "x": 194,
+        "y": 1078,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -2604,9 +2604,9 @@
       "kind": "target_size",
       "label": "Security code",
       "box": {
-        "x": 752,
-        "y": 1086,
-        "w": 624,
+        "x": 808,
+        "y": 1078,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -2619,9 +2619,9 @@
       "kind": "target_size",
       "label": "Security code",
       "box": {
-        "x": 752,
-        "y": 1086,
-        "w": 624,
+        "x": 808,
+        "y": 1078,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -2632,11 +2632,11 @@
       "id": "checkout-v2-m-c9-target",
       "reviewId": "review-checkout-v2",
       "kind": "target_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 96,
-        "y": 1206,
-        "w": 1280,
+        "x": 194,
+        "y": 1198,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -2647,11 +2647,11 @@
       "id": "checkout-v2-m-c9-target-rule",
       "reviewId": "review-checkout-v2",
       "kind": "target_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 96,
-        "y": 1206,
-        "w": 1280,
+        "x": 194,
+        "y": 1198,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -2664,8 +2664,8 @@
       "kind": "target_size",
       "label": "Read the terms",
       "box": {
-        "x": 96,
-        "y": 1334,
+        "x": 194,
+        "y": 1326,
         "w": 316,
         "h": 96
       },
@@ -2679,8 +2679,8 @@
       "kind": "target_size",
       "label": "Read the terms",
       "box": {
-        "x": 96,
-        "y": 1334,
+        "x": 194,
+        "y": 1326,
         "w": 316,
         "h": 96
       },
@@ -2692,29 +2692,29 @@
       "id": "checkout-v3-m-t0-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "Northwind Goods",
+      "label": "Little Fern Coffee",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 356,
-        "h": 54
+        "x": 112,
+        "y": 34,
+        "w": 424,
+        "h": 74
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 8.69,
+      "threshold": 3,
       "passes": true
     },
     {
       "id": "checkout-v3-m-t0-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "Northwind Goods",
+      "label": "Little Fern Coffee",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 356,
-        "h": 54
+        "x": 112,
+        "y": 34,
+        "w": 424,
+        "h": 74
       },
-      "value": 23,
+      "value": 31,
       "threshold": 16,
       "passes": true
     },
@@ -2724,12 +2724,12 @@
       "kind": "contrast",
       "label": "Secure checkout",
       "box": {
-        "x": 2230,
-        "y": 43,
-        "w": 234,
-        "h": 40
+        "x": 2205,
+        "y": 51,
+        "w": 243,
+        "h": 38
       },
-      "value": 7.87,
+      "value": 6.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -2739,12 +2739,12 @@
       "kind": "text_size",
       "label": "Secure checkout",
       "box": {
-        "x": 2230,
-        "y": 43,
-        "w": 234,
-        "h": 40
+        "x": 2205,
+        "y": 51,
+        "w": 243,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2754,12 +2754,12 @@
       "kind": "contrast",
       "label": "Checkout",
       "box": {
-        "x": 96,
+        "x": 194,
         "y": 188,
-        "w": 324,
-        "h": 92
+        "w": 307,
+        "h": 96
       },
-      "value": 17.79,
+      "value": 10.04,
       "threshold": 3,
       "passes": true
     },
@@ -2769,12 +2769,12 @@
       "kind": "text_size",
       "label": "Checkout",
       "box": {
-        "x": 96,
+        "x": 194,
         "y": 188,
-        "w": 324,
-        "h": 92
+        "w": 307,
+        "h": 96
       },
-      "value": 38,
+      "value": 40,
       "threshold": 16,
       "passes": true
     },
@@ -2784,13 +2784,13 @@
       "kind": "contrast",
       "label": "Contact",
       "box": {
-        "x": 96,
-        "y": 316,
-        "w": 148,
-        "h": 53
+        "x": 194,
+        "y": 304,
+        "w": 168,
+        "h": 62
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 10.04,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -2799,12 +2799,12 @@
       "kind": "text_size",
       "label": "Contact",
       "box": {
-        "x": 96,
-        "y": 316,
-        "w": 148,
-        "h": 53
+        "x": 194,
+        "y": 304,
+        "w": 168,
+        "h": 62
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -2814,12 +2814,12 @@
       "kind": "contrast",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 394,
-        "w": 215,
-        "h": 41
+        "x": 194,
+        "y": 389,
+        "w": 203,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -2829,12 +2829,12 @@
       "kind": "text_size",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 394,
-        "w": 215,
-        "h": 41
+        "x": 194,
+        "y": 389,
+        "w": 203,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2844,12 +2844,12 @@
       "kind": "contrast",
       "label": "We send your receipt to this address",
       "box": {
-        "x": 96,
-        "y": 562,
-        "w": 514,
-        "h": 41
+        "x": 194,
+        "y": 557,
+        "w": 524,
+        "h": 39
       },
-      "value": 7.87,
+      "value": 7.29,
       "threshold": 4.5,
       "passes": true
     },
@@ -2859,12 +2859,12 @@
       "kind": "text_size",
       "label": "We send your receipt to this address",
       "box": {
-        "x": 96,
-        "y": 562,
-        "w": 514,
-        "h": 41
+        "x": 194,
+        "y": 557,
+        "w": 524,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2874,13 +2874,13 @@
       "kind": "contrast",
       "label": "Payment",
       "box": {
-        "x": 96,
-        "y": 644,
-        "w": 168,
-        "h": 53
+        "x": 194,
+        "y": 633,
+        "w": 178,
+        "h": 63
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 10.04,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -2889,12 +2889,12 @@
       "kind": "text_size",
       "label": "Payment",
       "box": {
-        "x": 96,
-        "y": 644,
-        "w": 168,
-        "h": 53
+        "x": 194,
+        "y": 633,
+        "w": 178,
+        "h": 63
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -2904,12 +2904,12 @@
       "kind": "contrast",
       "label": "Card",
       "box": {
-        "x": 268,
-        "y": 746,
-        "w": 72,
-        "h": 41
+        "x": 353,
+        "y": 742,
+        "w": 73,
+        "h": 39
       },
-      "value": 5.77,
+      "value": 8.55,
       "threshold": 4.5,
       "passes": true
     },
@@ -2919,12 +2919,12 @@
       "kind": "text_size",
       "label": "Card",
       "box": {
-        "x": 268,
-        "y": 746,
-        "w": 72,
-        "h": 41
+        "x": 353,
+        "y": 742,
+        "w": 73,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2934,12 +2934,12 @@
       "kind": "contrast",
       "label": "PayPal",
       "box": {
-        "x": 687,
-        "y": 746,
-        "w": 102,
-        "h": 41
+        "x": 745,
+        "y": 742,
+        "w": 98,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -2949,12 +2949,12 @@
       "kind": "text_size",
       "label": "PayPal",
       "box": {
-        "x": 687,
-        "y": 746,
-        "w": 102,
-        "h": 41
+        "x": 745,
+        "y": 742,
+        "w": 98,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2964,12 +2964,12 @@
       "kind": "contrast",
       "label": "Other methods",
       "box": {
-        "x": 1057,
-        "y": 746,
-        "w": 226,
-        "h": 41
+        "x": 1085,
+        "y": 742,
+        "w": 224,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -2979,12 +2979,12 @@
       "kind": "text_size",
       "label": "Other methods",
       "box": {
-        "x": 1057,
-        "y": 746,
-        "w": 226,
-        "h": 41
+        "x": 1085,
+        "y": 742,
+        "w": 224,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -2994,12 +2994,12 @@
       "kind": "contrast",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 850,
-        "w": 195,
-        "h": 41
+        "x": 194,
+        "y": 842,
+        "w": 193,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -3009,12 +3009,12 @@
       "kind": "text_size",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 850,
-        "w": 195,
-        "h": 41
+        "x": 194,
+        "y": 842,
+        "w": 193,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3024,12 +3024,12 @@
       "kind": "contrast",
       "label": "Expiry date",
       "box": {
-        "x": 96,
-        "y": 1030,
-        "w": 172,
-        "h": 41
+        "x": 194,
+        "y": 1022,
+        "w": 169,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -3039,12 +3039,12 @@
       "kind": "text_size",
       "label": "Expiry date",
       "box": {
-        "x": 96,
-        "y": 1030,
-        "w": 172,
-        "h": 41
+        "x": 194,
+        "y": 1022,
+        "w": 169,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3054,12 +3054,12 @@
       "kind": "contrast",
       "label": "Security code",
       "box": {
-        "x": 752,
-        "y": 1030,
-        "w": 207,
-        "h": 41
+        "x": 808,
+        "y": 1022,
+        "w": 206,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -3069,12 +3069,12 @@
       "kind": "text_size",
       "label": "Security code",
       "box": {
-        "x": 752,
-        "y": 1030,
-        "w": 207,
-        "h": 41
+        "x": 808,
+        "y": 1022,
+        "w": 206,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3082,14 +3082,14 @@
       "id": "checkout-v3-m-t13-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 648,
-        "y": 1234,
-        "w": 176,
-        "h": 41
+        "x": 703,
+        "y": 1226,
+        "w": 178,
+        "h": 39
       },
-      "value": 6.7,
+      "value": 9.39,
       "threshold": 4.5,
       "passes": true
     },
@@ -3097,14 +3097,14 @@
       "id": "checkout-v3-m-t13-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 648,
-        "y": 1234,
-        "w": 176,
-        "h": 41
+        "x": 703,
+        "y": 1226,
+        "w": 178,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3114,12 +3114,12 @@
       "kind": "contrast",
       "label": "Read the terms",
       "box": {
-        "x": 138,
-        "y": 1362,
-        "w": 233,
-        "h": 41
+        "x": 240,
+        "y": 1354,
+        "w": 224,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 10.04,
       "threshold": 4.5,
       "passes": true
     },
@@ -3129,12 +3129,12 @@
       "kind": "text_size",
       "label": "Read the terms",
       "box": {
-        "x": 138,
-        "y": 1362,
-        "w": 233,
-        "h": 41
+        "x": 240,
+        "y": 1354,
+        "w": 224,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3144,13 +3144,13 @@
       "kind": "contrast",
       "label": "Order summary",
       "box": {
-        "x": 1618,
-        "y": 368,
-        "w": 296,
-        "h": 52
+        "x": 1656,
+        "y": 276,
+        "w": 328,
+        "h": 62
       },
-      "value": 16.74,
-      "threshold": 4.5,
+      "value": 7.81,
+      "threshold": 3,
       "passes": true
     },
     {
@@ -3159,12 +3159,12 @@
       "kind": "text_size",
       "label": "Order summary",
       "box": {
-        "x": 1618,
-        "y": 368,
-        "w": 296,
-        "h": 52
+        "x": 1656,
+        "y": 276,
+        "w": 328,
+        "h": 62
       },
-      "value": 22,
+      "value": 26,
       "threshold": 16,
       "passes": true
     },
@@ -3172,14 +3172,14 @@
       "id": "checkout-v3-m-t16-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "Linen shirt",
+      "label": "House blend, whole bean",
       "box": {
-        "x": 1618,
-        "y": 462,
-        "w": 150,
-        "h": 40
+        "x": 1656,
+        "y": 377,
+        "w": 361,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -3187,14 +3187,14 @@
       "id": "checkout-v3-m-t16-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "Linen shirt",
+      "label": "House blend, whole bean",
       "box": {
-        "x": 1618,
-        "y": 462,
-        "w": 150,
-        "h": 40
+        "x": 1656,
+        "y": 377,
+        "w": 361,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3202,14 +3202,14 @@
       "id": "checkout-v3-m-t17-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "€59.00",
+      "label": "€14.00",
       "box": {
-        "x": 2211,
-        "y": 462,
-        "w": 107,
-        "h": 40
+        "x": 2226,
+        "y": 377,
+        "w": 102,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -3217,14 +3217,14 @@
       "id": "checkout-v3-m-t17-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "€59.00",
+      "label": "€14.00",
       "box": {
-        "x": 2211,
-        "y": 462,
-        "w": 107,
-        "h": 40
+        "x": 2226,
+        "y": 377,
+        "w": 102,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3232,14 +3232,14 @@
       "id": "checkout-v3-m-t18-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "Canvas tote",
+      "label": "Ceramic pour over",
       "box": {
-        "x": 1618,
-        "y": 542,
-        "w": 166,
-        "h": 40
+        "x": 1656,
+        "y": 457,
+        "w": 265,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -3247,14 +3247,14 @@
       "id": "checkout-v3-m-t18-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "Canvas tote",
+      "label": "Ceramic pour over",
       "box": {
-        "x": 1618,
-        "y": 542,
-        "w": 166,
-        "h": 40
+        "x": 1656,
+        "y": 457,
+        "w": 265,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3262,14 +3262,14 @@
       "id": "checkout-v3-m-t19-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "€19.00",
+      "label": "€32.00",
       "box": {
-        "x": 2216,
-        "y": 542,
-        "w": 102,
-        "h": 40
+        "x": 2223,
+        "y": 457,
+        "w": 105,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -3277,14 +3277,14 @@
       "id": "checkout-v3-m-t19-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "€19.00",
+      "label": "€32.00",
       "box": {
-        "x": 2216,
-        "y": 542,
-        "w": 102,
-        "h": 40
+        "x": 2223,
+        "y": 457,
+        "w": 105,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3292,14 +3292,14 @@
       "id": "checkout-v3-m-t20-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "Shipping",
+      "label": "Delivery",
       "box": {
-        "x": 1618,
-        "y": 622,
-        "w": 126,
-        "h": 40
+        "x": 1656,
+        "y": 537,
+        "w": 116,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -3307,14 +3307,14 @@
       "id": "checkout-v3-m-t20-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "Shipping",
+      "label": "Delivery",
       "box": {
-        "x": 1618,
-        "y": 622,
-        "w": 126,
-        "h": 40
+        "x": 1656,
+        "y": 537,
+        "w": 116,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3322,14 +3322,14 @@
       "id": "checkout-v3-m-t21-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "€6.00",
+      "label": "€4.50",
       "box": {
-        "x": 2229,
-        "y": 622,
-        "w": 89,
-        "h": 40
+        "x": 2241,
+        "y": 537,
+        "w": 87,
+        "h": 39
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -3337,14 +3337,14 @@
       "id": "checkout-v3-m-t21-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "€6.00",
+      "label": "€4.50",
       "box": {
-        "x": 2229,
-        "y": 622,
-        "w": 89,
-        "h": 40
+        "x": 2241,
+        "y": 537,
+        "w": 87,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3354,12 +3354,12 @@
       "kind": "contrast",
       "label": "Total",
       "box": {
-        "x": 1618,
-        "y": 736,
-        "w": 85,
-        "h": 44
+        "x": 1656,
+        "y": 651,
+        "w": 82,
+        "h": 45
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -3369,12 +3369,12 @@
       "kind": "text_size",
       "label": "Total",
       "box": {
-        "x": 1618,
-        "y": 736,
-        "w": 85,
-        "h": 44
+        "x": 1656,
+        "y": 651,
+        "w": 82,
+        "h": 45
       },
-      "value": 18,
+      "value": 19,
       "threshold": 16,
       "passes": true
     },
@@ -3382,14 +3382,14 @@
       "id": "checkout-v3-m-t23-contrast",
       "reviewId": "review-checkout-v3",
       "kind": "contrast",
-      "label": "€84.00",
+      "label": "€50.50",
       "box": {
-        "x": 2193,
-        "y": 736,
-        "w": 125,
-        "h": 44
+        "x": 2205,
+        "y": 651,
+        "w": 123,
+        "h": 45
       },
-      "value": 16.74,
+      "value": 11.9,
       "threshold": 4.5,
       "passes": true
     },
@@ -3397,14 +3397,14 @@
       "id": "checkout-v3-m-t23-size",
       "reviewId": "review-checkout-v3",
       "kind": "text_size",
-      "label": "€84.00",
+      "label": "€50.50",
       "box": {
-        "x": 2193,
-        "y": 736,
-        "w": 125,
-        "h": 44
+        "x": 2205,
+        "y": 651,
+        "w": 123,
+        "h": 45
       },
-      "value": 18,
+      "value": 19,
       "threshold": 16,
       "passes": true
     },
@@ -3414,12 +3414,12 @@
       "kind": "contrast",
       "label": "sam@example.com",
       "box": {
-        "x": 126,
-        "y": 478,
-        "w": 270,
-        "h": 41
+        "x": 224,
+        "y": 474,
+        "w": 280,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 15.31,
       "threshold": 4.5,
       "passes": true
     },
@@ -3429,12 +3429,12 @@
       "kind": "text_size",
       "label": "sam@example.com",
       "box": {
-        "x": 126,
-        "y": 478,
-        "w": 270,
-        "h": 41
+        "x": 224,
+        "y": 474,
+        "w": 280,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3444,12 +3444,12 @@
       "kind": "contrast",
       "label": "1234 5678 9012 3456",
       "box": {
-        "x": 126,
-        "y": 934,
-        "w": 314,
-        "h": 41
+        "x": 224,
+        "y": 927,
+        "w": 309,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -3459,12 +3459,12 @@
       "kind": "text_size",
       "label": "1234 5678 9012 3456",
       "box": {
-        "x": 126,
-        "y": 934,
-        "w": 314,
-        "h": 41
+        "x": 224,
+        "y": 927,
+        "w": 309,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3474,12 +3474,12 @@
       "kind": "contrast",
       "label": "MM / YY",
       "box": {
-        "x": 126,
-        "y": 1114,
-        "w": 121,
-        "h": 41
+        "x": 224,
+        "y": 1107,
+        "w": 122,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -3489,12 +3489,12 @@
       "kind": "text_size",
       "label": "MM / YY",
       "box": {
-        "x": 126,
-        "y": 1114,
-        "w": 121,
-        "h": 41
+        "x": 224,
+        "y": 1107,
+        "w": 122,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3504,12 +3504,12 @@
       "kind": "contrast",
       "label": "3 digits",
       "box": {
-        "x": 782,
-        "y": 1114,
-        "w": 107,
-        "h": 41
+        "x": 838,
+        "y": 1107,
+        "w": 105,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 5.65,
       "threshold": 4.5,
       "passes": true
     },
@@ -3519,12 +3519,12 @@
       "kind": "text_size",
       "label": "3 digits",
       "box": {
-        "x": 782,
-        "y": 1114,
-        "w": 107,
-        "h": 41
+        "x": 838,
+        "y": 1107,
+        "w": 105,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3534,9 +3534,9 @@
       "kind": "target_size",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 450,
-        "w": 1280,
+        "x": 194,
+        "y": 446,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -3549,9 +3549,9 @@
       "kind": "target_size",
       "label": "Email address",
       "box": {
-        "x": 96,
-        "y": 450,
-        "w": 1280,
+        "x": 194,
+        "y": 446,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -3564,9 +3564,9 @@
       "kind": "target_size",
       "label": "Card",
       "box": {
-        "x": 96,
-        "y": 718,
-        "w": 416,
+        "x": 194,
+        "y": 714,
+        "w": 407,
         "h": 96
       },
       "value": 48,
@@ -3579,9 +3579,9 @@
       "kind": "target_size",
       "label": "Card",
       "box": {
-        "x": 96,
-        "y": 718,
-        "w": 416,
+        "x": 194,
+        "y": 714,
+        "w": 407,
         "h": 96
       },
       "value": 48,
@@ -3594,9 +3594,9 @@
       "kind": "target_size",
       "label": "PayPal",
       "box": {
-        "x": 532,
-        "y": 718,
-        "w": 412,
+        "x": 600,
+        "y": 714,
+        "w": 388,
         "h": 96
       },
       "value": 48,
@@ -3609,9 +3609,9 @@
       "kind": "target_size",
       "label": "PayPal",
       "box": {
-        "x": 532,
-        "y": 718,
-        "w": 412,
+        "x": 600,
+        "y": 714,
+        "w": 388,
         "h": 96
       },
       "value": 48,
@@ -3624,9 +3624,9 @@
       "kind": "target_size",
       "label": "Other methods",
       "box": {
-        "x": 964,
-        "y": 718,
-        "w": 412,
+        "x": 987,
+        "y": 714,
+        "w": 403,
         "h": 96
       },
       "value": 48,
@@ -3639,9 +3639,9 @@
       "kind": "target_size",
       "label": "Other methods",
       "box": {
-        "x": 964,
-        "y": 718,
-        "w": 412,
+        "x": 987,
+        "y": 714,
+        "w": 403,
         "h": 96
       },
       "value": 48,
@@ -3654,9 +3654,9 @@
       "kind": "target_size",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 906,
-        "w": 1280,
+        "x": 194,
+        "y": 898,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -3669,9 +3669,9 @@
       "kind": "target_size",
       "label": "Card number",
       "box": {
-        "x": 96,
-        "y": 906,
-        "w": 1280,
+        "x": 194,
+        "y": 898,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -3684,9 +3684,9 @@
       "kind": "target_size",
       "label": "Expiry date",
       "box": {
-        "x": 96,
-        "y": 1086,
-        "w": 624,
+        "x": 194,
+        "y": 1078,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -3699,9 +3699,9 @@
       "kind": "target_size",
       "label": "Expiry date",
       "box": {
-        "x": 96,
-        "y": 1086,
-        "w": 624,
+        "x": 194,
+        "y": 1078,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -3714,9 +3714,9 @@
       "kind": "target_size",
       "label": "Security code",
       "box": {
-        "x": 752,
-        "y": 1086,
-        "w": 624,
+        "x": 808,
+        "y": 1078,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -3729,9 +3729,9 @@
       "kind": "target_size",
       "label": "Security code",
       "box": {
-        "x": 752,
-        "y": 1086,
-        "w": 624,
+        "x": 808,
+        "y": 1078,
+        "w": 582,
         "h": 96
       },
       "value": 48,
@@ -3742,11 +3742,11 @@
       "id": "checkout-v3-m-c7-target",
       "reviewId": "review-checkout-v3",
       "kind": "target_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 96,
-        "y": 1206,
-        "w": 1280,
+        "x": 194,
+        "y": 1198,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -3757,11 +3757,11 @@
       "id": "checkout-v3-m-c7-target-rule",
       "reviewId": "review-checkout-v3",
       "kind": "target_size",
-      "label": "Pay €84.00",
+      "label": "Pay €50.50",
       "box": {
-        "x": 96,
-        "y": 1206,
-        "w": 1280,
+        "x": 194,
+        "y": 1198,
+        "w": 1196,
         "h": 96
       },
       "value": 48,
@@ -3774,8 +3774,8 @@
       "kind": "target_size",
       "label": "Read the terms",
       "box": {
-        "x": 96,
-        "y": 1334,
+        "x": 194,
+        "y": 1326,
         "w": 316,
         "h": 96
       },
@@ -3789,8 +3789,8 @@
       "kind": "target_size",
       "label": "Read the terms",
       "box": {
-        "x": 96,
-        "y": 1334,
+        "x": 194,
+        "y": 1326,
         "w": 316,
         "h": 96
       },
@@ -3802,14 +3802,14 @@
       "id": "signup-v1-m-t0-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Create your account",
+      "label": "RALLY",
       "box": {
-        "x": 874,
-        "y": 120,
-        "w": 576,
-        "h": 74
+        "x": 112,
+        "y": 104,
+        "w": 208,
+        "h": 72
       },
-      "value": 17.79,
+      "value": 5.18,
       "threshold": 3,
       "passes": true
     },
@@ -3817,14 +3817,14 @@
       "id": "signup-v1-m-t0-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Create your account",
+      "label": "RALLY",
       "box": {
-        "x": 874,
-        "y": 120,
-        "w": 576,
-        "h": 74
+        "x": 112,
+        "y": 104,
+        "w": 208,
+        "h": 72
       },
-      "value": 31,
+      "value": 30,
       "threshold": 16,
       "passes": true
     },
@@ -3832,29 +3832,29 @@
       "id": "signup-v1-m-t1-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Free for 30 days, no card needed",
+      "label": "Train together. Start free. (line 1)",
       "box": {
-        "x": 874,
-        "y": 210,
-        "w": 467,
-        "h": 40
+        "x": 112,
+        "y": 1226,
+        "w": 619,
+        "h": 94
       },
-      "value": 7.87,
-      "threshold": 4.5,
+      "value": 5.18,
+      "threshold": 3,
       "passes": true
     },
     {
       "id": "signup-v1-m-t1-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Free for 30 days, no card needed",
+      "label": "Train together. Start free. (line 1)",
       "box": {
-        "x": 874,
-        "y": 210,
-        "w": 467,
-        "h": 40
+        "x": 112,
+        "y": 1226,
+        "w": 619,
+        "h": 94
       },
-      "value": 17,
+      "value": 39,
       "threshold": 16,
       "passes": true
     },
@@ -3862,29 +3862,29 @@
       "id": "signup-v1-m-t2-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Full name",
+      "label": "Train together. Start free. (line 2)",
       "box": {
-        "x": 874,
-        "y": 298,
-        "w": 149,
-        "h": 40
+        "x": 112,
+        "y": 1318,
+        "w": 434,
+        "h": 94
       },
-      "value": 17.79,
-      "threshold": 4.5,
+      "value": 5.18,
+      "threshold": 3,
       "passes": true
     },
     {
       "id": "signup-v1-m-t2-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Full name",
+      "label": "Train together. Start free. (line 2)",
       "box": {
-        "x": 874,
-        "y": 298,
-        "w": 149,
-        "h": 40
+        "x": 112,
+        "y": 1318,
+        "w": 434,
+        "h": 94
       },
-      "value": 17,
+      "value": 39,
       "threshold": 16,
       "passes": true
     },
@@ -3892,14 +3892,14 @@
       "id": "signup-v1-m-t3-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Email",
+      "label": "Classes, runs and rides near you",
       "box": {
-        "x": 874,
-        "y": 482,
-        "w": 85,
-        "h": 40
+        "x": 112,
+        "y": 1450,
+        "w": 597,
+        "h": 48
       },
-      "value": 17.79,
+      "value": 5.18,
       "threshold": 4.5,
       "passes": true
     },
@@ -3907,14 +3907,14 @@
       "id": "signup-v1-m-t3-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Email",
+      "label": "Classes, runs and rides near you",
       "box": {
-        "x": 874,
-        "y": 482,
-        "w": 85,
-        "h": 40
+        "x": 112,
+        "y": 1450,
+        "w": 597,
+        "h": 48
       },
-      "value": 17,
+      "value": 20,
       "threshold": 16,
       "passes": true
     },
@@ -3922,29 +3922,29 @@
       "id": "signup-v1-m-t4-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Invalid input",
+      "label": "Create your account",
       "box": {
-        "x": 874,
-        "y": 646,
-        "w": 194,
-        "h": 40
+        "x": 1320,
+        "y": 78,
+        "w": 756,
+        "h": 86
       },
-      "value": 6.57,
-      "threshold": 4.5,
+      "value": 17.49,
+      "threshold": 3,
       "passes": true
     },
     {
       "id": "signup-v1-m-t4-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Invalid input",
+      "label": "Create your account",
       "box": {
-        "x": 874,
-        "y": 646,
-        "w": 194,
-        "h": 40
+        "x": 1320,
+        "y": 78,
+        "w": 756,
+        "h": 86
       },
-      "value": 17,
+      "value": 36,
       "threshold": 16,
       "passes": true
     },
@@ -3952,14 +3952,14 @@
       "id": "signup-v1-m-t5-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "I agree to the terms and privacy policy",
+      "label": "Free for 30 days, no card needed",
       "box": {
-        "x": 916,
-        "y": 846,
-        "w": 541,
-        "h": 40
+        "x": 1320,
+        "y": 174,
+        "w": 487,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 7.63,
       "threshold": 4.5,
       "passes": true
     },
@@ -3967,14 +3967,14 @@
       "id": "signup-v1-m-t5-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "I agree to the terms and privacy policy",
+      "label": "Free for 30 days, no card needed",
       "box": {
-        "x": 916,
-        "y": 846,
-        "w": 541,
-        "h": 40
+        "x": 1320,
+        "y": 174,
+        "w": 487,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -3982,14 +3982,14 @@
       "id": "signup-v1-m-t6-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Create account",
+      "label": "Full name",
       "box": {
-        "x": 1166,
-        "y": 954,
-        "w": 228,
-        "h": 40
+        "x": 1320,
+        "y": 262,
+        "w": 154,
+        "h": 39
       },
-      "value": 6.7,
+      "value": 17.49,
       "threshold": 4.5,
       "passes": true
     },
@@ -3997,14 +3997,14 @@
       "id": "signup-v1-m-t6-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Create account",
+      "label": "Full name",
       "box": {
-        "x": 1166,
-        "y": 954,
-        "w": 228,
-        "h": 40
+        "x": 1320,
+        "y": 262,
+        "w": 154,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4012,14 +4012,14 @@
       "id": "signup-v1-m-t7-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Sign up with Google",
+      "label": "Email",
       "box": {
-        "x": 1127,
-        "y": 1070,
-        "w": 306,
-        "h": 40
+        "x": 1320,
+        "y": 446,
+        "w": 87,
+        "h": 39
       },
-      "value": 6.7,
+      "value": 17.49,
       "threshold": 4.5,
       "passes": true
     },
@@ -4027,14 +4027,14 @@
       "id": "signup-v1-m-t7-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Sign up with Google",
+      "label": "Email",
       "box": {
-        "x": 1127,
-        "y": 1070,
-        "w": 306,
-        "h": 40
+        "x": 1320,
+        "y": 446,
+        "w": 87,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4042,14 +4042,14 @@
       "id": "signup-v1-m-t8-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Already have an account?",
+      "label": "Invalid input",
       "box": {
-        "x": 993,
-        "y": 1198,
-        "w": 360,
-        "h": 40
+        "x": 1320,
+        "y": 610,
+        "w": 199,
+        "h": 39
       },
-      "value": 7.87,
+      "value": 6.47,
       "threshold": 4.5,
       "passes": true
     },
@@ -4057,14 +4057,14 @@
       "id": "signup-v1-m-t8-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Already have an account?",
+      "label": "Invalid input",
       "box": {
-        "x": 993,
-        "y": 1198,
-        "w": 360,
-        "h": 40
+        "x": 1320,
+        "y": 610,
+        "w": 199,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4072,14 +4072,14 @@
       "id": "signup-v1-m-t9-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Sign in",
+      "label": "I agree to the terms and privacy policy",
       "box": {
-        "x": 1418,
-        "y": 1198,
-        "w": 107,
-        "h": 40
+        "x": 1362,
+        "y": 810,
+        "w": 566,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 17.49,
       "threshold": 4.5,
       "passes": true
     },
@@ -4087,14 +4087,14 @@
       "id": "signup-v1-m-t9-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Sign in",
+      "label": "I agree to the terms and privacy policy",
       "box": {
-        "x": 1418,
-        "y": 1198,
-        "w": 107,
-        "h": 40
+        "x": 1362,
+        "y": 810,
+        "w": 566,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4102,14 +4102,14 @@
       "id": "signup-v1-m-t10-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Sam Jordan",
+      "label": "Create account",
       "box": {
-        "x": 904,
-        "y": 382,
-        "w": 169,
-        "h": 40
+        "x": 1676,
+        "y": 918,
+        "w": 248,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 5.18,
       "threshold": 4.5,
       "passes": true
     },
@@ -4117,14 +4117,14 @@
       "id": "signup-v1-m-t10-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "Sam Jordan",
+      "label": "Create account",
       "box": {
-        "x": 904,
-        "y": 382,
-        "w": 169,
-        "h": 40
+        "x": 1676,
+        "y": 918,
+        "w": 248,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4132,14 +4132,14 @@
       "id": "signup-v1-m-t11-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "sam@example",
+      "label": "Sign up with Google",
       "box": {
-        "x": 906,
-        "y": 566,
-        "w": 203,
-        "h": 40
+        "x": 1643,
+        "y": 1034,
+        "w": 314,
+        "h": 39
       },
-      "value": 17.79,
+      "value": 5.18,
       "threshold": 4.5,
       "passes": true
     },
@@ -4147,14 +4147,14 @@
       "id": "signup-v1-m-t11-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
-      "label": "sam@example",
+      "label": "Sign up with Google",
       "box": {
-        "x": 906,
-        "y": 566,
-        "w": 203,
-        "h": 40
+        "x": 1643,
+        "y": 1034,
+        "w": 314,
+        "h": 39
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4162,14 +4162,14 @@
       "id": "signup-v1-m-t12-contrast",
       "reviewId": "review-signup-v1",
       "kind": "contrast",
-      "label": "Password",
+      "label": "Already have an account?",
       "box": {
-        "x": 904,
-        "y": 746,
-        "w": 133,
-        "h": 40
+        "x": 1489,
+        "y": 1162,
+        "w": 386,
+        "h": 39
       },
-      "value": 4.83,
+      "value": 7.63,
       "threshold": 4.5,
       "passes": true
     },
@@ -4177,14 +4177,134 @@
       "id": "signup-v1-m-t12-size",
       "reviewId": "review-signup-v1",
       "kind": "text_size",
+      "label": "Already have an account?",
+      "box": {
+        "x": 1489,
+        "y": 1162,
+        "w": 386,
+        "h": 39
+      },
+      "value": 16,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t13-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Sign in",
+      "box": {
+        "x": 1950,
+        "y": 1162,
+        "w": 109,
+        "h": 39
+      },
+      "value": 17.49,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t13-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Sign in",
+      "box": {
+        "x": 1950,
+        "y": 1162,
+        "w": 109,
+        "h": 39
+      },
+      "value": 16,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t14-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Sam Jordan",
+      "box": {
+        "x": 1358,
+        "y": 347,
+        "w": 181,
+        "h": 39
+      },
+      "value": 17.49,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t14-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Sam Jordan",
+      "box": {
+        "x": 1358,
+        "y": 347,
+        "w": 181,
+        "h": 39
+      },
+      "value": 16,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t15-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "sam@example",
+      "box": {
+        "x": 1360,
+        "y": 531,
+        "w": 215,
+        "h": 39
+      },
+      "value": 17.49,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t15-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "sam@example",
+      "box": {
+        "x": 1360,
+        "y": 531,
+        "w": 215,
+        "h": 39
+      },
+      "value": 16,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t16-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
       "label": "Password",
       "box": {
-        "x": 904,
-        "y": 746,
-        "w": 133,
-        "h": 40
+        "x": 1358,
+        "y": 711,
+        "w": 145,
+        "h": 39
       },
-      "value": 17,
+      "value": 5.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t16-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Password",
+      "box": {
+        "x": 1358,
+        "y": 711,
+        "w": 145,
+        "h": 39
+      },
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4194,9 +4314,9 @@
       "kind": "target_size",
       "label": "Full name",
       "box": {
-        "x": 874,
-        "y": 354,
-        "w": 812,
+        "x": 1320,
+        "y": 318,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4209,9 +4329,9 @@
       "kind": "target_size",
       "label": "Full name",
       "box": {
-        "x": 874,
-        "y": 354,
-        "w": 812,
+        "x": 1320,
+        "y": 318,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4224,9 +4344,9 @@
       "kind": "target_size",
       "label": "Email",
       "box": {
-        "x": 874,
-        "y": 538,
-        "w": 812,
+        "x": 1320,
+        "y": 502,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4239,9 +4359,9 @@
       "kind": "target_size",
       "label": "Email",
       "box": {
-        "x": 874,
-        "y": 538,
-        "w": 812,
+        "x": 1320,
+        "y": 502,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4254,9 +4374,9 @@
       "kind": "target_size",
       "label": "Password",
       "box": {
-        "x": 874,
-        "y": 718,
-        "w": 812,
+        "x": 1320,
+        "y": 682,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4269,9 +4389,9 @@
       "kind": "target_size",
       "label": "Password",
       "box": {
-        "x": 874,
-        "y": 718,
-        "w": 812,
+        "x": 1320,
+        "y": 682,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4284,8 +4404,8 @@
       "kind": "target_size",
       "label": "I agree to the terms and privacy policy",
       "box": {
-        "x": 874,
-        "y": 854,
+        "x": 1320,
+        "y": 818,
         "w": 26,
         "h": 26
       },
@@ -4299,8 +4419,8 @@
       "kind": "target_size",
       "label": "I agree to the terms and privacy policy",
       "box": {
-        "x": 874,
-        "y": 854,
+        "x": 1320,
+        "y": 818,
         "w": 26,
         "h": 26
       },
@@ -4314,9 +4434,9 @@
       "kind": "target_size",
       "label": "Create account",
       "box": {
-        "x": 874,
-        "y": 926,
-        "w": 812,
+        "x": 1320,
+        "y": 890,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4329,9 +4449,9 @@
       "kind": "target_size",
       "label": "Create account",
       "box": {
-        "x": 874,
-        "y": 926,
-        "w": 812,
+        "x": 1320,
+        "y": 890,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4344,9 +4464,9 @@
       "kind": "target_size",
       "label": "Sign up with Google",
       "box": {
-        "x": 874,
-        "y": 1042,
-        "w": 812,
+        "x": 1320,
+        "y": 1006,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4359,9 +4479,9 @@
       "kind": "target_size",
       "label": "Sign up with Google",
       "box": {
-        "x": 874,
-        "y": 1042,
-        "w": 812,
+        "x": 1320,
+        "y": 1006,
+        "w": 960,
         "h": 96
       },
       "value": 48,
@@ -4374,9 +4494,9 @@
       "kind": "target_size",
       "label": "Sign in",
       "box": {
-        "x": 1376,
-        "y": 1170,
-        "w": 190,
+        "x": 1898,
+        "y": 1134,
+        "w": 212,
         "h": 96
       },
       "value": 48,
@@ -4389,9 +4509,9 @@
       "kind": "target_size",
       "label": "Sign in",
       "box": {
-        "x": 1376,
-        "y": 1170,
-        "w": 190,
+        "x": 1898,
+        "y": 1134,
+        "w": 212,
         "h": 96
       },
       "value": 48,
@@ -4402,14 +4522,14 @@
       "id": "dashboard-v1-m-t0-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Lumen Analytics",
+      "label": "Waypoint Freight",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 350,
-        "h": 54
+        "x": 80,
+        "y": 28,
+        "w": 385,
+        "h": 52
       },
-      "value": 17.79,
+      "value": 10.12,
       "threshold": 4.5,
       "passes": true
     },
@@ -4417,14 +4537,14 @@
       "id": "dashboard-v1-m-t0-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Lumen Analytics",
+      "label": "Waypoint Freight",
       "box": {
-        "x": 96,
-        "y": 36,
-        "w": 350,
-        "h": 54
+        "x": 80,
+        "y": 28,
+        "w": 385,
+        "h": 52
       },
-      "value": 23,
+      "value": 22,
       "threshold": 16,
       "passes": true
     },
@@ -4432,14 +4552,14 @@
       "id": "dashboard-v1-m-t1-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Acme Store workspace",
+      "label": "North depot · Dispatch",
       "box": {
-        "x": 2142,
-        "y": 43,
-        "w": 322,
-        "h": 40
+        "x": 2203,
+        "y": 35,
+        "w": 277,
+        "h": 38
       },
-      "value": 7.87,
+      "value": 8.78,
       "threshold": 4.5,
       "passes": true
     },
@@ -4447,14 +4567,14 @@
       "id": "dashboard-v1-m-t1-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Acme Store workspace",
+      "label": "North depot · Dispatch",
       "box": {
-        "x": 2142,
-        "y": 43,
-        "w": 322,
-        "h": 40
+        "x": 2203,
+        "y": 35,
+        "w": 277,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4462,14 +4582,14 @@
       "id": "dashboard-v1-m-t2-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Sales overview",
+      "label": "Fleet overview",
       "box": {
         "x": 80,
-        "y": 172,
-        "w": 207,
-        "h": 40
+        "y": 156,
+        "w": 180,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 15.27,
       "threshold": 4.5,
       "passes": true
     },
@@ -4477,14 +4597,14 @@
       "id": "dashboard-v1-m-t2-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Sales overview",
+      "label": "Fleet overview",
       "box": {
         "x": 80,
-        "y": 172,
-        "w": 207,
-        "h": 40
+        "y": 156,
+        "w": 180,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4495,11 +4615,11 @@
       "label": "Export",
       "box": {
         "x": 114,
-        "y": 268,
-        "w": 91,
-        "h": 40
+        "y": 252,
+        "w": 82,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4510,11 +4630,11 @@
       "label": "Export",
       "box": {
         "x": 114,
-        "y": 268,
-        "w": 91,
-        "h": 40
+        "y": 252,
+        "w": 82,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4524,12 +4644,12 @@
       "kind": "contrast",
       "label": "Share",
       "box": {
-        "x": 288,
-        "y": 268,
-        "w": 82,
-        "h": 40
+        "x": 279,
+        "y": 252,
+        "w": 73,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4539,12 +4659,12 @@
       "kind": "text_size",
       "label": "Share",
       "box": {
-        "x": 288,
-        "y": 268,
-        "w": 82,
-        "h": 40
+        "x": 279,
+        "y": 252,
+        "w": 73,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4554,12 +4674,12 @@
       "kind": "contrast",
       "label": "Filter",
       "box": {
-        "x": 453,
-        "y": 268,
-        "w": 74,
-        "h": 40
+        "x": 435,
+        "y": 252,
+        "w": 66,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4569,12 +4689,12 @@
       "kind": "text_size",
       "label": "Filter",
       "box": {
-        "x": 453,
-        "y": 268,
-        "w": 74,
-        "h": 40
+        "x": 435,
+        "y": 252,
+        "w": 66,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4584,12 +4704,12 @@
       "kind": "contrast",
       "label": "Refresh",
       "box": {
-        "x": 610,
-        "y": 268,
-        "w": 109,
-        "h": 40
+        "x": 584,
+        "y": 252,
+        "w": 97,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4599,12 +4719,12 @@
       "kind": "text_size",
       "label": "Refresh",
       "box": {
-        "x": 610,
-        "y": 268,
-        "w": 109,
-        "h": 40
+        "x": 584,
+        "y": 252,
+        "w": 97,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4614,12 +4734,12 @@
       "kind": "contrast",
       "label": "Compare",
       "box": {
-        "x": 802,
-        "y": 268,
-        "w": 129,
-        "h": 40
+        "x": 764,
+        "y": 252,
+        "w": 113,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4629,12 +4749,12 @@
       "kind": "text_size",
       "label": "Compare",
       "box": {
-        "x": 802,
-        "y": 268,
-        "w": 129,
-        "h": 40
+        "x": 764,
+        "y": 252,
+        "w": 113,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4644,12 +4764,12 @@
       "kind": "contrast",
       "label": "Annotate",
       "box": {
-        "x": 1014,
-        "y": 268,
-        "w": 128,
-        "h": 40
+        "x": 960,
+        "y": 252,
+        "w": 113,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4659,12 +4779,12 @@
       "kind": "text_size",
       "label": "Annotate",
       "box": {
-        "x": 1014,
-        "y": 268,
-        "w": 128,
-        "h": 40
+        "x": 960,
+        "y": 252,
+        "w": 113,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4674,12 +4794,12 @@
       "kind": "contrast",
       "label": "Schedule",
       "box": {
-        "x": 1226,
-        "y": 268,
-        "w": 130,
-        "h": 40
+        "x": 1156,
+        "y": 252,
+        "w": 114,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4689,12 +4809,12 @@
       "kind": "text_size",
       "label": "Schedule",
       "box": {
-        "x": 1226,
-        "y": 268,
-        "w": 130,
-        "h": 40
+        "x": 1156,
+        "y": 252,
+        "w": 114,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4704,12 +4824,12 @@
       "kind": "contrast",
       "label": "Settings",
       "box": {
-        "x": 1439,
-        "y": 268,
-        "w": 117,
-        "h": 40
+        "x": 1353,
+        "y": 252,
+        "w": 104,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4719,12 +4839,12 @@
       "kind": "text_size",
       "label": "Settings",
       "box": {
-        "x": 1439,
-        "y": 268,
-        "w": 117,
-        "h": 40
+        "x": 1353,
+        "y": 252,
+        "w": 104,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4734,12 +4854,12 @@
       "kind": "contrast",
       "label": "Print",
       "box": {
-        "x": 1639,
-        "y": 268,
-        "w": 67,
-        "h": 40
+        "x": 1540,
+        "y": 252,
+        "w": 61,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -4749,12 +4869,12 @@
       "kind": "text_size",
       "label": "Print",
       "box": {
-        "x": 1639,
-        "y": 268,
-        "w": 67,
-        "h": 40
+        "x": 1540,
+        "y": 252,
+        "w": 61,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4762,14 +4882,14 @@
       "id": "dashboard-v1-m-t12-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "€48,210",
+      "label": "1,284",
       "box": {
         "x": 122,
-        "y": 404,
-        "w": 307,
-        "h": 100
+        "y": 390,
+        "w": 168,
+        "h": 96
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 3,
       "passes": true
     },
@@ -4777,14 +4897,14 @@
       "id": "dashboard-v1-m-t12-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "€48,210",
+      "label": "1,284",
       "box": {
         "x": 122,
-        "y": 404,
-        "w": 307,
-        "h": 100
+        "y": 390,
+        "w": 168,
+        "h": 96
       },
-      "value": 42,
+      "value": 40,
       "threshold": 16,
       "passes": true
     },
@@ -4792,14 +4912,14 @@
       "id": "dashboard-v1-m-t13-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "12.4%",
+      "label": "6.2%",
       "box": {
         "x": 122,
-        "y": 502,
-        "w": 93,
-        "h": 40
+        "y": 486,
+        "w": 65,
+        "h": 38
       },
-      "value": 5.07,
+      "value": 9.36,
       "threshold": 4.5,
       "passes": true
     },
@@ -4807,14 +4927,14 @@
       "id": "dashboard-v1-m-t13-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "12.4%",
+      "label": "6.2%",
       "box": {
         "x": 122,
-        "y": 502,
-        "w": 93,
-        "h": 40
+        "y": 486,
+        "w": 65,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4822,14 +4942,14 @@
       "id": "dashboard-v1-m-t14-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Revenue",
+      "label": "Shipments",
       "box": {
         "x": 122,
-        "y": 618,
-        "w": 121,
-        "h": 40
+        "y": 602,
+        "w": 133,
+        "h": 38
       },
-      "value": 7.87,
+      "value": 7.6,
       "threshold": 4.5,
       "passes": true
     },
@@ -4837,14 +4957,14 @@
       "id": "dashboard-v1-m-t14-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Revenue",
+      "label": "Shipments",
       "box": {
         "x": 122,
-        "y": 618,
-        "w": 121,
-        "h": 40
+        "y": 602,
+        "w": 133,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4852,14 +4972,14 @@
       "id": "dashboard-v1-m-t15-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "1,284",
+      "label": "94.1%",
       "box": {
         "x": 730,
-        "y": 404,
-        "w": 206,
-        "h": 100
+        "y": 390,
+        "w": 191,
+        "h": 96
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 3,
       "passes": true
     },
@@ -4867,14 +4987,14 @@
       "id": "dashboard-v1-m-t15-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "1,284",
+      "label": "94.1%",
       "box": {
         "x": 730,
-        "y": 404,
-        "w": 206,
-        "h": 100
+        "y": 390,
+        "w": 191,
+        "h": 96
       },
-      "value": 42,
+      "value": 40,
       "threshold": 16,
       "passes": true
     },
@@ -4882,14 +5002,14 @@
       "id": "dashboard-v1-m-t16-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "3.1%",
+      "label": "1.3%",
       "box": {
         "x": 730,
-        "y": 502,
-        "w": 73,
-        "h": 40
+        "y": 486,
+        "w": 60,
+        "h": 38
       },
-      "value": 6.57,
+      "value": 5.89,
       "threshold": 4.5,
       "passes": true
     },
@@ -4897,14 +5017,14 @@
       "id": "dashboard-v1-m-t16-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "3.1%",
+      "label": "1.3%",
       "box": {
         "x": 730,
-        "y": 502,
-        "w": 73,
-        "h": 40
+        "y": 486,
+        "w": 60,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4912,14 +5032,14 @@
       "id": "dashboard-v1-m-t17-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Orders",
+      "label": "On time",
       "box": {
         "x": 730,
-        "y": 618,
+        "y": 602,
         "w": 96,
-        "h": 40
+        "h": 38
       },
-      "value": 7.87,
+      "value": 7.6,
       "threshold": 4.5,
       "passes": true
     },
@@ -4927,14 +5047,14 @@
       "id": "dashboard-v1-m-t17-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Orders",
+      "label": "On time",
       "box": {
         "x": 730,
-        "y": 618,
+        "y": 602,
         "w": 96,
-        "h": 40
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -4942,14 +5062,14 @@
       "id": "dashboard-v1-m-t18-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "€37.55",
+      "label": "2.4 d",
       "box": {
         "x": 1338,
-        "y": 404,
-        "w": 248,
-        "h": 100
+        "y": 390,
+        "w": 160,
+        "h": 96
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 3,
       "passes": true
     },
@@ -4957,14 +5077,14 @@
       "id": "dashboard-v1-m-t18-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "€37.55",
+      "label": "2.4 d",
       "box": {
         "x": 1338,
-        "y": 404,
-        "w": 248,
-        "h": 100
+        "y": 390,
+        "w": 160,
+        "h": 96
       },
-      "value": 42,
+      "value": 40,
       "threshold": 16,
       "passes": true
     },
@@ -4972,14 +5092,14 @@
       "id": "dashboard-v1-m-t19-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "8.0%",
+      "label": "4.0%",
       "box": {
         "x": 1338,
-        "y": 502,
-        "w": 80,
-        "h": 40
+        "y": 486,
+        "w": 67,
+        "h": 38
       },
-      "value": 5.07,
+      "value": 9.36,
       "threshold": 4.5,
       "passes": true
     },
@@ -4987,14 +5107,14 @@
       "id": "dashboard-v1-m-t19-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "8.0%",
+      "label": "4.0%",
       "box": {
         "x": 1338,
-        "y": 502,
-        "w": 80,
-        "h": 40
+        "y": 486,
+        "w": 67,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -5002,14 +5122,14 @@
       "id": "dashboard-v1-m-t20-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Average order",
+      "label": "Average transit",
       "box": {
         "x": 1338,
-        "y": 618,
-        "w": 197,
-        "h": 40
+        "y": 602,
+        "w": 188,
+        "h": 38
       },
-      "value": 7.87,
+      "value": 7.6,
       "threshold": 4.5,
       "passes": true
     },
@@ -5017,14 +5137,14 @@
       "id": "dashboard-v1-m-t20-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Average order",
+      "label": "Average transit",
       "box": {
         "x": 1338,
-        "y": 618,
-        "w": 197,
-        "h": 40
+        "y": 602,
+        "w": 188,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -5032,14 +5152,14 @@
       "id": "dashboard-v1-m-t21-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "2.6%",
+      "label": "37",
       "box": {
         "x": 1946,
-        "y": 404,
-        "w": 186,
-        "h": 100
+        "y": 390,
+        "w": 76,
+        "h": 96
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 3,
       "passes": true
     },
@@ -5047,14 +5167,14 @@
       "id": "dashboard-v1-m-t21-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "2.6%",
+      "label": "37",
       "box": {
         "x": 1946,
-        "y": 404,
-        "w": 186,
-        "h": 100
+        "y": 390,
+        "w": 76,
+        "h": 96
       },
-      "value": 42,
+      "value": 40,
       "threshold": 16,
       "passes": true
     },
@@ -5062,14 +5182,14 @@
       "id": "dashboard-v1-m-t22-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "0.4%",
+      "label": "12.0%",
       "box": {
         "x": 1946,
-        "y": 502,
-        "w": 80,
-        "h": 40
+        "y": 486,
+        "w": 75,
+        "h": 38
       },
-      "value": 6.57,
+      "value": 5.89,
       "threshold": 4.5,
       "passes": true
     },
@@ -5077,14 +5197,14 @@
       "id": "dashboard-v1-m-t22-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "0.4%",
+      "label": "12.0%",
       "box": {
         "x": 1946,
-        "y": 502,
-        "w": 80,
-        "h": 40
+        "y": 486,
+        "w": 75,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -5092,14 +5212,14 @@
       "id": "dashboard-v1-m-t23-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Conversion",
+      "label": "Exceptions",
       "box": {
         "x": 1946,
-        "y": 618,
-        "w": 158,
-        "h": 40
+        "y": 602,
+        "w": 138,
+        "h": 38
       },
-      "value": 7.87,
+      "value": 7.6,
       "threshold": 4.5,
       "passes": true
     },
@@ -5107,14 +5227,14 @@
       "id": "dashboard-v1-m-t23-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Conversion",
+      "label": "Exceptions",
       "box": {
         "x": 1946,
-        "y": 618,
-        "w": 158,
-        "h": 40
+        "y": 602,
+        "w": 138,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -5122,14 +5242,14 @@
       "id": "dashboard-v1-m-t24-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Revenue by week",
+      "label": "Deliveries by week",
       "box": {
         "x": 122,
-        "y": 772,
-        "w": 329,
-        "h": 52
+        "y": 758,
+        "w": 300,
+        "h": 48
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -5137,14 +5257,14 @@
       "id": "dashboard-v1-m-t24-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Revenue by week",
+      "label": "Deliveries by week",
       "box": {
         "x": 122,
-        "y": 772,
-        "w": 329,
-        "h": 52
+        "y": 758,
+        "w": 300,
+        "h": 48
       },
-      "value": 22,
+      "value": 20,
       "threshold": 16,
       "passes": true
     },
@@ -5155,11 +5275,11 @@
       "label": "This year",
       "box": {
         "x": 162,
-        "y": 842,
-        "w": 127,
-        "h": 40
+        "y": 826,
+        "w": 112,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -5170,11 +5290,11 @@
       "label": "This year",
       "box": {
         "x": 162,
-        "y": 842,
-        "w": 127,
-        "h": 40
+        "y": 826,
+        "w": 112,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -5184,12 +5304,12 @@
       "kind": "contrast",
       "label": "Last year",
       "box": {
-        "x": 368,
-        "y": 842,
-        "w": 129,
-        "h": 40
+        "x": 353,
+        "y": 826,
+        "w": 115,
+        "h": 38
       },
-      "value": 17.79,
+      "value": 13.8,
       "threshold": 4.5,
       "passes": true
     },
@@ -5199,12 +5319,12 @@
       "kind": "text_size",
       "label": "Last year",
       "box": {
-        "x": 368,
-        "y": 842,
-        "w": 129,
-        "h": 40
+        "x": 353,
+        "y": 826,
+        "w": 115,
+        "h": 38
       },
-      "value": 17,
+      "value": 16,
       "threshold": 16,
       "passes": true
     },
@@ -5212,14 +5332,14 @@
       "id": "dashboard-v1-m-t27-contrast",
       "reviewId": "review-dashboard-v1",
       "kind": "contrast",
-      "label": "Figures exclude refunds and are converted to euros at the daily rate",
+      "label": "Times are local to each depot and exclude weekend pickups",
       "box": {
         "x": 122,
-        "y": 1270,
-        "w": 774,
+        "y": 1252,
+        "w": 598,
         "h": 32
       },
-      "value": 3.1,
+      "value": 2.81,
       "threshold": 4.5,
       "passes": false
     },
@@ -5227,11 +5347,11 @@
       "id": "dashboard-v1-m-t27-size",
       "reviewId": "review-dashboard-v1",
       "kind": "text_size",
-      "label": "Figures exclude refunds and are converted to euros at the daily rate",
+      "label": "Times are local to each depot and exclude weekend pickups",
       "box": {
         "x": 122,
-        "y": 1270,
-        "w": 774,
+        "y": 1252,
+        "w": 598,
         "h": 32
       },
       "value": 13,
@@ -5245,8 +5365,8 @@
       "label": "Export",
       "box": {
         "x": 80,
-        "y": 244,
-        "w": 175,
+        "y": 228,
+        "w": 150,
         "h": 88
       },
       "value": 44,
@@ -5260,8 +5380,8 @@
       "label": "Export",
       "box": {
         "x": 80,
-        "y": 244,
-        "w": 175,
+        "y": 228,
+        "w": 150,
         "h": 88
       },
       "value": 44,
@@ -5274,9 +5394,9 @@
       "kind": "target_size",
       "label": "Share",
       "box": {
-        "x": 254,
-        "y": 244,
-        "w": 150,
+        "x": 229,
+        "y": 228,
+        "w": 157,
         "h": 88
       },
       "value": 44,
@@ -5289,9 +5409,9 @@
       "kind": "target_size",
       "label": "Share",
       "box": {
-        "x": 254,
-        "y": 244,
-        "w": 150,
+        "x": 229,
+        "y": 228,
+        "w": 157,
         "h": 88
       },
       "value": 44,
@@ -5304,9 +5424,9 @@
       "kind": "target_size",
       "label": "Filter",
       "box": {
-        "x": 403,
-        "y": 244,
-        "w": 174,
+        "x": 385,
+        "y": 228,
+        "w": 166,
         "h": 88
       },
       "value": 44,
@@ -5319,9 +5439,9 @@
       "kind": "target_size",
       "label": "Filter",
       "box": {
-        "x": 403,
-        "y": 244,
-        "w": 174,
+        "x": 385,
+        "y": 228,
+        "w": 166,
         "h": 88
       },
       "value": 44,
@@ -5334,9 +5454,9 @@
       "kind": "target_size",
       "label": "Refresh",
       "box": {
-        "x": 576,
-        "y": 244,
-        "w": 193,
+        "x": 550,
+        "y": 228,
+        "w": 181,
         "h": 88
       },
       "value": 44,
@@ -5349,9 +5469,9 @@
       "kind": "target_size",
       "label": "Refresh",
       "box": {
-        "x": 576,
-        "y": 244,
-        "w": 193,
+        "x": 550,
+        "y": 228,
+        "w": 181,
         "h": 88
       },
       "value": 44,
@@ -5364,9 +5484,9 @@
       "kind": "target_size",
       "label": "Compare",
       "box": {
-        "x": 768,
-        "y": 244,
-        "w": 213,
+        "x": 730,
+        "y": 228,
+        "w": 197,
         "h": 88
       },
       "value": 44,
@@ -5379,9 +5499,9 @@
       "kind": "target_size",
       "label": "Compare",
       "box": {
-        "x": 768,
-        "y": 244,
-        "w": 213,
+        "x": 730,
+        "y": 228,
+        "w": 197,
         "h": 88
       },
       "value": 44,
@@ -5394,9 +5514,9 @@
       "kind": "target_size",
       "label": "Annotate",
       "box": {
-        "x": 980,
-        "y": 244,
-        "w": 196,
+        "x": 926,
+        "y": 228,
+        "w": 197,
         "h": 88
       },
       "value": 44,
@@ -5409,9 +5529,9 @@
       "kind": "target_size",
       "label": "Annotate",
       "box": {
-        "x": 980,
-        "y": 244,
-        "w": 196,
+        "x": 926,
+        "y": 228,
+        "w": 197,
         "h": 88
       },
       "value": 44,
@@ -5424,9 +5544,9 @@
       "kind": "target_size",
       "label": "Schedule",
       "box": {
-        "x": 1192,
-        "y": 244,
-        "w": 198,
+        "x": 1122,
+        "y": 228,
+        "w": 182,
         "h": 88
       },
       "value": 44,
@@ -5439,9 +5559,9 @@
       "kind": "target_size",
       "label": "Schedule",
       "box": {
-        "x": 1192,
-        "y": 244,
-        "w": 198,
+        "x": 1122,
+        "y": 228,
+        "w": 182,
         "h": 88
       },
       "value": 44,
@@ -5454,9 +5574,9 @@
       "kind": "target_size",
       "label": "Settings",
       "box": {
-        "x": 1389,
-        "y": 244,
-        "w": 201,
+        "x": 1303,
+        "y": 228,
+        "w": 204,
         "h": 88
       },
       "value": 44,
@@ -5469,9 +5589,9 @@
       "kind": "target_size",
       "label": "Settings",
       "box": {
-        "x": 1389,
-        "y": 244,
-        "w": 201,
+        "x": 1303,
+        "y": 228,
+        "w": 204,
         "h": 88
       },
       "value": 44,
@@ -5484,9 +5604,9 @@
       "kind": "target_size",
       "label": "Print",
       "box": {
-        "x": 1589,
-        "y": 244,
-        "w": 151,
+        "x": 1506,
+        "y": 228,
+        "w": 128,
         "h": 88
       },
       "value": 44,
@@ -5499,9 +5619,9 @@
       "kind": "target_size",
       "label": "Print",
       "box": {
-        "x": 1589,
-        "y": 244,
-        "w": 151,
+        "x": 1506,
+        "y": 228,
+        "w": 128,
         "h": 88
       },
       "value": 44,
@@ -5523,10 +5643,10 @@
       "confidence": "high",
       "measurementId": null,
       "region": {
-        "x": 96,
-        "y": 390,
-        "w": 1280,
-        "h": 613
+        "x": 194,
+        "y": 385,
+        "w": 1196,
+        "h": 610
       }
     },
     {
@@ -5542,10 +5662,10 @@
       "confidence": null,
       "measurementId": "checkout-v1-m-t4-contrast",
       "region": {
-        "x": 96,
-        "y": 502,
-        "w": 514,
-        "h": 41
+        "x": 194,
+        "y": 497,
+        "w": 524,
+        "h": 39
       }
     },
     {
@@ -5561,9 +5681,9 @@
       "confidence": "medium",
       "measurementId": null,
       "region": {
-        "x": 96,
-        "y": 658,
-        "w": 1280,
+        "x": 194,
+        "y": 654,
+        "w": 1196,
         "h": 97
       }
     },
@@ -5580,9 +5700,9 @@
       "confidence": null,
       "measurementId": "checkout-v1-m-c10-target",
       "region": {
-        "x": 96,
-        "y": 1165,
-        "w": 64,
+        "x": 194,
+        "y": 1157,
+        "w": 65,
         "h": 21
       }
     },
@@ -5599,9 +5719,9 @@
       "confidence": "medium",
       "measurementId": null,
       "region": {
-        "x": 96,
-        "y": 718,
-        "w": 1280,
+        "x": 194,
+        "y": 714,
+        "w": 1196,
         "h": 97
       }
     },
@@ -5618,9 +5738,9 @@
       "confidence": "high",
       "measurementId": null,
       "region": {
-        "x": 96,
-        "y": 906,
-        "w": 1280,
+        "x": 194,
+        "y": 898,
+        "w": 1196,
         "h": 97
       }
     },
@@ -5637,10 +5757,10 @@
       "confidence": "high",
       "measurementId": null,
       "region": {
-        "x": 874,
-        "y": 642,
-        "w": 812,
-        "h": 48
+        "x": 1320,
+        "y": 606,
+        "w": 960,
+        "h": 49
       }
     },
     {
@@ -5656,10 +5776,10 @@
       "confidence": "high",
       "measurementId": null,
       "region": {
-        "x": 874,
-        "y": 718,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 682,
+        "w": 960,
+        "h": 97
       }
     },
     {
@@ -5675,10 +5795,10 @@
       "confidence": "low",
       "measurementId": null,
       "region": {
-        "x": 874,
-        "y": 718,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 682,
+        "w": 960,
+        "h": 97
       }
     },
     {
@@ -5694,8 +5814,8 @@
       "confidence": null,
       "measurementId": "signup-v1-m-c3-target",
       "region": {
-        "x": 874,
-        "y": 854,
+        "x": 1320,
+        "y": 818,
         "w": 26,
         "h": 26
       }
@@ -5713,10 +5833,10 @@
       "confidence": "medium",
       "measurementId": null,
       "region": {
-        "x": 874,
-        "y": 926,
-        "w": 812,
-        "h": 212
+        "x": 1320,
+        "y": 890,
+        "w": 960,
+        "h": 213
       }
     },
     {
@@ -5726,14 +5846,14 @@
       "kind": "evaluated",
       "principleId": "wcag-2.4.6",
       "title": "Page title looks like body text",
-      "detail": "\"Sales overview\" has the same size and weight as body text, while the numbers below are far larger. At a glance people cannot tell which page they are on.",
-      "fix": "Make \"Sales overview\" a real heading, clearly larger and bolder than the content.",
+      "detail": "\"Fleet overview\" has the same size and weight as body text, while the numbers below are far larger. At a glance people cannot tell which page they are on.",
+      "fix": "Make \"Fleet overview\" a real heading, clearly larger and bolder than the content.",
       "severity": "medium",
       "confidence": "medium",
       "measurementId": null,
       "region": {
         "x": 80,
-        "y": 168,
+        "y": 152,
         "w": 2400,
         "h": 48
       }
@@ -5752,7 +5872,7 @@
       "measurementId": null,
       "region": {
         "x": 80,
-        "y": 244,
+        "y": 228,
         "w": 2400,
         "h": 88
       }
@@ -5764,14 +5884,14 @@
       "kind": "evaluated",
       "principleId": "law-proximity",
       "title": "KPI labels sit far from their numbers",
-      "detail": "Each label, such as Revenue or Orders, is at the bottom of its card, far from the number it names. People read a number before they know what it means.",
+      "detail": "Each label, such as Shipments or On time, is at the bottom of its card, far from the number it names. People read a number before they know what it means.",
       "fix": "Put each label right above its number and keep the change next to it.",
       "severity": "low",
       "confidence": "medium",
       "measurementId": null,
       "region": {
         "x": 80,
-        "y": 376,
+        "y": 360,
         "w": 2400,
         "h": 320
       }
@@ -5783,14 +5903,14 @@
       "kind": "evaluated",
       "principleId": "wcag-1.4.1",
       "title": "Up and down are shown only by colour",
-      "detail": "The change under each number is green or red, with no plus or minus sign and no arrow. People who do not see colour well cannot tell growth from decline.",
+      "detail": "The change under each number is green or red, with no plus or minus sign and no arrow. People who do not see colour well cannot tell growth from decline, and for exceptions a rise is bad news.",
       "fix": "Add an arrow or a plus or minus sign to each change, and write \"up\" or \"down\" for screen readers.",
       "severity": "high",
       "confidence": "high",
       "measurementId": null,
       "region": {
         "x": 122,
-        "y": 498,
+        "y": 482,
         "w": 2316,
         "h": 48
       }
@@ -5802,15 +5922,15 @@
       "kind": "measured",
       "principleId": "wcag-1.4.3",
       "title": "Text is too faint",
-      "detail": "This text measures 3.10 : 1 on #FFFFFF. Text needs at least 4.5 : 1. Bold text from about 19 px only needs 3 : 1, but bold is not detected.",
-      "fix": "Use #6D7585 for this text: it measures 4.63 : 1 on #FFFFFF.",
-      "severity": "medium",
+      "detail": "This text measures 2.81 : 1 on #16212C. Text needs at least 4.5 : 1.",
+      "fix": "Use #788A9E for this text: it measures 4.60 : 1 on #16212C.",
+      "severity": "high",
       "confidence": null,
       "measurementId": "dashboard-v1-m-t27-contrast",
       "region": {
         "x": 122,
-        "y": 1270,
-        "w": 774,
+        "y": 1252,
+        "w": 598,
         "h": 32
       }
     },
@@ -5828,8 +5948,8 @@
       "measurementId": "dashboard-v1-m-t27-size",
       "region": {
         "x": 122,
-        "y": 1270,
-        "w": 774,
+        "y": 1252,
+        "w": 598,
         "h": 32
       }
     }

@@ -74,7 +74,7 @@
       "name": "v1",
       "fixture": "checkout-v1",
       "sampleName": "Checkout, first draft",
-      "context": "Guest checkout for a small clothing shop. People pay for what is in their cart.",
+      "context": "Guest checkout for a small coffee shop. People pay for the beans and gear in their cart.",
       "createdAt": "2026-10-03T09:05:00.000Z"
     },
     {
@@ -101,7 +101,7 @@
       "name": "v1",
       "fixture": "signup",
       "sampleName": "Sign up form",
-      "context": "Account sign up for a free trial. Shown after someone typed an email without the domain ending.",
+      "context": "Sign up for a fitness app's free trial. Shown after someone typed an email without the domain ending.",
       "createdAt": "2026-10-09T14:10:00.000Z"
     },
     {
@@ -110,7 +110,7 @@
       "name": "v1",
       "fixture": "dashboard",
       "sampleName": "Analytics dashboard",
-      "context": "Weekly sales overview for a shop owner who checks it every Monday.",
+      "context": "Daily fleet overview for a dispatcher at a freight company who checks it every morning.",
       "createdAt": "2026-10-12T10:40:00.000Z"
     }
   ],
@@ -192,8 +192,8 @@
         "severity": "medium",
         "confidence": "medium",
         "title": "Page title looks like body text",
-        "detail": "\"Sales overview\" has the same size and weight as body text, while the numbers below are far larger. At a glance people cannot tell which page they are on.",
-        "fix": "Make \"Sales overview\" a real heading, clearly larger and bolder than the content."
+        "detail": "\"Fleet overview\" has the same size and weight as body text, while the numbers below are far larger. At a glance people cannot tell which page they are on.",
+        "fix": "Make \"Fleet overview\" a real heading, clearly larger and bolder than the content."
       },
       {
         "planted": "nine-equal-buttons",
@@ -208,7 +208,7 @@
         "severity": "low",
         "confidence": "medium",
         "title": "KPI labels sit far from their numbers",
-        "detail": "Each label, such as Revenue or Orders, is at the bottom of its card, far from the number it names. People read a number before they know what it means.",
+        "detail": "Each label, such as Shipments or On time, is at the bottom of its card, far from the number it names. People read a number before they know what it means.",
         "fix": "Put each label right above its number and keep the change next to it."
       },
       {
@@ -216,7 +216,7 @@
         "severity": "high",
         "confidence": "high",
         "title": "Up and down are shown only by colour",
-        "detail": "The change under each number is green or red, with no plus or minus sign and no arrow. People who do not see colour well cannot tell growth from decline.",
+        "detail": "The change under each number is green or red, with no plus or minus sign and no arrow. People who do not see colour well cannot tell growth from decline, and for exceptions a rise is bad news.",
         "fix": "Add an arrow or a plus or minus sign to each change, and write \"up\" or \"down\" for screen readers."
       }
     ]

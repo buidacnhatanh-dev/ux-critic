@@ -1,6 +1,6 @@
 {
   "fixture": "signup",
-  "description": "Sign up form with a vague error, a placeholder only password field, hidden password rules, a tiny checkbox and two primary buttons.",
+  "description": "Fitness app sign up form with a vague error, a placeholder only password field, hidden password rules, a tiny checkbox and two primary buttons.",
   "issues": [
     {
       "id": "vague-error",

@@ -5,78 +5,122 @@
   "scale": 2,
   "textLines": [
     {
+      "label": "RALLY",
+      "box": {
+        "x": 112,
+        "y": 104,
+        "w": 208,
+        "h": 72
+      },
+      "cssColor": "rgb(255, 255, 255)",
+      "cssFontSize": 30
+    },
+    {
+      "label": "Train together. Start free. (line 1)",
+      "box": {
+        "x": 112,
+        "y": 1226,
+        "w": 619,
+        "h": 94
+      },
+      "cssColor": "rgb(255, 255, 255)",
+      "cssFontSize": 40
+    },
+    {
+      "label": "Train together. Start free. (line 2)",
+      "box": {
+        "x": 112,
+        "y": 1318,
+        "w": 434,
+        "h": 94
+      },
+      "cssColor": "rgb(255, 255, 255)",
+      "cssFontSize": 40
+    },
+    {
+      "label": "Classes, runs and rides near you",
+      "box": {
+        "x": 112,
+        "y": 1450,
+        "w": 597,
+        "h": 48
+      },
+      "cssColor": "rgb(255, 255, 255)",
+      "cssFontSize": 20
+    },
+    {
       "label": "Create your account",
       "box": {
-        "x": 874,
-        "y": 120,
-        "w": 576,
-        "h": 74
+        "x": 1320,
+        "y": 78,
+        "w": 756,
+        "h": 86
       },
-      "cssColor": "rgb(21, 24, 29)",
-      "cssFontSize": 30
+      "cssColor": "rgb(28, 25, 23)",
+      "cssFontSize": 36
     },
     {
       "label": "Free for 30 days, no card needed",
       "box": {
-        "x": 874,
-        "y": 210,
-        "w": 467,
-        "h": 40
+        "x": 1320,
+        "y": 174,
+        "w": 487,
+        "h": 39
       },
-      "cssColor": "rgb(74, 82, 96)",
+      "cssColor": "rgb(87, 83, 78)",
       "cssFontSize": 16
     },
     {
       "label": "Full name",
       "box": {
-        "x": 874,
-        "y": 298,
-        "w": 149,
-        "h": 40
+        "x": 1320,
+        "y": 262,
+        "w": 154,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(28, 25, 23)",
       "cssFontSize": 16
     },
     {
       "label": "Email",
       "box": {
-        "x": 874,
-        "y": 482,
-        "w": 85,
-        "h": 40
+        "x": 1320,
+        "y": 446,
+        "w": 87,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(28, 25, 23)",
       "cssFontSize": 16
     },
     {
       "label": "Invalid input",
       "box": {
-        "x": 874,
-        "y": 646,
-        "w": 194,
-        "h": 40
+        "x": 1320,
+        "y": 610,
+        "w": 199,
+        "h": 39
       },
-      "cssColor": "rgb(180, 35, 24)",
+      "cssColor": "rgb(185, 28, 28)",
       "cssFontSize": 16
     },
     {
       "label": "I agree to the terms and privacy policy",
       "box": {
-        "x": 916,
-        "y": 846,
-        "w": 541,
-        "h": 40
+        "x": 1362,
+        "y": 810,
+        "w": 566,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(28, 25, 23)",
       "cssFontSize": 16
     },
     {
       "label": "Create account",
       "box": {
-        "x": 1166,
-        "y": 954,
-        "w": 228,
-        "h": 40
+        "x": 1676,
+        "y": 918,
+        "w": 248,
+        "h": 39
       },
       "cssColor": "rgb(255, 255, 255)",
       "cssFontSize": 16
@@ -84,10 +128,10 @@
     {
       "label": "Sign up with Google",
       "box": {
-        "x": 1127,
-        "y": 1070,
-        "w": 306,
-        "h": 40
+        "x": 1643,
+        "y": 1034,
+        "w": 314,
+        "h": 39
       },
       "cssColor": "rgb(255, 255, 255)",
       "cssFontSize": 16
@@ -95,56 +139,56 @@
     {
       "label": "Already have an account?",
       "box": {
-        "x": 993,
-        "y": 1198,
-        "w": 360,
-        "h": 40
+        "x": 1489,
+        "y": 1162,
+        "w": 386,
+        "h": 39
       },
-      "cssColor": "rgb(74, 82, 96)",
+      "cssColor": "rgb(87, 83, 78)",
       "cssFontSize": 16
     },
     {
       "label": "Sign in",
       "box": {
-        "x": 1418,
-        "y": 1198,
-        "w": 107,
-        "h": 40
+        "x": 1950,
+        "y": 1162,
+        "w": 109,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(28, 25, 23)",
       "cssFontSize": 16
     },
     {
       "label": "Sam Jordan",
       "box": {
-        "x": 904,
-        "y": 382,
-        "w": 169,
-        "h": 40
+        "x": 1358,
+        "y": 347,
+        "w": 181,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(28, 25, 23)",
       "cssFontSize": 16
     },
     {
       "label": "sam@example",
       "box": {
-        "x": 906,
-        "y": 566,
-        "w": 203,
-        "h": 40
+        "x": 1360,
+        "y": 531,
+        "w": 215,
+        "h": 39
       },
-      "cssColor": "rgb(21, 24, 29)",
+      "cssColor": "rgb(28, 25, 23)",
       "cssFontSize": 16
     },
     {
       "label": "Password",
       "box": {
-        "x": 904,
-        "y": 746,
-        "w": 133,
-        "h": 40
+        "x": 1358,
+        "y": 711,
+        "w": 145,
+        "h": 39
       },
-      "cssColor": "rgb(107, 114, 128)",
+      "cssColor": "rgb(107, 101, 96)",
       "cssFontSize": 16
     }
   ],
@@ -153,70 +197,70 @@
       "label": "Full name",
       "role": "input",
       "box": {
-        "x": 874,
-        "y": 354,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 318,
+        "w": 960,
+        "h": 97
       }
     },
     {
       "label": "Email",
       "role": "input",
       "box": {
-        "x": 874,
-        "y": 538,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 502,
+        "w": 960,
+        "h": 97
       }
     },
     {
       "label": "Password",
       "role": "input",
       "box": {
-        "x": 874,
-        "y": 718,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 682,
+        "w": 960,
+        "h": 97
       }
     },
     {
       "label": "I agree to the terms and privacy policy",
       "role": "checkbox",
       "box": {
-        "x": 874,
-        "y": 853,
+        "x": 1320,
+        "y": 817,
         "w": 26,
-        "h": 26
+        "h": 27
       }
     },
     {
       "label": "Create account",
       "role": "button",
       "box": {
-        "x": 874,
-        "y": 926,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 890,
+        "w": 960,
+        "h": 97
       }
     },
     {
       "label": "Sign up with Google",
       "role": "button",
       "box": {
-        "x": 874,
-        "y": 1042,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 1006,
+        "w": 960,
+        "h": 97
       }
     },
     {
       "label": "Sign in",
       "role": "button",
       "box": {
-        "x": 1376,
-        "y": 1170,
-        "w": 191,
-        "h": 96
+        "x": 1898,
+        "y": 1134,
+        "w": 213,
+        "h": 97
       }
     }
   ],
@@ -224,46 +268,46 @@
     {
       "selector": "#email-error",
       "box": {
-        "x": 874,
-        "y": 642,
-        "w": 812,
-        "h": 48
+        "x": 1320,
+        "y": 606,
+        "w": 960,
+        "h": 49
       }
     },
     {
       "selector": "#password",
       "box": {
-        "x": 874,
-        "y": 718,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 682,
+        "w": 960,
+        "h": 97
       }
     },
     {
       "selector": "#password",
       "box": {
-        "x": 874,
-        "y": 718,
-        "w": 812,
-        "h": 96
+        "x": 1320,
+        "y": 682,
+        "w": 960,
+        "h": 97
       }
     },
     {
       "selector": "#agree",
       "box": {
-        "x": 874,
-        "y": 853,
+        "x": 1320,
+        "y": 817,
         "w": 26,
-        "h": 26
+        "h": 27
       }
     },
     {
       "selector": "#actions",
       "box": {
-        "x": 874,
-        "y": 926,
-        "w": 812,
-        "h": 212
+        "x": 1320,
+        "y": 890,
+        "w": 960,
+        "h": 213
       }
     }
   ]

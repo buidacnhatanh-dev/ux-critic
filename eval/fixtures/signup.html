@@ -2,23 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Sign up form (planted problems)</title>
+    <title>Rally sign up form (planted problems)</title>
     <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="fitness.css" />
     <style>
       body {
-        background: #f7f8fa;
+        display: grid;
+        grid-template-columns: 520px 1fr;
+      }
+      .hero {
+        height: 800px;
+        padding: 48px 56px;
+        background: #c2410c;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+      .hero-title {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 16px;
+      }
+      .hero-text {
+        font-size: 20px;
       }
       .card {
         width: 480px;
-        margin: 28px auto 0;
-        padding: 32px 36px;
-        border: 1.5px solid #dde1e7;
-        border-radius: 14px;
-        background: #ffffff;
+        margin: 40px auto 0;
       }
       h1 {
-        font-size: 30px;
-        margin-bottom: 6px;
+        font-size: 36px;
+        margin-bottom: 4px;
       }
       .intro {
         margin-bottom: 20px;
@@ -27,12 +48,12 @@
         margin-bottom: 14px;
       }
       .input.has-error {
-        border: 2px solid #b42318;
+        border: 2px solid #b91c1c;
       }
       /* Planted: error says something is wrong but not what or how to fix it. */
       .error {
         margin-top: 4px;
-        color: #b42318;
+        color: #b91c1c;
         font-weight: 700;
       }
       .agree {
@@ -44,6 +65,7 @@
       /* Planted: native 13 px checkbox, too small to tap. */
       .agree input {
         margin: 0;
+        accent-color: #c2410c;
       }
       .actions {
         display: grid;
@@ -62,6 +84,13 @@
     </style>
   </head>
   <body>
+    <aside class="hero">
+      <span class="logo">RALLY</span>
+      <div>
+        <p class="hero-title">Train together. Start free.</p>
+        <p class="hero-text">Classes, runs and rides near you</p>
+      </div>
+    </aside>
     <div class="card">
       <h1>Create your account</h1>
       <p class="intro muted">Free for 30 days, no card needed</p>

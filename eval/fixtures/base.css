@@ -1,19 +1,4 @@
-/* Shared base for eval fixtures: local fonts only (Fontsource files), no network. */
-@font-face {
-  font-family: "Atkinson Hyperlegible";
-  font-weight: 400;
-  src: url(../../node_modules/@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-400-normal.woff2);
-}
-@font-face {
-  font-family: "Atkinson Hyperlegible";
-  font-weight: 700;
-  src: url(../../node_modules/@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-700-normal.woff2);
-}
-@font-face {
-  font-family: Overpass;
-  font-weight: 800;
-  src: url(../../node_modules/@fontsource/overpass/files/overpass-latin-800-normal.woff2);
-}
+/* Reset shared by every fixture. Fonts and colours live in each product's stylesheet. */
 *,
 *::before,
 *::after {
@@ -25,19 +10,11 @@ body {
   width: 1280px;
   height: 800px;
   overflow: hidden;
-  background: #ffffff;
-  color: #15181d;
-  font-family: "Atkinson Hyperlegible", sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
 h1,
-h2 {
-  margin: 0;
-  font-family: Overpass, sans-serif;
-  font-weight: 800;
-  line-height: 1.2;
-}
+h2,
 p {
   margin: 0;
 }
@@ -48,52 +25,5 @@ select {
   color: inherit;
 }
 ::placeholder {
-  color: #6b7280;
   opacity: 1;
-}
-.topbar {
-  height: 64px;
-  padding: 0 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #dde1e7;
-}
-.brand {
-  font-family: Overpass, sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-}
-.muted {
-  color: #4a5260;
-}
-.input {
-  display: block;
-  width: 100%;
-  height: 48px;
-  padding: 0 14px;
-  border: 1.5px solid #8a93a3;
-  border-radius: 8px;
-  background: #ffffff;
-}
-.label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 700;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  padding: 0 20px;
-  border-radius: 8px;
-  border: 1.5px solid #15181d;
-  background: #ffffff;
-  font-weight: 700;
-}
-.btn-primary {
-  border-color: #1d4ed8;
-  background: #1d4ed8;
-  color: #ffffff;
 }

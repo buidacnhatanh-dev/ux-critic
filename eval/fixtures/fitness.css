@@ -1,0 +1,62 @@
+/* Rally: fitness app, white with bold orange, geometric type with rounded corners. */
+@font-face {
+  font-family: Rubik;
+  font-weight: 400;
+  src: url(../../node_modules/@fontsource/rubik/files/rubik-latin-400-normal.woff2);
+}
+@font-face {
+  font-family: Rubik;
+  font-weight: 700;
+  src: url(../../node_modules/@fontsource/rubik/files/rubik-latin-700-normal.woff2);
+}
+@font-face {
+  font-family: Rubik;
+  font-weight: 800;
+  src: url(../../node_modules/@fontsource/rubik/files/rubik-latin-800-normal.woff2);
+}
+body {
+  background: #ffffff;
+  color: #1c1917;
+  font-family: Rubik, sans-serif;
+}
+h1 {
+  font-weight: 800;
+  line-height: 1.15;
+}
+::placeholder {
+  color: #6b6560;
+}
+.muted {
+  color: #57534e;
+}
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0 18px;
+  border: 1.5px solid #a8a29e;
+  border-radius: 14px;
+  background: #ffffff;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 2px solid #1c1917;
+  background: #ffffff;
+  font-weight: 700;
+}
+/* Orange dark enough for white text (5.18 : 1). */
+.btn-primary {
+  border-color: #c2410c;
+  background: #c2410c;
+  color: #ffffff;
+}
