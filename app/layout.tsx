@@ -1,7 +1,7 @@
-import "@fontsource/atkinson-hyperlegible/400.css";
-import "@fontsource/atkinson-hyperlegible/700.css";
-import "@fontsource/overpass/700.css";
-import "@fontsource/overpass/800.css";
+import "@fontsource/atkinson-hyperlegible-next/400.css";
+import "@fontsource/atkinson-hyperlegible-next/500.css";
+import "@fontsource/atkinson-hyperlegible-next/600.css";
+import "@fontsource/overpass/600.css";
 import "@fontsource/jetbrains-mono/400.css";
 import "./tokens.css";
 import "./globals.css";

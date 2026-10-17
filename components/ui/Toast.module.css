@@ -27,7 +27,7 @@
 .message {
   flex: 1;
   margin: 0;
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .action,
@@ -42,7 +42,7 @@
   border-radius: var(--radius-control);
   background: transparent;
   color: var(--color-on-dark);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;

@@ -8,7 +8,7 @@
 .legend {
   padding: 0;
   margin-bottom: var(--space-3);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .error {
@@ -17,7 +17,7 @@
   gap: var(--space-2);
   align-items: flex-start;
   color: var(--color-high);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .error svg {
@@ -88,7 +88,7 @@
   gap: var(--space-2);
   min-height: var(--target-min);
   padding: var(--space-2) var(--space-3);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .radio {
@@ -134,7 +134,7 @@
   margin: 0;
   font-family: var(--font-heading);
   font-size: var(--text-h3);
-  font-weight: 800;
+  font-weight: var(--weight-heading);
 }
 
 .dropHint {
@@ -171,7 +171,7 @@
 }
 
 .pickedName {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   color: var(--color-ink);
   overflow-wrap: anywhere;
 }
@@ -225,7 +225,7 @@
   border-radius: var(--radius-control);
   background: var(--color-success-bg);
   color: var(--color-success-strong);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .scale fieldset {

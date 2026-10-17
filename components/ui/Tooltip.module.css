@@ -14,7 +14,7 @@
   background: var(--color-ink);
   color: var(--color-on-dark);
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.4;
   transform: translateX(-50%);
 }

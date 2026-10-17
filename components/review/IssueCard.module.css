@@ -56,7 +56,7 @@
   color: var(--color-on-dark);
   font-family: var(--font-body);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .headText {
@@ -68,7 +68,7 @@
 
 .title {
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: var(--weight-heading);
   font-size: 19px;
   line-height: 1.25;
   color: var(--color-ink);
@@ -88,7 +88,7 @@
 
 .basedOn {
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   color: var(--color-text-muted);
 }
 
@@ -117,7 +117,7 @@
 .fixLabel {
   margin: 0 0 var(--space-1);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   color: var(--color-primary);
 }
 
@@ -171,7 +171,7 @@
 .reasonLabel {
   margin: 0;
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .reasonText {

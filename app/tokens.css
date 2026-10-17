@@ -42,8 +42,14 @@
   --border-input-error: 2px;
 
   --font-heading: "Overpass", sans-serif;
-  --font-body: "Atkinson Hyperlegible", Verdana, sans-serif;
+  --font-body: "Atkinson Hyperlegible Next", Verdana, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+
+  /* Font weights. Body 400; labels, buttons, badges and pills 600; headings (Overpass) 600. */
+  --weight-regular: 400;
+  --weight-medium: 500; /* inline emphasis in running text */
+  --weight-semibold: 600;
+  --weight-heading: 600;
 
   --text-xs: 13px;
   --text-sm: 14px;

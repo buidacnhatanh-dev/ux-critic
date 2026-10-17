@@ -6,7 +6,7 @@
 }
 
 .legend {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   padding: 0;
   margin-bottom: var(--space-2);
 }
@@ -23,7 +23,7 @@
   gap: var(--space-2);
   align-items: flex-start;
   color: var(--color-high);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .errorIcon {
@@ -56,7 +56,7 @@
 }
 
 .title {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .description {

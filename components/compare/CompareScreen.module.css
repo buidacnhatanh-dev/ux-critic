@@ -50,12 +50,12 @@
 }
 
 .tileLabel {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .tileCount {
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: var(--weight-heading);
   font-size: 40px;
   line-height: 1.1;
 }
@@ -89,7 +89,7 @@
 .shots figcaption {
   text-align: left;
   font-size: var(--text-md);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   color: var(--color-ink);
 }
 
@@ -153,7 +153,7 @@
 
 .itemTitle {
   margin: 0 0 6px;
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .itemMeta {
@@ -172,7 +172,7 @@
   align-items: center;
   min-height: var(--target-min);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .severity {
@@ -208,16 +208,16 @@
 }
 
 .table tbody th {
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 
 .better {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   color: var(--color-success-strong);
 }
 
 .total {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .table .total {
@@ -225,5 +225,5 @@
 }
 
 .table .total th {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }

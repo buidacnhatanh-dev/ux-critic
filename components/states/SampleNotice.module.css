@@ -19,5 +19,5 @@
   display: inline-flex;
   align-items: center;
   min-height: var(--target-min);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }

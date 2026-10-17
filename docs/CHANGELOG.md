@@ -117,3 +117,10 @@ Decisions
 * The "Choose a file" button is the field the error summary links to; the native file input stays hidden. Small single-field forms (add a rule, edit a rule) show the error under the field and focus it instead of a summary, as the push back form does
 * Connect Claude stays inside the app shell and says `pnpm dev` (the design shows a standalone page and `npm run dev`). "Continue with measured checks only" sets the `uxc-measured-only` cookie; nothing reads it until M5
 * Until token usage is saved (M5), live "Spent this month" shows the docs/01 placeholder without prices and "Counted once live reviews are saved" with them, so no amount is invented
+
+## Type weights (2026-10-17)
+
+* Weight tokens in `app/tokens.css`: `--weight-regular` 400, `--weight-medium` 500, `--weight-semibold` 600, `--weight-heading` 600. Every `font-weight` in `app/` and `components/` uses them; a unit test fails on a raw number
+* Headings: Overpass 800 → 600
+* Body font: Atkinson Hyperlegible → Atkinson Hyperlegible Next (`@fontsource/atkinson-hyperlegible-next`, OFL), 400 for body and 600 for labels, buttons, badges and pills. `<strong>` in running text is 500, table headers 600. The old package is removed; CLAUDE.md, docs/01 and docs/06 updated
+* The sample screens in `public/demo` and the fixtures are unchanged. The text size check in docs/04 was measured on the fixture fonts, so the font switch does not affect it

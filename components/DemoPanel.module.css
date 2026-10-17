@@ -28,5 +28,5 @@
   margin-right: auto;
   padding: 0 var(--space-1);
   border-radius: var(--radius-control);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }

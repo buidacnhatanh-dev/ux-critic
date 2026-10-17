@@ -21,7 +21,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: var(--weight-heading);
   line-height: 1.2;
   margin: 0;
 }
@@ -36,6 +36,15 @@ h2 {
 
 h3 {
   font-size: var(--text-h3);
+}
+
+b,
+strong {
+  font-weight: var(--weight-medium);
+}
+
+th {
+  font-weight: var(--weight-semibold);
 }
 
 a {

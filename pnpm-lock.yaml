@@ -8,8 +8,8 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/atkinson-hyperlegible':
-        specifier: ^5.3.0
+      '@fontsource/atkinson-hyperlegible-next':
+        specifier: 5.3.0
         version: 5.3.0
       '@fontsource/jetbrains-mono':
         specifier: ^5.3.0
@@ -290,8 +290,8 @@ packages:
       '@noble/hashes':
         optional: true
 
-  '@fontsource/atkinson-hyperlegible@5.3.0':
-    resolution: {integrity: sha512-Sp8Ve8+rQmENY2Lv02VH7sLpntzTTvnncnJMTbRE7DX6TLxGraN4ykZfzaUWIoCFmaomwkvNiqmlPkrKBuDoSA==}
+  '@fontsource/atkinson-hyperlegible-next@5.3.0':
+    resolution: {integrity: sha512-8p1tHVoPDo6oYwSO3sMw5snGwFwSf3TmeSF9Gcj792GXdsg6oqvhoItbj6Hj/XZIk0Xs+Cwu6pkLBAl3Q5HrwA==}
 
   '@fontsource/barlow-semi-condensed@5.3.0':
     resolution: {integrity: sha512-EdpQ1GlLMofGqDsQhEw+g6DonNKmzt21p8y/oNbTl4BFzEkqYkFyE2fj25YGxmZBL/LZZGAxe74FlvEWcgc31w==}
@@ -2702,7 +2702,7 @@ snapshots:
 
   '@exodus/bytes@1.16.0': {}
 
-  '@fontsource/atkinson-hyperlegible@5.3.0': {}
+  '@fontsource/atkinson-hyperlegible-next@5.3.0': {}
 
   '@fontsource/barlow-semi-condensed@5.3.0': {}
 

@@ -37,7 +37,7 @@
   background: var(--color-bg);
   color: var(--color-ink);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   cursor: pointer;
 }
 
@@ -77,7 +77,7 @@
   border: 2px solid var(--color-medium);
   border-radius: 50%;
   color: var(--color-medium);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   font-size: var(--text-sm);
 }
 
@@ -100,7 +100,7 @@
 
 .missingTitle {
   margin: 0 0 var(--space-1);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .missingText {

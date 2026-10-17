@@ -62,14 +62,7 @@ export function FirstUse({ onResetDemo }: { onResetDemo?: () => void }) {
           strokeDasharray="5 4"
         />
         <circle cx="42" cy="69" r="10" className={styles.artButton} />
-        <text
-          x="42"
-          y="73"
-          textAnchor="middle"
-          fontSize="12"
-          fontWeight="700"
-          className={styles.artNumber}
-        >
+        <text x="42" y="73" textAnchor="middle" fontSize="12" className={styles.artNumber}>
           1
         </text>
         <rect
@@ -83,14 +76,7 @@ export function FirstUse({ onResetDemo }: { onResetDemo?: () => void }) {
           strokeWidth="2"
         />
         <circle cx="156" cy="47" r="10" className={styles.artInk} />
-        <text
-          x="156"
-          y="51"
-          textAnchor="middle"
-          fontSize="12"
-          fontWeight="700"
-          className={styles.artNumber}
-        >
+        <text x="156" y="51" textAnchor="middle" fontSize="12" className={styles.artNumber}>
           2
         </text>
       </svg>

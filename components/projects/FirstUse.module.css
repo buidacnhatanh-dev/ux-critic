@@ -46,6 +46,7 @@
 .artNumber {
   fill: var(--color-on-dark);
   font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
 }
 
 .title {
@@ -100,12 +101,12 @@
   border-radius: 50%;
   background: var(--color-primary-tint);
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .stepTitle {
   margin: 10px 0 var(--space-1);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .stepText {

@@ -81,7 +81,7 @@
 .worse,
 .same {
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .better {
@@ -108,7 +108,7 @@
   color: var(--color-primary);
   border: 2px dashed var(--color-primary-dashed);
   border-radius: var(--radius-card);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .addCard:hover {

@@ -23,7 +23,7 @@
 .rowLabel {
   width: 160px;
   font-family: var(--font-mono);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   font-size: var(--text-sm);
   color: var(--color-text-muted);
 }

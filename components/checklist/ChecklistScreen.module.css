@@ -115,7 +115,7 @@
 
 .connection dt {
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   color: var(--color-text-muted);
 }
 

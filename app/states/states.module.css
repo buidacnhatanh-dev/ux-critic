@@ -28,7 +28,7 @@
   min-height: var(--target-min);
   font-family: var(--font-heading);
   font-size: var(--text-h3);
-  font-weight: 800;
+  font-weight: var(--weight-heading);
 }
 
 .text {

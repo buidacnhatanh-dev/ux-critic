@@ -11,8 +11,9 @@ Read `docs/00-overview.md`, `docs/01-architecture.md`, `docs/10-demo-mode.md` an
 * pnpm, Node LTS, TypeScript strict
 * Next.js (App Router) with React Server Components and Route Handlers. Live mode runs locally with `pnpm dev`. Demo mode is deployed to Vercel
 * Own small component set in `components/ui/` and design tokens as CSS variables in `app/tokens.css` (see `docs/01-architecture.md`). Styling with CSS Modules. No Tailwind, no CSS in JS, no component library
-* Fonts: Fontsource for Atkinson Hyperlegible, Overpass and JetBrains Mono. Never load fonts from Google servers
-* Fixture fonts (dev dependencies, used only in `eval/fixtures/` so the sample products look unlike UX Critic; each checked to keep the docs/04 text size estimate within 1 px): `@fontsource/cormorant-garamond` and `@fontsource/figtree` (coffee shop checkout), `@fontsource/rubik` (fitness sign up), `@fontsource/barlow-semi-condensed` (logistics dashboard). Fixtures never use #1D4ED8, Atkinson Hyperlegible or Overpass
+* Fonts: Fontsource for Atkinson Hyperlegible Next (body, `@fontsource/atkinson-hyperlegible-next`), Overpass (headings) and JetBrains Mono. Never load fonts from Google servers
+* Font weights only through the tokens in `app/tokens.css`: `--weight-regular` (400, body), `--weight-medium` (500, inline emphasis), `--weight-semibold` (600, labels, buttons, badges, pills), `--weight-heading` (600, Overpass headings). Never a raw number
+* Fixture fonts (dev dependencies, used only in `eval/fixtures/` so the sample products look unlike UX Critic; each checked to keep the docs/04 text size estimate within 1 px): `@fontsource/cormorant-garamond` and `@fontsource/figtree` (coffee shop checkout), `@fontsource/rubik` (fitness sign up), `@fontsource/barlow-semi-condensed` (logistics dashboard). Fixtures never use #1D4ED8, Atkinson Hyperlegible (Next or original) or Overpass
 * SQLite with `better-sqlite3` and Drizzle ORM. Database and screenshots live in `data/` (gitignored)
 * `@anthropic-ai/sdk` for Claude. Structured answers with `output_config.format` (JSON schema), validated again with `zod`
 * `sharp` for reading and resizing images, `tesseract.js` for finding text on screenshots

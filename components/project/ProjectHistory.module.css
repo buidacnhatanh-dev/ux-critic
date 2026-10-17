@@ -98,7 +98,7 @@
   background: var(--color-primary);
   color: var(--color-on-dark);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .context {
@@ -111,7 +111,7 @@
   display: inline-flex;
   align-items: center;
   min-height: var(--target-min);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .muted {
@@ -163,7 +163,7 @@
 
 .barName,
 .barTotal {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .barTotal {
@@ -234,7 +234,7 @@
 
 .reasonTitle {
   margin: 0 0 var(--space-1);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .reasonMeta {

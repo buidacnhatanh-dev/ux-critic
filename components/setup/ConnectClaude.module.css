@@ -16,7 +16,7 @@
   background: var(--color-medium-bg);
   color: var(--color-medium);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .title {
@@ -55,7 +55,7 @@
   border-radius: 50%;
   background: var(--color-primary-tint);
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .step > div {
@@ -65,7 +65,7 @@
 
 .stepTitle {
   margin: 4px 0 var(--space-1);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .stepText {

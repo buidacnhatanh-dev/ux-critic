@@ -23,7 +23,7 @@
   align-items: center;
   min-height: 24px;
   color: var(--color-high);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .link:hover {

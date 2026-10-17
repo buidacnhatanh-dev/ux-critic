@@ -70,8 +70,10 @@ All colours, fonts, radii and spacing come from `app/tokens.css`. Components nev
   --focus-ring: 0 0 0 2px #FFFFFF, 0 0 0 4px #15181D, 0 0 0 7px #FFC21A;
   --radius-control: 8px; --radius-card: 14px; --radius-pill: 999px;
   --font-heading: "Overpass", sans-serif;
-  --font-body: "Atkinson Hyperlegible", sans-serif;
+  --font-body: "Atkinson Hyperlegible Next", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --weight-regular: 400;  --weight-medium: 500;
+  --weight-semibold: 600; --weight-heading: 600;
 }
 :where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid transparent; /* stays visible in forced colours mode */

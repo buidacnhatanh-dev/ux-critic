@@ -5,7 +5,7 @@
 }
 
 .label {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .hint {
@@ -20,7 +20,7 @@
   gap: var(--space-2);
   align-items: flex-start;
   color: var(--color-high);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 
 .errorIcon {

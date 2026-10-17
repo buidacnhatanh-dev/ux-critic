@@ -18,7 +18,7 @@
   border-radius: 50%;
   background: var(--color-high-bg);
   color: var(--color-high);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   font-size: 22px;
 }
 
@@ -62,7 +62,7 @@
   align-items: center;
   gap: var(--space-2);
   min-height: var(--target-min);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   cursor: pointer;
 }
 
