@@ -76,6 +76,7 @@ describe("DemoClient reading", () => {
     expect(checkout.previousIssueCount).toBe(
       DATA.issues.filter((i) => i.reviewId === "review-checkout-v2").length,
     );
+    expect(checkout.previousVersionName).toBe("v2");
     expect(checkout.versionCount).toBe(3);
     expect(projects.find((p) => p.name === "Sign up form")!.previousIssueCount).toBeNull();
   });
@@ -86,6 +87,20 @@ describe("DemoClient reading", () => {
     expect(project.versions[2]!.issueCount).toBe(
       DATA.issues.filter((i) => i.reviewId === "review-checkout-v1").length,
     );
+  });
+
+  it("gives each version its context, review date and severity counts", async () => {
+    const project = await setup().client.getProject("checkout-practice");
+    const v1 = project.versions[2]!;
+    const row = DATA.versions.find((v) => v.id === "checkout-v1")!;
+    const issues = DATA.issues.filter((i) => i.reviewId === "review-checkout-v1");
+    expect(v1.context).toBe(row.context);
+    expect(v1.reviewedAt).toBe(DATA.reviews.find((r) => r.id === "review-checkout-v1")!.finishedAt);
+    expect(v1.counts).toEqual({
+      high: issues.filter((i) => i.severity === "high").length,
+      medium: issues.filter((i) => i.severity === "medium").length,
+      low: issues.filter((i) => i.severity === "low").length,
+    });
   });
 
   it("returns a review with issues in number order, measurements and the source", async () => {

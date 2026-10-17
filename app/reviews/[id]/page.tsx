@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/PagePlaceholder";
+import { ReviewScreen } from "@/components/review/ReviewScreen";
 
 export const metadata: Metadata = { title: "Review" };
 
-export default function ReviewPage() {
+export default async function ReviewPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ issue?: string | string[] }>;
+}) {
+  const { id } = await params;
+  const { issue } = await searchParams;
   return (
-    <PagePlaceholder
-      title="Review"
-      note="Measured and evaluated notes on the screenshot. Built in milestone M2."
+    <ReviewScreen
+      id={decodeURIComponent(id)}
+      initialIssueId={typeof issue === "string" ? issue : undefined}
     />
   );
 }

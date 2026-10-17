@@ -84,6 +84,14 @@ export function parseOverlay(raw: string | null): DemoOverlay {
   }
 }
 
+function severityCounts(issues: Pick<Issue, "severity">[]): Record<Severity, number> {
+  return {
+    high: issues.filter((i) => i.severity === "high").length,
+    medium: issues.filter((i) => i.severity === "medium").length,
+    low: issues.filter((i) => i.severity === "low").length,
+  };
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -267,9 +275,11 @@ export class DemoClient implements DataClient {
   ): VersionSummary {
     const reviewId = this.reviewIdFor(data, overlay, version.id);
     const review = reviewId ? this.buildReview(data, overlay, reviewId) : null;
+    const finished = review && review.status !== "running" ? review : null;
     return {
       id: version.id,
       name: version.name,
+      context: version.context,
       createdAt: version.createdAt,
       screenshotUrl: version.screenshotUrl,
       width: version.width,
@@ -277,6 +287,8 @@ export class DemoClient implements DataClient {
       scale: version.scale,
       reviewId,
       reviewStatus: review?.status ?? null,
+      reviewedAt: finished?.finishedAt ?? null,
+      counts: finished ? severityCounts(finished.issues) : null,
       issueCount: review?.issues.length ?? 0,
       pushbackCount: review?.issues.filter((i) => i.pushback).length ?? 0,
     };
@@ -299,13 +311,7 @@ export class DemoClient implements DataClient {
         ? this.buildReview(data, overlay, this.reviewIdFor(data, overlay, latest.id) ?? "")
         : null;
       const finished = latestReview && latestReview.status !== "running" ? latestReview : null;
-      const counts: Record<Severity, number> | null = finished
-        ? {
-            high: finished.issues.filter((i) => i.severity === "high").length,
-            medium: finished.issues.filter((i) => i.severity === "medium").length,
-            low: finished.issues.filter((i) => i.severity === "low").length,
-          }
-        : null;
+      const counts = finished ? severityCounts(finished.issues) : null;
       const previousReviewId = previous ? this.reviewIdFor(data, overlay, previous.id) : null;
       const previousReview = previousReviewId
         ? this.buildReview(data, overlay, previousReviewId)
@@ -327,6 +333,7 @@ export class DemoClient implements DataClient {
             previousReview && previousReview.status !== "running"
               ? previousReview.issues.length
               : null,
+          previousVersionName: previous?.name ?? null,
           versionCount: versions.length,
         } satisfies ProjectSummary,
         activity: latest?.createdAt ?? project.createdAt,

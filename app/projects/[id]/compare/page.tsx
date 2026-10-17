@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/PagePlaceholder";
+import { CompareScreen } from "@/components/compare/CompareScreen";
 
 export const metadata: Metadata = { title: "Compare versions" };
 
-export default function ComparePage() {
+type Search = { from?: string | string[]; to?: string | string[] };
+const one = (value: string | string[] | undefined) =>
+  typeof value === "string" ? value : undefined;
+
+export default async function ComparePage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<Search>;
+}) {
+  const { id } = await params;
+  const search = await searchParams;
   return (
-    <PagePlaceholder
-      title="Compare versions"
-      note="Fixed, still open and new issues between two versions. Built in milestone M2."
+    <CompareScreen
+      projectId={decodeURIComponent(id)}
+      fromId={one(search.from)}
+      toId={one(search.to)}
     />
   );
 }

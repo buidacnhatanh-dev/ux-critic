@@ -1,0 +1,107 @@
+.frame {
+  margin: 0;
+  padding: var(--space-6);
+  border-radius: 16px;
+  background: var(--color-surface);
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: var(--shadow-screenshot);
+}
+
+/* Measured = ink, evaluated = primary, pushed back = grey. Dashed, solid 3 px when selected. */
+.region {
+  position: absolute;
+  border: 2px dashed var(--region-colour);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.measured {
+  --region-colour: var(--color-ink);
+  --badge-fill: var(--color-ink);
+}
+
+.evaluated {
+  --region-colour: var(--color-primary);
+  --badge-fill: var(--color-primary);
+}
+
+.pushedBack {
+  --region-colour: var(--color-pushed-back);
+  /* Darker than the box so the white number keeps 4.5 : 1 */
+  --badge-fill: var(--color-text-muted);
+}
+
+.selected {
+  border: 3px solid var(--region-colour);
+  background: var(--color-region-tint);
+  z-index: 1;
+}
+
+/* 44 px target centred on the top left corner; the visible dot is 24 px. */
+.badge {
+  position: absolute;
+  left: -22px;
+  top: -22px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translateX(calc(var(--badge-offset, 0) * 28px));
+}
+
+.badgeDot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--badge-fill);
+  color: var(--color-on-dark);
+  box-shadow: 0 0 0 2px var(--color-bg);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.badge:hover .badgeDot,
+.badge[aria-pressed="true"] .badgeDot {
+  box-shadow:
+    0 0 0 2px var(--color-bg),
+    0 0 0 4px var(--badge-fill);
+}
+
+.caption {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+@media (forced-colors: active) {
+  .region {
+    border-color: Highlight;
+  }
+
+  .badgeDot {
+    border: 1px solid ButtonText;
+  }
+}

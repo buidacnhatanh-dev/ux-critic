@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/PagePlaceholder";
+import { ProjectHistory } from "@/components/project/ProjectHistory";
 
 export const metadata: Metadata = { title: "Project history" };
 
-export default function ProjectPage() {
-  return (
-    <PagePlaceholder
-      title="Project history"
-      note="Every version of this project and its reviews. Built in milestone M2."
-    />
-  );
+export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  return <ProjectHistory id={decodeURIComponent(id)} />;
 }

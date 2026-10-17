@@ -1,0 +1,66 @@
+.title {
+  font-size: 36px;
+  margin-bottom: var(--space-7);
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.shot {
+  flex: 1 1 480px;
+  min-width: 0;
+}
+
+.side {
+  flex: 1 1 380px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.card {
+  padding: var(--space-7);
+  border: 2px solid var(--color-success);
+  border-radius: 16px;
+}
+
+.checkCircle {
+  fill: var(--color-success);
+}
+
+.checkMark {
+  stroke: var(--color-on-dark);
+}
+
+.cardTitle {
+  margin: 14px 0 var(--space-2);
+  font-size: 28px;
+}
+
+.checked {
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+
+.honest {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.fixed {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-text-muted);
+}

@@ -19,9 +19,16 @@
   --color-low-bg: #eef1f5;
   --color-success: #1a7f3c;
   --color-pushed-back: #8a93a3; /* pushed back regions */
+  --color-region-tint: rgb(29 78 216 / 0.1); /* selected region fill */
+  --color-success-bg: #e6f4ea; /* Fixed tile */
+  --color-success-strong: #145c2e; /* text on the Fixed tile, 7.4 : 1 */
+  --color-high-bar: #b42318; /* Issues per version bars (decorative) */
+  --color-medium-bar: #d99a00;
+  --color-low-bar: #8a93a3;
   --color-backdrop: rgb(21 24 29 / 0.55);
   --shadow-dialog: 0 20px 50px rgb(21 24 29 / 0.3);
   --shadow-toast: 0 8px 24px rgb(21 24 29 / 0.25);
+  --shadow-screenshot: 0 1px 3px rgb(21 24 29 / 0.12);
 
   --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #15181d, 0 0 0 7px #ffc21a;
 

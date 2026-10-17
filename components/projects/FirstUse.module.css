@@ -1,0 +1,116 @@
+.wrap {
+  max-width: 720px;
+  margin: var(--space-6) auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+}
+
+.art {
+  max-width: 100%;
+  height: auto;
+}
+
+.artFrame {
+  fill: var(--color-primary-soft);
+  stroke: var(--color-primary);
+}
+
+.artLine {
+  fill: var(--color-border);
+}
+
+.artField {
+  fill: var(--color-bg);
+  stroke: var(--color-border-input);
+}
+
+.artButton {
+  fill: var(--color-primary);
+}
+
+.artEvaluated {
+  stroke: var(--color-primary);
+}
+
+.artMeasured {
+  stroke: var(--color-ink);
+}
+
+.artInk {
+  fill: var(--color-ink);
+}
+
+.artNumber {
+  fill: var(--color-on-dark);
+  font-family: var(--font-body);
+}
+
+.title {
+  font-size: var(--text-h1);
+}
+
+.lead {
+  margin: 0;
+  max-width: 560px;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.start {
+  min-height: 52px;
+  padding: 0 28px;
+  font-size: 17px;
+}
+
+.steps {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--space-4);
+  text-align: left;
+}
+
+.step {
+  border: var(--border-card) solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 18px;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.stepTitle {
+  margin: 10px 0 var(--space-1);
+  font-weight: 700;
+}
+
+.stepText {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}

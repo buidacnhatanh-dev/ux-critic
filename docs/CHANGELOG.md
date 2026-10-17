@@ -64,3 +64,30 @@ Decisions
 * Fonts were chosen by testing the docs/04 estimate at 12 to 40 px (within 1 px), then checked again on the captured pages (worst 0.8 px). Fredoka passed the first test (+0.67 px) but reached 1.08 px on the page once boxes snap to whole pixels, so the sign up form uses Rubik instead. Note added to docs/04
 * Handwritten prose and contexts updated for the new products (coffee shop, fitness app, "Fleet overview", Shipments and On time); no numbers added
 * New dev dependencies, listed in CLAUDE.md: `@fontsource/cormorant-garamond`, `@fontsource/figtree`, `@fontsource/rubik`, `@fontsource/barlow-semi-condensed`
+
+## M2 · Demo screens: Projects, Review, Project history, Compare (2026-10-17)
+
+Built
+
+* `lib/compare.ts` (docs/07): normalised boxes, IoU, token Jaccard title similarity, greedy best pair matching, fixed / still open / new, and "was … now …" values for fixed measured issues (same kind, IoU ≥ 0.25 or exact label, otherwise "no longer found"). Unit tests for every docs/07 fixture: identical versions, everything fixed, moved element, same principle in two places, null regions, plus value lookups
+* `lib/principles.ts` (docs/05 catalogue, "My rule: <text>" for own rules), `lib/format.ts` (dates, values, trend line, summary line, "Checked against …"), `lib/regions.ts` (percent positions, badge offsets), each unit tested
+* Projects (1) with thumbnails, severity counts, trend line, "Add a project" and Recent reviews (latest 10); First use (7) when there are no projects, with Reset demo in demo mode
+* Project history (2): versions newest first with Latest, context, counts and Open review; Issues per version bars (decorative, numbers in text); Where I disagreed; Compare and Review a new version; Delete project icon button with the screen 15 dialog (Keep project focused first, real counts, toast after deleting)
+* Review (4): filters with counts (`aria-pressed`), regions in percentages, badges as buttons that open and focus their card, cards as disclosure buttons with only one open, push back with required reason, Undo, announcements through the Announcer; `?issue=` opens a card (used by Compare's "Open in v2 review")
+* No issues found (12) with what the review was checked against, Compare with, Back to project and "Fixed since v<n>" computed with `compareReviews`
+* Compare (5): From and To selects (default the two newest finished versions), tiles, side by side screenshots, the three lists, "I disagreed in v<n>: <reason>", By severity table
+* Playwright in demo mode with axe on every state: projects, first use, project history, delete dialog, review (keyboard only: badges, cards, filters, push back, error, cancel, save, reload, undo), prepared pushback, shared badge corners, compare, no issues, and 375 px reflow for every new screen
+
+Decisions
+
+* `VersionSummary` gained `context`, `reviewedAt` and `counts`; `ProjectSummary` gained `previousVersionName`. Screens compose Recent reviews and Where I disagreed from the existing `DataClient` methods, so the interface did not change
+* Pushed back badges and card numbers use the muted text colour (`#4A5260`) instead of `#8A93A3`: white numbers on `#8A93A3` are 3.2 : 1, below 4.5 : 1. The region box itself stays `#8A93A3`
+* Region badges are 44 × 44 px buttons around a 24 px dot. Badges of regions that share a top left corner (two checks on one text line) are shifted sideways so both stay visible and reachable
+* Filter buttons use the input border colour (3.1 : 1) instead of the design's `#C5CBD4`
+* Thumbnails show the real screenshot (top of the image), not the abstract shapes in the designs
+* The push back form has one field, so its error shows under the field and focus stays in it, instead of an error summary
+* "Compare with v<n>" on a review points to the previous finished version, or the next one for the first version
+* An evaluated fixed item shows "Evaluated · severity · principle"; the design's "labels now above each field" is not data the app has, so it is not shown
+* The full Reviewing, Review failed and Evaluation unreadable screens come in M3 and M5; for now a running review polls and shows one line, and partial reviews show the measured issues with the banner text. The "Evaluation is off" note needs the live mode signal from M5
+* The Delete project dialog from screen 15 was built here because the button is part of screen 2; M3 only needs to check it
+* `<img>` is used for screenshots (with a lint exception) because regions are placed on the exact image and live screenshots will come from local files

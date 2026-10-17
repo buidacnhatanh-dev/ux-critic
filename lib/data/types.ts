@@ -30,12 +30,16 @@ export type ProjectSummary = {
   counts: SeverityCounts | null;
   /** Issue count of the previous version, for the trend line. Null with one version. */
   previousIssueCount: number | null;
+  /** Name of the previous version ("v1"), for the trend line. Null with one version. */
+  previousVersionName: string | null;
   versionCount: number;
 };
 
 export type VersionSummary = {
   id: string;
   name: string;
+  /** The "What is this screen for?" answer, may be empty. */
+  context: string;
   createdAt: string;
   screenshotUrl: string;
   width: number;
@@ -43,6 +47,10 @@ export type VersionSummary = {
   scale: Scale;
   reviewId: string | null;
   reviewStatus: ReviewStatus | null;
+  /** When the latest review finished. Null while it runs or when there is none. */
+  reviewedAt: string | null;
+  /** Severity counts of the latest finished review. Null while it runs or when there is none. */
+  counts: SeverityCounts | null;
   issueCount: number;
   pushbackCount: number;
 };

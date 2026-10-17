@@ -1,0 +1,225 @@
+.header {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+}
+
+.title {
+  font-size: var(--text-h1);
+}
+
+.pickers {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.select {
+  min-height: var(--target-min);
+  min-width: 140px;
+}
+
+.muted {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.tiles {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: 18px var(--space-5);
+  border-radius: var(--radius-card);
+}
+
+.tileLabel {
+  font-weight: 700;
+}
+
+.tileCount {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.tileFixed {
+  background: var(--color-success-bg);
+  color: var(--color-success-strong);
+}
+
+.tileOpen {
+  background: var(--color-low-bg);
+  color: var(--color-text-muted);
+}
+
+.tileOpen .tileCount {
+  color: var(--color-ink);
+}
+
+.tileNew {
+  background: var(--color-medium-bg);
+  color: var(--color-medium);
+}
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: 36px;
+}
+
+.shots figcaption {
+  text-align: left;
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.listTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-3);
+  font-size: 22px;
+}
+
+.iconFixed {
+  fill: var(--color-success);
+}
+
+.iconMark {
+  stroke: var(--color-on-dark);
+}
+
+.iconDot {
+  fill: var(--color-on-dark);
+}
+
+.iconOpen {
+  stroke: var(--color-text-muted);
+}
+
+.iconNew {
+  fill: var(--color-medium);
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  padding: 14px var(--space-4);
+  border: var(--border-card) solid var(--color-border);
+  border-radius: 12px;
+}
+
+.itemDisagreed {
+  background: var(--color-surface);
+}
+
+.itemNew {
+  border-color: var(--color-medium);
+}
+
+.itemTitle {
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.itemMeta {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.itemReason {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+}
+
+.itemLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.severity {
+  margin-top: 36px;
+}
+
+.tableWrap {
+  /* Keeps visually hidden text inside the scroll area, so the page never scrolls sideways. */
+  position: relative;
+  max-width: 520px;
+  overflow-x: auto;
+  border: var(--border-card) solid var(--color-border);
+  border-radius: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px var(--space-4);
+  text-align: left;
+}
+
+.table thead tr {
+  background: var(--color-surface);
+}
+
+.table tbody tr {
+  border-top: 1px solid var(--color-border);
+}
+
+.table tbody th {
+  font-weight: 400;
+}
+
+.better {
+  font-weight: 700;
+  color: var(--color-success-strong);
+}
+
+.total {
+  font-weight: 700;
+}
+
+.table .total {
+  border-top: var(--border-card) solid var(--color-ink);
+}
+
+.table .total th {
+  font-weight: 700;
+}

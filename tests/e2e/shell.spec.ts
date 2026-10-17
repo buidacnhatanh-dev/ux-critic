@@ -1,21 +1,22 @@
 import { expect, test } from "@playwright/test";
 import { expectNoAxeViolations } from "./axe";
 
-const ROUTES: [string, string][] = [
-  ["/", "Projects"],
-  ["/new", "New review"],
-  ["/checklist", "My checklist"],
-  ["/setup", "Connect Claude"],
-  ["/projects/sample", "Project history"],
-  ["/projects/sample/compare", "Compare versions"],
-  ["/reviews/sample", "Review"],
-  ["/states", "Screen states"],
+// [path, page title, h1]
+const ROUTES: [string, string, string][] = [
+  ["/", "Projects", "Projects"],
+  ["/new", "New review", "New review"],
+  ["/checklist", "My checklist", "My checklist"],
+  ["/setup", "Connect Claude", "Connect Claude"],
+  ["/projects/checkout-practice", "Project history", "Checkout practice"],
+  ["/projects/checkout-practice/compare", "Compare versions", "What changed"],
+  ["/reviews/review-checkout-v1", "Review", "Review of v1"],
+  ["/states", "Screen states", "Screen states"],
 ];
 
-for (const [path, title] of ROUTES) {
+for (const [path, title, heading] of ROUTES) {
   test(`${path} renders the shell and passes axe`, async ({ page }) => {
     await page.goto(path);
-    await expect(page.getByRole("heading", { level: 1, name: title })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1, name: heading })).toBeVisible();
     await expect(page.getByRole("navigation", { name: "Main" })).toBeVisible();
     await expect(page).toHaveTitle(new RegExp(`${title} · UX Critic`));
     await expectNoAxeViolations(page);
