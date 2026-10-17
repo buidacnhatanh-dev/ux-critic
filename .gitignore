@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# next
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# tests
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# private data (CLAUDE.md)
+data/
+eval/runs/
+.env*
+!.env.example
+
+# misc
+.DS_Store
+*.log
+.vercel

@@ -1,0 +1,90 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--control-height);
+  min-width: var(--target-min);
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-control);
+  border: var(--border-input) solid transparent;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+}
+
+.primary {
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+}
+
+.primary:hover {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.secondary {
+  background: var(--color-bg);
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.secondary:hover {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.danger {
+  background: var(--color-high);
+  color: var(--color-on-dark);
+}
+
+.danger:hover {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+.text {
+  min-height: var(--target-min);
+  padding: 0 var(--space-1);
+  background: transparent;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text:hover {
+  color: var(--color-ink);
+}
+
+.text.destructive {
+  color: var(--color-high);
+}
+
+.text.destructive:hover {
+  color: var(--color-ink);
+}
+
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  background: var(--color-low-bg);
+  border-color: var(--color-border-input);
+  color: var(--color-text-muted);
+}
+
+.text[aria-disabled="true"] {
+  background: transparent;
+  border-color: transparent;
+}
+
+@media (forced-colors: active) {
+  .button {
+    border-color: ButtonText;
+  }
+}

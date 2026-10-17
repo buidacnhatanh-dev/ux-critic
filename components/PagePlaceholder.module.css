@@ -1,0 +1,8 @@
+.title {
+  margin-bottom: var(--space-4);
+}
+
+.note {
+  margin: 0;
+  color: var(--color-text-muted);
+}

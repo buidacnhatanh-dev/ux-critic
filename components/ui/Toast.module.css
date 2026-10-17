@@ -1,0 +1,64 @@
+.region {
+  position: fixed;
+  left: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: min(440px, calc(100vw - 2 * var(--space-4)));
+}
+
+.region[hidden] {
+  display: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  box-shadow: var(--shadow-toast);
+}
+
+.message {
+  flex: 1;
+  margin: 0;
+  font-weight: 700;
+}
+
+.action,
+.dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--target-min);
+  min-height: var(--target-min);
+  padding: 0 var(--space-3);
+  border: none;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--color-on-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.dismiss {
+  padding: 0;
+}
+
+.action:hover,
+.dismiss:hover {
+  background: var(--color-text-muted);
+}
+
+@media (forced-colors: active) {
+  .toast {
+    border: 2px solid CanvasText;
+  }
+}
