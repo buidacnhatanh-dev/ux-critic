@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign up form (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <style>
+      body {
+        background: #f7f8fa;
+      }
+      .card {
+        width: 480px;
+        margin: 28px auto 0;
+        padding: 32px 36px;
+        border: 1.5px solid #dde1e7;
+        border-radius: 14px;
+        background: #ffffff;
+      }
+      h1 {
+        font-size: 30px;
+        margin-bottom: 6px;
+      }
+      .intro {
+        margin-bottom: 20px;
+      }
+      .field {
+        margin-bottom: 14px;
+      }
+      .input.has-error {
+        border: 2px solid #b42318;
+      }
+      /* Planted: error says something is wrong but not what or how to fix it. */
+      .error {
+        margin-top: 4px;
+        color: #b42318;
+        font-weight: 700;
+      }
+      .agree {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 4px 0 18px;
+      }
+      /* Planted: native 13 px checkbox, too small to tap. */
+      .agree input {
+        margin: 0;
+      }
+      .actions {
+        display: grid;
+        gap: 10px;
+      }
+      .actions .btn {
+        width: 100%;
+      }
+      .switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Create your account</h1>
+      <p class="intro muted">Free for 30 days, no card needed</p>
+      <div class="field">
+        <label class="label" for="name">Full name</label>
+        <input class="input" id="name" value="Sam Jordan" />
+      </div>
+      <div class="field" id="email-field">
+        <label class="label" for="email">Email</label>
+        <input class="input has-error" id="email" value="sam@example" />
+        <p class="error" id="email-error">Invalid input</p>
+      </div>
+      <div class="field">
+        <!-- Planted: no label, placeholder only, and the password rules are not shown -->
+        <input class="input" id="password" type="password" placeholder="Password" />
+      </div>
+      <div class="agree">
+        <input type="checkbox" id="agree" />
+        <label for="agree">I agree to the terms and privacy policy</label>
+      </div>
+      <!-- Planted: two primary buttons compete -->
+      <div class="actions" id="actions">
+        <button class="btn btn-primary" type="button">Create account</button>
+        <button class="btn btn-primary" type="button">Sign up with Google</button>
+      </div>
+      <div class="switch">
+        <span class="muted">Already have an account?</span>
+        <button class="btn" type="button">Sign in</button>
+      </div>
+    </div>
+  </body>
+</html>

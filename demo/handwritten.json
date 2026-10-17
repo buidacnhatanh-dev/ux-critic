@@ -1,0 +1,232 @@
+{
+  "$comment": "Handwritten demo content (docs/10). No measured numbers here: scripts/demo-data.ts computes those from the PNGs. Dates and names are sample data.",
+  "rules": [
+    {
+      "key": "targets-44",
+      "id": "73ee2594-19b3-5ed8-895b-c6660025f2f7",
+      "text": "Touch targets are at least 44 by 44 px",
+      "kind": "measured",
+      "metric": "target_size_min",
+      "threshold": 44
+    },
+    {
+      "key": "body-text-16",
+      "id": "f936bf4f-9c12-56a3-bac2-0bc367a4d9cd",
+      "text": "Body text is at least 16 px",
+      "kind": "measured",
+      "metric": "text_size_min",
+      "threshold": 16
+    },
+    {
+      "key": "visible-labels",
+      "id": "0489249f-1bd0-54a4-ada6-58f38fdb207f",
+      "text": "Every field has a visible label",
+      "kind": "evaluated",
+      "metric": null,
+      "threshold": null
+    },
+    {
+      "key": "one-primary-button",
+      "id": "08f0f43b-09e4-563f-98dc-f07e3aa12ac1",
+      "text": "One primary button per screen",
+      "kind": "evaluated",
+      "metric": null,
+      "threshold": null
+    },
+    {
+      "key": "errors-say-how",
+      "id": "f6112615-4d27-5972-be28-11352cb3e788",
+      "text": "Error messages say how to fix the problem",
+      "kind": "evaluated",
+      "metric": null,
+      "threshold": null
+    },
+    {
+      "key": "colour-never-alone",
+      "id": "5b6fcbf2-53ca-5307-8bcf-56434f8d3c98",
+      "text": "Colour is never the only way to show a state",
+      "kind": "evaluated",
+      "metric": null,
+      "threshold": null
+    }
+  ],
+  "projects": [
+    {
+      "id": "checkout-practice",
+      "name": "Checkout practice",
+      "createdAt": "2026-10-03T09:00:00.000Z"
+    },
+    {
+      "id": "sign-up-form",
+      "name": "Sign up form",
+      "createdAt": "2026-10-09T14:00:00.000Z"
+    },
+    {
+      "id": "analytics-dashboard",
+      "name": "Analytics dashboard",
+      "createdAt": "2026-10-12T10:30:00.000Z"
+    }
+  ],
+  "versions": [
+    {
+      "id": "checkout-v1",
+      "projectId": "checkout-practice",
+      "name": "v1",
+      "fixture": "checkout-v1",
+      "sampleName": "Checkout, first draft",
+      "context": "Guest checkout for a small clothing shop. People pay for what is in their cart.",
+      "createdAt": "2026-10-03T09:05:00.000Z"
+    },
+    {
+      "id": "checkout-v2",
+      "projectId": "checkout-practice",
+      "name": "v2",
+      "fixture": "checkout-v2",
+      "sampleName": "Checkout with labels",
+      "context": "Same checkout after adding field labels. The card number was typed wrong on purpose.",
+      "createdAt": "2026-10-08T16:20:00.000Z"
+    },
+    {
+      "id": "checkout-v3",
+      "projectId": "checkout-practice",
+      "name": "v3",
+      "fixture": "checkout-v3",
+      "sampleName": "Checkout, final",
+      "context": "Checkout after fixing the payment choices and the error state.",
+      "createdAt": "2026-10-14T11:00:00.000Z"
+    },
+    {
+      "id": "signup-v1",
+      "projectId": "sign-up-form",
+      "name": "v1",
+      "fixture": "signup",
+      "sampleName": "Sign up form",
+      "context": "Account sign up for a free trial. Shown after someone typed an email without the domain ending.",
+      "createdAt": "2026-10-09T14:10:00.000Z"
+    },
+    {
+      "id": "dashboard-v1",
+      "projectId": "analytics-dashboard",
+      "name": "v1",
+      "fixture": "dashboard",
+      "sampleName": "Analytics dashboard",
+      "context": "Weekly sales overview for a shop owner who checks it every Monday.",
+      "createdAt": "2026-10-12T10:40:00.000Z"
+    }
+  ],
+  "evaluated": {
+    "checkout-v1": [
+      {
+        "planted": "placeholder-labels",
+        "severity": "high",
+        "confidence": "high",
+        "title": "Fields have no visible labels",
+        "detail": "The email, card number, expiry and CVC fields show their name only as placeholder text. It disappears as soon as someone starts typing, so people lose track of what each field wants.",
+        "fix": "Add a visible label above each field. Keep the placeholder only for an example, or drop it."
+      },
+      {
+        "planted": "five-methods",
+        "severity": "medium",
+        "confidence": "medium",
+        "title": "Five payment options compete",
+        "detail": "Card, PayPal, Apple Pay, Google Pay and Klarna get the same weight. Most people pay by card, but everyone has to scan five choices before they can start.",
+        "fix": "Show the two or three most used methods and put the rest behind \"Other methods\"."
+      }
+    ],
+    "checkout-v2": [
+      {
+        "planted": "five-methods",
+        "severity": "medium",
+        "confidence": "medium",
+        "title": "Five payment options compete",
+        "detail": "Card, PayPal, Apple Pay, Google Pay and Klarna still get the same weight, so everyone scans five choices before paying.",
+        "fix": "Show the two or three most used methods and put the rest behind \"Other methods\"."
+      },
+      {
+        "planted": "colour-only-error",
+        "severity": "high",
+        "confidence": "high",
+        "title": "Card number error is shown only in red",
+        "detail": "The card number field turns red, but nothing says what is wrong. People who do not see red well get no signal at all, and nobody learns how to fix it.",
+        "fix": "Add a message under the field that says what is wrong and how to fix it, with an error icon."
+      }
+    ],
+    "checkout-v3": [],
+    "signup-v1": [
+      {
+        "planted": "vague-error",
+        "severity": "high",
+        "confidence": "high",
+        "title": "Error message does not say how to fix it",
+        "detail": "\"Invalid input\" under the email field says that something is wrong, but not what. The address is missing its domain ending, and the message could say exactly that.",
+        "fix": "Say what to change, for example \"Add the end of the address, like sam@example.com\"."
+      },
+      {
+        "planted": "password-placeholder",
+        "severity": "medium",
+        "confidence": "high",
+        "title": "Password field has no visible label",
+        "detail": "The password field only has placeholder text. Once someone types, nothing on screen says what the field is for.",
+        "fix": "Add a visible \"Password\" label above the field, like the other fields."
+      },
+      {
+        "planted": "hidden-password-rules",
+        "severity": "medium",
+        "confidence": "low",
+        "title": "Password rules are not shown",
+        "detail": "Nothing tells people how long the password must be or which characters it needs, so many will only find out from an error after they submit.",
+        "fix": "Show the rules under the field before people type, and tick them off as they are met."
+      },
+      {
+        "planted": "two-primary-buttons",
+        "severity": "low",
+        "confidence": "medium",
+        "title": "Two primary buttons compete",
+        "detail": "\"Create account\" and \"Sign up with Google\" are both filled blue buttons of the same size, so neither reads as the main action.",
+        "fix": "Keep \"Create account\" as the primary button and make the Google option an outlined secondary button."
+      }
+    ],
+    "dashboard-v1": [
+      {
+        "planted": "weak-title",
+        "severity": "medium",
+        "confidence": "medium",
+        "title": "Page title looks like body text",
+        "detail": "\"Sales overview\" has the same size and weight as body text, while the numbers below are far larger. At a glance people cannot tell which page they are on.",
+        "fix": "Make \"Sales overview\" a real heading, clearly larger and bolder than the content."
+      },
+      {
+        "planted": "nine-equal-buttons",
+        "severity": "medium",
+        "confidence": "medium",
+        "title": "Nine equal buttons, nothing stands out",
+        "detail": "Export, Share, Filter, Refresh, Compare, Annotate, Schedule, Settings and Print all look the same, so the common actions are as hard to find as the rare ones.",
+        "fix": "Keep the two or three most used actions visible, make the main one stand out, and move the rest into a \"More\" menu."
+      },
+      {
+        "planted": "kpi-label-far",
+        "severity": "low",
+        "confidence": "medium",
+        "title": "KPI labels sit far from their numbers",
+        "detail": "Each label, such as Revenue or Orders, is at the bottom of its card, far from the number it names. People read a number before they know what it means.",
+        "fix": "Put each label right above its number and keep the change next to it."
+      },
+      {
+        "planted": "colour-only-change",
+        "severity": "high",
+        "confidence": "high",
+        "title": "Up and down are shown only by colour",
+        "detail": "The change under each number is green or red, with no plus or minus sign and no arrow. People who do not see colour well cannot tell growth from decline.",
+        "fix": "Add an arrow or a plus or minus sign to each change, and write \"up\" or \"down\" for screen readers."
+      }
+    ]
+  },
+  "pushbacks": [
+    {
+      "versionId": "signup-v1",
+      "planted": "hidden-password-rules",
+      "reason": "The rules appear as soon as the password field gets focus. This screenshot was taken before anyone clicked into it.",
+      "createdAt": "2026-10-09T15:02:00.000Z"
+    }
+  ]
+}

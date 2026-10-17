@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Checkout v1 (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="checkout.css" />
+    <style>
+      /* Planted: faint helper text, #B9BFC8 on white. */
+      .help {
+        margin-top: 6px;
+        color: #b9bfc8;
+      }
+      /* Planted: tiny stand alone link. */
+      .terms {
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 1;
+        color: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="brand">Northwind Goods</span>
+      <span class="muted">Secure checkout</span>
+    </header>
+    <div class="page">
+      <main>
+        <h1>Checkout</h1>
+        <section class="section" id="contact">
+          <h2>Contact</h2>
+          <!-- Planted: placeholder used as the only label -->
+          <input class="input" id="email" type="email" placeholder="Email address" />
+          <p class="help" id="email-help">We send your receipt to this address</p>
+        </section>
+        <section class="section" id="payment">
+          <h2>Payment</h2>
+          <!-- Planted: five payment options at once -->
+          <div class="methods" id="methods">
+            <button class="method" type="button" aria-pressed="true">Card</button>
+            <button class="method" type="button" aria-pressed="false">PayPal</button>
+            <button class="method" type="button" aria-pressed="false">Apple Pay</button>
+            <button class="method" type="button" aria-pressed="false">Google Pay</button>
+            <button class="method" type="button" aria-pressed="false">Klarna</button>
+          </div>
+          <div class="field">
+            <input class="input" id="card" placeholder="Card number" inputmode="numeric" />
+          </div>
+          <div class="row field">
+            <input class="input" id="expiry" placeholder="MM / YY" />
+            <input class="input" id="cvc" placeholder="CVC" />
+          </div>
+          <button class="btn btn-primary pay" type="button">Pay €84.00</button>
+          <a class="terms" id="terms" href="#terms">Terms</a>
+        </section>
+      </main>
+      <aside class="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Order summary</h2>
+        <p class="line"><span>Linen shirt</span><span>€59.00</span></p>
+        <p class="line"><span>Canvas tote</span><span>€19.00</span></p>
+        <p class="line"><span>Shipping</span><span>€6.00</span></p>
+        <p class="line total"><span>Total</span><span>€84.00</span></p>
+      </aside>
+    </div>
+  </body>
+</html>

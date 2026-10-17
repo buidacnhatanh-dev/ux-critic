@@ -1,0 +1,34 @@
+{
+  "fixture": "checkout-v1",
+  "description": "Checkout with placeholder labels, faint helper text, a tiny link and five payment options.",
+  "issues": [
+    {
+      "id": "placeholder-labels",
+      "kind": "evaluated",
+      "principle_id": "wcag-3.3.2",
+      "selector": "#email, #card, #expiry, #cvc",
+      "note": "Every field uses its placeholder as the only label."
+    },
+    {
+      "id": "faint-helper",
+      "kind": "measured",
+      "principle_id": "wcag-1.4.3",
+      "selector": "#email-help",
+      "note": "Helper text is #B9BFC8 on white."
+    },
+    {
+      "id": "five-methods",
+      "kind": "evaluated",
+      "principle_id": "law-hick",
+      "selector": "#methods",
+      "note": "Five payment options of equal weight at once."
+    },
+    {
+      "id": "tiny-terms",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "selector": "#terms",
+      "note": "12 px text link with no padding."
+    }
+  ]
+}

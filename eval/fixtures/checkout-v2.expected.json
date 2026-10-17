@@ -1,0 +1,20 @@
+{
+  "fixture": "checkout-v2",
+  "description": "Checkout with labels fixed, still five payment options, and a new error shown only by a red border.",
+  "issues": [
+    {
+      "id": "five-methods",
+      "kind": "evaluated",
+      "principle_id": "law-hick",
+      "selector": "#methods",
+      "note": "Still five payment options of equal weight."
+    },
+    {
+      "id": "colour-only-error",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "selector": "#card",
+      "note": "The card number error is a red border with no text or icon."
+    }
+  ]
+}

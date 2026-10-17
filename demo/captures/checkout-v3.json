@@ -1,0 +1,409 @@
+{
+  "fixture": "checkout-v3",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "textLines": [
+    {
+      "label": "Northwind Goods",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 356,
+        "h": 54
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 22
+    },
+    {
+      "label": "Secure checkout",
+      "box": {
+        "x": 2230,
+        "y": 43,
+        "w": 234,
+        "h": 40
+      },
+      "cssColor": "rgb(74, 82, 96)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Checkout",
+      "box": {
+        "x": 96,
+        "y": 188,
+        "w": 324,
+        "h": 92
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 36
+    },
+    {
+      "label": "Contact",
+      "box": {
+        "x": 96,
+        "y": 316,
+        "w": 148,
+        "h": 53
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 20
+    },
+    {
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 394,
+        "w": 215,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "We send your receipt to this address",
+      "box": {
+        "x": 96,
+        "y": 562,
+        "w": 514,
+        "h": 41
+      },
+      "cssColor": "rgb(74, 82, 96)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Payment",
+      "box": {
+        "x": 96,
+        "y": 644,
+        "w": 168,
+        "h": 53
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 20
+    },
+    {
+      "label": "Card",
+      "box": {
+        "x": 268,
+        "y": 746,
+        "w": 72,
+        "h": 41
+      },
+      "cssColor": "rgb(29, 78, 216)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "PayPal",
+      "box": {
+        "x": 687,
+        "y": 746,
+        "w": 102,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Other methods",
+      "box": {
+        "x": 1057,
+        "y": 746,
+        "w": 226,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 850,
+        "w": 195,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1030,
+        "w": 172,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1030,
+        "w": 207,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Pay €84.00",
+      "box": {
+        "x": 648,
+        "y": 1234,
+        "w": 176,
+        "h": 41
+      },
+      "cssColor": "rgb(255, 255, 255)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Read the terms",
+      "box": {
+        "x": 138,
+        "y": 1362,
+        "w": 233,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Order summary",
+      "box": {
+        "x": 1618,
+        "y": 368,
+        "w": 296,
+        "h": 52
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 20
+    },
+    {
+      "label": "Linen shirt",
+      "box": {
+        "x": 1618,
+        "y": 462,
+        "w": 150,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "€59.00",
+      "box": {
+        "x": 2211,
+        "y": 462,
+        "w": 107,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Canvas tote",
+      "box": {
+        "x": 1618,
+        "y": 542,
+        "w": 166,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "€19.00",
+      "box": {
+        "x": 2216,
+        "y": 542,
+        "w": 102,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Shipping",
+      "box": {
+        "x": 1618,
+        "y": 622,
+        "w": 126,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "€6.00",
+      "box": {
+        "x": 2229,
+        "y": 622,
+        "w": 89,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Total",
+      "box": {
+        "x": 1618,
+        "y": 736,
+        "w": 85,
+        "h": 44
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 18
+    },
+    {
+      "label": "€84.00",
+      "box": {
+        "x": 2193,
+        "y": 736,
+        "w": 125,
+        "h": 44
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 18
+    },
+    {
+      "label": "sam@example.com",
+      "box": {
+        "x": 126,
+        "y": 478,
+        "w": 270,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "1234 5678 9012 3456",
+      "box": {
+        "x": 126,
+        "y": 934,
+        "w": 314,
+        "h": 41
+      },
+      "cssColor": "rgb(107, 114, 128)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "MM / YY",
+      "box": {
+        "x": 126,
+        "y": 1114,
+        "w": 121,
+        "h": 41
+      },
+      "cssColor": "rgb(107, 114, 128)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "3 digits",
+      "box": {
+        "x": 782,
+        "y": 1114,
+        "w": 107,
+        "h": 41
+      },
+      "cssColor": "rgb(107, 114, 128)",
+      "cssFontSize": 16
+    }
+  ],
+  "controls": [
+    {
+      "label": "Email address",
+      "role": "input",
+      "box": {
+        "x": 96,
+        "y": 450,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card",
+      "role": "button",
+      "box": {
+        "x": 96,
+        "y": 718,
+        "w": 416,
+        "h": 97
+      }
+    },
+    {
+      "label": "PayPal",
+      "role": "button",
+      "box": {
+        "x": 532,
+        "y": 718,
+        "w": 412,
+        "h": 97
+      }
+    },
+    {
+      "label": "Other methods",
+      "role": "button",
+      "box": {
+        "x": 964,
+        "y": 718,
+        "w": 412,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card number",
+      "role": "input",
+      "box": {
+        "x": 96,
+        "y": 906,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "label": "Expiry date",
+      "role": "input",
+      "box": {
+        "x": 96,
+        "y": 1086,
+        "w": 624,
+        "h": 97
+      }
+    },
+    {
+      "label": "Security code",
+      "role": "input",
+      "box": {
+        "x": 752,
+        "y": 1086,
+        "w": 624,
+        "h": 97
+      }
+    },
+    {
+      "label": "Pay €84.00",
+      "role": "button",
+      "box": {
+        "x": 96,
+        "y": 1206,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "label": "Read the terms",
+      "role": "button",
+      "box": {
+        "x": 96,
+        "y": 1334,
+        "w": 317,
+        "h": 97
+      }
+    }
+  ],
+  "expected": []
+}

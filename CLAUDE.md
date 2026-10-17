@@ -70,6 +70,7 @@ pnpm test           # vitest
 pnpm test:e2e       # playwright, fake AI mode
 pnpm eval           # real Claude calls against eval/cases, writes eval/runs/<date>.md
 pnpm demo:capture   # render demo screens from eval/fixtures to public/demo/*.png
+pnpm demo:data      # measure the demo PNGs, write demo/data.json (source: handwritten)
 pnpm demo:build     # live mode only: run the real pipeline on demo screens, write demo/data.json
 pnpm lint
 pnpm typecheck

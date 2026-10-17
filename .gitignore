@@ -3,6 +3,7 @@ node_modules/
 
 # next
 .next/
+.next-e2e/
 out/
 next-env.d.ts
 *.tsbuildinfo
@@ -14,8 +15,8 @@ test-results/
 blob-report/
 
 # private data (CLAUDE.md)
-data/
-eval/runs/
+/data/
+/eval/runs/
 .env*
 !.env.example
 

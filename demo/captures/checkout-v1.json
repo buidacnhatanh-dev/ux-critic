@@ -1,0 +1,444 @@
+{
+  "fixture": "checkout-v1",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "textLines": [
+    {
+      "label": "Northwind Goods",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 356,
+        "h": 54
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 22
+    },
+    {
+      "label": "Secure checkout",
+      "box": {
+        "x": 2230,
+        "y": 43,
+        "w": 234,
+        "h": 40
+      },
+      "cssColor": "rgb(74, 82, 96)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Checkout",
+      "box": {
+        "x": 96,
+        "y": 188,
+        "w": 324,
+        "h": 92
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 36
+    },
+    {
+      "label": "Contact",
+      "box": {
+        "x": 96,
+        "y": 316,
+        "w": 148,
+        "h": 53
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 20
+    },
+    {
+      "label": "We send your receipt to this address",
+      "box": {
+        "x": 96,
+        "y": 502,
+        "w": 514,
+        "h": 41
+      },
+      "cssColor": "rgb(185, 191, 200)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Payment",
+      "box": {
+        "x": 96,
+        "y": 584,
+        "w": 168,
+        "h": 53
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 20
+    },
+    {
+      "label": "Card",
+      "box": {
+        "x": 182,
+        "y": 686,
+        "w": 71,
+        "h": 41
+      },
+      "cssColor": "rgb(29, 78, 216)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "PayPal",
+      "box": {
+        "x": 428,
+        "y": 686,
+        "w": 101,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Apple Pay",
+      "box": {
+        "x": 661,
+        "y": 686,
+        "w": 154,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Google Pay",
+      "box": {
+        "x": 911,
+        "y": 686,
+        "w": 172,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Klarna",
+      "box": {
+        "x": 1207,
+        "y": 686,
+        "w": 99,
+        "h": 41
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Pay €84.00",
+      "box": {
+        "x": 648,
+        "y": 1054,
+        "w": 176,
+        "h": 41
+      },
+      "cssColor": "rgb(255, 255, 255)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Terms",
+      "box": {
+        "x": 96,
+        "y": 1160,
+        "w": 64,
+        "h": 29
+      },
+      "cssColor": "rgb(29, 78, 216)",
+      "cssFontSize": 12
+    },
+    {
+      "label": "Order summary",
+      "box": {
+        "x": 1618,
+        "y": 368,
+        "w": 296,
+        "h": 52
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 20
+    },
+    {
+      "label": "Linen shirt",
+      "box": {
+        "x": 1618,
+        "y": 462,
+        "w": 150,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "€59.00",
+      "box": {
+        "x": 2211,
+        "y": 462,
+        "w": 107,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Canvas tote",
+      "box": {
+        "x": 1618,
+        "y": 542,
+        "w": 166,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "€19.00",
+      "box": {
+        "x": 2216,
+        "y": 542,
+        "w": 102,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Shipping",
+      "box": {
+        "x": 1618,
+        "y": 622,
+        "w": 126,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "€6.00",
+      "box": {
+        "x": 2229,
+        "y": 622,
+        "w": 89,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Total",
+      "box": {
+        "x": 1618,
+        "y": 736,
+        "w": 85,
+        "h": 44
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 18
+    },
+    {
+      "label": "€84.00",
+      "box": {
+        "x": 2193,
+        "y": 736,
+        "w": 125,
+        "h": 44
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 18
+    },
+    {
+      "label": "Email address",
+      "box": {
+        "x": 126,
+        "y": 418,
+        "w": 199,
+        "h": 41
+      },
+      "cssColor": "rgb(107, 114, 128)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Card number",
+      "box": {
+        "x": 126,
+        "y": 814,
+        "w": 184,
+        "h": 41
+      },
+      "cssColor": "rgb(107, 114, 128)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "MM / YY",
+      "box": {
+        "x": 126,
+        "y": 934,
+        "w": 121,
+        "h": 41
+      },
+      "cssColor": "rgb(107, 114, 128)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "CVC",
+      "box": {
+        "x": 782,
+        "y": 934,
+        "w": 60,
+        "h": 41
+      },
+      "cssColor": "rgb(107, 114, 128)",
+      "cssFontSize": 16
+    }
+  ],
+  "controls": [
+    {
+      "label": "Email address",
+      "role": "input",
+      "box": {
+        "x": 96,
+        "y": 390,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card",
+      "role": "button",
+      "box": {
+        "x": 96,
+        "y": 658,
+        "w": 244,
+        "h": 97
+      }
+    },
+    {
+      "label": "PayPal",
+      "role": "button",
+      "box": {
+        "x": 359,
+        "y": 658,
+        "w": 240,
+        "h": 97
+      }
+    },
+    {
+      "label": "Apple Pay",
+      "role": "button",
+      "box": {
+        "x": 618,
+        "y": 658,
+        "w": 240,
+        "h": 97
+      }
+    },
+    {
+      "label": "Google Pay",
+      "role": "button",
+      "box": {
+        "x": 877,
+        "y": 658,
+        "w": 240,
+        "h": 97
+      }
+    },
+    {
+      "label": "Klarna",
+      "role": "button",
+      "box": {
+        "x": 1136,
+        "y": 658,
+        "w": 240,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card number",
+      "role": "input",
+      "box": {
+        "x": 96,
+        "y": 786,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "label": "MM / YY",
+      "role": "input",
+      "box": {
+        "x": 96,
+        "y": 906,
+        "w": 624,
+        "h": 97
+      }
+    },
+    {
+      "label": "CVC",
+      "role": "input",
+      "box": {
+        "x": 752,
+        "y": 906,
+        "w": 624,
+        "h": 97
+      }
+    },
+    {
+      "label": "Pay €84.00",
+      "role": "button",
+      "box": {
+        "x": 96,
+        "y": 1026,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "label": "Terms",
+      "role": "link",
+      "box": {
+        "x": 96,
+        "y": 1162,
+        "w": 64,
+        "h": 25
+      }
+    }
+  ],
+  "expected": [
+    {
+      "selector": "#email, #card, #expiry, #cvc",
+      "box": {
+        "x": 96,
+        "y": 390,
+        "w": 1280,
+        "h": 613
+      }
+    },
+    {
+      "selector": "#email-help",
+      "box": {
+        "x": 96,
+        "y": 498,
+        "w": 1280,
+        "h": 49
+      }
+    },
+    {
+      "selector": "#methods",
+      "box": {
+        "x": 96,
+        "y": 658,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "selector": "#terms",
+      "box": {
+        "x": 96,
+        "y": 1162,
+        "w": 64,
+        "h": 25
+      }
+    }
+  ]
+}

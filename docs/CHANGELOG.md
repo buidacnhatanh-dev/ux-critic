@@ -27,3 +27,30 @@ Decisions
 * Toasts announce through the shared Announcer; the toast region itself is not a live region
 * ESLint blocks imports of `@/lib/db` and `@/lib/pipeline` outside API routes, the pipeline, the database and the live client
 * The mode is read when a page renders; static pages bake it in at build time, which is fine because the mode is a deployment setting
+
+## M1 · Demo data (2026-10-17)
+
+Built
+
+* `eval/fixtures/`: five fixture pages (Checkout practice v1, v2, v3, Sign up form, Analytics dashboard), each with `*.expected.json` listing the planted problems with `principle_id` and a CSS selector. Shared `base.css` loads fonts from `node_modules/@fontsource` only; the capture blocks every non file request
+* `pnpm demo:capture` (`scripts/demo-capture.ts`): Playwright at 1280 × 800, scale 2, to `public/demo/*.png`, plus `demo/captures/*.json` with the text line, control and planted element boxes
+* `lib/contrast.ts`: WCAG luminance and ratio (known pairs from docs/04 tested), thresholds, OKLCH and the nearest passing colour
+* `lib/pipeline/measure.ts`, `measure-screen.ts`, `measured-text.ts`, `order.ts`, `image.ts`: background ring, text colour, contrast, text size, tight target box, target size, the docs/04 issue wording, and reading order numbers. Unit tested on synthetic images, including anti aliased text rendered with sharp
+* `pnpm demo:data` (`scripts/demo-data.ts`): runs the measuring code on the PNGs and writes `demo/data.json` with `source: "handwritten"`. Measured issues and all measurements are computed. Evaluated issues come from `demo/handwritten.json`, written from the planted problems, with principle and region taken from the fixture. The script stops if a planted measured problem is not found, or if something unplanned fails
+* `lib/data/demo-schema.ts` (zod) validates the data when it is written and in a unit test
+* `DemoClient`: every `DataClient` method on top of `demo/data.json` (loaded once, as its own chunk) and the visitor's overlay in `localStorage` (`uxc-demo-v1`): pushbacks (including undoing the prepared one), deleting projects, checklist changes, and new reviews from a sample screen with simulated steps (about 6 s, `instant` for reduced motion; measured results appear before evaluated ones). Every storage call is wrapped; blocked storage keeps changes in memory. `resetDemo()` clears it all. `listSamples()` added for the New review picker
+
+Result: 3 projects, 5 reviews, 17 issues (5 measured, 12 evaluated), 344 measurements. Checkout v3 has no issues. The faint helper text measures 1.85 : 1, the reference value from docs/04
+
+Decisions
+
+* **Where things are vs what they measure.** In the demo scripts the text lines and controls are located from the page at capture time, standing in for OCR and Claude call 1. Every value (contrast, text colour, target size) is computed from the PNG pixels by the same code live mode will use. Text size is estimated from the located line height, as docs/04 says
+* **Fixture font.** The docs/04 estimate (line height ÷ scale ÷ 1.2) is accurate for Atkinson Hyperlegible and Overpass (within about 2 px) but underestimates Arial and Helvetica by 1 to 2 px, which would flag 16 px text. Fixtures use Atkinson and Overpass. Live mode (M5) will need a check of this formula against real OCR boxes
+* **Contrast severity** is high below 3 : 1 and medium otherwise (docs/04 does not say). Target size: one issue per control, WCAG 2.5.8 (medium) first, the 44 px rule (low) only when WCAG passes. Both checks are kept as measurements
+* **Handwritten reviews** have `model`, `inputTokens` and `outputTokens` set to null (types now allow null), and `finishedAt` equal to `startedAt`, so no duration or token number is ever shown for them
+* Seed rules use stable UUIDs (v5 from their key); fixtures refer to them as `rule:<key>`
+* `.gitignore` had `data/`, which also matched `lib/data/`, so the M0 commit was missing `lib/data/`. Now `/data/` and `/eval/runs/` are anchored to the root, and `lib/data/` is committed
+* Playwright starts its dev server with its own build folder (`UXC_DIST_DIR=.next-e2e`), so `pnpm test:e2e` works while `pnpm dev` is running
+* ESLint also blocks relative imports of `lib/pipeline` and `lib/db` from screens and the data clients
+* Node 24 runs the scripts directly (built in type stripping), so no new dev dependency; script reachable `lib/` files use `.ts` import extensions (`allowImportingTsExtensions`)
+* New dependencies from the CLAUDE.md stack: `sharp` (its install script is allowed in `pnpm-workspace.yaml`) and `zod`

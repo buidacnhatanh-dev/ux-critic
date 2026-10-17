@@ -1,0 +1,270 @@
+{
+  "fixture": "signup",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "textLines": [
+    {
+      "label": "Create your account",
+      "box": {
+        "x": 874,
+        "y": 120,
+        "w": 576,
+        "h": 74
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 30
+    },
+    {
+      "label": "Free for 30 days, no card needed",
+      "box": {
+        "x": 874,
+        "y": 210,
+        "w": 467,
+        "h": 40
+      },
+      "cssColor": "rgb(74, 82, 96)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Full name",
+      "box": {
+        "x": 874,
+        "y": 298,
+        "w": 149,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Email",
+      "box": {
+        "x": 874,
+        "y": 482,
+        "w": 85,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Invalid input",
+      "box": {
+        "x": 874,
+        "y": 646,
+        "w": 194,
+        "h": 40
+      },
+      "cssColor": "rgb(180, 35, 24)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "I agree to the terms and privacy policy",
+      "box": {
+        "x": 916,
+        "y": 846,
+        "w": 541,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Create account",
+      "box": {
+        "x": 1166,
+        "y": 954,
+        "w": 228,
+        "h": 40
+      },
+      "cssColor": "rgb(255, 255, 255)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Sign up with Google",
+      "box": {
+        "x": 1127,
+        "y": 1070,
+        "w": 306,
+        "h": 40
+      },
+      "cssColor": "rgb(255, 255, 255)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Already have an account?",
+      "box": {
+        "x": 993,
+        "y": 1198,
+        "w": 360,
+        "h": 40
+      },
+      "cssColor": "rgb(74, 82, 96)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Sign in",
+      "box": {
+        "x": 1418,
+        "y": 1198,
+        "w": 107,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Sam Jordan",
+      "box": {
+        "x": 904,
+        "y": 382,
+        "w": 169,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "sam@example",
+      "box": {
+        "x": 906,
+        "y": 566,
+        "w": 203,
+        "h": 40
+      },
+      "cssColor": "rgb(21, 24, 29)",
+      "cssFontSize": 16
+    },
+    {
+      "label": "Password",
+      "box": {
+        "x": 904,
+        "y": 746,
+        "w": 133,
+        "h": 40
+      },
+      "cssColor": "rgb(107, 114, 128)",
+      "cssFontSize": 16
+    }
+  ],
+  "controls": [
+    {
+      "label": "Full name",
+      "role": "input",
+      "box": {
+        "x": 874,
+        "y": 354,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "label": "Email",
+      "role": "input",
+      "box": {
+        "x": 874,
+        "y": 538,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "label": "Password",
+      "role": "input",
+      "box": {
+        "x": 874,
+        "y": 718,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "label": "I agree to the terms and privacy policy",
+      "role": "checkbox",
+      "box": {
+        "x": 874,
+        "y": 853,
+        "w": 26,
+        "h": 26
+      }
+    },
+    {
+      "label": "Create account",
+      "role": "button",
+      "box": {
+        "x": 874,
+        "y": 926,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "label": "Sign up with Google",
+      "role": "button",
+      "box": {
+        "x": 874,
+        "y": 1042,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "label": "Sign in",
+      "role": "button",
+      "box": {
+        "x": 1376,
+        "y": 1170,
+        "w": 191,
+        "h": 96
+      }
+    }
+  ],
+  "expected": [
+    {
+      "selector": "#email-error",
+      "box": {
+        "x": 874,
+        "y": 642,
+        "w": 812,
+        "h": 48
+      }
+    },
+    {
+      "selector": "#password",
+      "box": {
+        "x": 874,
+        "y": 718,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "selector": "#password",
+      "box": {
+        "x": 874,
+        "y": 718,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "selector": "#agree",
+      "box": {
+        "x": 874,
+        "y": 853,
+        "w": 26,
+        "h": 26
+      }
+    },
+    {
+      "selector": "#actions",
+      "box": {
+        "x": 874,
+        "y": 926,
+        "w": 812,
+        "h": 212
+      }
+    }
+  ]
+}

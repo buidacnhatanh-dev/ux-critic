@@ -1,0 +1,41 @@
+{
+  "fixture": "signup",
+  "description": "Sign up form with a vague error, a placeholder only password field, hidden password rules, a tiny checkbox and two primary buttons.",
+  "issues": [
+    {
+      "id": "vague-error",
+      "kind": "evaluated",
+      "principle_id": "nielsen-9",
+      "selector": "#email-error",
+      "note": "\"Invalid input\" does not say what is wrong or how to fix it."
+    },
+    {
+      "id": "password-placeholder",
+      "kind": "evaluated",
+      "principle_id": "wcag-3.3.2",
+      "selector": "#password",
+      "note": "The password field has no visible label."
+    },
+    {
+      "id": "hidden-password-rules",
+      "kind": "evaluated",
+      "principle_id": "nielsen-5",
+      "selector": "#password",
+      "note": "Password rules are not shown before the person types."
+    },
+    {
+      "id": "tiny-checkbox",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "selector": "#agree",
+      "note": "Native 13 px checkbox."
+    },
+    {
+      "id": "two-primary-buttons",
+      "kind": "evaluated",
+      "principle_id": "rule:one-primary-button",
+      "selector": "#actions",
+      "note": "Two filled primary buttons of equal weight. Checks the seed rule \"One primary button per screen\"."
+    }
+  ]
+}

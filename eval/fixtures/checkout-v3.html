@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Checkout v3 (clean)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="checkout.css" />
+    <style>
+      .help {
+        margin-top: 6px;
+        color: #4a5260;
+      }
+      .terms {
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="brand">Northwind Goods</span>
+      <span class="muted">Secure checkout</span>
+    </header>
+    <div class="page">
+      <main>
+        <h1>Checkout</h1>
+        <section class="section" id="contact">
+          <h2>Contact</h2>
+          <label class="label" for="email">Email address</label>
+          <input class="input" id="email" type="email" value="sam@example.com" />
+          <p class="help" id="email-help">We send your receipt to this address</p>
+        </section>
+        <section class="section" id="payment">
+          <h2>Payment</h2>
+          <!-- Three choices; the rest behind "Other" -->
+          <div class="methods" id="methods">
+            <button class="method" type="button" aria-pressed="true">Card</button>
+            <button class="method" type="button" aria-pressed="false">PayPal</button>
+            <button class="method" type="button" aria-pressed="false">Other methods</button>
+          </div>
+          <div class="field">
+            <label class="label" for="card">Card number</label>
+            <input class="input" id="card" placeholder="1234 5678 9012 3456" inputmode="numeric" />
+          </div>
+          <div class="row field">
+            <div>
+              <label class="label" for="expiry">Expiry date</label>
+              <input class="input" id="expiry" placeholder="MM / YY" />
+            </div>
+            <div>
+              <label class="label" for="cvc">Security code</label>
+              <input class="input" id="cvc" placeholder="3 digits" />
+            </div>
+          </div>
+          <button class="btn btn-primary pay" type="button">Pay €84.00</button>
+          <button class="btn terms" id="terms" type="button">Read the terms</button>
+        </section>
+      </main>
+      <aside class="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Order summary</h2>
+        <p class="line"><span>Linen shirt</span><span>€59.00</span></p>
+        <p class="line"><span>Canvas tote</span><span>€19.00</span></p>
+        <p class="line"><span>Shipping</span><span>€6.00</span></p>
+        <p class="line total"><span>Total</span><span>€84.00</span></p>
+      </aside>
+    </div>
+  </body>
+</html>

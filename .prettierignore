@@ -1,11 +1,12 @@
 .next
+.next-e2e
 node_modules
 design
 docs
 pnpm-lock.yaml
 playwright-report
 test-results
-data
+/data
 eval/runs
 *.md
 .claude

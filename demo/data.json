@@ -1,4 +1,5844 @@
 {
-  "projects": [],
-  "reviews": []
+  "generatedBy": "scripts/demo-data.ts (pnpm demo:data) from demo/handwritten.json and public/demo/*.png",
+  "settings": {
+    "sources": {
+      "nielsen": true,
+      "wcag": true,
+      "laws": true,
+      "mine": true
+    }
+  },
+  "rules": [
+    {
+      "id": "73ee2594-19b3-5ed8-895b-c6660025f2f7",
+      "text": "Touch targets are at least 44 by 44 px",
+      "kind": "measured",
+      "metric": "target_size_min",
+      "threshold": 44,
+      "position": 1,
+      "enabled": true
+    },
+    {
+      "id": "f936bf4f-9c12-56a3-bac2-0bc367a4d9cd",
+      "text": "Body text is at least 16 px",
+      "kind": "measured",
+      "metric": "text_size_min",
+      "threshold": 16,
+      "position": 2,
+      "enabled": true
+    },
+    {
+      "id": "0489249f-1bd0-54a4-ada6-58f38fdb207f",
+      "text": "Every field has a visible label",
+      "kind": "evaluated",
+      "metric": null,
+      "threshold": null,
+      "position": 3,
+      "enabled": true
+    },
+    {
+      "id": "08f0f43b-09e4-563f-98dc-f07e3aa12ac1",
+      "text": "One primary button per screen",
+      "kind": "evaluated",
+      "metric": null,
+      "threshold": null,
+      "position": 4,
+      "enabled": true
+    },
+    {
+      "id": "f6112615-4d27-5972-be28-11352cb3e788",
+      "text": "Error messages say how to fix the problem",
+      "kind": "evaluated",
+      "metric": null,
+      "threshold": null,
+      "position": 5,
+      "enabled": true
+    },
+    {
+      "id": "5b6fcbf2-53ca-5307-8bcf-56434f8d3c98",
+      "text": "Colour is never the only way to show a state",
+      "kind": "evaluated",
+      "metric": null,
+      "threshold": null,
+      "position": 6,
+      "enabled": true
+    }
+  ],
+  "samples": [
+    {
+      "id": "checkout-v1",
+      "name": "Checkout, first draft",
+      "screenshotUrl": "/demo/checkout-v1.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "reviewId": "review-checkout-v1"
+    },
+    {
+      "id": "checkout-v2",
+      "name": "Checkout with labels",
+      "screenshotUrl": "/demo/checkout-v2.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "reviewId": "review-checkout-v2"
+    },
+    {
+      "id": "checkout-v3",
+      "name": "Checkout, final",
+      "screenshotUrl": "/demo/checkout-v3.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "reviewId": "review-checkout-v3"
+    },
+    {
+      "id": "signup",
+      "name": "Sign up form",
+      "screenshotUrl": "/demo/signup.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "reviewId": "review-signup-v1"
+    },
+    {
+      "id": "dashboard",
+      "name": "Analytics dashboard",
+      "screenshotUrl": "/demo/dashboard.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "reviewId": "review-dashboard-v1"
+    }
+  ],
+  "projects": [
+    {
+      "id": "checkout-practice",
+      "name": "Checkout practice",
+      "createdAt": "2026-10-03T09:00:00.000Z"
+    },
+    {
+      "id": "sign-up-form",
+      "name": "Sign up form",
+      "createdAt": "2026-10-09T14:00:00.000Z"
+    },
+    {
+      "id": "analytics-dashboard",
+      "name": "Analytics dashboard",
+      "createdAt": "2026-10-12T10:30:00.000Z"
+    }
+  ],
+  "versions": [
+    {
+      "id": "checkout-v1",
+      "projectId": "checkout-practice",
+      "sampleId": "checkout-v1",
+      "name": "v1",
+      "context": "Guest checkout for a small clothing shop. People pay for what is in their cart.",
+      "screenshotUrl": "/demo/checkout-v1.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "createdAt": "2026-10-03T09:05:00.000Z"
+    },
+    {
+      "id": "checkout-v2",
+      "projectId": "checkout-practice",
+      "sampleId": "checkout-v2",
+      "name": "v2",
+      "context": "Same checkout after adding field labels. The card number was typed wrong on purpose.",
+      "screenshotUrl": "/demo/checkout-v2.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "createdAt": "2026-10-08T16:20:00.000Z"
+    },
+    {
+      "id": "checkout-v3",
+      "projectId": "checkout-practice",
+      "sampleId": "checkout-v3",
+      "name": "v3",
+      "context": "Checkout after fixing the payment choices and the error state.",
+      "screenshotUrl": "/demo/checkout-v3.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "createdAt": "2026-10-14T11:00:00.000Z"
+    },
+    {
+      "id": "signup-v1",
+      "projectId": "sign-up-form",
+      "sampleId": "signup",
+      "name": "v1",
+      "context": "Account sign up for a free trial. Shown after someone typed an email without the domain ending.",
+      "screenshotUrl": "/demo/signup.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "createdAt": "2026-10-09T14:10:00.000Z"
+    },
+    {
+      "id": "dashboard-v1",
+      "projectId": "analytics-dashboard",
+      "sampleId": "dashboard",
+      "name": "v1",
+      "context": "Weekly sales overview for a shop owner who checks it every Monday.",
+      "screenshotUrl": "/demo/dashboard.png",
+      "width": 2560,
+      "height": 1600,
+      "scale": 2,
+      "createdAt": "2026-10-12T10:40:00.000Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-checkout-v1",
+      "versionId": "checkout-v1",
+      "status": "done",
+      "step": "place",
+      "error": null,
+      "sources": {
+        "sets": {
+          "nielsen": true,
+          "wcag": true,
+          "laws": true,
+          "mine": true
+        },
+        "ruleIds": [
+          "73ee2594-19b3-5ed8-895b-c6660025f2f7",
+          "f936bf4f-9c12-56a3-bac2-0bc367a4d9cd",
+          "0489249f-1bd0-54a4-ada6-58f38fdb207f",
+          "08f0f43b-09e4-563f-98dc-f07e3aa12ac1",
+          "f6112615-4d27-5972-be28-11352cb3e788",
+          "5b6fcbf2-53ca-5307-8bcf-56434f8d3c98"
+        ]
+      },
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "startedAt": "2026-10-03T09:05:00.000Z",
+      "finishedAt": "2026-10-03T09:05:00.000Z",
+      "source": {
+        "kind": "handwritten"
+      }
+    },
+    {
+      "id": "review-checkout-v2",
+      "versionId": "checkout-v2",
+      "status": "done",
+      "step": "place",
+      "error": null,
+      "sources": {
+        "sets": {
+          "nielsen": true,
+          "wcag": true,
+          "laws": true,
+          "mine": true
+        },
+        "ruleIds": [
+          "73ee2594-19b3-5ed8-895b-c6660025f2f7",
+          "f936bf4f-9c12-56a3-bac2-0bc367a4d9cd",
+          "0489249f-1bd0-54a4-ada6-58f38fdb207f",
+          "08f0f43b-09e4-563f-98dc-f07e3aa12ac1",
+          "f6112615-4d27-5972-be28-11352cb3e788",
+          "5b6fcbf2-53ca-5307-8bcf-56434f8d3c98"
+        ]
+      },
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "startedAt": "2026-10-08T16:20:00.000Z",
+      "finishedAt": "2026-10-08T16:20:00.000Z",
+      "source": {
+        "kind": "handwritten"
+      }
+    },
+    {
+      "id": "review-checkout-v3",
+      "versionId": "checkout-v3",
+      "status": "done",
+      "step": "place",
+      "error": null,
+      "sources": {
+        "sets": {
+          "nielsen": true,
+          "wcag": true,
+          "laws": true,
+          "mine": true
+        },
+        "ruleIds": [
+          "73ee2594-19b3-5ed8-895b-c6660025f2f7",
+          "f936bf4f-9c12-56a3-bac2-0bc367a4d9cd",
+          "0489249f-1bd0-54a4-ada6-58f38fdb207f",
+          "08f0f43b-09e4-563f-98dc-f07e3aa12ac1",
+          "f6112615-4d27-5972-be28-11352cb3e788",
+          "5b6fcbf2-53ca-5307-8bcf-56434f8d3c98"
+        ]
+      },
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "startedAt": "2026-10-14T11:00:00.000Z",
+      "finishedAt": "2026-10-14T11:00:00.000Z",
+      "source": {
+        "kind": "handwritten"
+      }
+    },
+    {
+      "id": "review-signup-v1",
+      "versionId": "signup-v1",
+      "status": "done",
+      "step": "place",
+      "error": null,
+      "sources": {
+        "sets": {
+          "nielsen": true,
+          "wcag": true,
+          "laws": true,
+          "mine": true
+        },
+        "ruleIds": [
+          "73ee2594-19b3-5ed8-895b-c6660025f2f7",
+          "f936bf4f-9c12-56a3-bac2-0bc367a4d9cd",
+          "0489249f-1bd0-54a4-ada6-58f38fdb207f",
+          "08f0f43b-09e4-563f-98dc-f07e3aa12ac1",
+          "f6112615-4d27-5972-be28-11352cb3e788",
+          "5b6fcbf2-53ca-5307-8bcf-56434f8d3c98"
+        ]
+      },
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "startedAt": "2026-10-09T14:10:00.000Z",
+      "finishedAt": "2026-10-09T14:10:00.000Z",
+      "source": {
+        "kind": "handwritten"
+      }
+    },
+    {
+      "id": "review-dashboard-v1",
+      "versionId": "dashboard-v1",
+      "status": "done",
+      "step": "place",
+      "error": null,
+      "sources": {
+        "sets": {
+          "nielsen": true,
+          "wcag": true,
+          "laws": true,
+          "mine": true
+        },
+        "ruleIds": [
+          "73ee2594-19b3-5ed8-895b-c6660025f2f7",
+          "f936bf4f-9c12-56a3-bac2-0bc367a4d9cd",
+          "0489249f-1bd0-54a4-ada6-58f38fdb207f",
+          "08f0f43b-09e4-563f-98dc-f07e3aa12ac1",
+          "f6112615-4d27-5972-be28-11352cb3e788",
+          "5b6fcbf2-53ca-5307-8bcf-56434f8d3c98"
+        ]
+      },
+      "model": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "startedAt": "2026-10-12T10:40:00.000Z",
+      "finishedAt": "2026-10-12T10:40:00.000Z",
+      "source": {
+        "kind": "handwritten"
+      }
+    }
+  ],
+  "measurements": [
+    {
+      "id": "checkout-v1-m-t0-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Northwind Goods",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 356,
+        "h": 54
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t0-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Northwind Goods",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 356,
+        "h": 54
+      },
+      "value": 23,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t1-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Secure checkout",
+      "box": {
+        "x": 2230,
+        "y": 43,
+        "w": 234,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t1-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Secure checkout",
+      "box": {
+        "x": 2230,
+        "y": 43,
+        "w": 234,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t2-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Checkout",
+      "box": {
+        "x": 96,
+        "y": 188,
+        "w": 324,
+        "h": 92
+      },
+      "value": 17.79,
+      "threshold": 3,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t2-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Checkout",
+      "box": {
+        "x": 96,
+        "y": 188,
+        "w": 324,
+        "h": 92
+      },
+      "value": 38,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t3-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Contact",
+      "box": {
+        "x": 96,
+        "y": 316,
+        "w": 148,
+        "h": 53
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t3-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Contact",
+      "box": {
+        "x": 96,
+        "y": 316,
+        "w": 148,
+        "h": 53
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t4-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "We send your receipt to this address",
+      "box": {
+        "x": 96,
+        "y": 502,
+        "w": 514,
+        "h": 41
+      },
+      "value": 1.85,
+      "threshold": 4.5,
+      "passes": false
+    },
+    {
+      "id": "checkout-v1-m-t4-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "We send your receipt to this address",
+      "box": {
+        "x": 96,
+        "y": 502,
+        "w": 514,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t5-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Payment",
+      "box": {
+        "x": 96,
+        "y": 584,
+        "w": 168,
+        "h": 53
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t5-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Payment",
+      "box": {
+        "x": 96,
+        "y": 584,
+        "w": 168,
+        "h": 53
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t6-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Card",
+      "box": {
+        "x": 182,
+        "y": 686,
+        "w": 71,
+        "h": 41
+      },
+      "value": 5.77,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t6-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Card",
+      "box": {
+        "x": 182,
+        "y": 686,
+        "w": 71,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t7-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "PayPal",
+      "box": {
+        "x": 428,
+        "y": 686,
+        "w": 101,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t7-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "PayPal",
+      "box": {
+        "x": 428,
+        "y": 686,
+        "w": 101,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t8-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Apple Pay",
+      "box": {
+        "x": 661,
+        "y": 686,
+        "w": 154,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t8-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Apple Pay",
+      "box": {
+        "x": 661,
+        "y": 686,
+        "w": 154,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t9-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Google Pay",
+      "box": {
+        "x": 911,
+        "y": 686,
+        "w": 172,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t9-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Google Pay",
+      "box": {
+        "x": 911,
+        "y": 686,
+        "w": 172,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t10-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Klarna",
+      "box": {
+        "x": 1207,
+        "y": 686,
+        "w": 99,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t10-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Klarna",
+      "box": {
+        "x": 1207,
+        "y": 686,
+        "w": 99,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t11-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 648,
+        "y": 1054,
+        "w": 176,
+        "h": 41
+      },
+      "value": 6.7,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t11-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 648,
+        "y": 1054,
+        "w": 176,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t12-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Terms",
+      "box": {
+        "x": 96,
+        "y": 1160,
+        "w": 64,
+        "h": 29
+      },
+      "value": 6.7,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t12-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Terms",
+      "box": {
+        "x": 96,
+        "y": 1160,
+        "w": 64,
+        "h": 29
+      },
+      "value": 12,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t13-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Order summary",
+      "box": {
+        "x": 1618,
+        "y": 368,
+        "w": 296,
+        "h": 52
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t13-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Order summary",
+      "box": {
+        "x": 1618,
+        "y": 368,
+        "w": 296,
+        "h": 52
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t14-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Linen shirt",
+      "box": {
+        "x": 1618,
+        "y": 462,
+        "w": 150,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t14-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Linen shirt",
+      "box": {
+        "x": 1618,
+        "y": 462,
+        "w": 150,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t15-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "€59.00",
+      "box": {
+        "x": 2211,
+        "y": 462,
+        "w": 107,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t15-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "€59.00",
+      "box": {
+        "x": 2211,
+        "y": 462,
+        "w": 107,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t16-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Canvas tote",
+      "box": {
+        "x": 1618,
+        "y": 542,
+        "w": 166,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t16-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Canvas tote",
+      "box": {
+        "x": 1618,
+        "y": 542,
+        "w": 166,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t17-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "€19.00",
+      "box": {
+        "x": 2216,
+        "y": 542,
+        "w": 102,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t17-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "€19.00",
+      "box": {
+        "x": 2216,
+        "y": 542,
+        "w": 102,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t18-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Shipping",
+      "box": {
+        "x": 1618,
+        "y": 622,
+        "w": 126,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t18-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Shipping",
+      "box": {
+        "x": 1618,
+        "y": 622,
+        "w": 126,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t19-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "€6.00",
+      "box": {
+        "x": 2229,
+        "y": 622,
+        "w": 89,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t19-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "€6.00",
+      "box": {
+        "x": 2229,
+        "y": 622,
+        "w": 89,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t20-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Total",
+      "box": {
+        "x": 1618,
+        "y": 736,
+        "w": 85,
+        "h": 44
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t20-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Total",
+      "box": {
+        "x": 1618,
+        "y": 736,
+        "w": 85,
+        "h": 44
+      },
+      "value": 18,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t21-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "€84.00",
+      "box": {
+        "x": 2193,
+        "y": 736,
+        "w": 125,
+        "h": 44
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t21-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "€84.00",
+      "box": {
+        "x": 2193,
+        "y": 736,
+        "w": 125,
+        "h": 44
+      },
+      "value": 18,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t22-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Email address",
+      "box": {
+        "x": 126,
+        "y": 418,
+        "w": 199,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t22-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Email address",
+      "box": {
+        "x": 126,
+        "y": 418,
+        "w": 199,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t23-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "Card number",
+      "box": {
+        "x": 126,
+        "y": 814,
+        "w": 184,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t23-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "Card number",
+      "box": {
+        "x": 126,
+        "y": 814,
+        "w": 184,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t24-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "MM / YY",
+      "box": {
+        "x": 126,
+        "y": 934,
+        "w": 121,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t24-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "MM / YY",
+      "box": {
+        "x": 126,
+        "y": 934,
+        "w": 121,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t25-contrast",
+      "reviewId": "review-checkout-v1",
+      "kind": "contrast",
+      "label": "CVC",
+      "box": {
+        "x": 782,
+        "y": 934,
+        "w": 60,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-t25-size",
+      "reviewId": "review-checkout-v1",
+      "kind": "text_size",
+      "label": "CVC",
+      "box": {
+        "x": 782,
+        "y": 934,
+        "w": 60,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c0-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 390,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c0-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 390,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c1-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Card",
+      "box": {
+        "x": 96,
+        "y": 658,
+        "w": 244,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c1-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Card",
+      "box": {
+        "x": 96,
+        "y": 658,
+        "w": 244,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c2-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "PayPal",
+      "box": {
+        "x": 360,
+        "y": 658,
+        "w": 238,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c2-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "PayPal",
+      "box": {
+        "x": 360,
+        "y": 658,
+        "w": 238,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c3-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Apple Pay",
+      "box": {
+        "x": 618,
+        "y": 658,
+        "w": 240,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c3-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Apple Pay",
+      "box": {
+        "x": 618,
+        "y": 658,
+        "w": 240,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c4-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Google Pay",
+      "box": {
+        "x": 878,
+        "y": 658,
+        "w": 238,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c4-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Google Pay",
+      "box": {
+        "x": 878,
+        "y": 658,
+        "w": 238,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c5-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Klarna",
+      "box": {
+        "x": 1136,
+        "y": 658,
+        "w": 240,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c5-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Klarna",
+      "box": {
+        "x": 1136,
+        "y": 658,
+        "w": 240,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c6-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 786,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c6-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 786,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c7-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "MM / YY",
+      "box": {
+        "x": 96,
+        "y": 906,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c7-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "MM / YY",
+      "box": {
+        "x": 96,
+        "y": 906,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c8-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "CVC",
+      "box": {
+        "x": 752,
+        "y": 906,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c8-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "CVC",
+      "box": {
+        "x": 752,
+        "y": 906,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c9-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 96,
+        "y": 1026,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c9-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 96,
+        "y": 1026,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v1-m-c10-target",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Terms",
+      "box": {
+        "x": 96,
+        "y": 1165,
+        "w": 64,
+        "h": 21
+      },
+      "value": 10.5,
+      "threshold": 24,
+      "passes": false
+    },
+    {
+      "id": "checkout-v1-m-c10-target-rule",
+      "reviewId": "review-checkout-v1",
+      "kind": "target_size",
+      "label": "Terms",
+      "box": {
+        "x": 96,
+        "y": 1165,
+        "w": 64,
+        "h": 21
+      },
+      "value": 10.5,
+      "threshold": 44,
+      "passes": false
+    },
+    {
+      "id": "checkout-v2-m-t0-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Northwind Goods",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 356,
+        "h": 54
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t0-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Northwind Goods",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 356,
+        "h": 54
+      },
+      "value": 23,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t1-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Secure checkout",
+      "box": {
+        "x": 2230,
+        "y": 43,
+        "w": 234,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t1-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Secure checkout",
+      "box": {
+        "x": 2230,
+        "y": 43,
+        "w": 234,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t2-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Checkout",
+      "box": {
+        "x": 96,
+        "y": 188,
+        "w": 324,
+        "h": 92
+      },
+      "value": 17.79,
+      "threshold": 3,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t2-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Checkout",
+      "box": {
+        "x": 96,
+        "y": 188,
+        "w": 324,
+        "h": 92
+      },
+      "value": 38,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t3-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Contact",
+      "box": {
+        "x": 96,
+        "y": 316,
+        "w": 148,
+        "h": 53
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t3-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Contact",
+      "box": {
+        "x": 96,
+        "y": 316,
+        "w": 148,
+        "h": 53
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t4-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 394,
+        "w": 215,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t4-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 394,
+        "w": 215,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t5-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "We send your receipt to this address",
+      "box": {
+        "x": 96,
+        "y": 562,
+        "w": 514,
+        "h": 41
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t5-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "We send your receipt to this address",
+      "box": {
+        "x": 96,
+        "y": 562,
+        "w": 514,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t6-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Payment",
+      "box": {
+        "x": 96,
+        "y": 644,
+        "w": 168,
+        "h": 53
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t6-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Payment",
+      "box": {
+        "x": 96,
+        "y": 644,
+        "w": 168,
+        "h": 53
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t7-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Card",
+      "box": {
+        "x": 182,
+        "y": 746,
+        "w": 71,
+        "h": 41
+      },
+      "value": 5.77,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t7-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Card",
+      "box": {
+        "x": 182,
+        "y": 746,
+        "w": 71,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t8-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "PayPal",
+      "box": {
+        "x": 428,
+        "y": 746,
+        "w": 101,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t8-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "PayPal",
+      "box": {
+        "x": 428,
+        "y": 746,
+        "w": 101,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t9-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Apple Pay",
+      "box": {
+        "x": 661,
+        "y": 746,
+        "w": 154,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t9-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Apple Pay",
+      "box": {
+        "x": 661,
+        "y": 746,
+        "w": 154,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t10-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Google Pay",
+      "box": {
+        "x": 911,
+        "y": 746,
+        "w": 172,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t10-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Google Pay",
+      "box": {
+        "x": 911,
+        "y": 746,
+        "w": 172,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t11-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Klarna",
+      "box": {
+        "x": 1207,
+        "y": 746,
+        "w": 99,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t11-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Klarna",
+      "box": {
+        "x": 1207,
+        "y": 746,
+        "w": 99,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t12-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 850,
+        "w": 195,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t12-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 850,
+        "w": 195,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t13-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1030,
+        "w": 172,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t13-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1030,
+        "w": 172,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t14-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1030,
+        "w": 207,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t14-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1030,
+        "w": 207,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t15-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 648,
+        "y": 1234,
+        "w": 176,
+        "h": 41
+      },
+      "value": 6.7,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t15-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 648,
+        "y": 1234,
+        "w": 176,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t16-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Read the terms",
+      "box": {
+        "x": 138,
+        "y": 1362,
+        "w": 233,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t16-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Read the terms",
+      "box": {
+        "x": 138,
+        "y": 1362,
+        "w": 233,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t17-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Order summary",
+      "box": {
+        "x": 1618,
+        "y": 368,
+        "w": 296,
+        "h": 52
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t17-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Order summary",
+      "box": {
+        "x": 1618,
+        "y": 368,
+        "w": 296,
+        "h": 52
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t18-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Linen shirt",
+      "box": {
+        "x": 1618,
+        "y": 462,
+        "w": 150,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t18-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Linen shirt",
+      "box": {
+        "x": 1618,
+        "y": 462,
+        "w": 150,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t19-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "€59.00",
+      "box": {
+        "x": 2211,
+        "y": 462,
+        "w": 107,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t19-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "€59.00",
+      "box": {
+        "x": 2211,
+        "y": 462,
+        "w": 107,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t20-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Canvas tote",
+      "box": {
+        "x": 1618,
+        "y": 542,
+        "w": 166,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t20-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Canvas tote",
+      "box": {
+        "x": 1618,
+        "y": 542,
+        "w": 166,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t21-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "€19.00",
+      "box": {
+        "x": 2216,
+        "y": 542,
+        "w": 102,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t21-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "€19.00",
+      "box": {
+        "x": 2216,
+        "y": 542,
+        "w": 102,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t22-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Shipping",
+      "box": {
+        "x": 1618,
+        "y": 622,
+        "w": 126,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t22-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Shipping",
+      "box": {
+        "x": 1618,
+        "y": 622,
+        "w": 126,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t23-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "€6.00",
+      "box": {
+        "x": 2229,
+        "y": 622,
+        "w": 89,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t23-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "€6.00",
+      "box": {
+        "x": 2229,
+        "y": 622,
+        "w": 89,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t24-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "Total",
+      "box": {
+        "x": 1618,
+        "y": 736,
+        "w": 85,
+        "h": 44
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t24-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "Total",
+      "box": {
+        "x": 1618,
+        "y": 736,
+        "w": 85,
+        "h": 44
+      },
+      "value": 18,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t25-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "€84.00",
+      "box": {
+        "x": 2193,
+        "y": 736,
+        "w": 125,
+        "h": 44
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t25-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "€84.00",
+      "box": {
+        "x": 2193,
+        "y": 736,
+        "w": 125,
+        "h": 44
+      },
+      "value": 18,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t26-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "sam@example.com",
+      "box": {
+        "x": 126,
+        "y": 478,
+        "w": 270,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t26-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "sam@example.com",
+      "box": {
+        "x": 126,
+        "y": 478,
+        "w": 270,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t27-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "4242 4242 4242",
+      "box": {
+        "x": 128,
+        "y": 934,
+        "w": 241,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t27-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "4242 4242 4242",
+      "box": {
+        "x": 128,
+        "y": 934,
+        "w": 241,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t28-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "MM / YY",
+      "box": {
+        "x": 126,
+        "y": 1114,
+        "w": 121,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t28-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "MM / YY",
+      "box": {
+        "x": 126,
+        "y": 1114,
+        "w": 121,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t29-contrast",
+      "reviewId": "review-checkout-v2",
+      "kind": "contrast",
+      "label": "3 digits",
+      "box": {
+        "x": 782,
+        "y": 1114,
+        "w": 107,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-t29-size",
+      "reviewId": "review-checkout-v2",
+      "kind": "text_size",
+      "label": "3 digits",
+      "box": {
+        "x": 782,
+        "y": 1114,
+        "w": 107,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c0-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 450,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c0-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 450,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c1-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Card",
+      "box": {
+        "x": 96,
+        "y": 718,
+        "w": 244,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c1-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Card",
+      "box": {
+        "x": 96,
+        "y": 718,
+        "w": 244,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c2-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "PayPal",
+      "box": {
+        "x": 360,
+        "y": 718,
+        "w": 238,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c2-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "PayPal",
+      "box": {
+        "x": 360,
+        "y": 718,
+        "w": 238,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c3-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Apple Pay",
+      "box": {
+        "x": 618,
+        "y": 718,
+        "w": 240,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c3-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Apple Pay",
+      "box": {
+        "x": 618,
+        "y": 718,
+        "w": 240,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c4-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Google Pay",
+      "box": {
+        "x": 878,
+        "y": 718,
+        "w": 238,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c4-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Google Pay",
+      "box": {
+        "x": 878,
+        "y": 718,
+        "w": 238,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c5-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Klarna",
+      "box": {
+        "x": 1136,
+        "y": 718,
+        "w": 240,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c5-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Klarna",
+      "box": {
+        "x": 1136,
+        "y": 718,
+        "w": 240,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c6-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 906,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c6-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 906,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c7-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1086,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c7-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1086,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c8-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1086,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c8-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1086,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c9-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 96,
+        "y": 1206,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c9-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 96,
+        "y": 1206,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c10-target",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Read the terms",
+      "box": {
+        "x": 96,
+        "y": 1334,
+        "w": 316,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v2-m-c10-target-rule",
+      "reviewId": "review-checkout-v2",
+      "kind": "target_size",
+      "label": "Read the terms",
+      "box": {
+        "x": 96,
+        "y": 1334,
+        "w": 316,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t0-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Northwind Goods",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 356,
+        "h": 54
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t0-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Northwind Goods",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 356,
+        "h": 54
+      },
+      "value": 23,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t1-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Secure checkout",
+      "box": {
+        "x": 2230,
+        "y": 43,
+        "w": 234,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t1-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Secure checkout",
+      "box": {
+        "x": 2230,
+        "y": 43,
+        "w": 234,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t2-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Checkout",
+      "box": {
+        "x": 96,
+        "y": 188,
+        "w": 324,
+        "h": 92
+      },
+      "value": 17.79,
+      "threshold": 3,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t2-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Checkout",
+      "box": {
+        "x": 96,
+        "y": 188,
+        "w": 324,
+        "h": 92
+      },
+      "value": 38,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t3-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Contact",
+      "box": {
+        "x": 96,
+        "y": 316,
+        "w": 148,
+        "h": 53
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t3-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Contact",
+      "box": {
+        "x": 96,
+        "y": 316,
+        "w": 148,
+        "h": 53
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t4-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 394,
+        "w": 215,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t4-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 394,
+        "w": 215,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t5-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "We send your receipt to this address",
+      "box": {
+        "x": 96,
+        "y": 562,
+        "w": 514,
+        "h": 41
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t5-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "We send your receipt to this address",
+      "box": {
+        "x": 96,
+        "y": 562,
+        "w": 514,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t6-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Payment",
+      "box": {
+        "x": 96,
+        "y": 644,
+        "w": 168,
+        "h": 53
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t6-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Payment",
+      "box": {
+        "x": 96,
+        "y": 644,
+        "w": 168,
+        "h": 53
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t7-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Card",
+      "box": {
+        "x": 268,
+        "y": 746,
+        "w": 72,
+        "h": 41
+      },
+      "value": 5.77,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t7-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Card",
+      "box": {
+        "x": 268,
+        "y": 746,
+        "w": 72,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t8-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "PayPal",
+      "box": {
+        "x": 687,
+        "y": 746,
+        "w": 102,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t8-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "PayPal",
+      "box": {
+        "x": 687,
+        "y": 746,
+        "w": 102,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t9-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Other methods",
+      "box": {
+        "x": 1057,
+        "y": 746,
+        "w": 226,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t9-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Other methods",
+      "box": {
+        "x": 1057,
+        "y": 746,
+        "w": 226,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t10-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 850,
+        "w": 195,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t10-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 850,
+        "w": 195,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t11-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1030,
+        "w": 172,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t11-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1030,
+        "w": 172,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t12-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1030,
+        "w": 207,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t12-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1030,
+        "w": 207,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t13-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 648,
+        "y": 1234,
+        "w": 176,
+        "h": 41
+      },
+      "value": 6.7,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t13-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 648,
+        "y": 1234,
+        "w": 176,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t14-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Read the terms",
+      "box": {
+        "x": 138,
+        "y": 1362,
+        "w": 233,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t14-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Read the terms",
+      "box": {
+        "x": 138,
+        "y": 1362,
+        "w": 233,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t15-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Order summary",
+      "box": {
+        "x": 1618,
+        "y": 368,
+        "w": 296,
+        "h": 52
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t15-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Order summary",
+      "box": {
+        "x": 1618,
+        "y": 368,
+        "w": 296,
+        "h": 52
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t16-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Linen shirt",
+      "box": {
+        "x": 1618,
+        "y": 462,
+        "w": 150,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t16-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Linen shirt",
+      "box": {
+        "x": 1618,
+        "y": 462,
+        "w": 150,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t17-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "€59.00",
+      "box": {
+        "x": 2211,
+        "y": 462,
+        "w": 107,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t17-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "€59.00",
+      "box": {
+        "x": 2211,
+        "y": 462,
+        "w": 107,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t18-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Canvas tote",
+      "box": {
+        "x": 1618,
+        "y": 542,
+        "w": 166,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t18-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Canvas tote",
+      "box": {
+        "x": 1618,
+        "y": 542,
+        "w": 166,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t19-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "€19.00",
+      "box": {
+        "x": 2216,
+        "y": 542,
+        "w": 102,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t19-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "€19.00",
+      "box": {
+        "x": 2216,
+        "y": 542,
+        "w": 102,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t20-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Shipping",
+      "box": {
+        "x": 1618,
+        "y": 622,
+        "w": 126,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t20-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Shipping",
+      "box": {
+        "x": 1618,
+        "y": 622,
+        "w": 126,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t21-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "€6.00",
+      "box": {
+        "x": 2229,
+        "y": 622,
+        "w": 89,
+        "h": 40
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t21-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "€6.00",
+      "box": {
+        "x": 2229,
+        "y": 622,
+        "w": 89,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t22-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "Total",
+      "box": {
+        "x": 1618,
+        "y": 736,
+        "w": 85,
+        "h": 44
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t22-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "Total",
+      "box": {
+        "x": 1618,
+        "y": 736,
+        "w": 85,
+        "h": 44
+      },
+      "value": 18,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t23-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "€84.00",
+      "box": {
+        "x": 2193,
+        "y": 736,
+        "w": 125,
+        "h": 44
+      },
+      "value": 16.74,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t23-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "€84.00",
+      "box": {
+        "x": 2193,
+        "y": 736,
+        "w": 125,
+        "h": 44
+      },
+      "value": 18,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t24-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "sam@example.com",
+      "box": {
+        "x": 126,
+        "y": 478,
+        "w": 270,
+        "h": 41
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t24-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "sam@example.com",
+      "box": {
+        "x": 126,
+        "y": 478,
+        "w": 270,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t25-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "1234 5678 9012 3456",
+      "box": {
+        "x": 126,
+        "y": 934,
+        "w": 314,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t25-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "1234 5678 9012 3456",
+      "box": {
+        "x": 126,
+        "y": 934,
+        "w": 314,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t26-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "MM / YY",
+      "box": {
+        "x": 126,
+        "y": 1114,
+        "w": 121,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t26-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "MM / YY",
+      "box": {
+        "x": 126,
+        "y": 1114,
+        "w": 121,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t27-contrast",
+      "reviewId": "review-checkout-v3",
+      "kind": "contrast",
+      "label": "3 digits",
+      "box": {
+        "x": 782,
+        "y": 1114,
+        "w": 107,
+        "h": 41
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-t27-size",
+      "reviewId": "review-checkout-v3",
+      "kind": "text_size",
+      "label": "3 digits",
+      "box": {
+        "x": 782,
+        "y": 1114,
+        "w": 107,
+        "h": 41
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c0-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 450,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c0-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Email address",
+      "box": {
+        "x": 96,
+        "y": 450,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c1-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Card",
+      "box": {
+        "x": 96,
+        "y": 718,
+        "w": 416,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c1-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Card",
+      "box": {
+        "x": 96,
+        "y": 718,
+        "w": 416,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c2-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "PayPal",
+      "box": {
+        "x": 532,
+        "y": 718,
+        "w": 412,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c2-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "PayPal",
+      "box": {
+        "x": 532,
+        "y": 718,
+        "w": 412,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c3-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Other methods",
+      "box": {
+        "x": 964,
+        "y": 718,
+        "w": 412,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c3-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Other methods",
+      "box": {
+        "x": 964,
+        "y": 718,
+        "w": 412,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c4-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 906,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c4-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Card number",
+      "box": {
+        "x": 96,
+        "y": 906,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c5-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1086,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c5-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Expiry date",
+      "box": {
+        "x": 96,
+        "y": 1086,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c6-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1086,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c6-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Security code",
+      "box": {
+        "x": 752,
+        "y": 1086,
+        "w": 624,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c7-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 96,
+        "y": 1206,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c7-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Pay €84.00",
+      "box": {
+        "x": 96,
+        "y": 1206,
+        "w": 1280,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c8-target",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Read the terms",
+      "box": {
+        "x": 96,
+        "y": 1334,
+        "w": 316,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "checkout-v3-m-c8-target-rule",
+      "reviewId": "review-checkout-v3",
+      "kind": "target_size",
+      "label": "Read the terms",
+      "box": {
+        "x": 96,
+        "y": 1334,
+        "w": 316,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t0-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Create your account",
+      "box": {
+        "x": 874,
+        "y": 120,
+        "w": 576,
+        "h": 74
+      },
+      "value": 17.79,
+      "threshold": 3,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t0-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Create your account",
+      "box": {
+        "x": 874,
+        "y": 120,
+        "w": 576,
+        "h": 74
+      },
+      "value": 31,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t1-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Free for 30 days, no card needed",
+      "box": {
+        "x": 874,
+        "y": 210,
+        "w": 467,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t1-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Free for 30 days, no card needed",
+      "box": {
+        "x": 874,
+        "y": 210,
+        "w": 467,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t2-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Full name",
+      "box": {
+        "x": 874,
+        "y": 298,
+        "w": 149,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t2-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Full name",
+      "box": {
+        "x": 874,
+        "y": 298,
+        "w": 149,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t3-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Email",
+      "box": {
+        "x": 874,
+        "y": 482,
+        "w": 85,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t3-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Email",
+      "box": {
+        "x": 874,
+        "y": 482,
+        "w": 85,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t4-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Invalid input",
+      "box": {
+        "x": 874,
+        "y": 646,
+        "w": 194,
+        "h": 40
+      },
+      "value": 6.57,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t4-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Invalid input",
+      "box": {
+        "x": 874,
+        "y": 646,
+        "w": 194,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t5-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "I agree to the terms and privacy policy",
+      "box": {
+        "x": 916,
+        "y": 846,
+        "w": 541,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t5-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "I agree to the terms and privacy policy",
+      "box": {
+        "x": 916,
+        "y": 846,
+        "w": 541,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t6-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Create account",
+      "box": {
+        "x": 1166,
+        "y": 954,
+        "w": 228,
+        "h": 40
+      },
+      "value": 6.7,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t6-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Create account",
+      "box": {
+        "x": 1166,
+        "y": 954,
+        "w": 228,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t7-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Sign up with Google",
+      "box": {
+        "x": 1127,
+        "y": 1070,
+        "w": 306,
+        "h": 40
+      },
+      "value": 6.7,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t7-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Sign up with Google",
+      "box": {
+        "x": 1127,
+        "y": 1070,
+        "w": 306,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t8-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Already have an account?",
+      "box": {
+        "x": 993,
+        "y": 1198,
+        "w": 360,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t8-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Already have an account?",
+      "box": {
+        "x": 993,
+        "y": 1198,
+        "w": 360,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t9-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Sign in",
+      "box": {
+        "x": 1418,
+        "y": 1198,
+        "w": 107,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t9-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Sign in",
+      "box": {
+        "x": 1418,
+        "y": 1198,
+        "w": 107,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t10-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Sam Jordan",
+      "box": {
+        "x": 904,
+        "y": 382,
+        "w": 169,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t10-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Sam Jordan",
+      "box": {
+        "x": 904,
+        "y": 382,
+        "w": 169,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t11-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "sam@example",
+      "box": {
+        "x": 906,
+        "y": 566,
+        "w": 203,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t11-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "sam@example",
+      "box": {
+        "x": 906,
+        "y": 566,
+        "w": 203,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t12-contrast",
+      "reviewId": "review-signup-v1",
+      "kind": "contrast",
+      "label": "Password",
+      "box": {
+        "x": 904,
+        "y": 746,
+        "w": 133,
+        "h": 40
+      },
+      "value": 4.83,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-t12-size",
+      "reviewId": "review-signup-v1",
+      "kind": "text_size",
+      "label": "Password",
+      "box": {
+        "x": 904,
+        "y": 746,
+        "w": 133,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c0-target",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Full name",
+      "box": {
+        "x": 874,
+        "y": 354,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c0-target-rule",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Full name",
+      "box": {
+        "x": 874,
+        "y": 354,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c1-target",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Email",
+      "box": {
+        "x": 874,
+        "y": 538,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c1-target-rule",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Email",
+      "box": {
+        "x": 874,
+        "y": 538,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c2-target",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Password",
+      "box": {
+        "x": 874,
+        "y": 718,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c2-target-rule",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Password",
+      "box": {
+        "x": 874,
+        "y": 718,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c3-target",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "I agree to the terms and privacy policy",
+      "box": {
+        "x": 874,
+        "y": 854,
+        "w": 26,
+        "h": 26
+      },
+      "value": 13,
+      "threshold": 24,
+      "passes": false
+    },
+    {
+      "id": "signup-v1-m-c3-target-rule",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "I agree to the terms and privacy policy",
+      "box": {
+        "x": 874,
+        "y": 854,
+        "w": 26,
+        "h": 26
+      },
+      "value": 13,
+      "threshold": 44,
+      "passes": false
+    },
+    {
+      "id": "signup-v1-m-c4-target",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Create account",
+      "box": {
+        "x": 874,
+        "y": 926,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c4-target-rule",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Create account",
+      "box": {
+        "x": 874,
+        "y": 926,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c5-target",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Sign up with Google",
+      "box": {
+        "x": 874,
+        "y": 1042,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c5-target-rule",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Sign up with Google",
+      "box": {
+        "x": 874,
+        "y": 1042,
+        "w": 812,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c6-target",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Sign in",
+      "box": {
+        "x": 1376,
+        "y": 1170,
+        "w": 190,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "signup-v1-m-c6-target-rule",
+      "reviewId": "review-signup-v1",
+      "kind": "target_size",
+      "label": "Sign in",
+      "box": {
+        "x": 1376,
+        "y": 1170,
+        "w": 190,
+        "h": 96
+      },
+      "value": 48,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t0-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Lumen Analytics",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 350,
+        "h": 54
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t0-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Lumen Analytics",
+      "box": {
+        "x": 96,
+        "y": 36,
+        "w": 350,
+        "h": 54
+      },
+      "value": 23,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t1-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Acme Store workspace",
+      "box": {
+        "x": 2142,
+        "y": 43,
+        "w": 322,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t1-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Acme Store workspace",
+      "box": {
+        "x": 2142,
+        "y": 43,
+        "w": 322,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t2-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Sales overview",
+      "box": {
+        "x": 80,
+        "y": 172,
+        "w": 207,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t2-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Sales overview",
+      "box": {
+        "x": 80,
+        "y": 172,
+        "w": 207,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t3-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Export",
+      "box": {
+        "x": 114,
+        "y": 268,
+        "w": 91,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t3-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Export",
+      "box": {
+        "x": 114,
+        "y": 268,
+        "w": 91,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t4-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Share",
+      "box": {
+        "x": 288,
+        "y": 268,
+        "w": 82,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t4-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Share",
+      "box": {
+        "x": 288,
+        "y": 268,
+        "w": 82,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t5-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Filter",
+      "box": {
+        "x": 453,
+        "y": 268,
+        "w": 74,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t5-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Filter",
+      "box": {
+        "x": 453,
+        "y": 268,
+        "w": 74,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t6-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Refresh",
+      "box": {
+        "x": 610,
+        "y": 268,
+        "w": 109,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t6-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Refresh",
+      "box": {
+        "x": 610,
+        "y": 268,
+        "w": 109,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t7-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Compare",
+      "box": {
+        "x": 802,
+        "y": 268,
+        "w": 129,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t7-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Compare",
+      "box": {
+        "x": 802,
+        "y": 268,
+        "w": 129,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t8-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Annotate",
+      "box": {
+        "x": 1014,
+        "y": 268,
+        "w": 128,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t8-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Annotate",
+      "box": {
+        "x": 1014,
+        "y": 268,
+        "w": 128,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t9-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Schedule",
+      "box": {
+        "x": 1226,
+        "y": 268,
+        "w": 130,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t9-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Schedule",
+      "box": {
+        "x": 1226,
+        "y": 268,
+        "w": 130,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t10-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Settings",
+      "box": {
+        "x": 1439,
+        "y": 268,
+        "w": 117,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t10-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Settings",
+      "box": {
+        "x": 1439,
+        "y": 268,
+        "w": 117,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t11-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Print",
+      "box": {
+        "x": 1639,
+        "y": 268,
+        "w": 67,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t11-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Print",
+      "box": {
+        "x": 1639,
+        "y": 268,
+        "w": 67,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t12-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "€48,210",
+      "box": {
+        "x": 122,
+        "y": 404,
+        "w": 307,
+        "h": 100
+      },
+      "value": 17.79,
+      "threshold": 3,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t12-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "€48,210",
+      "box": {
+        "x": 122,
+        "y": 404,
+        "w": 307,
+        "h": 100
+      },
+      "value": 42,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t13-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "12.4%",
+      "box": {
+        "x": 122,
+        "y": 502,
+        "w": 93,
+        "h": 40
+      },
+      "value": 5.07,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t13-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "12.4%",
+      "box": {
+        "x": 122,
+        "y": 502,
+        "w": 93,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t14-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Revenue",
+      "box": {
+        "x": 122,
+        "y": 618,
+        "w": 121,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t14-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Revenue",
+      "box": {
+        "x": 122,
+        "y": 618,
+        "w": 121,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t15-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "1,284",
+      "box": {
+        "x": 730,
+        "y": 404,
+        "w": 206,
+        "h": 100
+      },
+      "value": 17.79,
+      "threshold": 3,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t15-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "1,284",
+      "box": {
+        "x": 730,
+        "y": 404,
+        "w": 206,
+        "h": 100
+      },
+      "value": 42,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t16-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "3.1%",
+      "box": {
+        "x": 730,
+        "y": 502,
+        "w": 73,
+        "h": 40
+      },
+      "value": 6.57,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t16-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "3.1%",
+      "box": {
+        "x": 730,
+        "y": 502,
+        "w": 73,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t17-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Orders",
+      "box": {
+        "x": 730,
+        "y": 618,
+        "w": 96,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t17-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Orders",
+      "box": {
+        "x": 730,
+        "y": 618,
+        "w": 96,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t18-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "€37.55",
+      "box": {
+        "x": 1338,
+        "y": 404,
+        "w": 248,
+        "h": 100
+      },
+      "value": 17.79,
+      "threshold": 3,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t18-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "€37.55",
+      "box": {
+        "x": 1338,
+        "y": 404,
+        "w": 248,
+        "h": 100
+      },
+      "value": 42,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t19-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "8.0%",
+      "box": {
+        "x": 1338,
+        "y": 502,
+        "w": 80,
+        "h": 40
+      },
+      "value": 5.07,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t19-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "8.0%",
+      "box": {
+        "x": 1338,
+        "y": 502,
+        "w": 80,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t20-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Average order",
+      "box": {
+        "x": 1338,
+        "y": 618,
+        "w": 197,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t20-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Average order",
+      "box": {
+        "x": 1338,
+        "y": 618,
+        "w": 197,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t21-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "2.6%",
+      "box": {
+        "x": 1946,
+        "y": 404,
+        "w": 186,
+        "h": 100
+      },
+      "value": 17.79,
+      "threshold": 3,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t21-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "2.6%",
+      "box": {
+        "x": 1946,
+        "y": 404,
+        "w": 186,
+        "h": 100
+      },
+      "value": 42,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t22-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "0.4%",
+      "box": {
+        "x": 1946,
+        "y": 502,
+        "w": 80,
+        "h": 40
+      },
+      "value": 6.57,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t22-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "0.4%",
+      "box": {
+        "x": 1946,
+        "y": 502,
+        "w": 80,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t23-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Conversion",
+      "box": {
+        "x": 1946,
+        "y": 618,
+        "w": 158,
+        "h": 40
+      },
+      "value": 7.87,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t23-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Conversion",
+      "box": {
+        "x": 1946,
+        "y": 618,
+        "w": 158,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t24-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Revenue by week",
+      "box": {
+        "x": 122,
+        "y": 772,
+        "w": 329,
+        "h": 52
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t24-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Revenue by week",
+      "box": {
+        "x": 122,
+        "y": 772,
+        "w": 329,
+        "h": 52
+      },
+      "value": 22,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t25-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "This year",
+      "box": {
+        "x": 162,
+        "y": 842,
+        "w": 127,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t25-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "This year",
+      "box": {
+        "x": 162,
+        "y": 842,
+        "w": 127,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t26-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Last year",
+      "box": {
+        "x": 368,
+        "y": 842,
+        "w": 129,
+        "h": 40
+      },
+      "value": 17.79,
+      "threshold": 4.5,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t26-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Last year",
+      "box": {
+        "x": 368,
+        "y": 842,
+        "w": 129,
+        "h": 40
+      },
+      "value": 17,
+      "threshold": 16,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-t27-contrast",
+      "reviewId": "review-dashboard-v1",
+      "kind": "contrast",
+      "label": "Figures exclude refunds and are converted to euros at the daily rate",
+      "box": {
+        "x": 122,
+        "y": 1270,
+        "w": 774,
+        "h": 32
+      },
+      "value": 3.1,
+      "threshold": 4.5,
+      "passes": false
+    },
+    {
+      "id": "dashboard-v1-m-t27-size",
+      "reviewId": "review-dashboard-v1",
+      "kind": "text_size",
+      "label": "Figures exclude refunds and are converted to euros at the daily rate",
+      "box": {
+        "x": 122,
+        "y": 1270,
+        "w": 774,
+        "h": 32
+      },
+      "value": 13,
+      "threshold": 16,
+      "passes": false
+    },
+    {
+      "id": "dashboard-v1-m-c0-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Export",
+      "box": {
+        "x": 80,
+        "y": 244,
+        "w": 175,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c0-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Export",
+      "box": {
+        "x": 80,
+        "y": 244,
+        "w": 175,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c1-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Share",
+      "box": {
+        "x": 254,
+        "y": 244,
+        "w": 150,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c1-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Share",
+      "box": {
+        "x": 254,
+        "y": 244,
+        "w": 150,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c2-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Filter",
+      "box": {
+        "x": 403,
+        "y": 244,
+        "w": 174,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c2-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Filter",
+      "box": {
+        "x": 403,
+        "y": 244,
+        "w": 174,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c3-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Refresh",
+      "box": {
+        "x": 576,
+        "y": 244,
+        "w": 193,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c3-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Refresh",
+      "box": {
+        "x": 576,
+        "y": 244,
+        "w": 193,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c4-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Compare",
+      "box": {
+        "x": 768,
+        "y": 244,
+        "w": 213,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c4-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Compare",
+      "box": {
+        "x": 768,
+        "y": 244,
+        "w": 213,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c5-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Annotate",
+      "box": {
+        "x": 980,
+        "y": 244,
+        "w": 196,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c5-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Annotate",
+      "box": {
+        "x": 980,
+        "y": 244,
+        "w": 196,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c6-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Schedule",
+      "box": {
+        "x": 1192,
+        "y": 244,
+        "w": 198,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c6-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Schedule",
+      "box": {
+        "x": 1192,
+        "y": 244,
+        "w": 198,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c7-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Settings",
+      "box": {
+        "x": 1389,
+        "y": 244,
+        "w": 201,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c7-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Settings",
+      "box": {
+        "x": 1389,
+        "y": 244,
+        "w": 201,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c8-target",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Print",
+      "box": {
+        "x": 1589,
+        "y": 244,
+        "w": 151,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 24,
+      "passes": true
+    },
+    {
+      "id": "dashboard-v1-m-c8-target-rule",
+      "reviewId": "review-dashboard-v1",
+      "kind": "target_size",
+      "label": "Print",
+      "box": {
+        "x": 1589,
+        "y": 244,
+        "w": 151,
+        "h": 88
+      },
+      "value": 44,
+      "threshold": 44,
+      "passes": true
+    }
+  ],
+  "issues": [
+    {
+      "id": "checkout-v1-placeholder-labels",
+      "reviewId": "review-checkout-v1",
+      "number": 1,
+      "kind": "evaluated",
+      "principleId": "wcag-3.3.2",
+      "title": "Fields have no visible labels",
+      "detail": "The email, card number, expiry and CVC fields show their name only as placeholder text. It disappears as soon as someone starts typing, so people lose track of what each field wants.",
+      "fix": "Add a visible label above each field. Keep the placeholder only for an example, or drop it.",
+      "severity": "high",
+      "confidence": "high",
+      "measurementId": null,
+      "region": {
+        "x": 96,
+        "y": 390,
+        "w": 1280,
+        "h": 613
+      }
+    },
+    {
+      "id": "checkout-v1-t4-contrast",
+      "reviewId": "review-checkout-v1",
+      "number": 2,
+      "kind": "measured",
+      "principleId": "wcag-1.4.3",
+      "title": "\"We send your receipt to this address\" is too faint",
+      "detail": "\"We send your receipt to this address\" measures 1.85 : 1 on #FFFFFF. Text needs at least 4.5 : 1.",
+      "fix": "Use #70767E for this text: it measures 4.58 : 1 on #FFFFFF.",
+      "severity": "high",
+      "confidence": null,
+      "measurementId": "checkout-v1-m-t4-contrast",
+      "region": {
+        "x": 96,
+        "y": 502,
+        "w": 514,
+        "h": 41
+      }
+    },
+    {
+      "id": "checkout-v1-five-methods",
+      "reviewId": "review-checkout-v1",
+      "number": 3,
+      "kind": "evaluated",
+      "principleId": "law-hick",
+      "title": "Five payment options compete",
+      "detail": "Card, PayPal, Apple Pay, Google Pay and Klarna get the same weight. Most people pay by card, but everyone has to scan five choices before they can start.",
+      "fix": "Show the two or three most used methods and put the rest behind \"Other methods\".",
+      "severity": "medium",
+      "confidence": "medium",
+      "measurementId": null,
+      "region": {
+        "x": 96,
+        "y": 658,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "id": "checkout-v1-c10-target",
+      "reviewId": "review-checkout-v1",
+      "number": 4,
+      "kind": "measured",
+      "principleId": "wcag-2.5.8",
+      "title": "\"Terms\" is too small to tap",
+      "detail": "11 px tall. Targets need at least 24 by 24 px.",
+      "fix": "Make it at least 24 px tall, ideally 44 px.",
+      "severity": "medium",
+      "confidence": null,
+      "measurementId": "checkout-v1-m-c10-target",
+      "region": {
+        "x": 96,
+        "y": 1165,
+        "w": 64,
+        "h": 21
+      }
+    },
+    {
+      "id": "checkout-v2-five-methods",
+      "reviewId": "review-checkout-v2",
+      "number": 1,
+      "kind": "evaluated",
+      "principleId": "law-hick",
+      "title": "Five payment options compete",
+      "detail": "Card, PayPal, Apple Pay, Google Pay and Klarna still get the same weight, so everyone scans five choices before paying.",
+      "fix": "Show the two or three most used methods and put the rest behind \"Other methods\".",
+      "severity": "medium",
+      "confidence": "medium",
+      "measurementId": null,
+      "region": {
+        "x": 96,
+        "y": 718,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "id": "checkout-v2-colour-only-error",
+      "reviewId": "review-checkout-v2",
+      "number": 2,
+      "kind": "evaluated",
+      "principleId": "wcag-1.4.1",
+      "title": "Card number error is shown only in red",
+      "detail": "The card number field turns red, but nothing says what is wrong. People who do not see red well get no signal at all, and nobody learns how to fix it.",
+      "fix": "Add a message under the field that says what is wrong and how to fix it, with an error icon.",
+      "severity": "high",
+      "confidence": "high",
+      "measurementId": null,
+      "region": {
+        "x": 96,
+        "y": 906,
+        "w": 1280,
+        "h": 97
+      }
+    },
+    {
+      "id": "signup-v1-vague-error",
+      "reviewId": "review-signup-v1",
+      "number": 1,
+      "kind": "evaluated",
+      "principleId": "nielsen-9",
+      "title": "Error message does not say how to fix it",
+      "detail": "\"Invalid input\" under the email field says that something is wrong, but not what. The address is missing its domain ending, and the message could say exactly that.",
+      "fix": "Say what to change, for example \"Add the end of the address, like sam@example.com\".",
+      "severity": "high",
+      "confidence": "high",
+      "measurementId": null,
+      "region": {
+        "x": 874,
+        "y": 642,
+        "w": 812,
+        "h": 48
+      }
+    },
+    {
+      "id": "signup-v1-password-placeholder",
+      "reviewId": "review-signup-v1",
+      "number": 2,
+      "kind": "evaluated",
+      "principleId": "wcag-3.3.2",
+      "title": "Password field has no visible label",
+      "detail": "The password field only has placeholder text. Once someone types, nothing on screen says what the field is for.",
+      "fix": "Add a visible \"Password\" label above the field, like the other fields.",
+      "severity": "medium",
+      "confidence": "high",
+      "measurementId": null,
+      "region": {
+        "x": 874,
+        "y": 718,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "id": "signup-v1-hidden-password-rules",
+      "reviewId": "review-signup-v1",
+      "number": 3,
+      "kind": "evaluated",
+      "principleId": "nielsen-5",
+      "title": "Password rules are not shown",
+      "detail": "Nothing tells people how long the password must be or which characters it needs, so many will only find out from an error after they submit.",
+      "fix": "Show the rules under the field before people type, and tick them off as they are met.",
+      "severity": "medium",
+      "confidence": "low",
+      "measurementId": null,
+      "region": {
+        "x": 874,
+        "y": 718,
+        "w": 812,
+        "h": 96
+      }
+    },
+    {
+      "id": "signup-v1-c3-target",
+      "reviewId": "review-signup-v1",
+      "number": 4,
+      "kind": "measured",
+      "principleId": "wcag-2.5.8",
+      "title": "\"I agree to the terms and privacy policy\" is too small to tap",
+      "detail": "13 px tall. Targets need at least 24 by 24 px.",
+      "fix": "Make it at least 24 px tall, ideally 44 px.",
+      "severity": "medium",
+      "confidence": null,
+      "measurementId": "signup-v1-m-c3-target",
+      "region": {
+        "x": 874,
+        "y": 854,
+        "w": 26,
+        "h": 26
+      }
+    },
+    {
+      "id": "signup-v1-two-primary-buttons",
+      "reviewId": "review-signup-v1",
+      "number": 5,
+      "kind": "evaluated",
+      "principleId": "rule:08f0f43b-09e4-563f-98dc-f07e3aa12ac1",
+      "title": "Two primary buttons compete",
+      "detail": "\"Create account\" and \"Sign up with Google\" are both filled blue buttons of the same size, so neither reads as the main action.",
+      "fix": "Keep \"Create account\" as the primary button and make the Google option an outlined secondary button.",
+      "severity": "low",
+      "confidence": "medium",
+      "measurementId": null,
+      "region": {
+        "x": 874,
+        "y": 926,
+        "w": 812,
+        "h": 212
+      }
+    },
+    {
+      "id": "dashboard-v1-weak-title",
+      "reviewId": "review-dashboard-v1",
+      "number": 1,
+      "kind": "evaluated",
+      "principleId": "wcag-2.4.6",
+      "title": "Page title looks like body text",
+      "detail": "\"Sales overview\" has the same size and weight as body text, while the numbers below are far larger. At a glance people cannot tell which page they are on.",
+      "fix": "Make \"Sales overview\" a real heading, clearly larger and bolder than the content.",
+      "severity": "medium",
+      "confidence": "medium",
+      "measurementId": null,
+      "region": {
+        "x": 80,
+        "y": 168,
+        "w": 2400,
+        "h": 48
+      }
+    },
+    {
+      "id": "dashboard-v1-nine-equal-buttons",
+      "reviewId": "review-dashboard-v1",
+      "number": 2,
+      "kind": "evaluated",
+      "principleId": "law-von-restorff",
+      "title": "Nine equal buttons, nothing stands out",
+      "detail": "Export, Share, Filter, Refresh, Compare, Annotate, Schedule, Settings and Print all look the same, so the common actions are as hard to find as the rare ones.",
+      "fix": "Keep the two or three most used actions visible, make the main one stand out, and move the rest into a \"More\" menu.",
+      "severity": "medium",
+      "confidence": "medium",
+      "measurementId": null,
+      "region": {
+        "x": 80,
+        "y": 244,
+        "w": 2400,
+        "h": 88
+      }
+    },
+    {
+      "id": "dashboard-v1-kpi-label-far",
+      "reviewId": "review-dashboard-v1",
+      "number": 3,
+      "kind": "evaluated",
+      "principleId": "law-proximity",
+      "title": "KPI labels sit far from their numbers",
+      "detail": "Each label, such as Revenue or Orders, is at the bottom of its card, far from the number it names. People read a number before they know what it means.",
+      "fix": "Put each label right above its number and keep the change next to it.",
+      "severity": "low",
+      "confidence": "medium",
+      "measurementId": null,
+      "region": {
+        "x": 80,
+        "y": 376,
+        "w": 2400,
+        "h": 320
+      }
+    },
+    {
+      "id": "dashboard-v1-colour-only-change",
+      "reviewId": "review-dashboard-v1",
+      "number": 4,
+      "kind": "evaluated",
+      "principleId": "wcag-1.4.1",
+      "title": "Up and down are shown only by colour",
+      "detail": "The change under each number is green or red, with no plus or minus sign and no arrow. People who do not see colour well cannot tell growth from decline.",
+      "fix": "Add an arrow or a plus or minus sign to each change, and write \"up\" or \"down\" for screen readers.",
+      "severity": "high",
+      "confidence": "high",
+      "measurementId": null,
+      "region": {
+        "x": 122,
+        "y": 498,
+        "w": 2316,
+        "h": 48
+      }
+    },
+    {
+      "id": "dashboard-v1-t27-contrast",
+      "reviewId": "review-dashboard-v1",
+      "number": 5,
+      "kind": "measured",
+      "principleId": "wcag-1.4.3",
+      "title": "Text is too faint",
+      "detail": "This text measures 3.10 : 1 on #FFFFFF. Text needs at least 4.5 : 1. Bold text from about 19 px only needs 3 : 1, but bold is not detected.",
+      "fix": "Use #6D7585 for this text: it measures 4.63 : 1 on #FFFFFF.",
+      "severity": "medium",
+      "confidence": null,
+      "measurementId": "dashboard-v1-m-t27-contrast",
+      "region": {
+        "x": 122,
+        "y": 1270,
+        "w": 774,
+        "h": 32
+      }
+    },
+    {
+      "id": "dashboard-v1-t27-size",
+      "reviewId": "review-dashboard-v1",
+      "number": 6,
+      "kind": "measured",
+      "principleId": "rule:f936bf4f-9c12-56a3-bac2-0bc367a4d9cd",
+      "title": "Body text is small",
+      "detail": "About 13 px. My checklist asks for at least 16 px. Estimated from the text line height.",
+      "fix": "Use at least 16 px for body text.",
+      "severity": "low",
+      "confidence": null,
+      "measurementId": "dashboard-v1-m-t27-size",
+      "region": {
+        "x": 122,
+        "y": 1270,
+        "w": 774,
+        "h": 32
+      }
+    }
+  ],
+  "pushbacks": [
+    {
+      "issueId": "signup-v1-hidden-password-rules",
+      "reason": "The rules appear as soon as the password field gets focus. This screenshot was taken before anyone clicked into it.",
+      "createdAt": "2026-10-09T15:02:00.000Z"
+    }
+  ]
 }

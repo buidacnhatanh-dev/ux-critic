@@ -13,8 +13,8 @@ export default defineConfig({
     // Dev server so /dev/ui is available. Fake AI, demo mode, no key.
     command: `pnpm exec next dev --port ${PORT}`,
     url: `http://localhost:${PORT}`,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 120_000,
-    env: { UXC_MODE: "demo", UXC_FAKE_AI: "1", ANTHROPIC_API_KEY: "" },
+    env: { UXC_MODE: "demo", UXC_FAKE_AI: "1", ANTHROPIC_API_KEY: "", UXC_DIST_DIR: ".next-e2e" },
   },
 });

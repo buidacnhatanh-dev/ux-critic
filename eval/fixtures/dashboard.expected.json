@@ -1,0 +1,48 @@
+{
+  "fixture": "dashboard",
+  "description": "Analytics dashboard with layout and hierarchy problems.",
+  "issues": [
+    {
+      "id": "weak-title",
+      "kind": "evaluated",
+      "principle_id": "wcag-2.4.6",
+      "selector": "#page-title",
+      "note": "The page title looks like body text; the KPI numbers dominate."
+    },
+    {
+      "id": "nine-equal-buttons",
+      "kind": "evaluated",
+      "principle_id": "law-von-restorff",
+      "selector": "#toolbar",
+      "note": "Nine buttons with the same style, nothing stands out."
+    },
+    {
+      "id": "kpi-label-far",
+      "kind": "evaluated",
+      "principle_id": "law-proximity",
+      "selector": "#kpis",
+      "note": "Each KPI label sits far below its number."
+    },
+    {
+      "id": "colour-only-change",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "selector": "#kpis .up, #kpis .down",
+      "note": "Up and down are told apart only by green and red."
+    },
+    {
+      "id": "faint-footnote",
+      "kind": "measured",
+      "principle_id": "wcag-1.4.3",
+      "selector": "#footnote",
+      "note": "#8A93A3 footnote on white."
+    },
+    {
+      "id": "small-footnote",
+      "kind": "measured",
+      "principle_id": "rule:body-text-16",
+      "selector": "#footnote",
+      "note": "13 px footnote, longer than 20 characters."
+    }
+  ]
+}

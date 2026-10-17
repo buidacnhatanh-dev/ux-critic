@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Analytics dashboard (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <style>
+      .page {
+        padding: 20px 40px;
+      }
+      /* Planted: the page title is no bigger than body text. */
+      .title {
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        margin: 0 0 14px;
+      }
+      /* Planted: nine equal buttons, nothing stands out. */
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+      .toolbar .btn {
+        height: 44px;
+        padding: 0 16px;
+        border-color: #8a93a3;
+        font-weight: 400;
+      }
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+      .kpi {
+        padding: 16px 20px;
+        border: 1.5px solid #dde1e7;
+        border-radius: 14px;
+      }
+      .kpi-value {
+        font-family: Overpass, sans-serif;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 1.1;
+      }
+      /* Planted: the label sits far below its number, closer to the change than to the value. */
+      .kpi-label {
+        margin-top: 34px;
+      }
+      /* Planted: up and down only told by colour. */
+      .up {
+        color: #1a7f3c;
+        font-weight: 700;
+      }
+      .down {
+        color: #b42318;
+        font-weight: 700;
+      }
+      .chart {
+        padding: 16px 20px;
+        border: 1.5px solid #dde1e7;
+        border-radius: 14px;
+      }
+      .chart h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      .legend {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 4px;
+      }
+      .swatch {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        margin-right: 6px;
+        vertical-align: -2px;
+      }
+      /* Planted: small faint footnote. */
+      .footnote {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #8a93a3;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="brand">Lumen Analytics</span>
+      <span class="muted">Acme Store workspace</span>
+    </header>
+    <div class="page">
+      <p class="title" id="page-title">Sales overview</p>
+      <div class="toolbar" id="toolbar">
+        <button class="btn" type="button">Export</button>
+        <button class="btn" type="button">Share</button>
+        <button class="btn" type="button">Filter</button>
+        <button class="btn" type="button">Refresh</button>
+        <button class="btn" type="button">Compare</button>
+        <button class="btn" type="button">Annotate</button>
+        <button class="btn" type="button">Schedule</button>
+        <button class="btn" type="button">Settings</button>
+        <button class="btn" type="button">Print</button>
+      </div>
+      <div class="kpis" id="kpis">
+        <div class="kpi">
+          <p class="kpi-value">€48,210</p>
+          <p class="up">12.4%</p>
+          <p class="kpi-label muted">Revenue</p>
+        </div>
+        <div class="kpi">
+          <p class="kpi-value">1,284</p>
+          <p class="down">3.1%</p>
+          <p class="kpi-label muted">Orders</p>
+        </div>
+        <div class="kpi">
+          <p class="kpi-value">€37.55</p>
+          <p class="up">8.0%</p>
+          <p class="kpi-label muted">Average order</p>
+        </div>
+        <div class="kpi">
+          <p class="kpi-value">2.6%</p>
+          <p class="down">0.4%</p>
+          <p class="kpi-label muted">Conversion</p>
+        </div>
+      </div>
+      <section class="chart" id="chart" aria-labelledby="chart-title">
+        <h2 id="chart-title">Revenue by week</h2>
+        <div class="legend">
+          <span><span class="swatch" style="background: #1d4ed8"></span>This year</span>
+          <span><span class="swatch" style="background: #b9bfc8"></span>Last year</span>
+        </div>
+        <svg
+          width="1150"
+          height="170"
+          viewBox="0 0 1196 170"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <g stroke="#dde1e7" stroke-width="1">
+            <line x1="0" y1="20" x2="1196" y2="20" />
+            <line x1="0" y1="75" x2="1196" y2="75" />
+            <line x1="0" y1="130" x2="1196" y2="130" />
+          </g>
+          <polyline
+            fill="none"
+            stroke="#b9bfc8"
+            stroke-width="3"
+            points="20,110 160,100 300,104 440,92 580,96 720,84 860,88 1000,80 1176,76"
+          />
+          <polyline
+            fill="none"
+            stroke="#1d4ed8"
+            stroke-width="3"
+            points="20,100 160,86 300,90 440,70 580,62 720,58 860,44 1000,40 1176,30"
+          />
+        </svg>
+        <p class="footnote" id="footnote">
+          Figures exclude refunds and are converted to euros at the daily rate
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
