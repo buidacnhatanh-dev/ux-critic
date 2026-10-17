@@ -10,7 +10,14 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./tests/setup/vitest.setup.ts"],
     include: ["**/*.test.{ts,tsx}"],
-    exclude: ["node_modules/**", ".next/**", "tests/e2e/**"],
+    exclude: [
+      "node_modules/**",
+      ".next/**",
+      ".next-e2e/**",
+      ".next-smoke/**",
+      "tests/e2e/**",
+      "tests/smoke/**",
+    ],
     css: { modules: { classNameStrategy: "non-scoped" } },
   },
 });

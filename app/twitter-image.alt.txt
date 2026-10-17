@@ -1,0 +1,1 @@
+UX Critic reviewing a checkout screen: a measured contrast issue of 1.85 : 1 with a suggested fix

@@ -124,3 +124,20 @@ Decisions
 * Headings: Overpass 800 → 600
 * Body font: Atkinson Hyperlegible → Atkinson Hyperlegible Next (`@fontsource/atkinson-hyperlegible-next`, OFL), 400 for body and 600 for labels, buttons, badges and pills. `<strong>` in running text is 500, table headers 600. The old package is removed; CLAUDE.md, docs/01 and docs/06 updated
 * The sample screens in `public/demo` and the fixtures are unchanged. The text size check in docs/04 was measured on the fixture fonts, so the font switch does not affect it
+
+## M4 · Deploy the demo (2026-10-17)
+
+Built
+
+* `scripts/check-demo-build.ts`, run by `pnpm vercel-build` (Vercel's build command) after `next build`: fails on any `/api` route, on server code or traced files that include `better-sqlite3`, tesseract, `@anthropic-ai/sdk`, Drizzle, `lib/pipeline` or `lib/db`, on browser code that reads the key, holds a key value or calls `api.anthropic.com`, and on a demo build with `ANTHROPIC_API_KEY` set. Unit tested on fake builds
+* og:image and twitter image: a captured Review screen (Checkout practice v1 with the measured contrast note open), 1200 × 630, via the Next.js file convention, with alt text. `pnpm demo:og` recaptures it from a running build (`scripts/og-capture.ts`)
+* `app/robots.ts`: crawling allowed, `/api/` disallowed. The `/states` pages keep their noindex
+* `metadataBase` from `VERCEL_PROJECT_PRODUCTION_URL`, so og:image URLs are absolute on Vercel
+* `pnpm test:smoke` (`playwright.smoke.config.ts`, `tests/smoke/`): builds the production demo into `.next-smoke`, runs the build check, serves it with `next start`, then opens every screen with axe, checks the Demo pill and source line, no console errors and no requests to other hosts, a full demo review, 404 on API paths (GET and POST), 404 on `/dev/ui`, robots and the og:image
+* README: "Run the demo" and "Deploy to Vercel"
+
+Decisions
+
+* `package.json` pins `packageManager: pnpm@12.11.2` and `engines.node: 24.x` (the scripts use Node 24 type stripping). Vercel needs `ENABLE_EXPERIMENTAL_COREPACK=1` to use that pnpm version; this is the only variable besides `UXC_MODE=demo`
+* Demo mode has no API routes yet and `proxy.ts` already answers 404 for `/api`; the build check makes sure it stays that way once M5 adds live routes
+* The og:image is laid out at 1800 × 945 and rendered at 2/3 scale, so the issue card sits next to the screenshot

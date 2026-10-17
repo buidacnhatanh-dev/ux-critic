@@ -30,6 +30,7 @@ const config = [
     ignores: [
       ".next/**",
       ".next-e2e/**",
+      ".next-smoke/**",
       "node_modules/**",
       "design/**",
       "playwright-report/**",

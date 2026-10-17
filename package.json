@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "vercel-build": "next build && node scripts/check-demo-build.ts",
+    "check:demo-build": "node scripts/check-demo-build.ts",
     "start": "next start",
     "lint": "eslint . --max-warnings 0 && prettier --check .",
     "format": "prettier --write .",
@@ -13,8 +15,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "test:smoke": "playwright test --config playwright.smoke.config.ts",
     "demo:capture": "node scripts/demo-capture.ts",
-    "demo:data": "node scripts/demo-data.ts"
+    "demo:data": "node scripts/demo-data.ts",
+    "demo:og": "node scripts/og-capture.ts"
   },
   "dependencies": {
     "@fontsource/atkinson-hyperlegible-next": "5.3.0",
@@ -48,5 +52,9 @@
     "prettier": "^3.9.10",
     "typescript": "^6.0.3",
     "vitest": "^5.0.5"
+  },
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": "24.x"
   }
 }

@@ -16,7 +16,17 @@ import { demoSourceLine } from "@/lib/data/demo-source";
 import { getMode } from "@/lib/mode";
 import styles from "./layout.module.css";
 
+/**
+ * Absolute base for og:image URLs. Vercel sets VERCEL_PROJECT_PRODUCTION_URL (host only) at
+ * build time; locally it is the dev server.
+ */
+function siteUrl(): URL {
+  const host = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  return new URL(host ? `https://${host}` : "http://localhost:3000");
+}
+
 export const metadata: Metadata = {
+  metadataBase: siteUrl(),
   title: { default: "UX Critic", template: "%s · UX Critic" },
   description:
     "Design review tool: code measures contrast and sizes from the pixels, Claude evaluates the screen against named UX principles.",
