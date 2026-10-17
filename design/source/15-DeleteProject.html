@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UX Critic: delete a project</title>
+<style>
+@font-face{font-family:'Atkinson Hyperlegible';src:url(https://cdn.jsdelivr.net/npm/@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:'Atkinson Hyperlegible';src:url(https://cdn.jsdelivr.net/npm/@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:Overpass;src:url(https://cdn.jsdelivr.net/npm/@fontsource/overpass/files/overpass-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:Overpass;src:url(https://cdn.jsdelivr.net/npm/@fontsource/overpass/files/overpass-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:'JetBrains Mono';src:url(https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2);font-weight:400}
+</style>
+</head>
+<body>
+
+
+
+
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#1D4ED8}a:hover{color:#15181D}
+</style>
+
+<div style="position: relative; font-family: 'Atkinson Hyperlegible', Verdana, sans-serif; color: #15181D; background: #FFFFFF; min-height: 100vh; display: flex; flex-wrap: wrap">
+
+  <div inert aria-hidden="true" style="flex: 1 1 220px; background: #F7F8FA; border-right: 1px solid #DDE1E7; padding: 20px 14px; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 4px 8px 20px">
+      <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#1D4ED8"/><circle cx="14" cy="14" r="6.5" fill="none" stroke="#FFFFFF" stroke-width="2.5"/><path d="M19 19l5 5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <span style="font-family: Overpass, sans-serif; font-weight: 800; font-size: 20px">UX Critic</span>
+    </div>
+    <div style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-radius: 8px; background: #E8EEFC; color: #1D4ED8; font-weight: 700">Projects</div>
+    <div style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; font-weight: 700">New review</div>
+    <div style="min-height: 44px; display: flex; align-items: center; padding: 0 12px; font-weight: 700">My checklist</div>
+  </div>
+
+  <div inert aria-hidden="true" style="flex: 999 1 560px; min-width: 0; padding: 32px 40px 64px; box-sizing: border-box">
+    <p style="margin: 0 0 8px; font-size: 15px; color: #4A5260">Projects / Checkout practice</p>
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px">
+      <p style="font-family: Overpass, sans-serif; font-weight: 800; font-size: 40px; margin: 0">Checkout practice</p>
+      <div style="margin-left: auto; width: 44px; height: 44px; border: 1.5px solid #15181D; border-radius: 8px"></div>
+    </div>
+    <div style="height: 150px; border: 2px solid #1D4ED8; border-radius: 14px; margin-bottom: 14px; max-width: 640px"></div>
+    <div style="height: 150px; border: 1.5px solid #DDE1E7; border-radius: 14px; max-width: 640px"></div>
+  </div>
+
+  <div style="position: absolute; inset: 0; background: rgba(21,24,29,0.55); display: flex; align-items: flex-start; justify-content: center; padding: 160px 24px; box-sizing: border-box">
+    <div role="alertdialog" aria-modal="true" aria-labelledby="del-title" aria-describedby="del-desc" style="width: 100%; max-width: 520px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 50px rgba(21,24,29,.3); padding: 28px">
+      <h2 id="del-title" style="font-family: Overpass, sans-serif; font-weight: 800; font-size: 26px; margin: 0 0 12px">Delete “Checkout practice”?</h2>
+      <div id="del-desc">
+        <p style="margin: 0 0 12px; line-height: 1.55">This deletes everything saved for this project:</p>
+        <ul style="margin: 0 0 16px; padding-left: 22px; line-height: 1.8">
+          <li>2 reviews and their screenshots</li>
+          <li>1 reason you wrote when you disagreed</li>
+        </ul>
+        <p style="margin: 0 0 24px; font-weight: 700">You can't undo this.</p>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; padding-top: 20px; border-top: 1px solid #DDE1E7">
+        <button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 8px; border: 1.5px solid #15181D; background: #FFFFFF; color: #15181D; font: inherit; font-weight: 700; cursor: pointer; box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #15181D, 0 0 0 8px #FFC21A">Keep project</button>
+        <button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 8px; border: none; background: #B42318; color: #FFFFFF; font: inherit; font-weight: 700; cursor: pointer">Delete project</button>
+      </div>
+      <p style="margin: 14px 0 0; font-size: 14px; color: #4A5260; text-align: right">Focus starts on the safe choice.</p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
