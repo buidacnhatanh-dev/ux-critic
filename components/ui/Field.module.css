@@ -59,3 +59,35 @@
   background: var(--color-surface);
   color: var(--color-text-muted);
 }
+
+/* Select: same box as the text fields, with our own chevron instead of the platform widget. */
+.selectWrap {
+  position: relative;
+  display: block;
+}
+
+.select {
+  appearance: none;
+  padding-right: 44px;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.select:hover {
+  border-color: var(--color-ink);
+}
+
+.chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-ink);
+  pointer-events: none;
+}
+
+@media (forced-colors: active) {
+  .chevron {
+    color: CanvasText;
+  }
+}

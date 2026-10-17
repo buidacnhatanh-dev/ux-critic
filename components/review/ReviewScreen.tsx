@@ -1,9 +1,10 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LoadStatus } from "@/components/LoadStatus";
-import { ButtonLink, useAnnouncer } from "@/components/ui";
+import { Button, ButtonLink, useAnnouncer, useToast } from "@/components/ui";
 import { useLoad } from "@/components/useLoad";
 import { compareReviews } from "@/lib/compare";
 import { useDataClient } from "@/lib/data/DataClientProvider";
@@ -12,6 +13,8 @@ import { isFinished, plural, reviewSummary } from "@/lib/format";
 import { principleName } from "@/lib/principles";
 import { IssueCard } from "./IssueCard";
 import { NoIssues } from "./NoIssues";
+import { ReviewFailed } from "./ReviewFailed";
+import { Reviewing } from "./Reviewing";
 import { ScreenshotViewer } from "./ScreenshotViewer";
 import styles from "./ReviewScreen.module.css";
 
@@ -59,20 +62,52 @@ async function loadReview(client: DataClient, id: string) {
   };
 }
 
-/** Screen 4 (Review) and screen 12 (No issues found). Other statuses come in M3 and M5. */
+/** New review, filled in with what this review used (Cancel review, Change settings). */
+export function newReviewHref(review: ReviewDetail): string {
+  const params = new URLSearchParams({
+    project: review.projectId,
+    projectName: review.projectName,
+    version: review.version.name,
+  });
+  if (review.version.context) params.set("context", review.version.context);
+  if (review.sampleId) params.set("sample", review.sampleId);
+  return `/new?${params.toString()}`;
+}
+
+/**
+ * /reviews/[id]: Reviewing (9) while it runs, Review failed (10), Review (4) with the partial
+ * state (11), and No issues found (12).
+ */
 export function ReviewScreen({ id, initialIssueId }: { id: string; initialIssueId?: string }) {
   const client = useDataClient();
+  const router = useRouter();
+  const { announce } = useAnnouncer();
+  const { showToast } = useToast();
   const { state, reload } = useLoad(() => loadReview(client, id), id);
   const running =
     state.status === "ready" &&
     (state.data.review.status === "queued" || state.data.review.status === "running");
 
-  // Poll while the review runs (docs/06 §9; the full Reviewing screen comes in M3).
+  // Poll every second while the review runs, then switch to the result (docs/06 §9).
   useEffect(() => {
     if (!running) return;
     const timer = setInterval(reload, 1000);
     return () => clearInterval(timer);
   }, [running, reload]);
+
+  const wasRunning = useRef(false);
+  useEffect(() => {
+    if (state.status !== "ready") return;
+    const { review } = state.data;
+    if (wasRunning.current && !running) {
+      announce(
+        review.status === "failed"
+          ? "The review didn't finish."
+          : `Review finished. ${plural(review.issues.length, "issue")} found.`,
+      );
+    }
+    wasRunning.current = running;
+  }, [state, running, announce]);
 
   if (state.status !== "ready") return <LoadStatus state={state} what="review" />;
   const { review, target, fixedSincePrevious, rules } = state.data;
@@ -86,15 +121,30 @@ export function ReviewScreen({ id, initialIssueId }: { id: string; initialIssueI
     ? `/projects/${review.projectId}/compare?from=${target.from}&to=${target.to}`
     : null;
 
-  if (running || review.status === "failed") {
+  if (running) {
     return (
-      <>
-        <Breadcrumb items={crumbs} />
-        <h1 className={styles.title}>Review of {review.version.name}</h1>
-        <p className={styles.summary}>
-          {running ? "This review is still running." : "This review did not finish."}
-        </p>
-      </>
+      <Reviewing
+        review={review}
+        crumbs={crumbs}
+        demo={client.mode === "demo"}
+        onCancel={async () => {
+          await client.cancelReview(review.id);
+          announce("Review cancelled. The form is filled in again.");
+          router.push(newReviewHref(review));
+        }}
+      />
+    );
+  }
+
+  if (review.status === "failed") {
+    return (
+      <ReviewFailed
+        review={review}
+        crumbs={crumbs}
+        changeSettingsHref={newReviewHref(review)}
+        // Starting again with the stored screenshot comes with the live pipeline (docs/03).
+        onTryAgain={() => router.push(newReviewHref(review))}
+      />
     );
   }
 
@@ -121,27 +171,40 @@ export function ReviewScreen({ id, initialIssueId }: { id: string; initialIssueI
       compare={compareHref && target ? { href: compareHref, name: target.other.name } : null}
       rules={rules}
       initialIssueId={initialIssueId}
-      onChanged={reload}
+      onSetPushback={async (issueId, reason) => {
+        await client.setPushback(issueId, reason);
+        await reload();
+      }}
+      onRetryEvaluation={async () => {
+        try {
+          await client.retryEvaluation(review.id);
+          await reload();
+        } catch (error) {
+          showToast({ message: error instanceof Error ? error.message : String(error) });
+        }
+      }}
     />
   );
 }
 
-function ReviewDone({
+/** Screen 4, and screen 11 when the status is partial. */
+export function ReviewDone({
   review,
   crumbs,
   compare,
   rules,
   initialIssueId,
-  onChanged,
+  onSetPushback,
+  onRetryEvaluation,
 }: {
   review: ReviewDetail;
   crumbs: { label: string; href?: string }[];
   compare: { href: string; name: string } | null;
   rules: Map<string, string>;
   initialIssueId?: string;
-  onChanged: () => Promise<void>;
+  onSetPushback: (issueId: string, reason: string | null) => Promise<void>;
+  onRetryEvaluation: () => Promise<void>;
 }) {
-  const client = useDataClient();
   const { announce } = useAnnouncer();
   const [filter, setFilter] = useState<Filter>("all");
   const [selectedId, setSelectedId] = useState<string | null>(() =>
@@ -204,14 +267,12 @@ function ReviewDone({
   }
 
   async function saveReason(issue: Issue, reason: string) {
-    await client.setPushback(issue.id, reason);
-    await onChanged();
+    await onSetPushback(issue.id, reason);
     announce(`Reason saved. Issue ${issue.number} is marked I disagreed.`);
   }
 
   async function undoReason(issue: Issue) {
-    await client.setPushback(issue.id, null);
-    await onChanged();
+    await onSetPushback(issue.id, null);
     announce(`Reason removed. Issue ${issue.number} is open again.`);
   }
 
@@ -248,10 +309,18 @@ function ReviewDone({
       </div>
 
       {review.status === "partial" ? (
-        <p className={styles.banner}>
-          Measured results are ready. The evaluation came back in a format the app couldn&apos;t
-          read, so it isn&apos;t shown.
-        </p>
+        <div className={styles.banner}>
+          <span className={styles.bannerIcon} aria-hidden="true">
+            !
+          </span>
+          <p className={styles.bannerText}>
+            <strong>Measured results are ready.</strong> The evaluation came back in a format the
+            app couldn&apos;t read, so it isn&apos;t shown.
+          </p>
+          <Button className={styles.retry} onClick={onRetryEvaluation}>
+            Retry evaluation
+          </Button>
+        </div>
       ) : null}
 
       <div className={styles.columns}>
@@ -289,6 +358,14 @@ function ReviewDone({
               />
             ))
           )}
+          {review.status === "partial" && filter !== "measured" ? (
+            <div className={styles.missing}>
+              <p className={styles.missingTitle}>Evaluation missing</p>
+              <p className={styles.missingText}>
+                Heuristics, Laws of UX and your own rules will appear here after a retry.
+              </p>
+            </div>
+          ) : null}
         </section>
       </div>
     </>

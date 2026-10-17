@@ -22,6 +22,8 @@ export interface DataClient {
   getReview(id: string): Promise<ReviewDetail>;
   startReview(input: StartReviewInput): Promise<{ reviewId: string }>;
   retryEvaluation(reviewId: string): Promise<void>;
+  /** Stops a running review and removes the version it created (docs/03 "Cancel review"). */
+  cancelReview(reviewId: string): Promise<void>;
   setPushback(issueId: string, reason: string | null): Promise<void>;
   deleteProject(id: string): Promise<void>;
   getChecklist(): Promise<Checklist>;

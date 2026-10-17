@@ -6,6 +6,13 @@ const SCREENS: [string, string][] = [
   ["/reviews/review-checkout-v1", "Review of v1"],
   ["/reviews/review-checkout-v3", "Review of v3"],
   ["/projects/checkout-practice/compare?from=checkout-v1&to=checkout-v2", "What changed"],
+  ["/new", "New review"],
+  ["/checklist", "My checklist"],
+  ["/setup", "Connect Claude to start reviewing"],
+  ["/states", "Screen states"],
+  ["/states/failed", "The review didn't finish"],
+  ["/states/partial", "Review of v1"],
+  ["/states/upload", "New review"],
 ];
 
 for (const [path, heading] of SCREENS) {

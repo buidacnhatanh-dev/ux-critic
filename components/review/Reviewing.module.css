@@ -1,0 +1,149 @@
+.title {
+  font-size: 36px;
+  margin-bottom: var(--space-7);
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.shot {
+  flex: 1 1 480px;
+  min-width: 0;
+}
+
+.side {
+  flex: 1 1 380px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+/* A soft line moving down the screenshot; still under reduced motion. */
+.scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 48px;
+  border-top: 2px solid var(--color-primary);
+  background: linear-gradient(to bottom, var(--color-region-tint), transparent);
+  animation: scan 2.4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  from {
+    top: 0;
+  }
+  to {
+    top: calc(100% - 48px);
+  }
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: var(--border-card) solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px var(--space-5);
+}
+
+.step + .step {
+  border-top: var(--border-card) solid var(--color-border);
+}
+
+.step[data-state="current"] {
+  background: var(--color-primary-soft);
+}
+
+.icon {
+  flex: none;
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+}
+
+.doneCircle {
+  fill: var(--color-success);
+}
+
+.doneMark {
+  stroke: var(--color-on-dark);
+}
+
+.spinner,
+.waiting {
+  width: 22px;
+  height: 22px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 2.5px solid var(--color-border-input);
+}
+
+.spinner {
+  border-color: var(--color-primary-tint);
+  border-top-color: var(--color-primary);
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stepLabel {
+  font-weight: 700;
+}
+
+.step[data-state="current"] .stepLabel {
+  color: var(--color-primary);
+}
+
+.step[data-state="waiting"] .stepLabel {
+  color: var(--color-text-muted);
+}
+
+.stepDetail {
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+.note {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.cancel {
+  min-height: var(--target-min);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan,
+  .spinner {
+    animation: none;
+  }
+}

@@ -16,6 +16,7 @@ export class LiveClient implements DataClient {
   getReview = () => notYet("getReview");
   startReview = () => notYet("startReview");
   retryEvaluation = () => notYet("retryEvaluation");
+  cancelReview = () => notYet("cancelReview");
   setPushback = () => notYet("setPushback");
   deleteProject = () => notYet("deleteProject");
   getChecklist = () => notYet("getChecklist");

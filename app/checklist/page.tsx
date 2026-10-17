@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/PagePlaceholder";
+import { ChecklistScreen } from "@/components/checklist/ChecklistScreen";
 
 export const metadata: Metadata = { title: "My checklist" };
+// Reads the environment when the page is requested, not at build time.
+export const dynamic = "force-dynamic";
 
 export default function ChecklistPage() {
-  return (
-    <PagePlaceholder
-      title="My checklist"
-      note="Principle sets and your own rules. Built in milestone M3."
-    />
-  );
+  // Server only: the key itself never leaves the server, only whether it is set.
+  const connection = {
+    model: process.env.UXC_MODEL?.trim() || null,
+    keySaved: Boolean(process.env.ANTHROPIC_API_KEY?.trim()),
+    pricesSet: Boolean(
+      process.env.UXC_PRICE_INPUT_PER_M?.trim() && process.env.UXC_PRICE_OUTPUT_PER_M?.trim(),
+    ),
+  };
+  return <ChecklistScreen connection={connection} />;
 }

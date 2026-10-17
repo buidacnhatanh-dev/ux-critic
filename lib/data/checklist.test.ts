@@ -79,4 +79,19 @@ describe("applyChecklistUpdate", () => {
       applyChecklistUpdate(base, { type: "moveRule", ruleId: "a", direction: "up" }, newId),
     ).toBe(base);
   });
+
+  it("restores a deleted rule at its old position, once", () => {
+    const deleted = applyChecklistUpdate(base, { type: "deleteRule", ruleId: "b" }, newId);
+    expect(ids(deleted)).toEqual(["a", "c"]);
+    const restored = applyChecklistUpdate(
+      deleted,
+      { type: "restoreRule", rule: rule("b", 2) },
+      newId,
+    );
+    expect(ids(restored)).toEqual(["a", "b", "c"]);
+    expect(restored.rules.map((r) => r.position)).toEqual([1, 2, 3]);
+    expect(applyChecklistUpdate(restored, { type: "restoreRule", rule: rule("b", 2) }, newId)).toBe(
+      restored,
+    );
+  });
 });

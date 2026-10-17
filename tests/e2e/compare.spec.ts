@@ -18,8 +18,12 @@ test("Compare v1 and v2: fixed with measured values, still open, new with a link
   page,
 }) => {
   await page.goto("/projects/checkout-practice/compare");
-  await page.getByRole("combobox", { name: "To" }).selectOption("checkout-v2");
+  // From must be older than To: the other choices are disabled.
+  const to = page.getByRole("combobox", { name: "To" });
+  await expect(to.locator('option[value="checkout-v2"]')).toBeDisabled();
   await page.getByRole("combobox", { name: "From" }).selectOption("checkout-v1");
+  await expect(to.locator('option[value="checkout-v2"]')).toBeEnabled();
+  await to.selectOption("checkout-v2");
   await expect(page).toHaveURL(/from=checkout-v1&to=checkout-v2/);
 
   const tiles = page.getByRole("list", { name: "Summary" });

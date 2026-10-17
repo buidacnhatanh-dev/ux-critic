@@ -229,6 +229,17 @@ describe("DemoClient startReview", () => {
     expect(review.issues.some((i) => i.pushback)).toBe(false);
   });
 
+  it("cancels a running review and removes its version and new project", async () => {
+    const { client } = setup();
+    const { reviewId } = await client.startReview(input);
+    await client.cancelReview(reviewId);
+    await expect(client.getReview(reviewId)).rejects.toMatchObject({ name: "NotFoundError" });
+    expect((await client.listProjects()).some((p) => p.name === "My test")).toBe(false);
+    await expect(client.cancelReview("review-signup-v1")).rejects.toMatchObject({
+      name: "ValidationError",
+    });
+  });
+
   it("finishes at once when instant (reduced motion)", async () => {
     const { client } = setup();
     const { reviewId } = await client.startReview({ ...input, instant: true });

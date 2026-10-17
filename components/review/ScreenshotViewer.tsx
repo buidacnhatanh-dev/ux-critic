@@ -1,6 +1,6 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import type { Issue } from "@/lib/data/types";
 import { badgeOffsets, regionPosition } from "@/lib/regions";
 import styles from "./ScreenshotViewer.module.css";
@@ -15,6 +15,8 @@ export type ScreenshotViewerProps = {
   selectedId?: string | null;
   onSelect?: (issueId: string) => void;
   caption?: string;
+  /** Drawn over the image, for example the scan line while reviewing. */
+  overlay?: ReactNode;
 };
 
 function regionTone(issue: Issue) {
@@ -35,6 +37,7 @@ export function ScreenshotViewer({
   selectedId = null,
   onSelect,
   caption,
+  overlay,
 }: ScreenshotViewerProps) {
   const marked = issues.filter((issue) => issue.region);
   const offsets = badgeOffsets(
@@ -77,6 +80,7 @@ export function ScreenshotViewer({
             </div>
           );
         })}
+        {overlay}
       </div>
       {caption ? <figcaption className={styles.caption}>{caption}</figcaption> : null}
     </figure>

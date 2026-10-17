@@ -124,6 +124,7 @@ export type StartReviewInput =
       context: string;
       scale: Scale;
       file: File;
+      sources: SourceSettings;
     }
   | {
       mode: "demo";
@@ -156,6 +157,8 @@ export type ChecklistUpdate =
   | { type: "createRule"; rule: Omit<Rule, "id" | "position"> }
   | { type: "updateRule"; rule: Rule }
   | { type: "deleteRule"; ruleId: string }
+  /** Undo of a delete: puts the rule back with its id at its old position. */
+  | { type: "restoreRule"; rule: Rule }
   | { type: "moveRule"; ruleId: string; direction: "up" | "down" };
 
 /** A demo sample screen for the New review picker (docs/10). */

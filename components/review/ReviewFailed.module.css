@@ -1,0 +1,84 @@
+.box {
+  display: flex;
+  gap: var(--space-5);
+  max-width: 828px;
+  margin-top: var(--space-6);
+  padding: 32px;
+  border: 2px solid var(--color-high);
+  border-radius: 16px;
+}
+
+.icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-high-bg);
+  color: var(--color-high);
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: var(--space-3);
+}
+
+.message {
+  margin: 0 0 var(--space-2);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.saved {
+  margin: 0 0 var(--space-6);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.details {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pre {
+  margin: var(--space-2) 0 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .box {
+    flex-direction: column;
+    padding: var(--space-5);
+  }
+}

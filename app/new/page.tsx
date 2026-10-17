@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/PagePlaceholder";
+import { NewReviewScreen } from "@/components/new/NewReviewScreen";
 
 export const metadata: Metadata = { title: "New review" };
 
-export default function NewReviewPage() {
+type Search = Record<string, string | string[] | undefined>;
+const one = (value: string | string[] | undefined) =>
+  typeof value === "string" ? value : undefined;
+
+export default async function NewReviewPage({ searchParams }: { searchParams: Promise<Search> }) {
+  const search = await searchParams;
   return (
-    <PagePlaceholder
-      title="New review"
-      note="Start a review of a screenshot. Built in milestone M3."
+    <NewReviewScreen
+      initial={{
+        project: one(search.project),
+        projectName: one(search.projectName),
+        version: one(search.version),
+        context: one(search.context),
+        sample: one(search.sample),
+      }}
     />
   );
 }

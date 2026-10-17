@@ -16,11 +16,15 @@
   flex-wrap: wrap;
   align-items: flex-end;
   gap: var(--space-3);
+  font-size: var(--text-sm);
 }
 
-.select {
-  min-height: var(--target-min);
-  min-width: 140px;
+.pickers select {
+  font-size: var(--text-md);
+}
+
+.pickers > * {
+  min-width: 170px;
 }
 
 .muted {

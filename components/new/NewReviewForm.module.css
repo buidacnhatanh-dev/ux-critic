@@ -1,0 +1,240 @@
+.form {
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.legend {
+  padding: 0;
+  margin-bottom: var(--space-3);
+  font-weight: 700;
+}
+
+.error {
+  margin: var(--space-2) 0 0;
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  color: var(--color-high);
+  font-weight: 700;
+}
+
+.error svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.note {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Demo sample picker */
+.samples {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.samples .error {
+  margin: 0 0 var(--space-3);
+}
+
+.sampleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.sample {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-card) solid var(--color-border-input);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.sample:hover {
+  border-color: var(--color-ink);
+}
+
+.sample[data-checked] {
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.sample:has(:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+
+.sampleImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sampleName {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  padding: var(--space-2) var(--space-3);
+  font-weight: 700;
+}
+
+.radio {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--color-primary);
+}
+
+/* Focus shows on the whole card instead. */
+.radio:focus-visible {
+  box-shadow: none;
+}
+
+/* Live upload */
+.drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-6);
+  border: 2px dashed var(--color-primary);
+  border-radius: var(--radius-card);
+  background: var(--color-primary-soft);
+  text-align: center;
+}
+
+.drop[data-dragging] {
+  background: var(--color-primary-tint);
+}
+
+.drop[data-invalid] {
+  border-color: var(--color-high);
+  background: var(--color-bg);
+}
+
+.dropIcon {
+  color: var(--color-primary);
+}
+
+.dropTitle {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: 800;
+}
+
+.dropHint {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.choose {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.picked {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-card) solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.pickedImage {
+  width: 96px;
+  height: 60px;
+  object-fit: cover;
+  object-position: top left;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+}
+
+.pickedName {
+  font-weight: 700;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+
+.pickedSize {
+  font-size: var(--text-sm);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.sources {
+  padding: var(--space-4) var(--space-5);
+  border: var(--border-card) solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.sourceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 var(--space-5);
+}
+
+.mine {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.edit {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-min);
+  font-size: var(--text-sm);
+}
+
+.submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.previewDone {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--color-success-bg);
+  color: var(--color-success-strong);
+  font-weight: 700;
+}
+
+.scale fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-6);
+}
+
+.scale legend,
+.scale fieldset > p {
+  flex: 0 0 100%;
+}

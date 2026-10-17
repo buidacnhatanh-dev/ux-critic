@@ -1,0 +1,31 @@
+.summary {
+  margin-bottom: var(--space-7);
+  padding: var(--space-5);
+  border: 2px solid var(--color-high);
+  border-radius: var(--radius-card);
+}
+
+.title {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-h3);
+}
+
+.list {
+  margin: 0;
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  color: var(--color-high);
+  font-weight: 700;
+}
+
+.link:hover {
+  color: var(--color-ink);
+}

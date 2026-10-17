@@ -89,16 +89,26 @@ export function CompareScreen({
   }
 
   const { from, to, result } = pair;
-  const options = finished.map((v) => ({
-    value: v.id,
-    label: v.reviewedAt ? `${v.name} · ${shortDate(v.reviewedAt)}` : v.name,
-  }));
-
   const known = (id?: string) => (finished.some((v) => v.id === id) ? id : undefined);
   const current = {
     from: known(picked.from) ?? from.version.id,
     to: known(picked.to) ?? to.version.id,
   };
+
+  // Versions are newest first: "from" must be older than "to", so the other choices are disabled.
+  const position = (versionId: string) => finished.findIndex((v) => v.id === versionId);
+  const label = (v: (typeof finished)[number]) =>
+    v.reviewedAt ? `${v.name} · ${shortDate(v.reviewedAt)}` : v.name;
+  const fromOptions = finished.map((v) => ({
+    value: v.id,
+    label: label(v),
+    disabled: position(v.id) <= position(current.to),
+  }));
+  const toOptions = finished.map((v) => ({
+    value: v.id,
+    label: label(v),
+    disabled: position(v.id) >= position(current.from),
+  }));
 
   function choose(which: "from" | "to", versionId: string) {
     const next = { ...current, [which]: versionId };
@@ -117,17 +127,15 @@ export function CompareScreen({
         <div className={styles.pickers}>
           <Select
             label="From"
-            options={options}
+            options={fromOptions}
             value={current.from}
             onChange={(e) => choose("from", e.target.value)}
-            className={styles.select}
           />
           <Select
             label="To"
-            options={options}
+            options={toOptions}
             value={current.to}
             onChange={(e) => choose("to", e.target.value)}
-            className={styles.select}
           />
         </div>
       </div>

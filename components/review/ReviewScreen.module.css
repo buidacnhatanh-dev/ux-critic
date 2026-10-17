@@ -57,11 +57,56 @@
 }
 
 .banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
   margin: 0 0 var(--space-6);
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-control);
-  border: var(--border-card) solid var(--color-medium);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-card);
   background: var(--color-medium-bg);
+}
+
+.bannerIcon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-medium);
+  border-radius: 50%;
+  color: var(--color-medium);
+  font-weight: 700;
+  font-size: var(--text-sm);
+}
+
+.bannerText {
+  flex: 1 1 320px;
+  margin: 0;
+}
+
+.retry {
+  margin-left: auto;
+  background: var(--color-ink);
+}
+
+.missing {
+  padding: var(--space-6) var(--space-5);
+  border: 2px dashed var(--color-border-input);
+  border-radius: var(--radius-card);
+  text-align: center;
+}
+
+.missingTitle {
+  margin: 0 0 var(--space-1);
+  font-weight: 700;
+}
+
+.missingText {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-text-muted);
 }
 
 .columns {

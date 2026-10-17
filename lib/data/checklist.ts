@@ -32,6 +32,12 @@ export function applyChecklistUpdate(
     }
     case "deleteRule":
       return { ...checklist, rules: renumber(rules.filter((r) => r.id !== update.ruleId)) };
+    case "restoreRule": {
+      if (rules.some((r) => r.id === update.rule.id)) return checklist;
+      const at = Math.min(Math.max(update.rule.position - 1, 0), rules.length);
+      rules.splice(at, 0, update.rule);
+      return { ...checklist, rules: renumber(rules) };
+    }
     case "moveRule": {
       const index = rules.findIndex((r) => r.id === update.ruleId);
       const target = update.direction === "up" ? index - 1 : index + 1;

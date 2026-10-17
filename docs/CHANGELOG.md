@@ -91,3 +91,29 @@ Decisions
 * The full Reviewing, Review failed and Evaluation unreadable screens come in M3 and M5; for now a running review polls and shows one line, and partial reviews show the measured issues with the banner text. The "Evaluation is off" note needs the live mode signal from M5
 * The Delete project dialog from screen 15 was built here because the button is part of screen 2; M3 only needs to check it
 * `<img>` is used for screenshots (with a lint exception) because regions are placed on the exact image and live screenshots will come from local files
+
+## M3 · Demo: New review, checklist, dialogs (2026-10-17)
+
+Built
+
+* Compare (fix): From and To use the restyled `Select` (own chevron, same box as text fields instead of the platform widget), and choices that would put From after To are disabled
+* New review (3) in both forms. Demo: "Pick a sample screen" radio cards with the docs/10 note. Live: drop zone, paste with Cmd+V anywhere, Choose a file, thumbnail with name, size and Remove, Scale 1× / 2× / 3× preselected per docs/04, Check against with the rule count and an Edit link. Project select with "New project…", next free version name, prefill from `?project=`, `?version=`, `?context=`, `?sample=`
+* Form errors (13): shown on submit only, then updated as fields are fixed; error summary ("Two things need fixing") focused, each error links to and focuses its field; field errors with icon, `aria-invalid`, `aria-describedby`. Wrong type names the type ("The file is a PDF"), over 20 MB gives the size, project name empty or taken, version empty or used ("v2 already exists. Try v4.")
+* Reviewing (9): step list with done, current and waiting, details from docs/03 (size, measured count once measuring is done, sources summary from docs/05), scan line that stays still under reduced motion, each finished step announced, "Review finished. 5 issues found." announced at the switch, Cancel review back to a filled in form. With reduced motion the demo review is instant
+* Review failed (10) with a sentence per error type (timeout, network, key, rate limit, unknown), focus on the heading, Try again, Change settings, technical details. Evaluation unreadable (11): banner with Retry evaluation and the "Evaluation missing" card
+* My checklist (6): principle sets saved at once with a "Saved" toast, own rules with kind and an Edit button, Add a rule with "Checked by" (measured rules get a metric and threshold), connection section ("Demo mode · no API key needed" in the demo; model, key status and spend placeholder in live)
+* Edit a rule (14): `Dialog` with focus in the text, Checked by radios, metric and threshold for measured rules, Move up and Move down (announced), Delete rule with an 8 second Undo toast that puts the rule back in place and focuses it
+* Connect Claude (8) on `/setup`; `/states` with Connect Claude, Review failed, Evaluation unreadable and the live upload form, each marked as a sample
+* Delete a project (15) from M2 checked against docs/06 §15: alert dialog, real counts, "You can't undo this.", Keep project focused first, Escape keeps, toast after deleting. No change needed
+* `lib/new-review.ts`, `lib/reviewing.ts`, `lib/rules.ts`, `lib/sample-states.ts`, `restoreRule` and `cancelReview`, all unit tested; Playwright for every flow in demo mode with axe, plus 375 px reflow for the new pages
+
+Decisions
+
+* `DataClient` gained `cancelReview(reviewId)` (docs/03 Cancel review needs it). In the demo it removes the started version, and the project when it was made for that review. `ChecklistUpdate` gained `restoreRule` for Undo. `StartReviewInput` (live) carries the chosen sources
+* The live upload form can't run in the public demo, so `/states/upload` shows it with the demo's projects. It validates like the real form but never uploads ("Everything is filled in…"). This is how Playwright covers the Form errors state in demo mode
+* Demo New review hides Scale (fixed per sample) and Check against (prepared reviews can't change)
+* Review failed and Evaluation unreadable samples are the Checkout practice reviews changed into that state in the browser (`lib/sample-states.ts`); push backs on the partial sample stay in memory. The timeout sample's "60 s" comes from its sample message
+* Until the live pipeline exists (M5), Try again on a real failed review opens New review filled in, and Retry evaluation shows the client's message as a toast
+* The "Choose a file" button is the field the error summary links to; the native file input stays hidden. Small single-field forms (add a rule, edit a rule) show the error under the field and focus it instead of a summary, as the push back form does
+* Connect Claude stays inside the app shell and says `pnpm dev` (the design shows a standalone page and `npm run dev`). "Continue with measured checks only" sets the `uxc-measured-only` cookie; nothing reads it until M5
+* Until token usage is saved (M5), live "Spent this month" shows the docs/01 placeholder without prices and "Counted once live reviews are saved" with them, so no amount is invented

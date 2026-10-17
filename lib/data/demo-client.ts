@@ -445,6 +445,27 @@ export class DemoClient implements DataClient {
     throw new Error("Demo reviews are prepared in advance, so there is nothing to retry.");
   };
 
+  cancelReview = async (reviewId: string): Promise<void> => {
+    const overlay = structuredClone(this.getOverlay());
+    const created = overlay.created.reviews.find((r) => r.id === reviewId);
+    if (!created)
+      throw new ValidationError("review", "Only a review you started can be cancelled.");
+    const version = overlay.created.versions.find((v) => v.id === created.versionId);
+    overlay.created.reviews = overlay.created.reviews.filter(
+      (r) => r.versionId !== created.versionId,
+    );
+    overlay.created.versions = overlay.created.versions.filter((v) => v.id !== created.versionId);
+    // A project made for this review goes too, when nothing else is in it.
+    if (
+      version &&
+      overlay.created.projects.some((p) => p.id === version.projectId) &&
+      !overlay.created.versions.some((v) => v.projectId === version.projectId)
+    ) {
+      overlay.created.projects = overlay.created.projects.filter((p) => p.id !== version.projectId);
+    }
+    this.save(overlay);
+  };
+
   setPushback = async (issueId: string, reason: string | null): Promise<void> => {
     const data = await this.getData();
     const overlay = structuredClone(this.getOverlay());
