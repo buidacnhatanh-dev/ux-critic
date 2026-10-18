@@ -5,7 +5,9 @@ import { loadRaw } from "./image";
 import {
   backgroundColour,
   dominantColour,
+  checkTextSize,
   estimateFontSize,
+  estimateFontSizeFromOcr,
   measureContrast,
   measureTargetSize,
   measureTextSize,
@@ -140,6 +142,48 @@ describe("text size", () => {
     expect(measureTextSize(38.4, 2, "A sentence long enough to be body text", 18).passes).toBe(
       false,
     );
+  });
+});
+
+describe("text size from OCR lines", () => {
+  it("uses the row height over 0.87, capped at 1.25 glyph box heights", () => {
+    // 16 px text at scale 2 (measured on the demo fixtures): row height 28, box 23 to 30.
+    expect(estimateFontSizeFromOcr(27.84, 30, 2)).toBeCloseTo(16, 10);
+    // A row height far above the glyph box (OCR row statistics gone wrong) is capped.
+    expect(estimateFontSizeFromOcr(46.8, 24, 2)).toBeCloseTo(30 / 2 / 0.87, 10);
+  });
+
+  it("checks an estimate like a line box", () => {
+    expect(checkTextSize(13.2, "Times are local to each depot")).toEqual({
+      size: 13,
+      threshold: 16,
+      passes: false,
+    });
+    expect(checkTextSize(13.2, "Last 30 days").passes).toBe(true);
+    expect(checkTextSize(15.6, "We send your receipt to this address").passes).toBe(true);
+  });
+
+  it("uses the estimate for the large text threshold of contrast", async () => {
+    // Grey on white at about 3.5 : 1: fails as body text, passes as large text (24 px and up).
+    const img = await loadRaw(
+      await sharp({ create: { width: 60, height: 40, channels: 3, background: "#ffffff" } })
+        .composite([
+          {
+            input: await sharp({
+              create: { width: 20, height: 10, channels: 3, background: "#8a8a8a" },
+            })
+              .png()
+              .toBuffer(),
+            left: 20,
+            top: 15,
+          },
+        ])
+        .png()
+        .toBuffer(),
+    );
+    const box = { x: 20, y: 15, w: 20, h: 10 };
+    expect(measureContrast(img, box, 1, null, 14)!.threshold).toBe(4.5);
+    expect(measureContrast(img, box, 1, null, 26)!.threshold).toBe(3);
   });
 });
 

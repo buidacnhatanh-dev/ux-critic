@@ -1,14 +1,34 @@
 import { readFileSync } from "node:fs";
 import { expect, type Page } from "@playwright/test";
 
-/** A real screenshot from the demo; the file name picks the fake AI fixture (docs/03). */
-const png = readFileSync("public/demo/checkout-v1.png");
+/**
+ * Real screenshots from the demo; the file name picks the fake AI fixture (docs/03). OCR and the
+ * measuring maths run for real: checkout v1 has faint helper text (1.85 : 1), v3 measures clean.
+ */
+export const SCREENSHOTS = {
+  faint: "public/demo/checkout-v1.png",
+  clean: "public/demo/checkout-v3.png",
+} as const;
+
+/** A review runs OCR on the server, one at a time, so parallel tests can queue behind others. */
+export const RESULT_TIMEOUT = 45_000;
 
 /** Fills the live New review form and starts the review. Lands on /reviews/<id>. */
 export async function startReview(
   page: Page,
-  { project, fileName, version = "v1" }: { project: string; fileName: string; version?: string },
+  {
+    project,
+    fileName,
+    version = "v1",
+    screenshot = "faint",
+  }: {
+    project: string;
+    fileName: string;
+    version?: string;
+    screenshot?: keyof typeof SCREENSHOTS;
+  },
 ) {
+  const png = readFileSync(SCREENSHOTS[screenshot]);
   await page.goto("/new");
   await expect(page.getByRole("heading", { level: 1, name: "New review" })).toBeVisible();
   await page

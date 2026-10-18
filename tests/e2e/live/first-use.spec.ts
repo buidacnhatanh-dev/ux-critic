@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { expectNoAxeViolations } from "../axe";
-import { startReview } from "./upload";
+import { RESULT_TIMEOUT, startReview } from "./upload";
 
 // docs/08 §1, live mode with fake AI: First use → New review → upload → Reviewing → Review.
 test("first review: upload, watch the steps, get numbered evaluated notes", async ({ page }) => {
@@ -21,17 +21,25 @@ test("first review: upload, watch the steps, get numbered evaluated notes", asyn
     page.getByRole("heading", { level: 1, name: /^(Reviewing|Review of) v1/ }),
   ).toBeVisible();
   await expect(page.getByRole("heading", { level: 1, name: "Review of v1" })).toBeVisible({
-    timeout: 15_000,
+    timeout: RESULT_TIMEOUT,
   });
   const filters = page.getByRole("group", { name: "Filter issues" });
-  await expect(filters.getByRole("button", { name: "All 3" })).toBeVisible();
+  await expect(filters.getByRole("button", { name: "All 4" })).toBeVisible();
+  await expect(filters.getByRole("button", { name: "Measured 1" })).toBeVisible();
   await expect(filters.getByRole("button", { name: "Evaluated 3" })).toBeVisible();
-  await expect(page.locator("article h3 button")).toHaveCount(3);
+  await expect(page.locator("article h3 button")).toHaveCount(4);
   // The model from the (fake) API response.
   await expect(page.getByText("Evaluated by fake-ai")).toBeVisible();
   await expect(page.locator("article").first()).toContainText(
     "Field labels disappear while typing",
   );
+  // Measured from the pixels: the faint helper text, in reading order after the labels note.
+  const measured = page.locator("article").nth(1);
+  await measured.locator("h3 button").click();
+  await expect(measured).toContainText('"We send your receipt to this address" is too faint');
+  await expect(measured).toContainText("measures 1.85 : 1 on #FFFFFF");
+  await expect(measured).toContainText("Measured from pixels");
+  await expect(page.getByText(/weren't measured/)).toHaveCount(0);
 
   // The screenshot comes from data/ through the API.
   const image = page.getByRole("img", { name: /Screenshot of Coffee shop v1/ });

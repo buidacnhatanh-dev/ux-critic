@@ -21,7 +21,14 @@ import type {
   VersionSummary,
 } from "../data/types.ts";
 import type { Db } from "./client.ts";
-import { readBox, readError, readJson, reviewSourcesSchema, sourceSettingsSchema } from "./json.ts";
+import {
+  readBox,
+  readError,
+  readJson,
+  readSkippedChecks,
+  reviewSourcesSchema,
+  sourceSettingsSchema,
+} from "./json.ts";
 import * as t from "./schema.ts";
 import { DEFAULT_SOURCES } from "./seed.ts";
 
@@ -204,6 +211,7 @@ export function getReview(db: Db, id: string): ReviewDetail {
     error: readError(review.error),
     sources: { sets: sources.sets, ruleIds: sources.ruleIds },
     evaluationOff: !sources.evaluation,
+    skippedChecks: readSkippedChecks(review.skippedChecks),
     model: review.model,
     inputTokens: review.inputTokens,
     outputTokens: review.outputTokens,

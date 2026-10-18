@@ -30,6 +30,7 @@ All ids are text UUIDs. Times are ISO strings. JSON columns are text with zod va
 | step | text enum | `prepare`, `measure`, `evaluate`, `place` |
 | error | text null | short message for the Failed screen, plus technical detail |
 | sources | text json | which principle sets and rule ids were on |
+| skipped_checks | text json null | measured checks that did not run: `[{check: "target_size" \| "text", reason: "no_claude" \| "failed", detail}]` (M6) |
 | model | text | value of UXC_MODEL at the time |
 | input_tokens, output_tokens | integer | summed over both calls, from the API usage |
 | started_at, finished_at | text | |

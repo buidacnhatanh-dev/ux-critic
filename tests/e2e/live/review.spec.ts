@@ -1,18 +1,19 @@
 import { existsSync, readdirSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 import { expectNoAxeViolations } from "../axe";
-import { startReview } from "./upload";
+import { RESULT_TIMEOUT, startReview } from "./upload";
 
 const SCREENSHOTS = ".e2e-data/live/screenshots";
 
 test("push back is saved in the database: kept after reload, undo removes it", async ({ page }) => {
   await startReview(page, { project: "Push back", fileName: "checkout.png" });
   await expect(page.getByRole("heading", { level: 1, name: "Review of v1" })).toBeVisible({
-    timeout: 15_000,
+    timeout: RESULT_TIMEOUT,
   });
-  const card = page.locator("article").nth(1);
+  // Issue 3 is the evaluated Hick's law note (issue 2 is the measured faint text).
+  const card = page.locator("article").nth(2);
   await card.locator("h3 button").click();
-  await card.getByRole("button", { name: "I disagree with issue 2" }).click();
+  await card.getByRole("button", { name: "I disagree with issue 3" }).click();
   await card
     .getByRole("textbox", { name: "Why is this not a problem here?" })
     .fill("People here pick from all five options.");
@@ -20,20 +21,24 @@ test("push back is saved in the database: kept after reload, undo removes it", a
   await expect(card).toContainText("Why I disagree");
 
   await page.reload();
-  const again = page.locator("article").nth(1);
+  const again = page.locator("article").nth(2);
   await expect(again.locator("h3")).toContainText("I disagreed");
   await again.locator("h3 button").click();
   await expect(again).toContainText("People here pick from all five options.");
   await expectNoAxeViolations(page);
-  await again.getByRole("button", { name: "Undo my reason for issue 2" }).click();
+  await again.getByRole("button", { name: "Undo my reason for issue 3" }).click();
   await page.reload();
-  await expect(page.locator("article").nth(1).locator("h3")).not.toContainText("I disagreed");
+  await expect(page.locator("article").nth(2).locator("h3")).not.toContainText("I disagreed");
 });
 
 test("delete a project removes its screenshots from data/", async ({ page }) => {
-  const reviewId = await startReview(page, { project: "To delete", fileName: "fake-empty.png" });
+  const reviewId = await startReview(page, {
+    project: "To delete",
+    fileName: "fake-empty.png",
+    screenshot: "clean",
+  });
   await expect(page.getByRole("heading", { level: 2, name: "No issues found" })).toBeVisible({
-    timeout: 15_000,
+    timeout: RESULT_TIMEOUT,
   });
   const review = await (await page.request.get(`/api/reviews/${reviewId}`)).json();
   const file = `${review.version.id}.png`;

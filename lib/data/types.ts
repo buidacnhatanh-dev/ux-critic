@@ -89,6 +89,18 @@ export type Issue = {
   pushback: Pushback | null;
 };
 
+/**
+ * A measured check that did not run in a live review (docs/03). Target sizes need Claude call 1 to
+ * find the controls; text checks need OCR.
+ */
+export type SkippedCheck = {
+  check: "target_size" | "text";
+  /** `no_claude`: measured checks only, no key. `failed`: the step failed, the rest went on. */
+  reason: "no_claude" | "failed";
+  /** Technical detail for a failure. */
+  detail: string | null;
+};
+
 export type SourceSettings = { nielsen: boolean; wcag: boolean; laws: boolean; mine: boolean };
 
 export type ReviewDetail = {
@@ -102,6 +114,8 @@ export type ReviewDetail = {
   sources: { sets: SourceSettings; ruleIds: string[] };
   /** Live only: true when the review ran without Claude (measured checks only, docs/03). */
   evaluationOff?: boolean;
+  /** Live only: measured checks that did not run, and why. */
+  skippedChecks?: SkippedCheck[];
   /** Null for reviews that were not made by a model (handwritten demo reviews). */
   model: string | null;
   /** From the API usage. Null when no API call was made. */

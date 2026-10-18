@@ -31,6 +31,24 @@ describe("fake AI fixtures", () => {
     expect(JSON.parse((await fakeLocate("checkout.png", size)).text).controls).toHaveLength(2);
   });
 
+  it("is slow only for call 2 with fake-slow", async () => {
+    vi.useFakeTimers();
+    try {
+      let located = false;
+      void fakeLocate("fake-slow.png", size).then(() => (located = true));
+      await vi.advanceTimersByTimeAsync(600);
+      expect(located).toBe(true);
+      let evaluated = false;
+      void fakeEvaluate("fake-slow.png", size).then(() => (evaluated = true));
+      await vi.advanceTimersByTimeAsync(600);
+      expect(evaluated).toBe(false);
+      await vi.advanceTimersByTimeAsync(8000);
+      expect(evaluated).toBe(true);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
   it("stops at once on cancel", async () => {
     const controller = new AbortController();
     const pending = fakeEvaluate("checkout.png", size, controller.signal);

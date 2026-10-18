@@ -47,6 +47,8 @@ export const reviews = sqliteTable("reviews", {
   error: text("error"),
   /** JSON: which principle sets and rule ids were on, and whether evaluation ran. */
   sources: text("sources").notNull(),
+  /** JSON array of measured checks that did not run, and why (SkippedCheck in lib/data/types). */
+  skippedChecks: text("skipped_checks"),
   model: text("model"),
   inputTokens: integer("input_tokens"),
   outputTokens: integer("output_tokens"),

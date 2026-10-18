@@ -4,3 +4,5 @@ allowBuilds:
   better-sqlite3: true
   # drizzle-kit's esbuild ships its binary as an optional dependency; no install script needed.
   esbuild: false
+  # Its only install script is an opencollective message.
+  tesseract.js: false

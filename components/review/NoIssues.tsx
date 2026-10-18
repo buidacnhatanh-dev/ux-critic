@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/ui";
 import type { ReviewDetail } from "@/lib/data/types";
 import { checkedAgainst, plural } from "@/lib/format";
 import { ScreenshotViewer } from "./ScreenshotViewer";
+import { SkippedChecks } from "./SkippedChecks";
 import styles from "./NoIssues.module.css";
 
 /** Screen 12: a finished review with no issues. */
@@ -57,6 +58,7 @@ export function NoIssues({
               watching one real person use it is still worth it.
             </p>
           </section>
+          <SkippedChecks skipped={review.skippedChecks} />
           <div className={styles.actions}>
             {compare ? (
               <ButtonLink href={compare.href}>Compare with {compare.name}</ButtonLink>

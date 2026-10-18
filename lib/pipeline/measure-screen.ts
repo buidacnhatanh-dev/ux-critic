@@ -4,11 +4,21 @@
  * Compare needs them); failures become measured issues with the wording from docs/04.
  */
 import { roundRatio, suggestPassingColour } from "../contrast.ts";
-import { WCAG_TARGET_MIN, measureContrast, measureTargetSize, measureTextSize } from "./measure.ts";
+import {
+  WCAG_TARGET_MIN,
+  checkTextSize,
+  measureContrast,
+  measureTargetSize,
+  measureTextSize,
+} from "./measure.ts";
 import { contrastIssueText, targetSizeIssueText, textSizeIssueText } from "./measured-text.ts";
 import type { PixelBox, RawImage } from "./raw-image.ts";
 
-export type LocatedText = { label: string; box: PixelBox };
+/**
+ * A text line. `fontSize` is an estimate in CSS px made by whoever located the line (OCR);
+ * without it the box is taken as a 1.2 line box (demo captures, docs/04).
+ */
+export type LocatedText = { label: string; box: PixelBox; fontSize?: number };
 export type LocatedControl = { label: string; box: PixelBox };
 
 /** Enabled measured rules from My checklist. A missing rule turns that check off. */
@@ -50,7 +60,7 @@ export function measureScreen(input: {
   const issues: ScreenMeasuredIssue[] = [];
 
   input.textLines.forEach((line, i) => {
-    const contrast = measureContrast(img, line.box, scale, rules.contrast?.min);
+    const contrast = measureContrast(img, line.box, scale, rules.contrast?.min, line.fontSize);
     if (contrast) {
       const key = `t${i}-contrast`;
       measurements.push({
@@ -85,7 +95,10 @@ export function measureScreen(input: {
     }
 
     if (rules.textSize) {
-      const size = measureTextSize(line.box.h, scale, line.label, rules.textSize.min);
+      const size =
+        line.fontSize === undefined
+          ? measureTextSize(line.box.h, scale, line.label, rules.textSize.min)
+          : checkTextSize(line.fontSize, line.label, rules.textSize.min);
       const key = `t${i}-size`;
       measurements.push({
         key,

@@ -5,12 +5,12 @@
  */
 import { and, eq } from "drizzle-orm";
 import { readFile } from "node:fs/promises";
-import { FAKE_MODEL, fakeEvaluate, isFakeAi } from "../fake-ai.ts";
+import { FAKE_MODEL, fakeEvaluate, fakeLocate, isFakeAi } from "../fake-ai.ts";
 import type { Db } from "../db/client.ts";
 import { getChecklist, getReviewJob } from "../db/repo.ts";
 import * as t from "../db/schema.ts";
-import { readBox } from "../db/json.ts";
-import type { ReviewStep } from "../data/types.ts";
+import { readBox, type ReviewSources } from "../db/json.ts";
+import type { ReviewStep, Rule, SkippedCheck } from "../data/types.ts";
 import { hasClaude } from "../mode.ts";
 import {
   callClaude,
@@ -30,7 +30,19 @@ import {
   userText,
   type EvaluatedIssue,
 } from "./evaluate.ts";
-import { imageForClaude, type ClaudeImage } from "./image.ts";
+import { imageForClaude, loadRaw, toOriginal, type ClaudeImage } from "./image.ts";
+import {
+  LOCATE_MAX_TOKENS,
+  LOCATE_SCHEMA,
+  LOCATE_SYSTEM_PROMPT,
+  LocateUnreadableError,
+  locateContent,
+  parseControls,
+} from "./locate.ts";
+import { estimateFontSizeFromOcr } from "./measure.ts";
+import { measureScreen, type LocatedControl, type MeasuredRules } from "./measure-screen.ts";
+import { findTextLines, type TextLine } from "./ocr.ts";
+import { numberInReadingOrder } from "./order.ts";
 import { placeIssues } from "./place.ts";
 
 /** Is Claude available: a key, or fake AI mode. */
@@ -74,14 +86,71 @@ export const defaultEvaluator: Evaluator = (input) =>
         signal: input.signal,
       });
 
+/** The answer of call 1 (locate controls), from Claude or from the fake AI fixtures. */
+export type Locator = (input: {
+  image: ClaudeImage;
+  fileName: string;
+  signal: AbortSignal;
+}) => Promise<ClaudeAnswer>;
+
+export const defaultLocator: Locator = (input) =>
+  isFakeAi()
+    ? fakeLocate(input.fileName, input.image, input.signal)
+    : callClaude({
+        system: LOCATE_SYSTEM_PROMPT,
+        content: locateContent(input.image),
+        schema: LOCATE_SCHEMA,
+        maxTokens: LOCATE_MAX_TOKENS,
+        signal: input.signal,
+      });
+
+/** Text lines on the original screenshot (OCR). Tests pass their own. */
+export type TextFinder = (png: Buffer) => Promise<TextLine[]>;
+
+/**
+ * Measured rules from My checklist that were on for this review (docs/04): enabled, in the
+ * review's rule ids, and only while "My checklist" is a source. With two rules for one metric the
+ * stricter one counts. A missing rule leaves the default (contrast 4.5, WCAG 24 px targets) and
+ * turns the text size check off, since its principle is the rule.
+ */
+export function measuredRulesFor(rules: Rule[], sources: ReviewSources): MeasuredRules {
+  const pick = (metric: Rule["metric"]) => {
+    if (!sources.sets.mine) return null;
+    const matching = rules.filter(
+      (r) =>
+        r.kind === "measured" &&
+        r.metric === metric &&
+        r.threshold !== null &&
+        sources.ruleIds.includes(r.id),
+    );
+    if (matching.length === 0) return null;
+    const strictest = matching.reduce((a, b) => (b.threshold! > a.threshold! ? b : a));
+    return { ruleId: strictest.id, min: strictest.threshold! };
+  };
+  return {
+    targetSize: pick("target_size_min"),
+    textSize: pick("text_size_min"),
+    contrast: pick("contrast_min"),
+  };
+}
+
 /** The model a call asks for; only used to explain a failure, never saved as the model. */
 function requestedModel(): string {
   return isFakeAi() ? FAKE_MODEL : modelId();
 }
 
-export type RunOptions = { evaluator?: Evaluator; now?: () => Date };
+export type RunOptions = {
+  evaluator?: Evaluator;
+  locator?: Locator;
+  findText?: TextFinder;
+  now?: () => Date;
+};
 
 class Stopped extends Error {}
+
+function messageOf(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
 
 function errorJson(message: string, detail: string | null) {
   return JSON.stringify({ message, detail });
@@ -97,6 +166,8 @@ export async function runReview(
   options: RunOptions & { evaluateOnly?: boolean } = {},
 ): Promise<void> {
   const evaluator = options.evaluator ?? defaultEvaluator;
+  const locator = options.locator ?? defaultLocator;
+  const findText = options.findText ?? findTextLines;
   const now = () => (options.now ? options.now() : new Date()).toISOString();
   const controller = new AbortController();
   registry.get(reviewId)?.abort();
@@ -123,8 +194,10 @@ export async function runReview(
     // 1 prepare: load the stored PNG and make the image for Claude.
     if (!options.evaluateOnly) setStep("prepare");
     let image: ClaudeImage;
+    let png: Buffer;
     try {
-      image = await imageForClaude(await readFile(version.screenshotPath));
+      png = await readFile(version.screenshotPath);
+      image = await imageForClaude(png);
     } catch (error) {
       if (signal.aborted) throw new Stopped();
       update({
@@ -139,11 +212,109 @@ export async function runReview(
       return;
     }
 
-    // 2 measure: OCR, call 1 and the measuring maths arrive in M6. Whatever is measured is saved
-    // here, before evaluation starts.
+    // 2 measure (docs/04): OCR text lines, call 1 for the controls, then contrast and sizes from
+    // the pixels. Saved here, before evaluation starts. A failed call 1 only skips target sizes.
     if (!options.evaluateOnly) {
       step = "measure";
       setStep("measure");
+      const skipped: SkippedCheck[] = [];
+
+      let lines: TextLine[] = [];
+      try {
+        lines = await findText(png);
+      } catch (error) {
+        if (signal.aborted) throw new Stopped();
+        skipped.push({ check: "text", reason: "failed", detail: messageOf(error) });
+      }
+      if (signal.aborted) throw new Stopped();
+
+      let controls: LocatedControl[] = [];
+      if (!sources.evaluation) {
+        skipped.push({ check: "target_size", reason: "no_claude", detail: null });
+      } else {
+        try {
+          const answer = await locator({ image, fileName: version.fileName, signal });
+          usedClaude = true;
+          usage = answer.usage;
+          if (answer.stopReason === "refusal" || answer.stopReason === "max_tokens") {
+            throw new LocateUnreadableError(
+              `The answer stopped early (stop reason: ${answer.stopReason}).`,
+              answer.text,
+            );
+          }
+          controls = parseControls(answer.text, image).controls.map((c) => ({
+            label: c.label,
+            box: toOriginal(c.box, image.factor),
+          }));
+        } catch (error) {
+          if (signal.aborted || error instanceof ReviewCancelledError) throw new Stopped();
+          const raw = error instanceof LocateUnreadableError ? `\n\n${error.raw}` : "";
+          skipped.push({
+            check: "target_size",
+            reason: "failed",
+            detail: `${messageOf(error)}${raw}`,
+          });
+        }
+      }
+
+      const screen = measureScreen({
+        img: await loadRaw(png),
+        scale: version.scale,
+        textLines: lines.map((line) => ({
+          label: line.text,
+          box: line.box,
+          fontSize: estimateFontSizeFromOcr(line.rowHeight, line.box.h, version.scale),
+        })),
+        controls,
+        rules: measuredRulesFor(getChecklist(db).rules, sources),
+      });
+      if (signal.aborted) throw new Stopped();
+      db.transaction((tx) => {
+        const ids = new Map<string, string>();
+        for (const m of screen.measurements) {
+          const id = crypto.randomUUID();
+          ids.set(m.key, id);
+          tx.insert(t.measurements)
+            .values({
+              id,
+              reviewId,
+              kind: m.kind,
+              label: m.label,
+              box: JSON.stringify(m.box),
+              value: m.value,
+              threshold: m.threshold,
+              passes: m.passes ? 1 : 0,
+            })
+            .run();
+        }
+        for (const issue of numberInReadingOrder(screen.issues)) {
+          tx.insert(t.issues)
+            .values({
+              id: crypto.randomUUID(),
+              reviewId,
+              number: issue.number,
+              kind: "measured",
+              principleId: issue.principleId,
+              title: issue.title,
+              detail: issue.detail,
+              fix: issue.fix,
+              severity: issue.severity,
+              confidence: null,
+              measurementId: ids.get(issue.measurementKey) ?? null,
+              region: JSON.stringify(issue.region),
+            })
+            .run();
+        }
+        // Call 1's tokens are saved with the measured results; call 2 adds its own later.
+        tx.update(t.reviews)
+          .set({
+            skippedChecks: skipped.length ? JSON.stringify(skipped) : null,
+            ...(usedClaude ? { inputTokens: usage.input, outputTokens: usage.output } : {}),
+          })
+          .where(eq(t.reviews.id, reviewId))
+          .run();
+      });
+      usage = { input: 0, output: 0 };
     }
 
     // 3 evaluate
@@ -168,6 +339,7 @@ export async function runReview(
     let unreadable: EvaluationUnreadableError | null = null;
     if (sources.evaluation && principles.length > 0) {
       usedClaude = true;
+      usage = { input: 0, output: 0 };
       let answer: ClaudeAnswer;
       try {
         answer = await evaluator({

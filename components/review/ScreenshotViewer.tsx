@@ -2,7 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import type { Issue } from "@/lib/data/types";
-import { badgeOffsets, regionPosition } from "@/lib/regions";
+import { badgePlacements, regionPosition } from "@/lib/regions";
 import styles from "./ScreenshotViewer.module.css";
 
 export type ScreenshotViewerProps = {
@@ -40,10 +40,9 @@ export function ScreenshotViewer({
   overlay,
 }: ScreenshotViewerProps) {
   const marked = issues.filter((issue) => issue.region);
-  const offsets = badgeOffsets(
+  const badges = badgePlacements(
     marked.map((i) => i.region),
     width,
-    height,
   );
 
   return (
@@ -68,7 +67,17 @@ export function ScreenshotViewer({
               <button
                 type="button"
                 className={styles.badge}
-                style={{ "--badge-offset": offsets[index] } as CSSProperties}
+                style={
+                  {
+                    "--badge-offset": badges[index]!.offset,
+                    ...(badges[index]!.anchor
+                      ? {
+                          left: `calc(${badges[index]!.anchor!.left} - 22px)`,
+                          top: `calc(${badges[index]!.anchor!.top} - 22px)`,
+                        }
+                      : {}),
+                  } as CSSProperties
+                }
                 aria-label={`Issue ${issue.number}: ${issue.title}`}
                 aria-pressed={selected}
                 onClick={() => onSelect?.(issue.id)}

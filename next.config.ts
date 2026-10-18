@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   pageExtensions: live ? ["live.ts", "tsx", "ts"] : ["tsx", "ts"],
+  // OCR (live only) starts a worker thread from a file inside the package, so it must not be
+  // bundled.
+  serverExternalPackages: ["tesseract.js"],
 };
 
 export default nextConfig;

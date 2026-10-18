@@ -21,23 +21,40 @@ export function regionPosition(box: Box, width: number, height: number): RegionP
   };
 }
 
-/** Corners closer than this (fraction of the image width) would hide each other's badge. */
-const SAME_CORNER = 0.02;
+/**
+ * Corners closer than this, as a fraction of the image width in both directions (the image scales
+ * evenly), would put the 24 px badges on top of each other. 8 % keeps them apart down to an image
+ * about 300 px wide, as on a phone.
+ */
+const SAME_CORNER = 0.08;
 
 /**
- * How many badge widths to shift each region's number badge to the right, so badges of regions
- * that share a top left corner (two checks on the same text line) stay visible and clickable.
- * Input in number order; output in the same order.
+ * Where each region's number badge goes. Badges whose top left corners are close (two checks on
+ * the same text line, a note just above a measured line) form a group: they sit on the first
+ * corner of the group, one badge width apart, so each stays visible and clickable at any image
+ * size. `offset` is how many badge widths to the right; `anchor` is the group's corner relative to
+ * this box, as a percentage of the box (null when the badge sits on its own corner). Input in
+ * number order; output in the same order.
  */
-export function badgeOffsets(boxes: (Box | null)[], width: number, height: number): number[] {
-  const placed: Box[] = [];
+export type BadgePlacement = { offset: number; anchor: { left: string; top: string } | null };
+
+export function badgePlacements(boxes: (Box | null)[], width: number): BadgePlacement[] {
+  const groups: { corner: { x: number; y: number }; size: number }[] = [];
   return boxes.map((box) => {
-    if (!box) return 0;
-    const offset = placed.filter(
-      (p) =>
-        Math.abs(p.x - box.x) / width < SAME_CORNER && Math.abs(p.y - box.y) / height < SAME_CORNER,
-    ).length;
-    placed.push(box);
-    return offset;
+    if (!box) return { offset: 0, anchor: null };
+    const near = (p: { x: number; y: number }) =>
+      Math.abs(p.x - box.x) / width < SAME_CORNER && Math.abs(p.y - box.y) / width < SAME_CORNER;
+    const group = groups.find((g) => near(g.corner));
+    if (!group) {
+      groups.push({ corner: { x: box.x, y: box.y }, size: 1 });
+      return { offset: 0, anchor: null };
+    }
+    const offset = group.size++;
+    const { x, y } = group.corner;
+    if (x === box.x && y === box.y) return { offset, anchor: null };
+    return {
+      offset,
+      anchor: { left: percent(x - box.x, box.w), top: percent(y - box.y, box.h) },
+    };
   });
 }

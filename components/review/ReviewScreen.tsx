@@ -16,6 +16,7 @@ import { IssueCard } from "./IssueCard";
 import { NoIssues } from "./NoIssues";
 import { ReviewFailed } from "./ReviewFailed";
 import { Reviewing } from "./Reviewing";
+import { SkippedChecks } from "./SkippedChecks";
 import { ScreenshotViewer } from "./ScreenshotViewer";
 import styles from "./ReviewScreen.module.css";
 
@@ -325,6 +326,7 @@ export function ReviewDone({
           Evaluation is off. <Link href="/setup">Connect Claude</Link> to turn it on.
         </p>
       ) : null}
+      <SkippedChecks skipped={review.skippedChecks} />
 
       {review.status === "partial" ? (
         <div className={styles.banner}>

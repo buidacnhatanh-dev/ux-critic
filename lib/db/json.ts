@@ -1,6 +1,6 @@
 /** JSON columns are text; every read goes through zod (docs/02). */
 import { z } from "zod";
-import type { Box } from "../data/types.ts";
+import type { Box, SkippedCheck } from "../data/types.ts";
 
 export const boxSchema = z.object({
   x: z.number().nonnegative(),
@@ -46,4 +46,16 @@ export function readError(text: string | null): ReviewError | null {
   } catch {
     return { message: text, detail: null };
   }
+}
+
+export const skippedChecksSchema = z.array(
+  z.object({
+    check: z.enum(["target_size", "text"]),
+    reason: z.enum(["no_claude", "failed"]),
+    detail: z.string().nullable(),
+  }),
+);
+
+export function readSkippedChecks(text: string | null): SkippedCheck[] {
+  return text === null ? [] : readJson(skippedChecksSchema, text);
 }

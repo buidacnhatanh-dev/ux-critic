@@ -1,0 +1,1 @@
+ALTER TABLE `reviews` ADD `skipped_checks` text;

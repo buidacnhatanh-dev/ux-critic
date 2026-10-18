@@ -73,9 +73,14 @@ describe("prompt", () => {
     expect(userText("  ", [])).toBe(
       "What this screen is for: Not given\nAlready measured (do not repeat):\nNothing",
     );
-    expect(
-      userText("Checkout", [{ kind: "contrast", label: "Terms", value: 2.1, threshold: 4.5 }]),
-    ).toContain('contrast, "Terms", 2.1, 4.5');
+    const text = userText("Checkout", [
+      { kind: "contrast", label: "Terms", value: 2.1, threshold: 4.5 },
+      { kind: "target_size", label: "Terms", value: 10.5, threshold: 24 },
+      { kind: "text_size", label: "Times are local", value: 13, threshold: 16 },
+    ]);
+    expect(text).toContain('contrast, "Terms", 2.1 : 1, needs 4.5 : 1');
+    expect(text).toContain('target_size, "Terms", 10.5 px, needs 24 px');
+    expect(text).toContain('text_size, "Times are local", 13 px, needs 16 px');
   });
 
   it("puts the enabled ids into the schema enum", () => {

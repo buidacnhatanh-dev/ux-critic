@@ -54,8 +54,14 @@ export function systemPrompt(principles: PromptPrinciple[]): string {
 
 export type FailingMeasurement = { kind: string; label: string; value: number; threshold: number };
 
+/** One failing measurement: kind, label, value, threshold (docs/03), with units. */
+function measuredLine(m: FailingMeasurement): string {
+  const unit = (n: number) => (m.kind === "contrast" ? `${n} : 1` : `${n} px`);
+  return `${m.kind}, "${m.label}", ${unit(Math.round(m.value * 100) / 100)}, needs ${unit(m.threshold)}`;
+}
+
 export function userText(context: string, measured: FailingMeasurement[]): string {
-  const lines = measured.map((m) => `${m.kind}, "${m.label}", ${m.value}, ${m.threshold}`);
+  const lines = measured.map(measuredLine);
   return [
     `What this screen is for: ${context.trim() || "Not given"}`,
     "Already measured (do not repeat):",

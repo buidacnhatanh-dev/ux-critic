@@ -147,8 +147,8 @@ After parsing, validate with zod (lengths, box inside image, at most 8 items). T
 
 ## No API key
 
-If `ANTHROPIC_API_KEY` is missing, every page redirects to `/setup`, except when the owner chose "Continue with measured checks only" (stored in a cookie). In that mode the pipeline skips call 1 and call 2, so only OCR based checks run, and the Review screen shows a small note: "Evaluation is off. Connect Claude to turn it on."
+If `ANTHROPIC_API_KEY` is missing, every page redirects to `/setup`, except when the owner chose "Continue with measured checks only" (stored in a cookie). In that mode the pipeline skips call 1 and call 2, so only OCR based checks run, and the Review screen shows a small note: "Evaluation is off. Connect Claude to turn it on." A second note says target sizes weren't measured, because Claude finds the controls before code measures them.
 
 ## Fake AI mode
 
-`UXC_FAKE_AI=1` makes call 1 and call 2 return fixtures from `lib/fake-ai.ts` after a 500 ms delay. Fixtures include: a normal result, an empty result, an unreadable result and a timeout, chosen by the screenshot file name (`fake-empty`, `fake-unreadable`, `fake-timeout`). `fake-slow` returns the normal result after 8 seconds, so tests can press Cancel review. All Playwright tests use this mode.
+`UXC_FAKE_AI=1` makes call 1 and call 2 return fixtures from `lib/fake-ai.ts` after a 500 ms delay. Fixtures include: a normal result, an empty result, an unreadable result and a timeout, chosen by the screenshot file name (`fake-empty`, `fake-unreadable`, `fake-timeout`). `fake-slow` returns the normal result of call 2 after 8 seconds (call 1 answers at the usual speed), so tests can press Cancel review. All Playwright tests use this mode.

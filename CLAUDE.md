@@ -16,7 +16,7 @@ Read `docs/00-overview.md`, `docs/01-architecture.md`, `docs/10-demo-mode.md` an
 * Fixture fonts (dev dependencies, used only in `eval/fixtures/` so the sample products look unlike UX Critic; each checked to keep the docs/04 text size estimate within 1 px): `@fontsource/cormorant-garamond` and `@fontsource/figtree` (coffee shop checkout), `@fontsource/rubik` (fitness sign up), `@fontsource/barlow-semi-condensed` (logistics dashboard). Fixtures never use #1D4ED8, Atkinson Hyperlegible (Next or original) or Overpass
 * SQLite with `better-sqlite3` and Drizzle ORM. Database and screenshots live in `data/` (gitignored)
 * `@anthropic-ai/sdk` for Claude. Structured answers with `output_config.format` (JSON schema), validated again with `zod`
-* `sharp` for reading and resizing images, `tesseract.js` for finding text on screenshots
+* `sharp` for reading and resizing images, `tesseract.js` for finding text on screenshots, with its language data from `@tesseract.js-data/eng` and `@tesseract.js-data/deu` (never downloaded at runtime)
 * Vitest and Testing Library, Playwright with `@axe-core/playwright`
 
 ## Product rules (hard requirements)

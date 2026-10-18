@@ -8,6 +8,10 @@ import { clampBox, expandBox, pixelAt, type PixelBox, type RawImage } from "./ra
 export const BACKGROUND_RING_PX = 2;
 export const TEXT_SAMPLE_SHARE = 0.1;
 export const LINE_HEIGHT_FACTOR = 1.2;
+/** OCR row height (ascender to descender) as a share of the font size, measured in M6. */
+export const OCR_ROW_HEIGHT_FACTOR = 0.87;
+/** OCR row heights above this many glyph box heights are row statistics gone wrong. */
+export const OCR_ROW_HEIGHT_CAP = 1.25;
 export const TARGET_EXPAND_CSS_PX = 8;
 export const TARGET_RGB_DISTANCE = 30;
 export const WCAG_TARGET_MIN = 24;
@@ -108,6 +112,18 @@ export function estimateFontSize(lineBoxHeight: number, scale: number): number {
   return lineBoxHeight / scale / LINE_HEIGHT_FACTOR;
 }
 
+/**
+ * Estimated font size in CSS px from an OCR text line (docs/04): OCR boxes are tight around the
+ * glyphs, not a 1.2 line box, so this uses tesseract's row height, capped by the glyph box height.
+ */
+export function estimateFontSizeFromOcr(
+  rowHeight: number,
+  boxHeight: number,
+  scale: number,
+): number {
+  return Math.min(rowHeight, boxHeight * OCR_ROW_HEIGHT_CAP) / scale / OCR_ROW_HEIGHT_FACTOR;
+}
+
 export type ContrastResult = {
   ratio: number;
   threshold: number;
@@ -117,18 +133,22 @@ export type ContrastResult = {
   fontSize: number;
 };
 
-/** Steps 1 to 5 for one text line. */
+/**
+ * Steps 1 to 5 for one text line. The font size (for the large text threshold) is estimated from
+ * the box as a 1.2 line box unless an estimate is given (OCR lines).
+ */
 export function measureContrast(
   img: RawImage,
   box: PixelBox,
   scale: number,
   ruleMin?: number | null,
+  fontSizeEstimate?: number,
 ): ContrastResult | null {
   const background = backgroundColour(img, box);
   if (!background) return null;
   const text = textColour(img, box, background);
   if (!text) return null;
-  const fontSize = estimateFontSize(box.h, scale);
+  const fontSize = fontSizeEstimate ?? estimateFontSize(box.h, scale);
   const ratio = contrastRatio(text, background);
   const threshold = contrastThreshold(fontSize, ruleMin);
   return { ratio, threshold, passes: ratio >= threshold, text, background, fontSize };
@@ -146,7 +166,16 @@ export function measureTextSize(
   text: string,
   ruleMin: number = DEFAULT_TEXT_SIZE_MIN,
 ): TextSizeResult {
-  const size = Math.round(estimateFontSize(lineBoxHeight, scale));
+  return checkTextSize(estimateFontSize(lineBoxHeight, scale), text, ruleMin);
+}
+
+/** The same check for a size that is already estimated in CSS px (OCR lines). */
+export function checkTextSize(
+  estimate: number,
+  text: string,
+  ruleMin: number = DEFAULT_TEXT_SIZE_MIN,
+): TextSizeResult {
+  const size = Math.round(estimate);
   const isBody = text.trim().length > BODY_TEXT_MIN_CHARS;
   return { size, threshold: ruleMin, passes: !isBody || size >= ruleMin };
 }

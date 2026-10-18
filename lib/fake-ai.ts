@@ -100,7 +100,7 @@ function evaluation(size: Size) {
   };
 }
 
-/** Call 1 answer (used from M6): controls at fixed places on the screen. */
+/** Call 1 answer: controls at fixed places on the screen. */
 function controls(size: Size) {
   return {
     controls: [
@@ -115,11 +115,9 @@ async function answer(
   signal: AbortSignal | undefined,
   normal: () => unknown,
   empty: unknown,
+  slow: boolean,
 ): Promise<ClaudeAnswer> {
-  await wait(
-    fileName.toLowerCase().includes("fake-slow") ? FAKE_SLOW_DELAY_MS : FAKE_DELAY_MS,
-    signal,
-  );
+  await wait(slow ? FAKE_SLOW_DELAY_MS : FAKE_DELAY_MS, signal);
   switch (fixtureFor(fileName)) {
     case "timeout":
       throw new ClaudeTimeoutError(timeoutMs());
@@ -142,10 +140,14 @@ async function answer(
   }
 }
 
+const isSlow = (fileName: string) => fileName.toLowerCase().includes("fake-slow");
+
+/** Call 2. `fake-slow` waits 8 s here, so Cancel review can be pressed while it runs. */
 export function fakeEvaluate(fileName: string, size: Size, signal?: AbortSignal) {
-  return answer(fileName, signal, () => evaluation(size), { issues: [] });
+  return answer(fileName, signal, () => evaluation(size), { issues: [] }, isSlow(fileName));
 }
 
+/** Call 1. Same fixtures (an unreadable or timed out call 1 skips target sizes), never slow. */
 export function fakeLocate(fileName: string, size: Size, signal?: AbortSignal) {
-  return answer(fileName, signal, () => controls(size), { controls: [] });
+  return answer(fileName, signal, () => controls(size), { controls: [] }, false);
 }
