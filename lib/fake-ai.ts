@@ -46,6 +46,8 @@ function wait(ms: number, signal?: AbortSignal): Promise<void> {
 }
 
 const USAGE = { input: 0, output: 0 };
+/** Shown as the model of fake reviews, so they are never mistaken for real ones. */
+export const FAKE_MODEL = "fake-ai";
 const UNREADABLE = "I reviewed the screen. Here are my notes: {issues: [the labels are";
 
 type Size = { width: number; height: number };
@@ -122,11 +124,21 @@ async function answer(
     case "timeout":
       throw new ClaudeTimeoutError(timeoutMs());
     case "unreadable":
-      return { text: UNREADABLE, stopReason: "end_turn", usage: USAGE };
+      return { text: UNREADABLE, stopReason: "end_turn", usage: USAGE, model: FAKE_MODEL };
     case "empty":
-      return { text: JSON.stringify(empty), stopReason: "end_turn", usage: USAGE };
+      return {
+        text: JSON.stringify(empty),
+        stopReason: "end_turn",
+        usage: USAGE,
+        model: FAKE_MODEL,
+      };
     case "normal":
-      return { text: JSON.stringify(normal()), stopReason: "end_turn", usage: USAGE };
+      return {
+        text: JSON.stringify(normal()),
+        stopReason: "end_turn",
+        usage: USAGE,
+        model: FAKE_MODEL,
+      };
   }
 }
 

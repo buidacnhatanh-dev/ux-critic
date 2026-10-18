@@ -29,7 +29,6 @@ async function setup(fileName = "checkout.png", width = 1280, height = 800) {
       height,
       sources,
       evaluation: true,
-      model: "claude-sonnet-5-5",
     },
     (id) => join(dir, `${id}.png`),
   );
@@ -62,6 +61,39 @@ describe("runReview", () => {
     expect(review.issues[0]!.region).toEqual({ x: 128, y: 240, w: 512, h: 96 });
     expect(review.issues[2]!.region).toBeNull();
     expect(review.inputTokens).toBe(0);
+    expect(review.model).toBe("fake-ai");
+  });
+
+  it("saves the model that answered, not the one requested (fallbacks)", async () => {
+    vi.stubEnv("UXC_MODEL", "claude-sonnet-5-5");
+    const { db, reviewId } = await setup();
+    await runReview(db, reviewId, {
+      evaluator: async (input) => ({ ...(await fake(input)), model: "claude-opus-4-8" }),
+    });
+    expect(repo.getReview(db, reviewId)).toMatchObject({
+      status: "done",
+      model: "claude-opus-4-8",
+    });
+    vi.unstubAllEnvs();
+  });
+
+  it("saves the answering model on a partial review and replaces it on retry", async () => {
+    const { db, reviewId } = await setup("fake-unreadable.png");
+    await runReview(db, reviewId, {
+      evaluator: async (input) => ({ ...(await fake(input)), model: "claude-opus-4-8" }),
+    });
+    expect(repo.getReview(db, reviewId)).toMatchObject({
+      status: "partial",
+      model: "claude-opus-4-8",
+    });
+    db.update(t.versions).set({ fileName: "checkout.png" }).run();
+    await retryEvaluation(db, reviewId, {
+      evaluator: async (input) => ({ ...(await fake(input)), model: "claude-sonnet-5-5" }),
+    });
+    expect(repo.getReview(db, reviewId)).toMatchObject({
+      status: "done",
+      model: "claude-sonnet-5-5",
+    });
   });
 
   it("maps boxes back to original pixels for large screenshots", async () => {
@@ -121,6 +153,9 @@ describe("runReview", () => {
     expect(review.status).toBe("failed");
     expect(review.step).toBe("evaluate");
     expect(review.error?.message).toBe(new ClaudeTimeoutError(60_000).message);
+    // Nothing answered: no model is saved, the requested one is in the details.
+    expect(review.model).toBeNull();
+    expect(review.error?.detail).toContain("Requested model:");
     expect(review.measurements).toHaveLength(1);
     expect(review.issues.map((i) => i.id)).toEqual(["mi1"]);
   });
@@ -193,6 +228,7 @@ describe("runReview", () => {
       status: "done",
       evaluationOff: true,
       inputTokens: null,
+      model: null,
     });
   });
 

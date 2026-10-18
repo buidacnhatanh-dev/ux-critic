@@ -23,7 +23,6 @@ function setup() {
         height: 800,
         sources,
         evaluation: true,
-        model: "claude-sonnet-5-5",
         ...overrides,
       },
       (id) => `/tmp/${id}.png`,
@@ -72,7 +71,8 @@ describe("creating a review", () => {
       status: "queued",
       step: "prepare",
       projectName: "NeighborGoods",
-      model: "claude-sonnet-5-5",
+      // Only an API response sets the model (the one that actually answered).
+      model: null,
       evaluationOff: false,
       issues: [],
     });
@@ -111,7 +111,7 @@ describe("creating a review", () => {
 
   it("stores whether evaluation runs", () => {
     const { db, create } = setup();
-    const { reviewId } = create({ evaluation: false, model: "claude-sonnet-5-5" });
+    const { reviewId } = create({ evaluation: false });
     expect(repo.getReview(db, reviewId)).toMatchObject({ evaluationOff: true, model: null });
   });
 });
@@ -178,12 +178,12 @@ describe("cancel and try again", () => {
   it("try again starts a new review of the same version, only after a failure", () => {
     const { db, create } = setup();
     const created = create();
-    expect(() =>
-      repo.restartReview(db, created.reviewId, { evaluation: true, model: "m" }),
-    ).toThrow(ValidationError);
+    expect(() => repo.restartReview(db, created.reviewId, { evaluation: true })).toThrow(
+      ValidationError,
+    );
     db.update(t.reviews).set({ status: "failed" }).where(eq(t.reviews.id, created.reviewId)).run();
-    const next = repo.restartReview(db, created.reviewId, { evaluation: true, model: "m" });
-    expect(repo.getReview(db, next)).toMatchObject({ status: "queued", model: "m" });
+    const next = repo.restartReview(db, created.reviewId, { evaluation: true });
+    expect(repo.getReview(db, next)).toMatchObject({ status: "queued", model: null });
     expect(repo.getProject(db, created.projectId).versions[0]!.reviewId).toBe(next);
   });
 });

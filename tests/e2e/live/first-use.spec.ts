@@ -27,6 +27,8 @@ test("first review: upload, watch the steps, get numbered evaluated notes", asyn
   await expect(filters.getByRole("button", { name: "All 3" })).toBeVisible();
   await expect(filters.getByRole("button", { name: "Evaluated 3" })).toBeVisible();
   await expect(page.locator("article h3 button")).toHaveCount(3);
+  // The model from the (fake) API response.
+  await expect(page.getByText("Evaluated by fake-ai")).toBeVisible();
   await expect(page.locator("article").first()).toContainText(
     "Field labels disappear while typing",
   );

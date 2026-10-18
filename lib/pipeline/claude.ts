@@ -12,6 +12,8 @@ export type ClaudeAnswer = {
   text: string;
   stopReason: string | null;
   usage: ClaudeUsage;
+  /** The model that actually answered: with fallbacks it can differ from the one requested. */
+  model: string;
 };
 
 export type ClaudeRequest = {
@@ -103,6 +105,7 @@ async function callOnce(request: ClaudeRequest, ms: number): Promise<ClaudeAnswe
     text,
     stopReason: response.stop_reason,
     usage: { input: response.usage.input_tokens, output: response.usage.output_tokens },
+    model: response.model,
   };
 }
 

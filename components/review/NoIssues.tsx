@@ -50,6 +50,7 @@ export function NoIssues({
             </h2>
             <p className={styles.checked}>
               Checked against {checkedAgainst(review.sources.sets, ruleCount)}.
+              {review.model ? ` Evaluated by ${review.model}.` : null}
             </p>
             <p className={styles.honest}>
               That doesn&apos;t mean there are no problems. An evaluation can miss things, so

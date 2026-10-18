@@ -36,5 +36,6 @@ test("measured checks only: pages open, reviews run without Claude and say so", 
     "/setup",
   );
   await expect(page.getByText("No issues found")).toHaveCount(0);
+  await expect(page.getByText(/Evaluated by/)).toHaveCount(0);
   await expectNoAxeViolations(page);
 });

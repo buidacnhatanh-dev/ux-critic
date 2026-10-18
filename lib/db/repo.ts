@@ -284,7 +284,6 @@ export type CreateReviewInput = {
   sources: SourceSettings;
   /** False when Claude is not connected and the owner chose measured checks only. */
   evaluation: boolean;
-  model: string | null;
 };
 
 /** Enabled rule ids at the start of a review, stored with it (docs/02 reviews.sources). */
@@ -368,7 +367,8 @@ export function createReview(
           ruleIds: enabledRuleIds(tx as unknown as Db),
           evaluation: input.evaluation,
         }),
-        model: input.evaluation ? input.model : null,
+        // Written by the pipeline from the API response: the model that actually answered.
+        model: null,
         startedAt: createdAt,
       })
       .run();
@@ -380,7 +380,7 @@ export function createReview(
 export function restartReview(
   db: Db,
   reviewId: string,
-  options: { evaluation: boolean; model: string | null },
+  options: { evaluation: boolean },
   newId: () => string = () => crypto.randomUUID(),
 ): string {
   const old = db.select().from(t.reviews).where(eq(t.reviews.id, reviewId)).get();
@@ -401,7 +401,7 @@ export function restartReview(
         ruleIds: enabledRuleIds(db),
         evaluation: options.evaluation,
       }),
-      model: options.evaluation ? options.model : null,
+      model: null,
       startedAt: now(),
     })
     .run();

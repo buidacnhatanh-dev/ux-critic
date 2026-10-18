@@ -11,7 +11,7 @@ test("No issues found (fake-empty)", async ({ page }) => {
   });
   await expect(
     page.getByText(
-      "Checked against Nielsen's heuristics, WCAG 2.2, the Laws of UX and your 6 rules.",
+      "Checked against Nielsen's heuristics, WCAG 2.2, the Laws of UX and your 6 rules. Evaluated by fake-ai.",
     ),
   ).toBeVisible();
   await expect(page.getByRole("link", { name: "Back to project" })).toBeVisible();

@@ -8,7 +8,6 @@ import { sourceSettingsSchema } from "@/lib/db/json";
 import { createReview, restartReview } from "@/lib/db/repo";
 import { MEASURED_ONLY_COOKIE } from "@/lib/measured-only";
 import { MAX_FILE_BYTES } from "@/lib/new-review";
-import { modelId } from "@/lib/pipeline/claude";
 import { toStoredPng } from "@/lib/pipeline/image";
 import { claudeConnected, startReview } from "@/lib/pipeline/run";
 
@@ -37,12 +36,11 @@ async function evaluationAllowed(): Promise<boolean> {
 export function POST(request: Request) {
   return handle(async (db) => {
     const evaluation = await evaluationAllowed();
-    const model = evaluation ? modelId() : null;
 
     if (request.headers.get("content-type")?.includes("application/json")) {
       const parsed = retry.safeParse(await request.json().catch(() => null));
       if (!parsed.success) throw new ValidationError("body", "The request body is not valid.");
-      const reviewId = restartReview(db, parsed.data.retryOf, { evaluation, model });
+      const reviewId = restartReview(db, parsed.data.retryOf, { evaluation });
       void startReview(db, reviewId);
       return NextResponse.json({ reviewId }, { status: 201 });
     }
@@ -85,7 +83,6 @@ export function POST(request: Request) {
         height: image.height,
         sources: sources.data,
         evaluation,
-        model,
       },
       screenshotPath,
     );

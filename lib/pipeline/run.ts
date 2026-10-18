@@ -5,7 +5,7 @@
  */
 import { and, eq } from "drizzle-orm";
 import { readFile } from "node:fs/promises";
-import { fakeEvaluate, isFakeAi } from "../fake-ai.ts";
+import { FAKE_MODEL, fakeEvaluate, isFakeAi } from "../fake-ai.ts";
 import type { Db } from "../db/client.ts";
 import { getChecklist, getReviewJob } from "../db/repo.ts";
 import * as t from "../db/schema.ts";
@@ -74,6 +74,11 @@ export const defaultEvaluator: Evaluator = (input) =>
         signal: input.signal,
       });
 
+/** The model a call asks for; only used to explain a failure, never saved as the model. */
+function requestedModel(): string {
+  return isFakeAi() ? FAKE_MODEL : modelId();
+}
+
 export type RunOptions = { evaluator?: Evaluator; now?: () => Date };
 
 class Stopped extends Error {}
@@ -107,6 +112,8 @@ export async function runReview(
 
   let usage: ClaudeUsage = { input: 0, output: 0 };
   let usedClaude = false;
+  /** From the API response, after any fallback. */
+  let answeredBy: string | null = null;
   let step: ReviewStep = options.evaluateOnly ? "evaluate" : "prepare";
 
   try {
@@ -173,19 +180,24 @@ export async function runReview(
         });
       } catch (error) {
         if (signal.aborted || error instanceof ReviewCancelledError) throw new Stopped();
-        // Timeout or network: failed, measured results kept.
+        // Timeout or network: failed, measured results kept. No model answered, so none is
+        // saved; the one that was asked goes into the technical details.
+        const cause =
+          error instanceof Error && error.cause instanceof Error ? error.cause.message : null;
         update({
           status: "failed",
           step: "evaluate",
           error: errorJson(
             error instanceof Error ? error.message : String(error),
-            error instanceof Error && error.cause instanceof Error ? error.cause.message : null,
+            [`Requested model: ${requestedModel()}`, cause].filter(Boolean).join("\n"),
           ),
+          model: null,
           finishedAt: now(),
         });
         return;
       }
       usage = answer.usage;
+      answeredBy = answer.model;
       if (signal.aborted) throw new Stopped();
       try {
         if (answer.stopReason === "refusal" || answer.stopReason === "max_tokens") {
@@ -271,7 +283,7 @@ export async function runReview(
                 `${unreadable.message}\n\n${unreadable.raw}`,
               )
             : null,
-          model: usedClaude ? (isFakeAi() ? "fake-ai" : modelId()) : (job.review.model ?? null),
+          model: answeredBy,
           inputTokens: usedClaude
             ? (previous?.input ?? 0) + usage.input
             : (previous?.input ?? null),

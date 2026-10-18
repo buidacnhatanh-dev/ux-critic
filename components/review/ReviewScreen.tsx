@@ -295,6 +295,8 @@ export function ReviewDone({
           <p className={styles.summary}>
             {reviewSummary(review.issues.length, pushbackCount, review.finishedAt)}
           </p>
+          {/* The model from the API response: after a fallback it is not the one requested. */}
+          {review.model ? <p className={styles.summary}>Evaluated by {review.model}</p> : null}
         </div>
         <div className={styles.tools}>
           <div role="group" aria-label="Filter issues" className={styles.filters}>
