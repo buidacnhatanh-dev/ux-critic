@@ -251,3 +251,8 @@
   margin: 0;
   line-height: 1.5;
 }
+
+/* Delete dialog: the last line is the one that matters (design 15). */
+.warning {
+  font-weight: var(--weight-semibold);
+}

@@ -7,11 +7,13 @@ import { roundRatio, suggestPassingColour } from "../contrast.ts";
 import {
   WCAG_TARGET_MIN,
   checkTextSize,
+  estimateFontSizeFromOcr,
   measureContrast,
   measureTargetSize,
   measureTextSize,
 } from "./measure.ts";
 import { contrastIssueText, targetSizeIssueText, textSizeIssueText } from "./measured-text.ts";
+import type { TextLine } from "./ocr.ts";
 import type { PixelBox, RawImage } from "./raw-image.ts";
 
 /**
@@ -20,6 +22,15 @@ import type { PixelBox, RawImage } from "./raw-image.ts";
  */
 export type LocatedText = { label: string; box: PixelBox; fontSize?: number };
 export type LocatedControl = { label: string; box: PixelBox };
+
+/** OCR lines as measure input, with the text size estimated from the OCR boxes (docs/04). */
+export function fromOcr(lines: readonly TextLine[], scale: number): LocatedText[] {
+  return lines.map((line) => ({
+    label: line.text,
+    box: line.box,
+    fontSize: estimateFontSizeFromOcr(line.rowHeight, line.box.h, scale),
+  }));
+}
 
 /** Enabled measured rules from My checklist. A missing rule turns that check off. */
 export type MeasuredRules = {

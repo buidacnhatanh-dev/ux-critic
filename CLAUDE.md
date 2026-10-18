@@ -70,7 +70,9 @@ pnpm dev            # http://localhost:3000
 pnpm db:migrate     # create or update data/uxcritic.db
 pnpm test           # vitest
 pnpm test:e2e       # playwright, fake AI mode
+pnpm eval:capture   # render eval/fixtures to eval/cases/<name>.png + .json (expected issues with boxes)
 pnpm eval           # real Claude calls against eval/cases, writes eval/runs/<date>.md
+pnpm eval:measured  # measured checks only on eval/cases, no key, writes eval/runs/<date>-measured.md
 pnpm demo:capture   # render demo screens from eval/fixtures to public/demo/*.png
 pnpm demo:data      # measure the demo PNGs, write demo/data.json (source: handwritten)
 pnpm demo:build     # live mode only: run the real pipeline on demo screens, write demo/data.json

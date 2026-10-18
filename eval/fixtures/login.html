@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rally sign in (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="fitness.css" />
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: 1fr 520px;
+      }
+      .card {
+        width: 440px;
+        margin: 120px auto 0;
+      }
+      .logo {
+        display: block;
+        margin-bottom: 40px;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        color: #c2410c;
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 8px;
+      }
+      .intro {
+        margin-bottom: 28px;
+      }
+      .field {
+        margin-bottom: 14px;
+      }
+      /* Planted: a 12 px text link with no padding, far too small to tap. */
+      .forgot {
+        display: inline-block;
+        margin: 2px 0 24px;
+        font-size: 12px;
+        line-height: 1;
+        color: #9a3412;
+      }
+      .btn-primary {
+        width: 100%;
+      }
+      .switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .photo {
+        height: 800px;
+        padding: 56px;
+        background: #1c1917;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .quote {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <span class="logo">RALLY</span>
+      <h1>Welcome back</h1>
+      <p class="intro muted">Sign in to book your next class</p>
+      <!-- Planted: placeholders are the only labels -->
+      <div class="field" id="fields">
+        <input class="input" id="email" type="email" placeholder="Email" />
+      </div>
+      <div class="field">
+        <input class="input" id="password" type="password" placeholder="Password" />
+      </div>
+      <a class="forgot" id="forgot" href="#forgot">Forgot password?</a>
+      <button class="btn btn-primary" type="button">Sign in</button>
+      <div class="switch">
+        <span class="muted">New to Rally?</span>
+        <button class="btn" type="button">Create an account</button>
+      </div>
+    </div>
+    <aside class="photo">
+      <p class="quote">“I found a running club two streets away.”</p>
+      <p>Priya, member since spring</p>
+    </aside>
+  </body>
+</html>

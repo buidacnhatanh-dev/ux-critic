@@ -1,0 +1,20 @@
+{
+  "fixture": "settings",
+  "description": "Logistics notification settings (dark theme) with a faint subtitle and switches whose state is shown only by colour.",
+  "issues": [
+    {
+      "id": "faint-subtitle",
+      "kind": "measured",
+      "principle_id": "wcag-1.4.3",
+      "selector": "#subtitle",
+      "note": "#3F4F5F subtitle on the #0F1720 page."
+    },
+    {
+      "id": "colour-only-switches",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "selector": "#settings .track",
+      "note": "On and off differ only by the colour of the track (and the knob position), with no text."
+    }
+  ]
+}

@@ -139,11 +139,11 @@ export type EvaluatedIssue = {
 
 /** The answer could not be read at all: the review becomes partial (docs/03). */
 export class EvaluationUnreadableError extends Error {
-  constructor(
-    reason: string,
-    readonly raw: string,
-  ) {
+  // A plain field, not a parameter property: Node's type stripping (scripts) can't run those.
+  readonly raw: string;
+  constructor(reason: string, raw: string) {
     super(reason);
+    this.raw = raw;
     this.name = "EvaluationUnreadableError";
   }
 }

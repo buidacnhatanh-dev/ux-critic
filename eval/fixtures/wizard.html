@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Little Fern Coffee subscription set up (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="coffee.css" />
+    <style>
+      .page {
+        grid-template-columns: 680px;
+        justify-content: center;
+      }
+      .intro {
+        margin-bottom: 20px;
+      }
+      .choices {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .choice {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        width: 100%;
+        min-height: 64px;
+        padding: 12px 18px;
+        border: 1.5px solid #8c8273;
+        border-radius: 4px;
+        background: #ffffff;
+        text-align: left;
+      }
+      .choice[aria-pressed="true"] {
+        border: 2px solid #1f4a36;
+        background: #e6efe8;
+      }
+      .choice-name {
+        display: block;
+        font-weight: 700;
+      }
+      /* Planted: only a forward button, no way back to the previous step. */
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="brand">Little Fern Coffee</span>
+      <span class="muted">Coffee subscription</span>
+    </header>
+    <div class="page">
+      <main>
+        <!-- Planted: no step indicator, nothing says how many steps are left -->
+        <div id="step-header">
+          <h1>How do you brew?</h1>
+          <p class="intro muted">We grind your beans to match</p>
+        </div>
+        <div class="choices" id="choices">
+          <button class="choice" type="button" aria-pressed="false">
+            <span>
+              <span class="choice-name">Whole bean</span>
+              <span class="muted">You grind at home</span>
+            </span>
+          </button>
+          <button class="choice" type="button" aria-pressed="true">
+            <span>
+              <span class="choice-name">Pour over</span>
+              <span class="muted">Medium fine, for filters and drippers</span>
+            </span>
+          </button>
+          <button class="choice" type="button" aria-pressed="false">
+            <span>
+              <span class="choice-name">French press</span>
+              <span class="muted">Coarse, for immersion brewing</span>
+            </span>
+          </button>
+          <button class="choice" type="button" aria-pressed="false">
+            <span>
+              <span class="choice-name">Espresso</span>
+              <span class="muted">Fine, for machines and moka pots</span>
+            </span>
+          </button>
+        </div>
+        <div class="actions" id="actions">
+          <button class="btn btn-primary" type="button">Continue</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

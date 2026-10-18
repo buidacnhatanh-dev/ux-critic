@@ -1,0 +1,112 @@
+{
+  "name": "cart",
+  "description": "Coffee shop basket with tiny Remove links and a filled promo button that outweighs the outlined checkout button.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "tiny-remove-1",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "note": "12 px text link with no padding.",
+      "box": {
+        "x": 194,
+        "y": 448,
+        "w": 88,
+        "h": 28
+      }
+    },
+    {
+      "id": "tiny-remove-2",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "note": "12 px text link with no padding.",
+      "box": {
+        "x": 194,
+        "y": 658,
+        "w": 88,
+        "h": 28
+      }
+    },
+    {
+      "id": "promo-outweighs-checkout",
+      "kind": "evaluated",
+      "principle_id": "law-von-restorff",
+      "note": "The filled Apply button stands out; the main action Go to checkout is only outlined.",
+      "box": {
+        "x": 1879,
+        "y": 705,
+        "w": 403,
+        "h": 167
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Remove",
+      "box": {
+        "x": 194,
+        "y": 450,
+        "w": 88,
+        "h": 24
+      }
+    },
+    {
+      "label": "Quantity",
+      "box": {
+        "x": 926,
+        "y": 364,
+        "w": 240,
+        "h": 96
+      }
+    },
+    {
+      "label": "Remove",
+      "box": {
+        "x": 194,
+        "y": 660,
+        "w": 88,
+        "h": 24
+      }
+    },
+    {
+      "label": "Quantity",
+      "box": {
+        "x": 926,
+        "y": 574,
+        "w": 240,
+        "h": 96
+      }
+    },
+    {
+      "label": "Promo code",
+      "box": {
+        "x": 1656,
+        "y": 677,
+        "w": 474,
+        "h": 97
+      }
+    },
+    {
+      "label": "Apply",
+      "box": {
+        "x": 2145,
+        "y": 677,
+        "w": 183,
+        "h": 97
+      }
+    },
+    {
+      "label": "Go to checkout",
+      "box": {
+        "x": 1656,
+        "y": 805,
+        "w": 672,
+        "h": 97
+      }
+    }
+  ]
+}

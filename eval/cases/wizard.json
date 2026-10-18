@@ -1,0 +1,82 @@
+{
+  "name": "wizard",
+  "description": "Coffee subscription set up, one step of several, with no progress indicator and no way back.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "no-progress",
+      "kind": "evaluated",
+      "principle_id": "nielsen-1",
+      "note": "Nothing shows which step this is or how many are left.",
+      "box": {
+        "x": 682,
+        "y": 188,
+        "w": 1196,
+        "h": 168
+      }
+    },
+    {
+      "id": "no-back",
+      "kind": "evaluated",
+      "principle_id": "nielsen-3",
+      "note": "Only Continue; there is no Back button to change an earlier answer.",
+      "box": {
+        "x": 1645,
+        "y": 1092,
+        "w": 233,
+        "h": 96
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Whole bean You grind at home",
+      "box": {
+        "x": 682,
+        "y": 396,
+        "w": 1196,
+        "h": 148
+      }
+    },
+    {
+      "label": "Pour over Medium fine, for filters and drippers",
+      "box": {
+        "x": 682,
+        "y": 564,
+        "w": 1196,
+        "h": 152
+      }
+    },
+    {
+      "label": "French press Coarse, for immersion brewing",
+      "box": {
+        "x": 682,
+        "y": 736,
+        "w": 1196,
+        "h": 148
+      }
+    },
+    {
+      "label": "Espresso Fine, for machines and moka pots",
+      "box": {
+        "x": 682,
+        "y": 904,
+        "w": 1196,
+        "h": 148
+      }
+    },
+    {
+      "label": "Continue",
+      "box": {
+        "x": 1645,
+        "y": 1092,
+        "w": 233,
+        "h": 96
+      }
+    }
+  ]
+}

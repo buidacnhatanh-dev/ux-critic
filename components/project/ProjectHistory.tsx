@@ -284,7 +284,7 @@ function DeleteProject({
           </li>
           <li>{plural(disagreementCount, "reason")} you wrote when you disagreed</li>
         </ul>
-        <p>You can&apos;t undo this.</p>
+        <p className={styles.warning}>You can&apos;t undo this.</p>
       </Dialog>
     </>
   );

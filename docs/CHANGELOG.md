@@ -201,3 +201,35 @@ Decisions
 * The "measurements table" in the milestone is the `measurements` database table (every check, pass or fail, used by Compare); the designs have no table on screen, so none was added
 * Live Playwright tests upload checkout v1 (faint text) or v3 (measures clean, for No issues found), and wait up to 45 s for a result because OCR runs one screenshot at a time while tests run in parallel
 * With real call 1 boxes and code based sizes, the fake call 1 fixture's two controls land on empty areas of the demo screenshots and measure nothing; target size results are covered by unit tests with synthetic images
+
+## M7 · Evaluation and real demo data (2026-10-18)
+
+Built
+
+* Seven more fixtures, for 12 in all (docs/08): Rally sign in (placeholder labels, tiny "Forgot password?" link) and class schedule (full classes shown only in red, Book still active), Waypoint Freight notification settings (faint subtitle, switches whose state is only colour), new shipment form (vague banner, fields marked only by a red border, no field error text) and a clean account page, Little Fern Coffee subscription step (no progress, no Back) and basket (tiny Remove links, filled promo button outweighs checkout). Two clean cases count false alarms. Same three products and fonts as the demo fixtures
+* `scripts/capture.ts`: the capture and locate code shared by `demo:capture` and `eval:capture`. `pnpm demo:capture` writes the same files byte for byte
+* `pnpm eval:capture`: every fixture to `eval/cases/<name>.png` and `<name>.json` (planted problems with boxes, plus the page's controls). Case shape in `lib/eval/case.ts` (zod); hand made cases leave out `controls`
+* `pnpm eval`: the real pipeline (`lib/pipeline/run.ts`, both Claude calls) on every case in a throwaway database, 3 runs each (`--runs`, `--case`). `lib/eval/score.ts` matches results to planted problems with the Compare matcher (`matchIssues`); `lib/eval/report.ts` writes `eval/runs/<date>.md` (model, found, missed, unexpected and recall per run and per case with the spread, measured vs evaluated, time and tokens per review, missed problems, unexpected notes with their verdicts), `<date>.results.json` and `<date>.review.json`. `pnpm eval --report <results>` makes the report again after the owner marks notes "real" or "invented", keeping earlier verdicts
+* `pnpm eval:measured`: the measured checks alone on every case, no key: real tesseract.js OCR and the docs/04 code for contrast and text size, controls from the page standing in for call 1 for target sizes. Writes `eval/runs/<date>-measured.md`
+* `pnpm demo:build`: captures the demo screens, runs the real pipeline on each, writes `demo/data.json` with `source: "claude"` and the date. Projects, versions, contexts, dates and rules stay from `demo/handwritten.json`; the prepared pushback moves to the note for the same planted problem, or the script says it was dropped. Nothing is written when a review fails or is partial
+* Screens checked against all 15 designs. Fixed: the Technical details disclosure on Review failed had lost its triangle (`inline-flex` hides the marker), "You can't undo this." in the Delete project dialog is semibold as in design 15, and Reviewing and Review failed now highlight New review in the sidebar as in designs 9 and 10 (`useNavSection`)
+* README finished: the two modes, setup, how a review works, measured vs evaluated, how to run the evaluation, and the note that evaluated reviews have not been scored with a real key
+* Unit tests for scoring, the report, rule keys, the measured tally and every case file; a sidebar test for the section override
+
+Verified without a key
+
+* `pnpm eval` and `pnpm demo:build` were run only in fake AI mode (`UXC_FAKE_AI=1`, empty `ANTHROPIC_API_KEY`); no real call was made. Both work end to end, including `--report` with marked verdicts and the demo schema check. Their numbers are fixture answers and mean nothing
+* `pnpm eval:measured` was run for real. Its numbers are in `eval/runs/` (gitignored) and, per docs/08, not copied here
+
+Decisions
+
+* **Planted boxes hug what the element shows.** The first `eval:measured` run found the dashboard footnote (2.81 : 1, 13 px) and the settings subtitle but scored them as unexpected: the planted box was the full width `<p>`, and a short line inside it overlaps less than IoU 0.25. `eval:capture` now uses the box of the element's content (text and child boxes) for planted elements; the demo captures keep CSS boxes so `demo/data.json` does not change. docs/08 updated
+* `eval/cases/` is committed (1.4 MB), like `public/demo`, so the measured numbers can be reproduced and `pnpm eval` runs without capturing first. `eval/runs/` stays gitignored
+* Cases refer to seed rules as `rule:<key>` (the keys of `demo/handwritten.json`); `lib/eval/rule-keys.ts` maps seed rule text to the key, since each database gives the rules random ids
+* `pnpm eval` sends an empty context: a case description names the planted problems and would give the answer away. Hand made cases can set `context`
+* `pnpm eval` and `pnpm demo:build` read `.env.local` through `node --env-file-if-exists`, so the owner's key works without exporting it. `demo:build` needs `UXC_MODE=live`; in fake AI mode it needs `--out` and never writes `demo/data.json`
+* Fake AI files are named `<date>-fake-ai` and the report opens with a warning that its numbers mean nothing
+* `ValidationError`, `EvaluationUnreadableError` and `LocateUnreadableError` use plain fields instead of TypeScript parameter properties: Node's type stripping (the scripts) can't run those
+* `lib/pipeline/measure-screen.ts` gained `fromOcr` (OCR lines to measure input), used by the pipeline and `eval:measured` so both estimate text size the same way
+* Evaluation unreadable keeps the filter buttons (design 11 leaves them out; docs/06 §11 says it is the Review screen), Connect Claude stays inside the shell (M3), and the design's annotation "Focus starts on the safe choice." is not shown in the dialog
+* The live Cancel review test waits up to `RESULT_TIMEOUT` (45 s) for the evaluation step instead of 10 s: measuring can queue behind other tests' OCR, and it failed once right after a dev server recompile

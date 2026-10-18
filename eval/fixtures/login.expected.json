@@ -1,0 +1,20 @@
+{
+  "fixture": "login",
+  "description": "Fitness app sign in with placeholder only labels and a tiny forgot password link.",
+  "issues": [
+    {
+      "id": "placeholder-labels",
+      "kind": "evaluated",
+      "principle_id": "wcag-3.3.2",
+      "selector": "#email, #password",
+      "note": "Email and password use their placeholders as the only label."
+    },
+    {
+      "id": "tiny-forgot",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "selector": "#forgot",
+      "note": "12 px text link with no padding."
+    }
+  ]
+}

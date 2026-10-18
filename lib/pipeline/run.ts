@@ -39,8 +39,12 @@ import {
   locateContent,
   parseControls,
 } from "./locate.ts";
-import { estimateFontSizeFromOcr } from "./measure.ts";
-import { measureScreen, type LocatedControl, type MeasuredRules } from "./measure-screen.ts";
+import {
+  fromOcr,
+  measureScreen,
+  type LocatedControl,
+  type MeasuredRules,
+} from "./measure-screen.ts";
 import { findTextLines, type TextLine } from "./ocr.ts";
 import { numberInReadingOrder } from "./order.ts";
 import { placeIssues } from "./place.ts";
@@ -260,11 +264,7 @@ export async function runReview(
       const screen = measureScreen({
         img: await loadRaw(png),
         scale: version.scale,
-        textLines: lines.map((line) => ({
-          label: line.text,
-          box: line.box,
-          fontSize: estimateFontSizeFromOcr(line.rowHeight, line.box.h, version.scale),
-        })),
+        textLines: fromOcr(lines, version.scale),
         controls,
         rules: measuredRulesFor(getChecklist(db).rules, sources),
       });

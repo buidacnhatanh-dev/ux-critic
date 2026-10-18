@@ -1,0 +1,20 @@
+{
+  "fixture": "schedule",
+  "description": "Fitness class schedule where full classes are shown only in red, and their Book buttons look the same as the others.",
+  "issues": [
+    {
+      "id": "colour-only-full",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "selector": "#full-1, #full-2",
+      "note": "Full classes differ only by red text; no word or icon says they are full."
+    },
+    {
+      "id": "book-full-class",
+      "kind": "evaluated",
+      "principle_id": "nielsen-5",
+      "selector": "#full-1 .btn, #full-2 .btn",
+      "note": "Full classes still show an active Book button, inviting a booking that will fail."
+    }
+  ]
+}

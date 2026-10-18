@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rally class schedule (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="fitness.css" />
+    <style>
+      .topbar {
+        height: 72px;
+        padding: 0 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e7e5e4;
+      }
+      .logo {
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        color: #c2410c;
+      }
+      .page {
+        width: 840px;
+        margin: 0 auto;
+        padding-top: 32px;
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 4px;
+      }
+      .intro {
+        margin-bottom: 24px;
+      }
+      .classes {
+        display: grid;
+        gap: 8px;
+      }
+      .class {
+        display: grid;
+        grid-template-columns: 96px 1fr 200px auto;
+        align-items: center;
+        gap: 16px;
+        padding: 10px 16px 10px 20px;
+        border: 1.5px solid #e7e5e4;
+        border-radius: 14px;
+      }
+      .time {
+        font-weight: 700;
+        font-size: 18px;
+      }
+      /* Planted: a full class is shown only by red text. */
+      .full .time,
+      .full .name {
+        color: #b91c1c;
+      }
+      .name {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="logo">RALLY</span>
+      <span class="muted">Riverside studio</span>
+    </header>
+    <div class="page">
+      <h1>Tuesday classes</h1>
+      <p class="intro muted">Book up to 7 days ahead</p>
+      <div class="classes" id="classes">
+        <div class="class">
+          <span class="time">06:30</span>
+          <span class="name">Spin 45</span>
+          <span class="muted">with Noor</span>
+          <button class="btn" type="button">Book</button>
+        </div>
+        <div class="class full" id="full-1">
+          <span class="time">07:30</span>
+          <span class="name">Strength basics</span>
+          <span class="muted">with Tomas</span>
+          <button class="btn" type="button">Book</button>
+        </div>
+        <div class="class">
+          <span class="time">12:15</span>
+          <span class="name">Lunch yoga</span>
+          <span class="muted">with Mei</span>
+          <button class="btn" type="button">Book</button>
+        </div>
+        <div class="class full" id="full-2">
+          <span class="time">17:45</span>
+          <span class="name">Run club 5 km</span>
+          <span class="muted">with Ade</span>
+          <button class="btn" type="button">Book</button>
+        </div>
+        <div class="class">
+          <span class="time">18:30</span>
+          <span class="name">Boxing fit</span>
+          <span class="muted">with Lena</span>
+          <button class="btn" type="button">Book</button>
+        </div>
+        <div class="class">
+          <span class="time">19:30</span>
+          <span class="name">Stretch and mobility</span>
+          <span class="muted">with Noor</span>
+          <button class="btn" type="button">Book</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

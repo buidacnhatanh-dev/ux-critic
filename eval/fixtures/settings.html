@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Waypoint Freight notification settings (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="logistics.css" />
+    <style>
+      .page {
+        width: 760px;
+        padding: 32px 40px;
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 4px;
+      }
+      /* Planted: faint subtitle on the dark page. */
+      .subtitle {
+        margin-bottom: 24px;
+        color: #3f4f5f;
+      }
+      .settings {
+        display: grid;
+        gap: 12px;
+      }
+      .setting {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+        padding: 16px 20px;
+        border: 1px solid #3b4d5e;
+        border-radius: 8px;
+        background: #16212c;
+        text-align: left;
+      }
+      .setting-title {
+        display: block;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .setting-text {
+        display: block;
+        color: #a3b3c2;
+      }
+      /* Planted: on and off differ only by the track colour. */
+      .track {
+        width: 56px;
+        height: 32px;
+        border-radius: 16px;
+        background: #3b4d5e;
+        position: relative;
+      }
+      .track::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #e6edf3;
+      }
+      [aria-checked="true"] .track {
+        background: #0f766e;
+      }
+      [aria-checked="true"] .track::after {
+        left: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="brand">Waypoint Freight</span>
+      <span class="muted">North depot · Settings</span>
+    </header>
+    <div class="page">
+      <h1>Notifications</h1>
+      <p class="subtitle" id="subtitle">Changes are saved as soon as you switch them</p>
+      <div class="settings" id="settings">
+        <button class="setting" type="button" role="switch" aria-checked="true">
+          <span>
+            <span class="setting-title">Delayed shipments</span>
+            <span class="setting-text">When a truck is more than 30 minutes late</span>
+          </span>
+          <span class="track"></span>
+        </button>
+        <button class="setting" type="button" role="switch" aria-checked="false">
+          <span>
+            <span class="setting-title">Exceptions</span>
+            <span class="setting-text">Damaged, refused or lost parcels</span>
+          </span>
+          <span class="track"></span>
+        </button>
+        <button class="setting" type="button" role="switch" aria-checked="true">
+          <span>
+            <span class="setting-title">Daily summary</span>
+            <span class="setting-text">One email at 7:00 with yesterday's numbers</span>
+          </span>
+          <span class="track"></span>
+        </button>
+        <button class="setting" type="button" role="switch" aria-checked="false">
+          <span>
+            <span class="setting-title">Driver messages</span>
+            <span class="setting-text">Notes drivers add at pickup or delivery</span>
+          </span>
+          <span class="track"></span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

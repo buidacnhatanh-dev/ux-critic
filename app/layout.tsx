@@ -8,6 +8,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { NavSectionProvider } from "@/components/NavSection";
 import { Sidebar } from "@/components/Sidebar";
 import { AnnouncerProvider, ToastProvider } from "@/components/ui";
 import { DataClientProvider } from "@/lib/data/DataClientProvider";
@@ -45,12 +46,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <a href="#main" className={styles.skip}>
                 Skip to content
               </a>
-              <div className={styles.shell}>
-                <Sidebar mode={mode} sourceLine={sourceLine} />
-                <main id="main" tabIndex={-1} className={styles.main}>
-                  <div className={styles.content}>{children}</div>
-                </main>
-              </div>
+              <NavSectionProvider>
+                <div className={styles.shell}>
+                  <Sidebar mode={mode} sourceLine={sourceLine} />
+                  <main id="main" tabIndex={-1} className={styles.main}>
+                    <div className={styles.content}>{children}</div>
+                  </main>
+                </div>
+              </NavSectionProvider>
             </DataClientProvider>
           </ToastProvider>
         </AnnouncerProvider>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import type { Mode } from "@/lib/data/types";
 import { DemoPanel } from "./DemoPanel";
+import { useNavSectionOverride } from "./NavSection";
 import styles from "./Sidebar.module.css";
 
 type NavItem = { href: string; label: string; icon: ReactNode; matches: (path: string) => boolean };
@@ -68,15 +69,22 @@ const NAV: NavItem[] = [
 
 /**
  * aria-current: "page" on the exact page, "true" on the section it belongs to
- * (Project history, Review and Compare highlight Projects, as in the designs).
+ * (Project history, Review and Compare highlight Projects, as in the designs). A screen can name
+ * its section instead (`useNavSection`): Reviewing and Review failed highlight New review.
  */
-export function currentFor(item: Pick<NavItem, "href" | "matches">, pathname: string) {
+export function currentFor(
+  item: Pick<NavItem, "href" | "matches">,
+  pathname: string,
+  section: string | null = null,
+) {
   if (pathname === item.href) return "page" as const;
+  if (section) return section === item.href ? ("true" as const) : undefined;
   return item.matches(pathname) ? ("true" as const) : undefined;
 }
 
 export function Sidebar({ mode, sourceLine }: { mode: Mode; sourceLine: string }) {
   const pathname = usePathname() ?? "/";
+  const section = useNavSectionOverride();
   return (
     <nav aria-label="Main" className={styles.sidebar}>
       <Link href="/" className={styles.logo}>
@@ -104,7 +112,7 @@ export function Sidebar({ mode, sourceLine }: { mode: Mode; sourceLine: string }
           <li key={item.href}>
             <Link
               href={item.href}
-              aria-current={currentFor(item, pathname)}
+              aria-current={currentFor(item, pathname, section)}
               className={styles.link}
             >
               {item.icon}

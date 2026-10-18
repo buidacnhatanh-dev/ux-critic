@@ -1,0 +1,5 @@
+{
+  "fixture": "account",
+  "description": "Clean logistics account page (dark theme): visible labels, one primary action, readable help text. Counts false alarms.",
+  "issues": []
+}

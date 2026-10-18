@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
+import { useNavSection } from "@/components/NavSection";
 import { Button, ButtonLink } from "@/components/ui";
 import type { ReviewDetail } from "@/lib/data/types";
 import { errorSentence, STEP_LABEL, STEPS } from "@/lib/reviewing";
@@ -21,6 +22,8 @@ export function ReviewFailed({
 }) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => headingRef.current?.focus(), []);
+  // Still part of starting a new review (design 10).
+  useNavSection("/new");
 
   const message = review.error?.message ?? "No error message was saved.";
   const measuredDone = STEPS.indexOf(review.step) > STEPS.indexOf("measure");

@@ -1,0 +1,27 @@
+{
+  "fixture": "cart",
+  "description": "Coffee shop basket with tiny Remove links and a filled promo button that outweighs the outlined checkout button.",
+  "issues": [
+    {
+      "id": "tiny-remove-1",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "selector": "#remove-1",
+      "note": "12 px text link with no padding."
+    },
+    {
+      "id": "tiny-remove-2",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "selector": "#remove-2",
+      "note": "12 px text link with no padding."
+    },
+    {
+      "id": "promo-outweighs-checkout",
+      "kind": "evaluated",
+      "principle_id": "law-von-restorff",
+      "selector": "#promo-apply, #checkout",
+      "note": "The filled Apply button stands out; the main action Go to checkout is only outlined."
+    }
+  ]
+}

@@ -64,6 +64,22 @@
   min-height: var(--target-min);
   font-weight: var(--weight-semibold);
   cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+/* inline-flex hides the native marker, so draw the triangle (design 10). */
+.summary::before {
+  content: "";
+  border-block: 5px solid transparent;
+  border-inline-start: 8px solid currentColor;
+}
+
+.details[open] > .summary::before {
+  transform: rotate(90deg);
 }
 
 .pre {

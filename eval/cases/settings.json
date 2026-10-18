@@ -1,0 +1,73 @@
+{
+  "name": "settings",
+  "description": "Logistics notification settings (dark theme) with a faint subtitle and switches whose state is shown only by colour.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "faint-subtitle",
+      "kind": "measured",
+      "principle_id": "wcag-1.4.3",
+      "note": "#3F4F5F subtitle on the #0F1720 page.",
+      "box": {
+        "x": 80,
+        "y": 264,
+        "w": 575,
+        "h": 39
+      }
+    },
+    {
+      "id": "colour-only-switches",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "note": "On and off differ only by the colour of the track (and the knob position), with no text.",
+      "box": {
+        "x": 1286,
+        "y": 409,
+        "w": 112,
+        "h": 647
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Delayed shipments When a truck is more than 30 minutes late",
+      "box": {
+        "x": 80,
+        "y": 356,
+        "w": 1360,
+        "h": 171
+      }
+    },
+    {
+      "label": "Exceptions Damaged, refused or lost parcels",
+      "box": {
+        "x": 80,
+        "y": 550,
+        "w": 1360,
+        "h": 171
+      }
+    },
+    {
+      "label": "Daily summary One email at 7:00 with yesterday's numbers",
+      "box": {
+        "x": 80,
+        "y": 744,
+        "w": 1360,
+        "h": 171
+      }
+    },
+    {
+      "label": "Driver messages Notes drivers add at pickup or delivery",
+      "box": {
+        "x": 80,
+        "y": 938,
+        "w": 1360,
+        "h": 171
+      }
+    }
+  ]
+}

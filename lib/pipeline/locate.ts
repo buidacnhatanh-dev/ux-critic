@@ -77,11 +77,11 @@ export type LocatedControlSent = {
 
 /** Call 1's answer could not be read: target sizes are skipped, nothing else changes. */
 export class LocateUnreadableError extends Error {
-  constructor(
-    reason: string,
-    readonly raw: string,
-  ) {
+  // A plain field, not a parameter property: Node's type stripping (scripts) can't run those.
+  readonly raw: string;
+  constructor(reason: string, raw: string) {
     super(reason);
+    this.raw = raw;
     this.name = "LocateUnreadableError";
   }
 }

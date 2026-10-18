@@ -1,0 +1,121 @@
+{
+  "name": "shipment",
+  "description": "Logistics new shipment form after a failed submit: a vague banner and two fields marked only by a red border.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "vague-banner",
+      "kind": "evaluated",
+      "principle_id": "nielsen-9",
+      "note": "\"Something went wrong\" names no field and no fix.",
+      "box": {
+        "x": 114,
+        "y": 306,
+        "w": 579,
+        "h": 39
+      }
+    },
+    {
+      "id": "no-field-error-text",
+      "kind": "evaluated",
+      "principle_id": "wcag-3.3.1",
+      "note": "Postcode and weight have errors but no text next to them says what is wrong.",
+      "box": {
+        "x": 80,
+        "y": 656,
+        "w": 1440,
+        "h": 269
+      }
+    },
+    {
+      "id": "colour-only-fields",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "note": "The fields with errors are marked only by a red border.",
+      "box": {
+        "x": 80,
+        "y": 656,
+        "w": 1440,
+        "h": 269
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Sender",
+      "box": {
+        "x": 80,
+        "y": 476,
+        "w": 700,
+        "h": 89
+      }
+    },
+    {
+      "label": "Receiver",
+      "box": {
+        "x": 820,
+        "y": 476,
+        "w": 700,
+        "h": 89
+      }
+    },
+    {
+      "label": "Street and number",
+      "box": {
+        "x": 80,
+        "y": 656,
+        "w": 700,
+        "h": 89
+      }
+    },
+    {
+      "label": "Postcode",
+      "box": {
+        "x": 820,
+        "y": 656,
+        "w": 700,
+        "h": 89
+      }
+    },
+    {
+      "label": "Weight in kg",
+      "box": {
+        "x": 80,
+        "y": 836,
+        "w": 700,
+        "h": 89
+      }
+    },
+    {
+      "label": "Pallets",
+      "box": {
+        "x": 820,
+        "y": 836,
+        "w": 700,
+        "h": 89
+      }
+    },
+    {
+      "label": "Create shipment",
+      "box": {
+        "x": 80,
+        "y": 972,
+        "w": 281,
+        "h": 89
+      }
+    },
+    {
+      "label": "Save as draft",
+      "box": {
+        "x": 384,
+        "y": 972,
+        "w": 230,
+        "h": 89
+      }
+    }
+  ]
+}

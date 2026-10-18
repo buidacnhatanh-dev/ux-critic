@@ -1,0 +1,82 @@
+{
+  "name": "login",
+  "description": "Fitness app sign in with placeholder only labels and a tiny forgot password link.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "placeholder-labels",
+      "kind": "evaluated",
+      "principle_id": "wcag-3.3.2",
+      "note": "Email and password use their placeholders as the only label.",
+      "box": {
+        "x": 320,
+        "y": 612,
+        "w": 880,
+        "h": 221
+      }
+    },
+    {
+      "id": "tiny-forgot",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "note": "12 px text link with no padding.",
+      "box": {
+        "x": 320,
+        "y": 872,
+        "w": 200,
+        "h": 29
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Email",
+      "box": {
+        "x": 320,
+        "y": 612,
+        "w": 880,
+        "h": 97
+      }
+    },
+    {
+      "label": "Password",
+      "box": {
+        "x": 320,
+        "y": 736,
+        "w": 880,
+        "h": 97
+      }
+    },
+    {
+      "label": "Forgot password?",
+      "box": {
+        "x": 320,
+        "y": 874,
+        "w": 200,
+        "h": 25
+      }
+    },
+    {
+      "label": "Sign in",
+      "box": {
+        "x": 320,
+        "y": 946,
+        "w": 880,
+        "h": 97
+      }
+    },
+    {
+      "label": "Create an account",
+      "box": {
+        "x": 672,
+        "y": 1090,
+        "w": 399,
+        "h": 97
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "fixture": "wizard",
+  "description": "Coffee subscription set up, one step of several, with no progress indicator and no way back.",
+  "issues": [
+    {
+      "id": "no-progress",
+      "kind": "evaluated",
+      "principle_id": "nielsen-1",
+      "selector": "#step-header",
+      "note": "Nothing shows which step this is or how many are left."
+    },
+    {
+      "id": "no-back",
+      "kind": "evaluated",
+      "principle_id": "nielsen-3",
+      "selector": "#actions",
+      "note": "Only Continue; there is no Back button to change an earlier answer."
+    }
+  ]
+}

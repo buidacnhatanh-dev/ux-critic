@@ -20,7 +20,11 @@
     "test:smoke": "playwright test --config playwright.smoke.config.ts",
     "demo:capture": "node scripts/demo-capture.ts",
     "demo:data": "node scripts/demo-data.ts",
-    "demo:og": "node scripts/og-capture.ts"
+    "demo:og": "node scripts/og-capture.ts",
+    "demo:build": "node --env-file-if-exists=.env.local scripts/demo-build.ts",
+    "eval:capture": "node scripts/eval-capture.ts",
+    "eval": "node --env-file-if-exists=.env.local scripts/eval.ts",
+    "eval:measured": "node scripts/eval-measured.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.135.0",

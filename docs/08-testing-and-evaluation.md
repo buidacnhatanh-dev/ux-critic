@@ -33,7 +33,7 @@ Goal: numbers like "found 17 of 20 planted problems, 2 notes that were not real 
 
 * `eval/fixtures/*.html`: small, realistic pages, each with planted problems. Claude Code writes 12 of them in M7: login form with placeholder labels, checkout with tiny links, settings page with low contrast, dashboard with 9 equal buttons, error message shown only in red, form without error text, wizard without progress, a clean page with no problems (to count false alarms), and similar
 * `eval/fixtures/*.expected.json`: the planted problems, each with `principle_id` and the CSS selector of the element. The script turns selectors into boxes when it takes the screenshot
-* `pnpm eval:capture` renders every fixture with Playwright at 1280 × 800, scale 2, into `eval/cases/<name>.png` and `eval/cases/<name>.json` (expected issues with boxes)
+* `pnpm eval:capture` renders every fixture with Playwright at 1280 × 800, scale 2, into `eval/cases/<name>.png` and `eval/cases/<name>.json` (expected issues with boxes). A planted element's box is the box of what it shows (its text and child boxes), not its CSS box: a full width paragraph with one short line would otherwise never overlap the line a result points at. The JSON also lists every control on the page, for `pnpm eval:measured`
 * The owner can add real cases by hand: a PNG and a JSON with expected issues and boxes
 
 ### Scoring
@@ -47,3 +47,9 @@ For each case, run the real pipeline (both calls) and match results to expected 
 Report `eval/runs/<date>.md`: model, date, per case found / missed / unexpected, totals, recall (found ÷ expected), measured vs evaluated split, average time and tokens per review, and the list of unexpected notes for review. Run each case 3 times and report the spread, because answers vary between runs.
 
 Never put numbers from a report into the UI or docs automatically. The owner copies them into the case study.
+
+`pnpm eval --report eval/runs/<date>.results.json` makes the report again from the saved results and the verdicts, without calling Claude. `pnpm eval --case <name> --runs <n>` runs a subset. With `UXC_FAKE_AI=1` the harness runs on fixture answers; those files are named `<date>-fake-ai` and the report says its numbers mean nothing.
+
+### Measured checks only (`pnpm eval:measured`, no key)
+
+Scores only the measured checks on every case, with no Claude call: tesseract.js finds the text lines and the docs/04 code measures contrast and text size from the pixels, exactly as in a live review. Target size needs Claude call 1 to find the controls, so here the controls located from the fixture page stand in for it (cases without `controls` skip target sizes). Rules of a first run checklist. The checks are deterministic, so one run per case. Writes `eval/runs/<date>-measured.md` with found, missed and unexpected per check (contrast, text size, target size) and per case.

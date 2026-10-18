@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Waypoint Freight account (clean)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="logistics.css" />
+    <style>
+      .page {
+        width: 760px;
+        padding: 28px 40px;
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 4px;
+      }
+      .intro {
+        margin-bottom: 24px;
+      }
+      .card {
+        padding: 20px 24px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+      }
+      .label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 700;
+      }
+      .input {
+        display: block;
+        width: 100%;
+        height: 44px;
+        padding: 0 12px;
+        border: 1px solid #5b6b7a;
+        border-radius: 6px;
+        background: #0f1720;
+      }
+      .field {
+        margin-bottom: 14px;
+      }
+      .help {
+        margin-top: 6px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+      }
+      .btn-primary {
+        border-color: #2dd4bf;
+        background: #2dd4bf;
+        color: #0f1720;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="brand">Waypoint Freight</span>
+      <span class="muted">North depot · Account</span>
+    </header>
+    <div class="page">
+      <h1>Your account</h1>
+      <p class="intro muted">Only you and the depot admins can see this</p>
+      <section class="card" aria-labelledby="details-title">
+        <h2 id="details-title">Details</h2>
+        <div class="field">
+          <label class="label" for="name">Full name</label>
+          <input class="input" id="name" value="Jonas Berg" />
+        </div>
+        <div class="field">
+          <label class="label" for="phone">Phone for urgent calls</label>
+          <input class="input" id="phone" value="+44 20 7946 0321" />
+          <p class="help muted">Drivers call this number when a delivery is refused</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" type="button">Save changes</button>
+          <button class="btn" type="button">Cancel</button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

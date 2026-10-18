@@ -1,0 +1,93 @@
+{
+  "name": "checkout-v3",
+  "description": "Clean coffee shop checkout: visible labels, three payment choices, no colour only states. Counts false alarms.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [],
+  "controls": [
+    {
+      "label": "Email address",
+      "box": {
+        "x": 194,
+        "y": 445,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card",
+      "box": {
+        "x": 194,
+        "y": 714,
+        "w": 391,
+        "h": 97
+      }
+    },
+    {
+      "label": "PayPal",
+      "box": {
+        "x": 600,
+        "y": 714,
+        "w": 388,
+        "h": 97
+      }
+    },
+    {
+      "label": "Other methods",
+      "box": {
+        "x": 1003,
+        "y": 714,
+        "w": 387,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card number",
+      "box": {
+        "x": 194,
+        "y": 898,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "Expiry date",
+      "box": {
+        "x": 194,
+        "y": 1078,
+        "w": 582,
+        "h": 97
+      }
+    },
+    {
+      "label": "Security code",
+      "box": {
+        "x": 808,
+        "y": 1078,
+        "w": 582,
+        "h": 97
+      }
+    },
+    {
+      "label": "Pay €50.50",
+      "box": {
+        "x": 194,
+        "y": 1198,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "Read the terms",
+      "box": {
+        "x": 194,
+        "y": 1326,
+        "w": 316,
+        "h": 97
+      }
+    }
+  ]
+}

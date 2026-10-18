@@ -1,0 +1,136 @@
+{
+  "name": "signup",
+  "description": "Fitness app sign up form with a vague error, a placeholder only password field, hidden password rules, a tiny checkbox and two primary buttons.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "vague-error",
+      "kind": "evaluated",
+      "principle_id": "nielsen-9",
+      "note": "\"Invalid input\" does not say what is wrong or how to fix it.",
+      "box": {
+        "x": 1320,
+        "y": 610,
+        "w": 199,
+        "h": 39
+      }
+    },
+    {
+      "id": "password-placeholder",
+      "kind": "evaluated",
+      "principle_id": "wcag-3.3.2",
+      "note": "The password field has no visible label.",
+      "box": {
+        "x": 1320,
+        "y": 682,
+        "w": 960,
+        "h": 97
+      }
+    },
+    {
+      "id": "hidden-password-rules",
+      "kind": "evaluated",
+      "principle_id": "nielsen-5",
+      "note": "Password rules are not shown before the person types.",
+      "box": {
+        "x": 1320,
+        "y": 682,
+        "w": 960,
+        "h": 97
+      }
+    },
+    {
+      "id": "tiny-checkbox",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "note": "Native 13 px checkbox.",
+      "box": {
+        "x": 1320,
+        "y": 817,
+        "w": 26,
+        "h": 27
+      }
+    },
+    {
+      "id": "two-primary-buttons",
+      "kind": "evaluated",
+      "principle_id": "rule:one-primary-button",
+      "note": "Two filled primary buttons of equal weight. Checks the seed rule \"One primary button per screen\".",
+      "box": {
+        "x": 1320,
+        "y": 890,
+        "w": 960,
+        "h": 213
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Full name",
+      "box": {
+        "x": 1320,
+        "y": 318,
+        "w": 960,
+        "h": 97
+      }
+    },
+    {
+      "label": "Email",
+      "box": {
+        "x": 1320,
+        "y": 502,
+        "w": 960,
+        "h": 97
+      }
+    },
+    {
+      "label": "Password",
+      "box": {
+        "x": 1320,
+        "y": 682,
+        "w": 960,
+        "h": 97
+      }
+    },
+    {
+      "label": "I agree to the terms and privacy policy",
+      "box": {
+        "x": 1320,
+        "y": 817,
+        "w": 26,
+        "h": 27
+      }
+    },
+    {
+      "label": "Create account",
+      "box": {
+        "x": 1320,
+        "y": 890,
+        "w": 960,
+        "h": 97
+      }
+    },
+    {
+      "label": "Sign up with Google",
+      "box": {
+        "x": 1320,
+        "y": 1006,
+        "w": 960,
+        "h": 97
+      }
+    },
+    {
+      "label": "Sign in",
+      "box": {
+        "x": 1898,
+        "y": 1134,
+        "w": 213,
+        "h": 97
+      }
+    }
+  ]
+}

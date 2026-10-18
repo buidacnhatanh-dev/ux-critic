@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Waypoint Freight new shipment form (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="logistics.css" />
+    <style>
+      .page {
+        width: 800px;
+        padding: 28px 40px;
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+      /* Planted: a banner that does not say which fields or what is wrong. */
+      .alert {
+        margin-bottom: 20px;
+        padding: 12px 16px;
+        border-radius: 6px;
+        background: #3b1418;
+        border: 1px solid #f87171;
+        color: #fecaca;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 20px;
+        margin-bottom: 24px;
+      }
+      .label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 700;
+      }
+      .input {
+        display: block;
+        width: 100%;
+        height: 44px;
+        padding: 0 12px;
+        border: 1px solid #5b6b7a;
+        border-radius: 6px;
+        background: #16212c;
+      }
+      /* Planted: the fields with errors only get a red border, no text. */
+      .input.invalid {
+        border: 2px solid #f87171;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+      }
+      .btn-primary {
+        border-color: #2dd4bf;
+        background: #2dd4bf;
+        color: #0f1720;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="brand">Waypoint Freight</span>
+      <span class="muted">North depot · Dispatch</span>
+    </header>
+    <div class="page">
+      <h1>New shipment</h1>
+      <p class="alert" id="form-alert">Something went wrong. Please check the form.</p>
+      <div class="grid">
+        <div>
+          <label class="label" for="sender">Sender</label>
+          <input class="input" id="sender" value="North depot" />
+        </div>
+        <div>
+          <label class="label" for="receiver">Receiver</label>
+          <input class="input" id="receiver" value="Harbour Foods Ltd" />
+        </div>
+        <div>
+          <label class="label" for="street">Street and number</label>
+          <input class="input" id="street" value="12 Quay Road" />
+        </div>
+        <div>
+          <label class="label" for="postcode">Postcode</label>
+          <input class="input invalid" id="postcode" value="HB4" />
+        </div>
+        <div>
+          <label class="label" for="weight">Weight in kg</label>
+          <input class="input invalid" id="weight" value="1,200" />
+        </div>
+        <div>
+          <label class="label" for="pallets">Pallets</label>
+          <input class="input" id="pallets" value="3" />
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="button">Create shipment</button>
+        <button class="btn" type="button">Save as draft</button>
+      </div>
+    </div>
+  </body>
+</html>

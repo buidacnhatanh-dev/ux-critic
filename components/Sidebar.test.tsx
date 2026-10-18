@@ -29,6 +29,12 @@ describe("currentFor", () => {
   it("is page on the exact route", () => expect(currentFor(projects, "/")).toBe("page"));
   it("is true inside the section", () => expect(currentFor(projects, "/projects/a")).toBe("true"));
   it("is undefined elsewhere", () => expect(currentFor(projects, "/checklist")).toBeUndefined());
+  it("follows a section named by the screen (Reviewing, Review failed)", () => {
+    const newReview = { href: "/new", matches: (p: string) => p === "/new" };
+    expect(currentFor(projects, "/reviews/r1", "/new")).toBeUndefined();
+    expect(currentFor(newReview, "/reviews/r1", "/new")).toBe("true");
+    expect(currentFor(newReview, "/reviews/r1", null)).toBeUndefined();
+  });
 });
 
 describe("Sidebar", () => {

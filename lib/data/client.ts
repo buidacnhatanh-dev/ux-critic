@@ -46,11 +46,11 @@ export class NotFoundError extends Error {
 
 /** A request the data source refuses, with a message that can be shown next to the field. */
 export class ValidationError extends Error {
-  constructor(
-    readonly field: string,
-    message: string,
-  ) {
+  // A plain field, not a parameter property: Node's type stripping (scripts) can't run those.
+  readonly field: string;
+  constructor(field: string, message: string) {
     super(message);
+    this.field = field;
     this.name = "ValidationError";
   }
 }

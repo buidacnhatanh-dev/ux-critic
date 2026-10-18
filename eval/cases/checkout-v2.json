@@ -1,0 +1,136 @@
+{
+  "name": "checkout-v2",
+  "description": "Coffee shop checkout with labels fixed, still five payment options, and a new error shown only by a red border.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "five-methods",
+      "kind": "evaluated",
+      "principle_id": "law-hick",
+      "note": "Still five payment options of equal weight.",
+      "box": {
+        "x": 194,
+        "y": 714,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "id": "colour-only-error",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "note": "The card number error is a red border with no text or icon.",
+      "box": {
+        "x": 194,
+        "y": 898,
+        "w": 1196,
+        "h": 97
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Email address",
+      "box": {
+        "x": 194,
+        "y": 445,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card",
+      "box": {
+        "x": 194,
+        "y": 714,
+        "w": 230,
+        "h": 97
+      }
+    },
+    {
+      "label": "PayPal",
+      "box": {
+        "x": 439,
+        "y": 714,
+        "w": 227,
+        "h": 97
+      }
+    },
+    {
+      "label": "Apple Pay",
+      "box": {
+        "x": 681,
+        "y": 714,
+        "w": 226,
+        "h": 97
+      }
+    },
+    {
+      "label": "Google Pay",
+      "box": {
+        "x": 922,
+        "y": 714,
+        "w": 227,
+        "h": 97
+      }
+    },
+    {
+      "label": "Klarna",
+      "box": {
+        "x": 1164,
+        "y": 714,
+        "w": 226,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card number",
+      "box": {
+        "x": 194,
+        "y": 898,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "Expiry date",
+      "box": {
+        "x": 194,
+        "y": 1078,
+        "w": 582,
+        "h": 97
+      }
+    },
+    {
+      "label": "Security code",
+      "box": {
+        "x": 808,
+        "y": 1078,
+        "w": 582,
+        "h": 97
+      }
+    },
+    {
+      "label": "Pay €50.50",
+      "box": {
+        "x": 194,
+        "y": 1198,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "Read the terms",
+      "box": {
+        "x": 194,
+        "y": 1326,
+        "w": 316,
+        "h": 97
+      }
+    }
+  ]
+}

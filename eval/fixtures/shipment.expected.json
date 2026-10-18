@@ -1,0 +1,27 @@
+{
+  "fixture": "shipment",
+  "description": "Logistics new shipment form after a failed submit: a vague banner and two fields marked only by a red border.",
+  "issues": [
+    {
+      "id": "vague-banner",
+      "kind": "evaluated",
+      "principle_id": "nielsen-9",
+      "selector": "#form-alert",
+      "note": "\"Something went wrong\" names no field and no fix."
+    },
+    {
+      "id": "no-field-error-text",
+      "kind": "evaluated",
+      "principle_id": "wcag-3.3.1",
+      "selector": "#postcode, #weight",
+      "note": "Postcode and weight have errors but no text next to them says what is wrong."
+    },
+    {
+      "id": "colour-only-fields",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "selector": "#postcode, #weight",
+      "note": "The fields with errors are marked only by a red border."
+    }
+  ]
+}

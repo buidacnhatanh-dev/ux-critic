@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
+import { useNavSection } from "@/components/NavSection";
 import { Button, useAnnouncer } from "@/components/ui";
 import type { ReviewDetail, ReviewStep } from "@/lib/data/types";
 import { STEP_LABEL, STEPS, stepDetail, stepState } from "@/lib/reviewing";
@@ -29,6 +30,8 @@ export function Reviewing({
 }) {
   const { announce } = useAnnouncer();
   const previous = useRef<ReviewStep>(review.step);
+  // Still part of starting a new review (design 9).
+  useNavSection("/new");
 
   // Announce each finished step politely (docs/06 §9).
   useEffect(() => {

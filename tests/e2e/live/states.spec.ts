@@ -78,8 +78,9 @@ test("Evaluation unreadable (fake-unreadable): banner and Retry evaluation", asy
 test("Cancel review stops it and returns to a filled in form", async ({ page }) => {
   await startReview(page, { project: "Changed my mind", fileName: "fake-slow.png" });
   await expect(page.getByRole("heading", { level: 1, name: "Reviewing v1…" })).toBeVisible();
+  // Measuring (OCR) can queue behind other tests' reviews before evaluation starts.
   await expect(page.getByText("Evaluating against principles, in progress")).toBeAttached({
-    timeout: 10_000,
+    timeout: RESULT_TIMEOUT,
   });
   await expectNoAxeViolations(page);
   await page.getByRole("button", { name: "Cancel review" }).click();

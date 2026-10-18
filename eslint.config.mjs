@@ -23,8 +23,10 @@ const config = [
     },
   },
   {
-    // Live server code: API routes and what they use. Never imported by screens.
+    // Live server code: API routes and what they use, plus the offline evaluation scripts.
+    // Never imported by screens.
     files: [
+      "lib/eval/**",
       "app/api/**",
       "lib/api/**",
       "lib/pipeline/**",

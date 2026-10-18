@@ -1,0 +1,160 @@
+{
+  "name": "checkout-v1",
+  "description": "Coffee shop checkout with placeholder labels, faint helper text, a tiny link and five payment options.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "placeholder-labels",
+      "kind": "evaluated",
+      "principle_id": "wcag-3.3.2",
+      "note": "Every field uses its placeholder as the only label.",
+      "box": {
+        "x": 194,
+        "y": 385,
+        "w": 1196,
+        "h": 610
+      }
+    },
+    {
+      "id": "faint-helper",
+      "kind": "measured",
+      "principle_id": "wcag-1.4.3",
+      "note": "Helper text is #B9BFC8 on white.",
+      "box": {
+        "x": 194,
+        "y": 497,
+        "w": 524,
+        "h": 39
+      }
+    },
+    {
+      "id": "five-methods",
+      "kind": "evaluated",
+      "principle_id": "law-hick",
+      "note": "Five payment options of equal weight at once.",
+      "box": {
+        "x": 194,
+        "y": 654,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "id": "tiny-terms",
+      "kind": "measured",
+      "principle_id": "wcag-2.5.8",
+      "note": "12 px text link with no padding.",
+      "box": {
+        "x": 194,
+        "y": 1152,
+        "w": 65,
+        "h": 29
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Email address",
+      "box": {
+        "x": 194,
+        "y": 385,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card",
+      "box": {
+        "x": 194,
+        "y": 654,
+        "w": 230,
+        "h": 97
+      }
+    },
+    {
+      "label": "PayPal",
+      "box": {
+        "x": 439,
+        "y": 654,
+        "w": 227,
+        "h": 97
+      }
+    },
+    {
+      "label": "Apple Pay",
+      "box": {
+        "x": 681,
+        "y": 654,
+        "w": 226,
+        "h": 97
+      }
+    },
+    {
+      "label": "Google Pay",
+      "box": {
+        "x": 922,
+        "y": 654,
+        "w": 227,
+        "h": 97
+      }
+    },
+    {
+      "label": "Klarna",
+      "box": {
+        "x": 1164,
+        "y": 654,
+        "w": 226,
+        "h": 97
+      }
+    },
+    {
+      "label": "Card number",
+      "box": {
+        "x": 194,
+        "y": 778,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "MM / YY",
+      "box": {
+        "x": 194,
+        "y": 898,
+        "w": 582,
+        "h": 97
+      }
+    },
+    {
+      "label": "CVC",
+      "box": {
+        "x": 808,
+        "y": 898,
+        "w": 582,
+        "h": 97
+      }
+    },
+    {
+      "label": "Pay €50.50",
+      "box": {
+        "x": 194,
+        "y": 1018,
+        "w": 1196,
+        "h": 97
+      }
+    },
+    {
+      "label": "Terms",
+      "box": {
+        "x": 194,
+        "y": 1154,
+        "w": 65,
+        "h": 25
+      }
+    }
+  ]
+}

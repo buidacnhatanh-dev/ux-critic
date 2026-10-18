@@ -1,0 +1,48 @@
+{
+  "name": "account",
+  "description": "Clean logistics account page (dark theme): visible labels, one primary action, readable help text. Counts false alarms.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [],
+  "controls": [
+    {
+      "label": "Full name",
+      "box": {
+        "x": 130,
+        "y": 531,
+        "w": 1260,
+        "h": 89
+      }
+    },
+    {
+      "label": "Phone for urgent calls",
+      "box": {
+        "x": 130,
+        "y": 707,
+        "w": 1260,
+        "h": 89
+      }
+    },
+    {
+      "label": "Save changes",
+      "box": {
+        "x": 130,
+        "y": 883,
+        "w": 246,
+        "h": 89
+      }
+    },
+    {
+      "label": "Cancel",
+      "box": {
+        "x": 399,
+        "y": 883,
+        "w": 152,
+        "h": 89
+      }
+    }
+  ]
+}

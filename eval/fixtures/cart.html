@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Little Fern Coffee basket (planted problems)</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="coffee.css" />
+    <style>
+      .item {
+        display: grid;
+        grid-template-columns: 1fr 120px 96px;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid #e6dcc8;
+      }
+      .item-name {
+        display: block;
+        font-weight: 700;
+      }
+      /* Planted: 12 px remove links with no padding. */
+      .remove {
+        display: inline-block;
+        margin-top: 4px;
+        font-size: 12px;
+        line-height: 1;
+        color: #1f4a36;
+      }
+      .qty {
+        height: 48px;
+        width: 100%;
+        padding: 0 12px;
+        border: 1.5px solid #8c8273;
+        border-radius: 4px;
+        background: #ffffff;
+      }
+      .price {
+        text-align: right;
+        font-weight: 700;
+      }
+      .promo {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        margin: 20px 0 16px;
+      }
+      /* Planted: the promo button is the filled one, checkout is only outlined. */
+      .checkout {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="brand">Little Fern Coffee</span>
+      <span class="muted">Your basket</span>
+    </header>
+    <div class="page">
+      <main>
+        <h1>Basket</h1>
+        <div class="item">
+          <span>
+            <span class="item-name">House blend, whole bean</span>
+            <span class="muted">250 g · roasted on Monday</span>
+            <br />
+            <a class="remove" id="remove-1" href="#remove">Remove</a>
+          </span>
+          <select class="qty" aria-label="Quantity">
+            <option>1</option>
+          </select>
+          <span class="price">€14.00</span>
+        </div>
+        <div class="item">
+          <span>
+            <span class="item-name">Ceramic pour over</span>
+            <span class="muted">Sage glaze, fits most mugs</span>
+            <br />
+            <a class="remove" id="remove-2" href="#remove">Remove</a>
+          </span>
+          <select class="qty" aria-label="Quantity">
+            <option>1</option>
+          </select>
+          <span class="price">€32.00</span>
+        </div>
+      </main>
+      <aside class="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Order summary</h2>
+        <p class="line"><span>Items</span><span>€46.00</span></p>
+        <p class="line"><span>Delivery</span><span>€4.50</span></p>
+        <p class="line total"><span>Total</span><span>€50.50</span></p>
+        <div class="promo">
+          <input class="input" id="promo" placeholder="Promo code" aria-label="Promo code" />
+          <button class="btn btn-primary" id="promo-apply" type="button">Apply</button>
+        </div>
+        <button class="btn checkout" id="checkout" type="button">Go to checkout</button>
+      </aside>
+    </div>
+  </body>
+</html>

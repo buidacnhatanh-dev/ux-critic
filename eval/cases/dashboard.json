@@ -1,0 +1,166 @@
+{
+  "name": "dashboard",
+  "description": "Logistics dashboard (dark theme) with layout and hierarchy problems.",
+  "context": "",
+  "source": "fixture",
+  "width": 2560,
+  "height": 1600,
+  "scale": 2,
+  "issues": [
+    {
+      "id": "weak-title",
+      "kind": "evaluated",
+      "principle_id": "wcag-2.4.6",
+      "note": "The page title looks like body text; the KPI numbers dominate.",
+      "box": {
+        "x": 80,
+        "y": 156,
+        "w": 180,
+        "h": 38
+      }
+    },
+    {
+      "id": "nine-equal-buttons",
+      "kind": "evaluated",
+      "principle_id": "law-von-restorff",
+      "note": "Nine buttons with the same style, nothing stands out.",
+      "box": {
+        "x": 80,
+        "y": 228,
+        "w": 1555,
+        "h": 88
+      }
+    },
+    {
+      "id": "kpi-label-far",
+      "kind": "evaluated",
+      "principle_id": "law-proximity",
+      "note": "Each KPI label sits far below its number.",
+      "box": {
+        "x": 80,
+        "y": 360,
+        "w": 2400,
+        "h": 320
+      }
+    },
+    {
+      "id": "colour-only-change",
+      "kind": "evaluated",
+      "principle_id": "wcag-1.4.1",
+      "note": "Up and down are told apart only by green and red.",
+      "box": {
+        "x": 122,
+        "y": 486,
+        "w": 1899,
+        "h": 38
+      }
+    },
+    {
+      "id": "faint-footnote",
+      "kind": "measured",
+      "principle_id": "wcag-1.4.3",
+      "note": "#56677A footnote on the #16212C card.",
+      "box": {
+        "x": 122,
+        "y": 1252,
+        "w": 598,
+        "h": 32
+      }
+    },
+    {
+      "id": "small-footnote",
+      "kind": "measured",
+      "principle_id": "rule:body-text-16",
+      "note": "13 px footnote, longer than 20 characters.",
+      "box": {
+        "x": 122,
+        "y": 1252,
+        "w": 598,
+        "h": 32
+      }
+    }
+  ],
+  "controls": [
+    {
+      "label": "Export",
+      "box": {
+        "x": 80,
+        "y": 228,
+        "w": 150,
+        "h": 88
+      }
+    },
+    {
+      "label": "Share",
+      "box": {
+        "x": 245,
+        "y": 228,
+        "w": 141,
+        "h": 88
+      }
+    },
+    {
+      "label": "Filter",
+      "box": {
+        "x": 401,
+        "y": 228,
+        "w": 134,
+        "h": 88
+      }
+    },
+    {
+      "label": "Refresh",
+      "box": {
+        "x": 550,
+        "y": 228,
+        "w": 165,
+        "h": 88
+      }
+    },
+    {
+      "label": "Compare",
+      "box": {
+        "x": 730,
+        "y": 228,
+        "w": 181,
+        "h": 88
+      }
+    },
+    {
+      "label": "Annotate",
+      "box": {
+        "x": 926,
+        "y": 228,
+        "w": 181,
+        "h": 88
+      }
+    },
+    {
+      "label": "Schedule",
+      "box": {
+        "x": 1122,
+        "y": 228,
+        "w": 182,
+        "h": 88
+      }
+    },
+    {
+      "label": "Settings",
+      "box": {
+        "x": 1319,
+        "y": 228,
+        "w": 172,
+        "h": 88
+      }
+    },
+    {
+      "label": "Print",
+      "box": {
+        "x": 1506,
+        "y": 228,
+        "w": 129,
+        "h": 88
+      }
+    }
+  ]
+}
