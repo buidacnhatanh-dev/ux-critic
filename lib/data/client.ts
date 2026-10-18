@@ -22,6 +22,8 @@ export interface DataClient {
   getReview(id: string): Promise<ReviewDetail>;
   startReview(input: StartReviewInput): Promise<{ reviewId: string }>;
   retryEvaluation(reviewId: string): Promise<void>;
+  /** Live only: "Try again" on Review failed starts a new review of the stored screenshot. */
+  restartReview?(reviewId: string): Promise<{ reviewId: string }>;
   /** Stops a running review and removes the version it created (docs/03 "Cancel review"). */
   cancelReview(reviewId: string): Promise<void>;
   setPushback(issueId: string, reason: string | null): Promise<void>;
@@ -29,6 +31,8 @@ export interface DataClient {
   getChecklist(): Promise<Checklist>;
   saveChecklist(update: ChecklistUpdate): Promise<void>;
   resetDemo?(): Promise<void>;
+  /** Live only: tokens used by reviews this month, for the spend line on My checklist. */
+  getUsage?(): Promise<{ input: number; output: number }>;
   /** Demo only: the sample screens for the New review picker. */
   listSamples?(): Promise<DemoSample[]>;
 }
@@ -48,12 +52,5 @@ export class ValidationError extends Error {
   ) {
     super(message);
     this.name = "ValidationError";
-  }
-}
-
-export class NotImplementedError extends Error {
-  constructor(method: string, milestone: string) {
-    super(`${method} is not built yet (${milestone}).`);
-    this.name = "NotImplementedError";
   }
 }

@@ -20,7 +20,7 @@ import type {
   RuleMetric,
   SourceSettings,
 } from "@/lib/data/types";
-import { plural } from "@/lib/format";
+import { plural, spendText, type Prices } from "@/lib/format";
 import {
   DEFAULT_THRESHOLD,
   METRIC_OPTIONS,
@@ -35,8 +35,22 @@ import styles from "./ChecklistScreen.module.css";
 export type Connection = {
   model: string | null;
   keySaved: boolean;
-  pricesSet: boolean;
+  /** From .env.local; null shows the placeholder. */
+  prices: Prices | null;
 };
+
+/** "Spent this month": saved token usage at the prices in .env.local. */
+function Spend({ prices }: { prices: Prices | null }) {
+  const client = useDataClient();
+  const { state } = useLoad(
+    () => (client.getUsage ? client.getUsage() : Promise.resolve(null)),
+    "usage",
+  );
+  if (!prices) return <>[set prices in .env.local]</>;
+  if (state.status === "loading") return <>Loading…</>;
+  if (state.status !== "ready" || !state.data) return <>Not available</>;
+  return <>{spendText(state.data, prices)}</>;
+}
 
 const PRINCIPLES: { key: keyof SourceSettings; label: string; description: string }[] = [
   {
@@ -86,6 +100,8 @@ export function ChecklistScreen({ connection }: { connection: Connection }) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [draft, setDraft] = useState<RuleDraft>(emptyDraft);
   const [errors, setErrors] = useState<RuleErrors>({});
+  /** Shown at once while a change to the principle sets is being saved (live mode waits). */
+  const [sourcesDraft, setSourcesDraft] = useState<SourceSettings | null>(null);
   const ruleTextRef = useRef<HTMLInputElement>(null);
   const thresholdRef = useRef<HTMLInputElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -113,9 +129,19 @@ export function ChecklistScreen({ connection }: { connection: Connection }) {
     await reload();
   }
 
+  const sources = sourcesDraft ?? checklist.sources;
+
   async function toggleSource(key: keyof SourceSettings, on: boolean) {
-    await save({ type: "sources", sources: { ...checklist.sources, [key]: on } });
-    showToast({ message: "Saved" });
+    const next = { ...sources, [key]: on };
+    setSourcesDraft(next);
+    try {
+      await save({ type: "sources", sources: next });
+      showToast({ message: "Saved" });
+    } catch (error) {
+      showToast({ message: error instanceof Error ? error.message : String(error) });
+    } finally {
+      setSourcesDraft(null);
+    }
   }
 
   async function addRule(event: FormEvent) {
@@ -168,7 +194,7 @@ export function ChecklistScreen({ connection }: { connection: Connection }) {
               <Checkbox
                 label={p.label}
                 description={p.description}
-                checked={checklist.sources[p.key]}
+                checked={sources[p.key]}
                 onChange={(e) => toggleSource(p.key, e.target.checked)}
               />
             </li>
@@ -280,9 +306,7 @@ export function ChecklistScreen({ connection }: { connection: Connection }) {
             <div>
               <dt>Spent this month</dt>
               <dd>
-                {connection.pricesSet
-                  ? "Counted once live reviews are saved"
-                  : "[set prices in .env.local]"}
+                <Spend prices={connection.prices} />
               </dd>
             </div>
           </dl>

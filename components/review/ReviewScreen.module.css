@@ -128,3 +128,11 @@
   flex-direction: column;
   gap: var(--space-3);
 }
+
+.evaluationOff {
+  margin: 0 0 var(--space-6);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}

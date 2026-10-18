@@ -2,10 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui";
+import { MEASURED_ONLY_COOKIE } from "@/lib/measured-only";
 import styles from "./ConnectClaude.module.css";
 
-/** docs/03: the owner's choice to run without evaluation, read by the server in live mode. */
-export const MEASURED_ONLY_COOKIE = "uxc-measured-only";
+export { MEASURED_ONLY_COOKIE };
 
 /** Screen 8: shown when the API key is missing. */
 export function ConnectClaude({ sample = false }: { sample?: boolean }) {

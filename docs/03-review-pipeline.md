@@ -151,4 +151,4 @@ If `ANTHROPIC_API_KEY` is missing, every page redirects to `/setup`, except when
 
 ## Fake AI mode
 
-`UXC_FAKE_AI=1` makes call 1 and call 2 return fixtures from `lib/fake-ai.ts` after a 500 ms delay. Fixtures include: a normal result, an empty result, an unreadable result and a timeout, chosen by the screenshot file name (`fake-empty`, `fake-unreadable`, `fake-timeout`). All Playwright tests use this mode.
+`UXC_FAKE_AI=1` makes call 1 and call 2 return fixtures from `lib/fake-ai.ts` after a 500 ms delay. Fixtures include: a normal result, an empty result, an unreadable result and a timeout, chosen by the screenshot file name (`fake-empty`, `fake-unreadable`, `fake-timeout`). `fake-slow` returns the normal result after 8 seconds, so tests can press Cancel review. All Playwright tests use this mode.

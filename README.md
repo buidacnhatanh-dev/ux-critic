@@ -28,7 +28,7 @@ Tests for the demo:
 | Command | What it checks |
 |---|---|
 | `pnpm test` | unit tests |
-| `pnpm test:e2e` | every screen flow on the dev server in demo mode, with axe |
+| `pnpm test:e2e` | every screen flow with axe: in demo mode, in live mode with fake AI (own database in `.e2e-data/`), and live without a key |
 | `pnpm test:smoke` | the production build in demo mode: every screen with axe, no third party requests, API paths 404, robots, og:image |
 
 `pnpm demo:og` recaptures the og:image (`app/opengraph-image.png`) from a running demo build: `node scripts/og-capture.ts http://localhost:3000`.
@@ -39,6 +39,23 @@ Tests for the demo:
 2. Set exactly these environment variables for Production and Preview: `UXC_MODE=demo` and `ENABLE_EXPERIMENTAL_COREPACK=1` (so Vercel uses the pnpm version in `package.json`)
 3. Never add `ANTHROPIC_API_KEY` to Vercel. A demo build with a key fails on purpose
 4. Deploy. Vercel runs `pnpm install` and `pnpm vercel-build`
+
+## Run live mode
+
+Live mode runs only on your laptop. It stores projects in `data/uxcritic.db` and screenshots in `data/screenshots/` (both gitignored), and sends screenshots to the Claude API and nowhere else.
+
+1. Create `.env.local` (gitignored) with:
+
+   ```
+   UXC_MODE=live
+   ANTHROPIC_API_KEY=your-key-here
+   ```
+
+   Optional: `UXC_MODEL` (default `claude-sonnet-5-5`), `UXC_TIMEOUT_MS` (default 60000), and `UXC_PRICE_INPUT_PER_M` / `UXC_PRICE_OUTPUT_PER_M` in euros for the spend line on My checklist
+2. `pnpm db:migrate` (optional: the app also creates and updates the database when it starts)
+3. `pnpm dev` and open http://localhost:3000
+
+Without a key, live mode shows Connect Claude. `UXC_FAKE_AI=1` answers from fixtures instead of calling Claude (`lib/fake-ai.ts`); the live Playwright tests use it. After changing `lib/db/schema.ts`, run `pnpm db:generate` and commit the new migration in `lib/db/migrations/`.
 
 ## How this repository was built
 

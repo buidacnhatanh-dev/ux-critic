@@ -55,10 +55,12 @@ export function stepDetail(
   }
 }
 
-export type ErrorKind = "timeout" | "network" | "key" | "rate" | "unknown";
+export type ErrorKind = "restart" | "prepare" | "timeout" | "network" | "key" | "rate" | "unknown";
 
 /** Picks the error type from the stored message, for a human sentence. */
 export function errorKind(message: string): ErrorKind {
+  if (/app stopped|restarted/i.test(message)) return "restart";
+  if (/screenshot couldn.t be prepared/i.test(message)) return "prepare";
   if (/timed?\s*out|timeout/i.test(message)) return "timeout";
   if (/\b401\b|\b403\b|api key|x-api-key|authentication|permission/i.test(message)) return "key";
   if (/\b429\b|rate.?limit|overloaded|\b529\b/i.test(message)) return "rate";
@@ -69,6 +71,10 @@ export function errorKind(message: string): ErrorKind {
 /** The sentence on Review failed. A timeout says the seconds only when the message has them. */
 export function errorSentence(message: string): string {
   switch (errorKind(message)) {
+    case "prepare":
+      return "The screenshot couldn't be read. Export it again as a PNG, JPG or WebP image and start a new review.";
+    case "restart":
+      return "The app was stopped while this review was running. Measured results are saved, so you can start it again.";
     case "timeout": {
       const seconds = /(\d+)\s*s\b/.exec(message)?.[1];
       return seconds

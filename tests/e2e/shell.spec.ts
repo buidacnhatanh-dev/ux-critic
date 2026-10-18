@@ -105,6 +105,8 @@ test("skip link moves focus to the main content", async ({ page }) => {
 test("sidebar stacks above the content on narrow windows", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 800 });
   await page.goto("/");
+  // Measure once the page has rendered with its styles.
+  await expect(page.getByRole("heading", { level: 1, name: "Projects" })).toBeVisible();
   const nav = await page.getByRole("navigation", { name: "Main" }).boundingBox();
   const main = await page.locator("main").boundingBox();
   expect(nav && main && main.y >= nav.y + nav.height - 1).toBe(true);

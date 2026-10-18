@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react";
 import type { ReactNode } from "react";
-import { NotImplementedError, type DataClient } from "./client";
+import type { DataClient } from "./client";
 import { DataClientProvider, createDataClient, useDataClient } from "./DataClientProvider";
 import { DemoClient } from "./demo-client";
 import { LiveClient } from "./live-client";
@@ -26,13 +26,10 @@ describe("mode switch", () => {
   });
 });
 
-describe("LiveClient (empty until M5)", () => {
-  it("has no resetDemo", () => {
+describe("LiveClient", () => {
+  it("has no resetDemo or sample picker", () => {
     const client: DataClient = new LiveClient();
     expect(client.resetDemo).toBeUndefined();
-  });
-
-  it("rejects data calls with NotImplementedError", async () => {
-    await expect(new LiveClient().getChecklist()).rejects.toBeInstanceOf(NotImplementedError);
+    expect(client.listSamples).toBeUndefined();
   });
 });

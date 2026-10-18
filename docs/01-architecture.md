@@ -20,6 +20,7 @@ ux-critic/
     api/issues/[id]/pushback/route.ts  PUT / DELETE
     api/rules/…                CRUD
     api/projects/[id]/route.ts DELETE
+                               (live only: API routes are named route.live.ts, see docs/10)
   lib/
     data/client.ts             DataClient interface, useDataClient()
     data/demo-client.ts        demo data + localStorage overlay
@@ -116,13 +117,14 @@ The pipeline runs inside the Next.js server process (no queue needed for one use
 ## Environment
 
 ```
-UXC_MODE=demo                 demo or live (docs/10). Without a key, live falls back to demo
+UXC_MODE=demo                 demo or live (docs/10). Live without a key shows Connect Claude (docs/03)
 ANTHROPIC_API_KEY=            live mode only, never on Vercel
 UXC_MODEL=claude-sonnet-5-5   model id, change without code changes
 UXC_TIMEOUT_MS=60000          per Claude call
 UXC_PRICE_INPUT_PER_M=        optional, euros per million input tokens, for the spend line
 UXC_PRICE_OUTPUT_PER_M=       optional, euros per million output tokens
 UXC_FAKE_AI=0                 1 = use lib/fake-ai.ts fixtures, no network
+UXC_DATA_DIR=data             live only: folder for uxcritic.db and screenshots (tests use their own)
 ```
 
 If the price variables are empty, the checklist page shows "[set prices in .env.local]" instead of an amount.

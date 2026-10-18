@@ -27,5 +27,13 @@ describe("reviewing wording", () => {
     expect(errorKind("429 rate_limit_error")).toBe("rate");
     expect(errorKind("fetch failed: ECONNRESET")).toBe("network");
     expect(errorKind("Something odd")).toBe("unknown");
+    expect(errorKind("Timed out: Claude didn't answer within 60 s.")).toBe("timeout");
+    expect(errorSentence("Timed out: Claude didn't answer within 60 s.")).toContain("60 seconds");
+    expect(errorKind("401: the API key was not accepted.")).toBe("key");
+    expect(errorKind("Network error: Connection error.")).toBe("network");
+    expect(
+      errorKind("The app stopped while this review was running. Measured results are kept."),
+    ).toBe("restart");
+    expect(errorKind("The screenshot couldn't be prepared.")).toBe("prepare");
   });
 });

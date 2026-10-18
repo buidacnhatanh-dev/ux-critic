@@ -33,6 +33,10 @@
     ".next/dev/types/**/*.ts",
     ".next-e2e/types/**/*.ts",
     ".next-e2e/dev/types/**/*.ts",
+    ".next-e2e-live/types/**/*.ts",
+    ".next-e2e-live/dev/types/**/*.ts",
+    ".next-e2e-setup/types/**/*.ts",
+    ".next-e2e-setup/dev/types/**/*.ts",
     ".next-smoke/types/**/*.ts",
     ".next-smoke/dev/types/**/*.ts"
   ],

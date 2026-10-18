@@ -82,3 +82,12 @@ export function checkedAgainst(sets: SourceSettings, ruleCount: number): string 
 export function isFinished(status: ReviewDetail["status"] | null): boolean {
   return status === "done" || status === "partial";
 }
+
+export type Prices = { inputPerM: number; outputPerM: number };
+
+/** "€0.42", "less than €0.01", from saved token counts and the prices in .env.local. */
+export function spendText(usage: { input: number; output: number }, prices: Prices): string {
+  const euros = (usage.input * prices.inputPerM + usage.output * prices.outputPerM) / 1_000_000;
+  if (euros > 0 && euros < 0.005) return "less than €0.01";
+  return `€${euros.toFixed(2)}`;
+}

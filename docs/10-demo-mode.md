@@ -5,7 +5,7 @@ UX Critic has two modes. Same screens, same components, different data source.
 | | Demo mode | Live mode |
 |---|---|---|
 | Where | Online on Vercel (public link for the portfolio), also locally | Only on the owner's laptop |
-| Turned on by | `UXC_MODE=demo` (Vercel always sets this), or no `ANTHROPIC_API_KEY` locally | `UXC_MODE=live` and a key in `.env.local` |
+| Turned on by | `UXC_MODE=demo` (Vercel always sets this), or no `UXC_MODE` at all | `UXC_MODE=live` in `.env.local`, plus a key (without one, Connect Claude, docs/03) |
 | Data | Built in sample projects from `demo/data.json` and `public/demo/*.png` | SQLite in `data/` |
 | Visitor changes (push back, checklist, delete) | Saved in the visitor's browser (`localStorage`), never on a server | Saved in the database |
 | New review | Pick a sample screen, watch the steps, get its prepared review | Upload any screenshot, real measuring and evaluation |
@@ -37,6 +37,7 @@ interface DataClient {
 * `LiveClient` (browser): calls the API routes from docs/01, which use SQLite and the pipeline
 * `useDataClient()` returns the right one based on the mode, which the root layout reads on the server and passes down
 * In demo mode, every API route except static files returns 404, and the code never opens the database or imports the pipeline. Check this with a test
+* The API route files are named `route.live.ts`. `next.config.ts` only adds the `live.ts` page extension when `UXC_MODE=live`, so a demo build contains no API routes at all, and `scripts/check-demo-build.ts` fails if one appears
 
 Interview note for the owner: this is the "repository pattern". The screens do not know where data comes from.
 

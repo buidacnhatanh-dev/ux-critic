@@ -6,6 +6,7 @@ import {
   shortDate,
   trend,
   valueChangeText,
+  spendText,
 } from "./format";
 
 describe("format", () => {
@@ -57,5 +58,16 @@ describe("format", () => {
     expect(checkedAgainst({ nielsen: false, wcag: false, laws: false, mine: false }, 0)).toBe(
       "measured checks only",
     );
+  });
+});
+
+describe("spendText", () => {
+  const prices = { inputPerM: 2, outputPerM: 10 };
+  it("adds input and output at their prices per million tokens", () => {
+    expect(spendText({ input: 100_000, output: 20_000 }, prices)).toBe("€0.40");
+    expect(spendText({ input: 0, output: 0 }, prices)).toBe("€0.00");
+  });
+  it("says less than a cent for tiny amounts", () => {
+    expect(spendText({ input: 1000, output: 0 }, prices)).toBe("less than €0.01");
   });
 });

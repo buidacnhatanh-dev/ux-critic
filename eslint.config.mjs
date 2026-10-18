@@ -23,13 +23,24 @@ const config = [
     },
   },
   {
-    files: ["app/api/**", "lib/pipeline/**", "lib/db/**", "scripts/**"],
+    // Live server code: API routes and what they use. Never imported by screens.
+    files: [
+      "app/api/**",
+      "lib/api/**",
+      "lib/pipeline/**",
+      "lib/db/**",
+      "lib/fake-ai*",
+      "scripts/**",
+    ],
     rules: { "no-restricted-syntax": "off" },
   },
   {
     ignores: [
       ".next/**",
       ".next-e2e/**",
+      ".next-e2e-live/**",
+      ".next-e2e-setup/**",
+      ".e2e-data/**",
       ".next-smoke/**",
       "node_modules/**",
       "design/**",

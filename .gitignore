@@ -4,6 +4,8 @@ node_modules/
 # next
 .next/
 .next-e2e/
+.next-e2e-live/
+.next-e2e-setup/
 .next-smoke/
 out/
 next-env.d.ts
@@ -14,6 +16,7 @@ coverage/
 playwright-report/
 test-results/
 blob-report/
+.e2e-data/
 
 # private data (CLAUDE.md)
 /data/

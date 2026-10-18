@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -142,13 +143,22 @@ export function ReviewScreen({ id, initialIssueId }: { id: string; initialIssueI
         review={review}
         crumbs={crumbs}
         changeSettingsHref={newReviewHref(review)}
-        // Starting again with the stored screenshot comes with the live pipeline (docs/03).
-        onTryAgain={() => router.push(newReviewHref(review))}
+        onTryAgain={async () => {
+          // Live: a new review of the stored screenshot (docs/03). Demo samples: the filled in form.
+          if (!client.restartReview) return router.push(newReviewHref(review));
+          try {
+            const { reviewId } = await client.restartReview(review.id);
+            announce("Starting the review again.");
+            router.push(`/reviews/${reviewId}`);
+          } catch (error) {
+            showToast({ message: error instanceof Error ? error.message : String(error) });
+          }
+        }}
       />
     );
   }
 
-  if (review.issues.length === 0 && review.status === "done") {
+  if (review.issues.length === 0 && review.status === "done" && !review.evaluationOff) {
     return (
       <NoIssues
         review={review}
@@ -308,6 +318,12 @@ export function ReviewDone({
         </div>
       </div>
 
+      {review.evaluationOff ? (
+        <p className={styles.evaluationOff}>
+          Evaluation is off. <Link href="/setup">Connect Claude</Link> to turn it on.
+        </p>
+      ) : null}
+
       {review.status === "partial" ? (
         <div className={styles.banner}>
           <span className={styles.bannerIcon} aria-hidden="true">
@@ -341,7 +357,11 @@ export function ReviewDone({
             Issues
           </h2>
           {visible.length === 0 ? (
-            <p className={styles.summary}>No {filter} issues in this review.</p>
+            <p className={styles.summary}>
+              {filter === "all"
+                ? "No issues in this review."
+                : `No ${filter} issues in this review.`}
+            </p>
           ) : (
             visible.map((issue) => (
               <IssueCard

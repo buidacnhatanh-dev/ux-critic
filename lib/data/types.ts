@@ -100,6 +100,8 @@ export type ReviewDetail = {
   step: ReviewStep;
   error: { message: string; detail: string | null } | null;
   sources: { sets: SourceSettings; ruleIds: string[] };
+  /** Live only: true when the review ran without Claude (measured checks only, docs/03). */
+  evaluationOff?: boolean;
   /** Null for reviews that were not made by a model (handwritten demo reviews). */
   model: string | null;
   /** From the API usage. Null when no API call was made. */

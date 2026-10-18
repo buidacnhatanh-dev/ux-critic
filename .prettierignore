@@ -1,5 +1,9 @@
 .next
 .next-e2e
+.next-e2e-live
+.next-e2e-setup
+.e2e-data
+lib/db/migrations/meta
 .next-smoke
 node_modules
 design

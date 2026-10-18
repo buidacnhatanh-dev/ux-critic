@@ -3,7 +3,7 @@
 import { LoadStatus } from "@/components/LoadStatus";
 import { useLoad } from "@/components/useLoad";
 import { useDataClient } from "@/lib/data/DataClientProvider";
-import type { DataClient } from "@/lib/data/client";
+import { NotFoundError, type DataClient } from "@/lib/data/client";
 import { NewReviewForm, type NewReviewInitial } from "./NewReviewForm";
 
 /** Loads what the form needs through DataClient. */
@@ -13,7 +13,17 @@ export async function loadNewReview(client: DataClient) {
     client.getChecklist(),
     client.listSamples ? client.listSamples() : Promise.resolve([]),
   ]);
-  const details = await Promise.all(projects.map((p) => client.getProject(p.id)));
+  // A project deleted since the list was read is left out instead of failing the form.
+  const details = (
+    await Promise.all(
+      projects.map((p) =>
+        client.getProject(p.id).catch((error: unknown) => {
+          if (error instanceof NotFoundError) return null;
+          throw error;
+        }),
+      ),
+    )
+  ).filter((p) => p !== null);
   return {
     projects: details.map((p) => ({
       id: p.id,
