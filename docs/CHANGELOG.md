@@ -239,3 +239,11 @@ Decisions
 * `pnpm eval:measured` now scores only contrast and text size, the checks that need no Claude call, exactly as a live review without a key runs them (OCR, then pixels). Target size is no longer scored there: M7 stood in controls located from the fixture page for Claude call 1, which a real review never has. The `controls` in `eval/cases/*.json` stay for later use
 * The report has found, missed and unexpected per check, per case and in total, with the Compare matcher as before. README and docs/08 updated
 * Only 4 planted problems across the 12 cases are contrast or text size (checkout v1, dashboard ×2, settings), so these numbers rest on a small sample
+
+## One note for a faint line split by OCR (2026-10-20)
+
+* `measureScreen` merges failing contrast notes that are one line split by OCR: same baseline (vertical overlap ≥ 60 % of the smaller height), same measured text colour and background, same rounded ratio, and no other OCR text line between them (`groupFaintPieces`). Both measurements stay; the note points at the first, covers both pieces, and joins the labels with " … " so the missing letters are not hidden. docs/04 updated
+* Unit tests: the two real settings pieces (merged), same coloured labels with other text between them (not merged), different colours on one line (not merged)
+* `pnpm eval:measured`: found 4 of 4, missed 0, 0 unexpected (was 1 unexpected, the split settings subtitle). Its report quotes the note title for a merged note
+* Decision: a distance based merge of OCR lines (1.5 × the line height) was tried on paper and dropped. The settings gap is 2.68 × the row height, and any threshold that large also merges separate elements ("New to Rally?" with the "Create an account" button at 1.69 ×, two payment buttons at 1.82 ×), which would put two colours in one box and give a wrong contrast value
+* `demo/data.json` is unchanged (`pnpm demo:data` writes the same file)

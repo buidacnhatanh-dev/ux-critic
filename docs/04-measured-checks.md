@@ -34,6 +34,8 @@ Unit test the formula with known pairs: `#B9BFC8` on white is 1.85, `#5B6472` on
 
 The `contrast_min` rule threshold replaces 4.5 if the owner set a stricter one.
 
+**One note for a line OCR split.** OCR sometimes reads one faint line as two pieces (it can drop faint letters in between). Two failing contrast lines become one note when all of these hold: same baseline (vertical overlap at least 60 % of the smaller height), the same measured text colour and background, the same rounded ratio, and no other OCR text line between them. Both measurements stay in the `measurements` table; the note points at the first one, its box covers both pieces, and its label joins them with " … ". A distance rule on the OCR lines does not work here: in the eval "settings" case the gap is 2.7 × the row height, wider than the gap between separate buttons elsewhere (`lib/pipeline/measure-screen.ts`, `groupFaintPieces`).
+
 ## Text size
 
 Estimated font size in CSS px = OCR line box height ÷ scale ÷ 1.2. This holds for line boxes as Chromium reports them (the demo captures). OCR boxes are tight around the glyphs, so live mode uses tesseract's row height instead (x height plus ascenders and descenders): `min(row height, 1.25 × glyph box height) ÷ scale ÷ 0.87`, see "Accuracy" below. Report as "about 13 px". Fail when below the `text_size_min` rule (default 16) and the line is longer than 20 characters (so labels and captions are not flagged as body text). Severity low. Detail must say the size is estimated from the text line height.

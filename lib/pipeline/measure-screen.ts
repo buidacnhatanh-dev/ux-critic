@@ -3,7 +3,7 @@
  * text size check, every located control a target size check. Every check is kept (pass or fail,
  * Compare needs them); failures become measured issues with the wording from docs/04.
  */
-import { roundRatio, suggestPassingColour } from "../contrast.ts";
+import { roundRatio, suggestPassingColour, toHex, type Rgb } from "../contrast.ts";
 import {
   WCAG_TARGET_MIN,
   checkTextSize,
@@ -69,6 +69,7 @@ export function measureScreen(input: {
   const { img, scale, rules } = input;
   const measurements: ScreenMeasurement[] = [];
   const issues: ScreenMeasuredIssue[] = [];
+  const faintPieces: FaintPiece[] = [];
 
   input.textLines.forEach((line, i) => {
     const contrast = measureContrast(img, line.box, scale, rules.contrast?.min, line.fontSize);
@@ -89,6 +90,16 @@ export function measureScreen(input: {
           contrast.background,
           contrast.threshold,
         );
+        faintPieces.push({
+          lineIndex: i,
+          label: line.label,
+          box: line.box,
+          text: contrast.text,
+          background: contrast.background,
+          ratio: contrast.ratio,
+          threshold: contrast.threshold,
+          measurementKey: key,
+        });
         issues.push({
           measurementKey: key,
           principleId: "wcag-1.4.3",
@@ -187,5 +198,96 @@ export function measureScreen(input: {
     }
   });
 
+  // OCR can split one faint line in two; both measurements stay, but they become one note.
+  for (const group of groupFaintPieces(faintPieces, input.textLines)) {
+    if (group.length < 2) continue;
+    const [first] = group as [FaintPiece, ...FaintPiece[]];
+    const keys = new Set(group.map((p) => p.measurementKey));
+    const at = issues.findIndex((issue) => keys.has(issue.measurementKey));
+    const merged: ScreenMeasuredIssue = {
+      measurementKey: first.measurementKey,
+      principleId: "wcag-1.4.3",
+      severity: first.ratio < 3 ? "high" : "medium",
+      region: unionBox(group.map((p) => p.box)),
+      ...contrastIssueText({
+        label: group.map((p) => p.label).join(" … "),
+        ratio: first.ratio,
+        threshold: first.threshold,
+        background: first.background,
+        suggestion: suggestPassingColour(first.text, first.background, first.threshold),
+      }),
+    };
+    const rest = issues.filter((issue) => !keys.has(issue.measurementKey));
+    rest.splice(Math.min(at, rest.length), 0, merged);
+    issues.splice(0, issues.length, ...rest);
+  }
+
   return { measurements, issues };
+}
+
+/** A text line that failed contrast, with what it measured. */
+export type FaintPiece = {
+  lineIndex: number;
+  label: string;
+  box: PixelBox;
+  text: Rgb;
+  background: Rgb;
+  ratio: number;
+  threshold: number;
+  measurementKey: string;
+};
+
+/** Same baseline: the boxes overlap vertically by at least this share of the smaller height. */
+export const SAME_BASELINE_OVERLAP = 0.6;
+
+function sameBaseline(a: PixelBox, b: PixelBox): boolean {
+  const overlap = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+  return overlap >= SAME_BASELINE_OVERLAP * Math.min(a.h, b.h);
+}
+
+function unionBox(boxes: PixelBox[]): PixelBox {
+  const x = Math.min(...boxes.map((b) => b.x));
+  const y = Math.min(...boxes.map((b) => b.y));
+  const right = Math.max(...boxes.map((b) => b.x + b.w));
+  const bottom = Math.max(...boxes.map((b) => b.y + b.h));
+  return { x, y, w: right - x, h: bottom - y };
+}
+
+/**
+ * Faint pieces that are one element split by OCR, left to right. Two neighbours join only when
+ * they sit on the same baseline, measured the same text colour, background and ratio, and no other
+ * text line lies between them. Everything else stays a group of one. Pure.
+ */
+export function groupFaintPieces(
+  pieces: readonly FaintPiece[],
+  lines: readonly { box: PixelBox }[],
+): FaintPiece[][] {
+  const sorted = [...pieces].sort((a, b) => a.box.y - b.box.y || a.box.x - b.box.x);
+  const groups: FaintPiece[][] = [];
+  for (const piece of sorted) {
+    const group = groups.find((g) => {
+      const last = g.at(-1)!;
+      const [left, right] = last.box.x <= piece.box.x ? [last, piece] : [piece, last];
+      const gapStart = left.box.x + left.box.w;
+      const gapEnd = right.box.x;
+      const between = lines.some(
+        (line, i) =>
+          i !== left.lineIndex &&
+          i !== right.lineIndex &&
+          sameBaseline(line.box, left.box) &&
+          line.box.x < gapEnd &&
+          line.box.x + line.box.w > gapStart,
+      );
+      return (
+        sameBaseline(last.box, piece.box) &&
+        toHex(last.text) === toHex(piece.text) &&
+        toHex(last.background) === toHex(piece.background) &&
+        roundRatio(last.ratio) === roundRatio(piece.ratio) &&
+        !between
+      );
+    });
+    if (group) group.push(piece);
+    else groups.push([piece]);
+  }
+  return groups;
 }

@@ -102,3 +102,73 @@ describe("measureScreen", () => {
     expect(off.issues).toEqual([]);
   });
 });
+
+describe("measureScreen: one faint line split by OCR", () => {
+  // Sample data for tests only: the eval "settings" case, #3F4F5F text on the #0F1720 page,
+  // with the two pieces OCR returned (it missed "are sa" between them). Text is drawn as solid
+  // strips inside each line box, so the ring around the box is the page.
+  const PAGE = parseHex("#0F1720");
+  const DIM = parseHex("#3F4F5F");
+  const TEXT = parseHex("#E6EDF3");
+  const inset = (box: { x: number; y: number; w: number; h: number }) => ({
+    x: box.x + 4,
+    y: box.y + 6,
+    w: box.w - 8,
+    h: box.h - 12,
+  });
+  const changes = { x: 82, y: 273, w: 103, h: 30 };
+  const rest = { x: 268, y: 273, w: 385, h: 30 };
+  const run = (
+    lines: { label: string; box: typeof changes; colour: typeof PAGE }[],
+    background = PAGE,
+  ) =>
+    measureScreen({
+      img: solidImage(
+        800,
+        400,
+        background,
+        lines.map((l) => ({ box: inset(l.box), colour: l.colour })),
+      ),
+      scale: 2,
+      textLines: lines.map((l) => ({ label: l.label, box: l.box, fontSize: 16 })),
+      controls: [],
+      rules: { targetSize: null, textSize: null, contrast: null },
+    });
+  const contrastNotes = (r: ReturnType<typeof run>) =>
+    r.issues.filter((i) => i.principleId === "wcag-1.4.3");
+
+  it("shows the two settings pieces as one note over both, and keeps both measurements", () => {
+    const r = run([
+      { label: "Changes", box: changes, colour: DIM },
+      { label: "ved as soon as you switch them", box: rest, colour: DIM },
+    ]);
+    expect(r.measurements.filter((m) => m.kind === "contrast" && !m.passes)).toHaveLength(2);
+    const notes = contrastNotes(r);
+    expect(notes).toHaveLength(1);
+    expect(notes[0]!.region).toEqual({ x: 82, y: 273, w: 571, h: 30 });
+    expect(notes[0]!.measurementKey).toBe("t0-contrast");
+    expect(notes[0]!.title).toBe('"Changes … ved as soon as you switch them" is too faint');
+    expect(notes[0]!.detail).toMatch(/measures 2\.\d\d : 1 on #0F1720/);
+    expect(notes[0]!.severity).toBe("high");
+  });
+
+  it("keeps two same coloured labels apart when other text lies between them", () => {
+    const r = run([
+      { label: "Changes", box: changes, colour: DIM },
+      { label: "Saved", box: { x: 200, y: 273, w: 50, h: 30 }, colour: TEXT },
+      { label: "ved as soon as you switch them", box: rest, colour: DIM },
+    ]);
+    expect(contrastNotes(r).map((n) => n.title)).toEqual([
+      '"Changes" is too faint',
+      '"ved as soon as you switch them" is too faint',
+    ]);
+  });
+
+  it("keeps two pieces with different colours on one line apart", () => {
+    const r = run([
+      { label: "Changes", box: changes, colour: DIM },
+      { label: "ved as soon as you switch them", box: rest, colour: parseHex("#4A3F5F") },
+    ]);
+    expect(contrastNotes(r)).toHaveLength(2);
+  });
+});

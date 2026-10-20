@@ -59,7 +59,8 @@ try {
         kind: "measured" as const,
         principleId: issue.principleId,
         title: issue.title,
-        detail: `"${m.label}" ${shown(m.value)}, needs ${shown(m.threshold)}`,
+        // A note wider than its measurement is a line OCR split; its title names every piece.
+        detail: `${issue.region.w > m.box.w ? issue.title : `"${m.label}"`}: ${shown(m.value)}, needs ${shown(m.threshold)}`,
         severity: issue.severity,
         confidence: null,
         region: issue.region,
