@@ -87,7 +87,7 @@ Tests prove the code works. The evaluation measures how good the reviews are (`d
 | Command | Key needed | What it does |
 |---|---|---|
 | `pnpm eval:capture` | no | Renders every fixture at 1280 × 800, scale 2, to `eval/cases/<name>.png` and `<name>.json` (planted problems with boxes, plus the page's controls) |
-| `pnpm eval:measured` | no | Scores only the measured checks on every case: real OCR and pixel measuring, controls taken from the page in place of Claude call 1. Writes `eval/runs/<date>-measured.md` |
+| `pnpm eval:measured` | no | Scores only contrast and text size on every case (real OCR and pixel measuring, no Claude call) with the same matcher. Writes `eval/runs/<date>-measured.md` with found, missed and unexpected per case and in total |
 | `pnpm eval` | yes | Runs the full pipeline (both Claude calls) on every case, 3 times each, and writes the report |
 | `pnpm eval --report eval/runs/<date>.results.json` | no | Makes the report again after you marked unexpected notes |
 | `pnpm demo:build` | yes, live mode | Captures the demo screens, runs the real pipeline on each and writes `demo/data.json` with `source: "claude"` and the date |
@@ -98,7 +98,7 @@ A full `pnpm eval` makes 72 Claude calls (12 cases × 3 runs × 2 calls). Try on
 
 You can add your own cases: a PNG and a JSON in `eval/cases/` with the same shape (`lib/eval/case.ts`), without `controls`. `eval/runs/` is gitignored.
 
-> **Honest note.** The evaluated half of UX Critic has not been scored yet. `pnpm eval` and `pnpm demo:build` have only been run in fake AI mode, because no API key was used while building this. Only the measured checks have real numbers (`pnpm eval:measured`, no key needed). The demo's evaluated notes are written by hand from the planted problems until `pnpm demo:build` is run with a key.
+> **Honest note.** The evaluated half of UX Critic has not been scored yet. `pnpm eval` and `pnpm demo:build` have only been run in fake AI mode, because no API key was used while building this. Only contrast and text size have real numbers (`pnpm eval:measured`, no key needed); target size needs Claude call 1 and is not scored yet. The demo's evaluated notes are written by hand from the planted problems until `pnpm demo:build` is run with a key.
 
 ## Tests
 

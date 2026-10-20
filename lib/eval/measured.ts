@@ -11,6 +11,9 @@ export type MeasuredCheck = "contrast" | "text_size" | "target_size";
 
 export const CHECKS: MeasuredCheck[] = ["contrast", "text_size", "target_size"];
 
+/** What `pnpm eval:measured` scores: the checks that need no Claude call (OCR and pixels only). */
+export const TEXT_CHECKS: MeasuredCheck[] = ["contrast", "text_size"];
+
 /** Which check a measured principle belongs to. */
 export function checkOf(principleId: string): MeasuredCheck | null {
   if (principleId === "wcag-1.4.3") return "contrast";

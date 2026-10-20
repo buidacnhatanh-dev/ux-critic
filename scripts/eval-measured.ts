@@ -1,21 +1,18 @@
 /**
- * pnpm eval:measured: scores only the measured checks (docs/04) on every case in eval/cases,
- * without any key and without calling Claude. Writes eval/runs/<date>-measured.md.
+ * pnpm eval:measured: scores only the measured checks that need no Claude call, contrast and
+ * text size (docs/04), on every case in eval/cases, without any key. Writes
+ * eval/runs/<date>-measured.md.
  *
- * - Contrast and text size run exactly as in a live review: tesseract.js finds the text lines on
- *   the PNG, then lib/pipeline/measure-screen.ts measures them from the pixels.
- * - Target size needs Claude call 1 to find the controls. Here the controls come from the page
- *   instead (located by pnpm eval:capture), then the same code measures them from the pixels.
- *   Cases without located controls (added by hand) skip target sizes.
- * - Rules: a first run checklist (contrast 4.5 : 1, targets 24 px WCAG and 44 px rule, body text
- *   16 px).
- *
- * The checks are deterministic, so one run per case.
+ * Exactly the live path of "measured checks only": tesseract.js finds the text lines on the PNG,
+ * then lib/pipeline/measure-screen.ts measures contrast and text size from the pixels, with the
+ * rules of a first run checklist (contrast 4.5 : 1, body text 16 px). Target size is left out: it
+ * needs Claude call 1 to find the controls. Results are matched to the planted contrast and text
+ * size problems with the Compare matcher (lib/eval/score.ts). Deterministic, so one run per case.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { formatRatio } from "../lib/contrast.ts";
-import { checkOf, CHECKS, seedMeasuredRules, tallyByCheck } from "../lib/eval/measured.ts";
+import { checkOf, seedMeasuredRules, tallyByCheck, TEXT_CHECKS } from "../lib/eval/measured.ts";
 import { recall, scoreRun, type ExpectedIssue, type RunScore } from "../lib/eval/score.ts";
 import { loadRaw } from "../lib/pipeline/image.ts";
 import { fromOcr, measureScreen } from "../lib/pipeline/measure-screen.ts";
@@ -23,11 +20,15 @@ import { findTextLines, stopOcr } from "../lib/pipeline/ocr.ts";
 import { numberInReadingOrder } from "../lib/pipeline/order.ts";
 import { expectedOf, freshStem, loadCases, parseArgs, root } from "./eval-cases.ts";
 
-const CHECK_NAMES = { contrast: "Contrast", text_size: "Text size", target_size: "Target size" };
+const CHECK_NAMES: Record<string, string> = { contrast: "Contrast", text_size: "Text size" };
+const isTextCheck = (principleId: string) => {
+  const check = checkOf(principleId);
+  return check !== null && TEXT_CHECKS.includes(check);
+};
 
 const args = parseArgs(process.argv.slice(2));
 const cases = await loadCases(args.get("case") ?? []);
-const rules = seedMeasuredRules();
+const rules = { ...seedMeasuredRules(), targetSize: null };
 
 type Row = {
   name: string;
@@ -35,46 +36,38 @@ type Row = {
   score: RunScore;
   checks: number;
   textLines: number;
-  controls: number | null;
   seconds: number;
-  notes: string[];
 };
 const rows: Row[] = [];
 try {
   for (const c of cases) {
     const started = performance.now();
     const png = await readFile(c.png);
-    const img = await loadRaw(png);
     const lines = await findTextLines(png);
     const screen = measureScreen({
-      img,
+      img: await loadRaw(png),
       scale: c.scale,
       textLines: fromOcr(lines, c.scale),
-      controls: c.controls ?? [],
+      controls: [],
       rules,
     });
     const results = numberInReadingOrder(screen.issues).map((issue) => {
       const m = screen.measurements.find((x) => x.key === issue.measurementKey)!;
-      const value = m.kind === "contrast" ? formatRatio(m.value) : `${m.value} px`;
+      const shown = (v: number) => (m.kind === "contrast" ? formatRatio(v) : `${v} px`);
       return {
         number: issue.number,
         kind: "measured" as const,
         principleId: issue.principleId,
         title: issue.title,
-        detail: `"${m.label}" ${value}, needs ${m.kind === "contrast" ? formatRatio(m.threshold) : `${m.threshold} px`}`,
+        detail: `"${m.label}" ${shown(m.value)}, needs ${shown(m.threshold)}`,
         severity: issue.severity,
         confidence: null,
         region: issue.region,
       };
     });
-    // Measured planted problems only; target sizes only where controls were located.
     const expected = expectedOf(c).filter(
-      (e) =>
-        e.kind === "measured" &&
-        checkOf(e.principleId) !== null &&
-        (c.controls || checkOf(e.principleId) !== "target_size"),
+      (e) => e.kind === "measured" && isTextCheck(e.principleId),
     );
-    const notes = c.controls ? [] : ["no located controls: target sizes skipped"];
     const score = scoreRun(expected, results, c);
     rows.push({
       name: c.name,
@@ -82,12 +75,10 @@ try {
       score,
       checks: screen.measurements.length,
       textLines: lines.length,
-      controls: c.controls?.length ?? null,
       seconds: (performance.now() - started) / 1000,
-      notes,
     });
     console.log(
-      `${c.name}: ${lines.length} text lines, ${c.controls?.length ?? 0} controls, ${screen.measurements.length} checks; found ${score.found.length} of ${expected.length}, ${score.unexpected.length} unexpected`,
+      `${c.name}: ${lines.length} text lines, ${screen.measurements.length} checks; found ${score.found.length} of ${expected.length}, missed ${score.missed.length}, ${score.unexpected.length} unexpected`,
     );
   }
 } finally {
@@ -95,9 +86,11 @@ try {
 }
 
 const tally = tallyByCheck(rows);
-const planted = rows.reduce((s, r) => s + r.expected.length, 0);
-const found = rows.reduce((s, r) => s + r.score.found.length, 0);
-const unexpected = rows.reduce((s, r) => s + r.score.unexpected.length, 0);
+const sum = (pick: (r: Row) => number) => rows.reduce((s, r) => s + pick(r), 0);
+const planted = sum((r) => r.expected.length);
+const found = sum((r) => r.score.found.length);
+const missed = sum((r) => r.score.missed.length);
+const unexpected = sum((r) => r.score.unexpected.length);
 const pct = (v: number | null) => (v === null ? "–" : `${Math.round(v * 100)} %`);
 const cell = (t: string) => t.replace(/\|/g, "\\|");
 const startedAt = new Date().toISOString();
@@ -105,24 +98,25 @@ const startedAt = new Date().toISOString();
 const md: string[] = [
   `# Measured checks ${startedAt.slice(0, 10)}`,
   "",
-  "Measured checks only (`pnpm eval:measured`), no Claude call. Contrast and text size: tesseract.js OCR on the screenshot, then measured from the pixels, as in a live review. Target size: controls located from the fixture page (standing in for Claude call 1), then measured from the pixels. Rules of a first run checklist.",
+  "Contrast and text size only (`pnpm eval:measured`), no Claude call: tesseract.js OCR on the screenshot, then measured from the pixels, as in a live review without a key. Rules of a first run checklist. Target size is not scored here: it needs Claude call 1 to find the controls. Matching: the Compare matcher (same principle, region IoU ≥ 0.25 or similar title).",
   "",
-  `**Found ${found} of ${planted} planted measured problems (recall ${pct(recall(found, planted))}), ${unexpected} unexpected measured notes** on ${rows.length} cases.`,
+  `**Total: found ${found} of ${planted} planted problems (recall ${pct(recall(found, planted))}), missed ${missed}, ${unexpected} unexpected** on ${rows.length} cases.`,
   "",
-  "| Check | Planted | Found | Recall | Unexpected |",
+  "| Check | Planted | Found | Missed | Unexpected |",
   "|---|---:|---:|---:|---:|",
-  ...CHECKS.map(
+  ...TEXT_CHECKS.map(
     (c) =>
-      `| ${CHECK_NAMES[c]} | ${tally[c].planted} | ${tally[c].found} | ${pct(recall(tally[c].found, tally[c].planted))} | ${tally[c].unexpected} |`,
+      `| ${CHECK_NAMES[c]} | ${tally[c].planted} | ${tally[c].found} | ${tally[c].planted - tally[c].found} | ${tally[c].unexpected} |`,
   ),
+  `| **Total** | ${planted} | ${found} | ${missed} | ${unexpected} |`,
   "",
   "## Per case",
   "",
-  "| Case | Text lines (OCR) | Controls | Checks | Planted | Found | Unexpected | Time |",
-  "|---|---:|---:|---:|---:|---:|---:|---:|",
+  "| Case | Text lines (OCR) | Checks | Planted | Found | Missed | Unexpected |",
+  "|---|---:|---:|---:|---:|---:|---:|",
   ...rows.map(
     (r) =>
-      `| ${r.name} | ${r.textLines} | ${r.controls ?? "–"} | ${r.checks} | ${r.expected.length} | ${r.score.found.length} | ${r.score.unexpected.length} | ${r.seconds.toFixed(1)} s |`,
+      `| ${r.name} | ${r.textLines} | ${r.checks} | ${r.expected.length} | ${r.score.found.length} | ${r.score.missed.length} | ${r.score.unexpected.length} |`,
   ),
   "",
   "## Found",
@@ -135,7 +129,7 @@ const md: string[] = [
   "",
   "## Missed",
   "",
-  ...(rows.some((r) => r.score.missed.length)
+  ...(missed
     ? rows.flatMap((r) =>
         r.score.missed.map((e) => `* ${r.name} · ${e.id} (${e.principleId}): ${cell(e.note)}`),
       )
@@ -150,8 +144,6 @@ const md: string[] = [
         ),
       )
     : ["None."]),
-  "",
-  ...rows.flatMap((r) => r.notes.map((n) => `* ${r.name}: ${n}`)),
 ];
 
 const runsDir = path.join(root, "eval/runs");
@@ -159,5 +151,5 @@ await mkdir(runsDir, { recursive: true });
 const stem = await freshStem(runsDir, `${startedAt.slice(0, 10)}-measured`);
 await writeFile(path.join(runsDir, `${stem}.md`), `${md.join("\n").trimEnd()}\n`);
 console.log(
-  `\nFound ${found} of ${planted} planted measured problems, ${unexpected} unexpected. eval/runs/${stem}.md written.`,
+  `\nFound ${found} of ${planted}, missed ${missed}, ${unexpected} unexpected. eval/runs/${stem}.md written.`,
 );

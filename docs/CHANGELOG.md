@@ -233,3 +233,9 @@ Decisions
 * `lib/pipeline/measure-screen.ts` gained `fromOcr` (OCR lines to measure input), used by the pipeline and `eval:measured` so both estimate text size the same way
 * Evaluation unreadable keeps the filter buttons (design 11 leaves them out; docs/06 §11 says it is the Review screen), Connect Claude stays inside the shell (M3), and the design's annotation "Focus starts on the safe choice." is not shown in the dialog
 * The live Cancel review test waits up to `RESULT_TIMEOUT` (45 s) for the evaluation step instead of 10 s: measuring can queue behind other tests' OCR, and it failed once right after a dev server recompile
+
+## eval:measured narrowed to contrast and text size (2026-10-20)
+
+* `pnpm eval:measured` now scores only contrast and text size, the checks that need no Claude call, exactly as a live review without a key runs them (OCR, then pixels). Target size is no longer scored there: M7 stood in controls located from the fixture page for Claude call 1, which a real review never has. The `controls` in `eval/cases/*.json` stay for later use
+* The report has found, missed and unexpected per check, per case and in total, with the Compare matcher as before. README and docs/08 updated
+* Only 4 planted problems across the 12 cases are contrast or text size (checkout v1, dashboard ×2, settings), so these numbers rest on a small sample
