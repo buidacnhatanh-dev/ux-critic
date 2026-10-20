@@ -61,9 +61,9 @@ All colours, fonts, radii and spacing come from `app/tokens.css`. Components nev
   --color-border: #DDE1E7;       /* decorative borders */
   --color-border-input: #8A93A3; /* input borders, 3.1 : 1 on white */
   --color-surface: #F7F8FA;
-  --color-primary: #1D4ED8;      /* buttons, links, evaluated badges, 6.7 : 1 on white */
-  --color-primary-tint: #E8EEFC;
-  --color-primary-soft: #F3F6FD;
+  --color-primary: #573CFA;      /* buttons, links, evaluated badges, 6.12 : 1 on white */
+  --color-primary-tint: #EEEBFE; /* primary text on it 5.23 : 1 */
+  --color-primary-soft: #F6F5FF; /* primary text on it 5.66 : 1 */
   --color-high: #B42318;  --color-high-bg: #FEE4E2;
   --color-medium: #7A5600; --color-medium-bg: #FFF4D1;
   --color-low: #4A5260;   --color-low-bg: #EEF1F5;

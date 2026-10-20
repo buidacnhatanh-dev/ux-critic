@@ -9,7 +9,7 @@ Design files: `design/NN-Name.png` and `design/source/NN-Name.html`. Sample data
 ## Visual basics (from the designs)
 
 * Fonts: Overpass 600 for headings, Atkinson Hyperlegible Next 400 for body text and 600 for labels, buttons, badges and pills, JetBrains Mono for code. Weights come from the `--weight-*` tokens. The PNG designs still show the older, bolder weights
-* Colours: ink `#15181D`, secondary text `#4A5260`, borders `#DDE1E7`, surface `#F7F8FA`, primary `#1D4ED8` with tint `#E8EEFC` and `#F3F6FD`. All of these are tokens in `app/tokens.css`; never use the raw hex in components
+* Colours: ink `#15181D`, secondary text `#4A5260`, borders `#DDE1E7`, surface `#F7F8FA`, primary `#573CFA` with tint `#EEEBFE` and `#F6F5FF`. All of these are tokens in `app/tokens.css`; never use the raw hex in components
 * Severity pills: High `#B42318` on `#FEE4E2`, Medium `#7A5600` on `#FFF4D1`, Low `#4A5260` on `#EEF1F5`
 * Kind badges: Measured = ink pill with white text. Evaluated = white pill with primary text and primary border
 * Region boxes on screenshots: measured = ink, evaluated = primary, pushed back = grey `#8A93A3`. Dashed when not selected, solid 3 px plus a light tint when selected. Number badge at the top left corner

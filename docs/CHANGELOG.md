@@ -247,3 +247,16 @@ Decisions
 * `pnpm eval:measured`: found 4 of 4, missed 0, 0 unexpected (was 1 unexpected, the split settings subtitle). Its report quotes the note title for a merged note
 * Decision: a distance based merge of OCR lines (1.5 × the line height) was tried on paper and dropped. The settings gap is 2.68 × the row height, and any threshold that large also merges separate elements ("New to Rally?" with the "Create an account" button at 1.69 ×, two payment buttons at 1.82 ×), which would put two colours in one box and give a wrong contrast value
 * `demo/data.json` is unchanged (`pnpm demo:data` writes the same file)
+
+## Primary colour: blue to violet (2026-10-20)
+
+* `app/tokens.css`: `--color-primary` `#573CFA` (6.12 : 1 on white, white text on it 6.12 : 1, 5.76 : 1 on the surface), `--color-primary-tint` `#EEEBFE` (primary text on it 5.23 : 1), `--color-primary-soft` `#F6F5FF` (5.66 : 1), `--color-primary-dashed` `#B9ACFC` (decorative, 2.03 : 1, like the old `#A9B9EC` at 1.94 : 1: the "Add a project" card is identified by its text and icon), and `--color-region-tint` now violet at 10 % (it was the old blue as `rgb()`, which a hex search missed). The logo follows the primary
+* Hover stays ink, no hover token: primary buttons and links already turn `#15181D` on hover
+* The yellow focus ring is unchanged (3.78 : 1 against the primary)
+* `app/tokens.test.ts` checks the colour pairs from the tokens file: primary on white, surface, tint and soft ≥ 4.5; white on primary ≥ 4.5; ink on both tints ≥ 4.5; primary as a control colour ≥ 3
+* `CLAUDE.md` (fixtures never use `#573CFA`), docs/01 and docs/06 updated. Older changelog entries keep the old values as history
+* `design/source/*.html`: app chrome changed to the violet values (144 replacements). The two screenshot thumbnails (`01-Main.html:62`, `02-Project.html:70`) and the mock screens' own `#2563EB` stay blue: they are the designs being reviewed, not the app
+* **Outdated: all 15 `design/*.png`** still show the old blue. No script renders them, and the design HTML loads its fonts from a CDN and still uses the old fonts, so a render would not match the app either. `design/source` and `app/tokens.css` are the reference for colour until the PNGs are redrawn
+* `app/opengraph-image.png` and `app/twitter-image.png` recaptured from the production demo build (`.claude/launch.json` gained a `demo-prod` entry for `next start` on port 3200)
+* Unchanged on purpose: `lib/contrast.test.ts`, `lib/pipeline/measure.test.ts` and `measure-screen.test.ts` keep `#1D4ED8` as a known test colour. The sample products in `eval/fixtures` and `public/demo` use none of the app colours
+* Checks: lint, typecheck, 375 unit tests, 84 Playwright tests with zero axe violations (one Compare run hit a one-off missing title during navigation; it passed 3 times alone and in the next full run), `pnpm vercel-build` with the demo build check, and 18 smoke tests on the production demo

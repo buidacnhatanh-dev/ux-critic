@@ -7,10 +7,10 @@
   --color-surface: #f7f8fa;
   --color-bg: #ffffff;
   --color-on-dark: #ffffff; /* text on ink, primary and danger fills */
-  --color-primary: #1d4ed8; /* buttons, links, evaluated badges, 6.7 : 1 on white */
-  --color-primary-tint: #e8eefc;
-  --color-primary-soft: #f3f6fd;
-  --color-primary-dashed: #a9b9ec; /* dashed "Add a project" card */
+  --color-primary: #573cfa; /* buttons, links, evaluated badges, 6.12 : 1 on white */
+  --color-primary-tint: #eeebfe; /* selected nav, badges: primary text on it 5.23 : 1 */
+  --color-primary-soft: #f6f5ff; /* soft panels: primary text on it 5.66 : 1 */
+  --color-primary-dashed: #b9acfc; /* dashed "Add a project" card, decorative (2.03 : 1) */
   --color-high: #b42318;
   --color-high-bg: #fee4e2;
   --color-medium: #7a5600;
@@ -19,7 +19,7 @@
   --color-low-bg: #eef1f5;
   --color-success: #1a7f3c;
   --color-pushed-back: #8a93a3; /* pushed back regions */
-  --color-region-tint: rgb(29 78 216 / 0.1); /* selected region fill */
+  --color-region-tint: rgb(87 60 250 / 0.1); /* selected region fill (primary at 10 %) */
   --color-success-bg: #e6f4ea; /* Fixed tile */
   --color-success-strong: #145c2e; /* text on the Fixed tile, 7.4 : 1 */
   --color-high-bar: #b42318; /* Issues per version bars (decorative) */
